@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:forest="http://code.solinx.co/schema/forest"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.solinx.co/schema/forest
+       http://code.solinx.co/schema/forest/forest.xsd">
+
+    <forest:registry address="zookeeper://192.168.254.136:2181"/>
+    <bean id="bidService" class="co.solinx.forest.common.utils.Holder"/>
+</beans>
