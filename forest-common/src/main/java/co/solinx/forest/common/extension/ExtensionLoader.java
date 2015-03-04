@@ -7,6 +7,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * Created by LX on 2015/3/1.
@@ -15,8 +17,9 @@ public class ExtensionLoader<T> {
 
     private static final String SERVICE_DIRECTORY = "META-INF/services/";
 
+    private final ConcurrentMap<String, Class> cacheClass = new ConcurrentHashMap<String, Class>();
 
-    public List<Class> loadFile() {
+    public void loadFile() {
         ClassLoader classLoader = findClassLoader();
         String fileName = SERVICE_DIRECTORY + "co.solinx.forest.container.IContainer";
         Enumeration<URL> urls;
@@ -33,8 +36,11 @@ public class ExtensionLoader<T> {
                 while ((line = reader.readLine()) != null) {
 
                     Class<?> clazz = classLoader.loadClass(line);
-                    classList.add(clazz);
+                    cacheClass.put(clazz.getSimpleName(), clazz);
+//                    classList.add(clazz);
                     System.out.println(line);
+                    System.out.println(clazz.getSimpleName());
+
                 }
 
             }
@@ -43,7 +49,15 @@ public class ExtensionLoader<T> {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return classList;
+    }
+
+    public Class findClass(String name) {
+        Class retval = null;
+        if (name != null) {
+            retval =cacheClass.get(name);
+
+        }
+        return retval;
     }
 
     private ClassLoader findClassLoader() {
