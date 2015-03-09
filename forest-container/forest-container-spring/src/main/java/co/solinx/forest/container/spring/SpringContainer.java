@@ -12,7 +12,7 @@ public class SpringContainer implements IContainer {
     //打印日志
     Logger logger = Logger.getLogger(SpringContainer.class);
 
-    static ClassPathXmlApplicationContext context;
+    public static ClassPathXmlApplicationContext context;
     public static final String DEFAULT_SPRING_CONFIG = "classpath*:META-INF/spring/*.xml";
 
     @Override
@@ -22,6 +22,9 @@ public class SpringContainer implements IContainer {
         context = new ClassPathXmlApplicationContext(DEFAULT_SPRING_CONFIG);
         context.start();
         logger.info(context.containsBean("bidService"));
+        logger.info(context.containsBean("ServiceConfig"));
+        logger.info(context.containsBean("RegistryConfig"));
+
     }
 
     @Override
