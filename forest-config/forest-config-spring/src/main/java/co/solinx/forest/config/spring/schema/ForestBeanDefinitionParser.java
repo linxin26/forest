@@ -1,5 +1,6 @@
 package co.solinx.forest.config.spring.schema;
 
+import co.solinx.forest.config.ServiceConfig;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.RootBeanDefinition;
@@ -29,15 +30,24 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
         beanDefinition.setBeanClass(beanClass);
         beanDefinition.setLazyInit(false);
         String id = element.getAttribute("id");
-        if (id == null & required) {
+        if ((id == null || id == "") & required) {
 //            String name = element.getAttribute("name");
+            id = beanClass.getSimpleName();
+            parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
+            beanDefinition.getPropertyValues().addPropertyValue("id", id);
+        } else {
+            parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
+            beanDefinition.getPropertyValues().addPropertyValue("id", id);
+        }
+        if (ServiceConfig.class.equals(beanClass)) {
+            beanDefinition.getPropertyValues().addPropertyValue("interfaceApi", element.getAttribute("interface"));
         }
         for (Method setter : beanClass.getMethods()) {
             String name = setter.getName();
-            logger.info(name);
+//            logger.info(name);
         }
-
-
-        return null;
+        logger.info(beanDefinition.getPropertyValues().get("interfaceApi"));
+        logger.info(beanDefinition.getPropertyValues().get("id"));
+        return beanDefinition;
     }
 }
