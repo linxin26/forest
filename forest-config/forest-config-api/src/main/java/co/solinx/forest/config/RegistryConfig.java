@@ -9,6 +9,8 @@ public class RegistryConfig extends AbstractConfig {
 
     public static final String NO_AVAILABLE = "N/A";
 
+    private String id;
+
     // 注册中心地址
     private String address;
 
@@ -70,6 +72,14 @@ public class RegistryConfig extends AbstractConfig {
     public RegistryConfig() {
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public RegistryConfig(String address) {
         setAddress(address);
     }
@@ -106,5 +116,31 @@ public class RegistryConfig extends AbstractConfig {
         this.username = username;
     }
 
-
+    @Override
+    public String toString() {
+        return "RegistryConfig{" +
+                "id='" + id + '\'' +
+                ", address='" + address + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", port=" + port +
+                ", protocol='" + protocol + '\'' +
+                ", transporter='" + transporter + '\'' +
+                ", server='" + server + '\'' +
+                ", client='" + client + '\'' +
+                ", cluster='" + cluster + '\'' +
+                ", group='" + group + '\'' +
+                ", version='" + version + '\'' +
+                ", timeout=" + timeout +
+                ", session=" + session +
+                ", file='" + file + '\'' +
+                ", wait=" + wait +
+                ", check=" + check +
+                ", dynamic=" + dynamic +
+                ", register=" + register +
+                ", subscribe=" + subscribe +
+                ", parameters=" + parameters +
+                ", isDefault=" + isDefault +
+                '}';
+    }
 }
