@@ -13,6 +13,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/forest-registry/forest-registry-api/pom.xml" />
       </set>
     </option>
   </component>

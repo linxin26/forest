@@ -14,7 +14,11 @@
       <module fileurl="file://$PROJECT_DIR$/forest-demo/forest-demo.iml" filepath="$PROJECT_DIR$/forest-demo/forest-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/forest-demo/forest-demo-provider/forest-demo-provider.iml" filepath="$PROJECT_DIR$/forest-demo/forest-demo-provider/forest-demo-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/forest-registry/forest-registry.iml" filepath="$PROJECT_DIR$/forest-registry/forest-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forest-registry/forest-registry-api/forest-registry-api.iml" filepath="$PROJECT_DIR$/forest-registry/forest-registry-api/forest-registry-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/forest-registry/forest-registry-zookeeper/forest-registry-zookeeper.iml" filepath="$PROJECT_DIR$/forest-registry/forest-registry-zookeeper/forest-registry-zookeeper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forest-remote/forest-remote.iml" filepath="$PROJECT_DIR$/forest-remote/forest-remote.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forest-remote/forest-remote-http/forest-remote-http.iml" filepath="$PROJECT_DIR$/forest-remote/forest-remote-http/forest-remote-http.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/forest-remote-zookeeper.iml" filepath="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/forest-remote-zookeeper.iml" />
     </modules>
   </component>
 </project>

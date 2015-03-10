@@ -1,6 +1,8 @@
 package co.solinx.forest.container.spring;
 
+import co.solinx.forest.config.RegistryConfig;
 import co.solinx.forest.container.IContainer;
+import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
 import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -24,7 +26,9 @@ public class SpringContainer implements IContainer {
         logger.info(context.containsBean("bidService"));
         logger.info(context.containsBean("ServiceConfig"));
         logger.info(context.containsBean("RegistryConfig"));
-
+        RegistryConfig registryConfig = (RegistryConfig) context.getBean("RegistryConfig");
+        ZookeeperRegistry zookeeperRegistry = new ZookeeperRegistry();
+        zookeeperRegistry.toRegistry(registryConfig.getAddress());
     }
 
     @Override

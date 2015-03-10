@@ -15,6 +15,7 @@
         <module>forest-demo</module>
         <module>forest-config</module>
         <module>demo</module>
+        <module>forest-remote</module>
     </modules>
 
 

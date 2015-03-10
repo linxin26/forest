@@ -31,6 +31,8 @@
         <module name="forest-container-spring" />
         <module name="forest-demo-provider" />
         <module name="forest-registry-zookeeper" />
+        <module name="forest-remote-http" />
+        <module name="forest-remote-zookeeper" />
       </profile>
     </annotationProcessing>
   </component>

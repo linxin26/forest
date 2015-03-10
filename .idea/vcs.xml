@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/forest-registry/forest-registry-api" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/forest-remote" vcs="svn" />
   </component>
 </project>
 

@@ -7,8 +7,9 @@ public class ServiceConfig extends AbstractConfig {
 
     public String id;
     public String name;
-    public String interfaceApi;
+    public String interfaceName;
     public String ref;
+    public String protocol;
 
     public String getId() {
         return id;
@@ -34,11 +35,19 @@ public class ServiceConfig extends AbstractConfig {
         this.ref = ref;
     }
 
-    public String getInterfaceApi() {
-        return interfaceApi;
+    public String getInterfaceName() {
+        return interfaceName;
     }
 
-    public void setInterfaceApi(String interfaceApi) {
-        this.interfaceApi = interfaceApi;
+    public void setInterfaceName(String interfaceName) {
+        this.interfaceName = interfaceName;
+    }
+
+    public String getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
     }
 }
