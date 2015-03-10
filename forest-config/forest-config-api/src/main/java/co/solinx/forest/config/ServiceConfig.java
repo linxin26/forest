@@ -11,6 +11,7 @@ public class ServiceConfig extends AbstractConfig {
     public String ref;
     public String protocol;
 
+
     public String getId() {
         return id;
     }

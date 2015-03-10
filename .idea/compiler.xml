@@ -30,6 +30,7 @@
         <module name="forest-container-log4j" />
         <module name="forest-container-spring" />
         <module name="forest-demo-provider" />
+        <module name="forest-registry-api" />
         <module name="forest-registry-zookeeper" />
         <module name="forest-remote-http" />
         <module name="forest-remote-zookeeper" />
