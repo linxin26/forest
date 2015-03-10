@@ -5,6 +5,10 @@ package co.solinx.forest.registry;
  */
 public interface IRegistry {
 
+    /**
+     * 注册
+     * @param url
+     */
     public void toRegistry(String url);
 
 }
