@@ -11,6 +11,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="forest-registry-api" />
+    <orderEntry type="module" module-name="forest-remote-zookeeper" />
   </component>
 </module>
 
