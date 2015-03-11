@@ -30,16 +30,25 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
         RootBeanDefinition beanDefinition = new RootBeanDefinition();
         beanDefinition.setBeanClass(beanClass);
         beanDefinition.setLazyInit(false);
-        String id = element.getAttribute("id");
+        String id=null;
+
+        if (ServiceConfig.class.equals(beanClass)) {
+            id = element.getAttribute("interface");
+            parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
+            beanDefinition.getPropertyValues().addPropertyValue("id", id);
+        }
+
         if ((id == null || id == "") & required) {
+//            id = element.getAttribute("id");
 //            String name = element.getAttribute("name");
             id = beanClass.getSimpleName();
             parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
             beanDefinition.getPropertyValues().addPropertyValue("id", id);
-        } else {
-            parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
-            beanDefinition.getPropertyValues().addPropertyValue("id", id);
         }
+//        else {
+//            parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
+//            beanDefinition.getPropertyValues().addPropertyValue("id", id);
+//        }
         if (ServiceConfig.class.equals(beanClass)) {
             beanDefinition.getPropertyValues().addPropertyValue("interfaceName", element.getAttribute("interface"));
             beanDefinition.getPropertyValues().addPropertyValue("ref", element.getAttribute("ref"));

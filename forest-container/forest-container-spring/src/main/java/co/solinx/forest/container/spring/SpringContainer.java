@@ -26,9 +26,22 @@ public class SpringContainer implements IContainer {
         logger.info(context.containsBean("bidService"));
         logger.info(context.containsBean("ServiceConfig"));
         logger.info(context.containsBean("RegistryConfig"));
+
         RegistryConfig registryConfig = (RegistryConfig) context.getBean("RegistryConfig");
         ZookeeperRegistry zookeeperRegistry = new ZookeeperRegistry();
         zookeeperRegistry.toRegistry(registryConfig.getAddress());
+
+        String[] beanNames = context.getBeanDefinitionNames();
+        String root="/forest/";
+        for (int i = 0; i < beanNames.length; i++) {
+            if (beanNames[i].indexOf(".") != -1) {
+                zookeeperRegistry.create(root+beanNames[i]);
+                logger.info(beanNames[i]);
+            }
+
+        }
+
+
     }
 
     @Override
