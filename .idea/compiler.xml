@@ -33,7 +33,9 @@
         <module name="forest-registry-api" />
         <module name="forest-registry-zookeeper" />
         <module name="forest-remote-http" />
+        <module name="forest-remote-netty" />
         <module name="forest-remote-zookeeper" />
+        <module name="forest-rmote-api" />
       </profile>
     </annotationProcessing>
   </component>

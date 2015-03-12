@@ -10,13 +10,13 @@
 
     <forest:registry address="zookeeper://192.168.254.144:2181"/>
 
-    <forest:service interface="co.solinx.forest.demo.api.IHelloForest" ref="helloForest" protocol="forest"
+    <forest:service interface="co.solinx.forest.demo.api.IHelloForestService" ref="helloForest" protocol="forest"
                     owner="linx"/>
-    <forest:service interface="co.solinx.forest.demo.api.IHelloRPC" ref="helloRpc" protocol="forest"
+    <forest:service interface="co.solinx.forest.demo.api.IHelloRpcService" ref="helloRpc" protocol="forest"
                     owner="linx"></forest:service>
 
-    <bean id="helloForest" class="co.solinx.forest.demo.impl.HelloForestImpl"/>
-    <bean id="helloRpc" class="co.solinx.forest.demo.impl.HelloRPCImpl"></bean>
+    <bean id="helloForest" class="co.solinx.forest.demo.impl.HelloForestServiceImpl"/>
+    <bean id="helloRpc" class="co.solinx.forest.demo.impl.HelloRpcServiceImpl"></bean>
 
     <bean id="bidService" class="co.solinx.forest.common.utils.Holder"/>
 </beans>

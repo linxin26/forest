@@ -18,8 +18,17 @@ public class ZookeeperRegistry implements IRegistry {
 
     }
 
-    public void create(String path) {
+    public void registryService(String note) {
 //        client.create("/forest/co.solinx.forest", true);
-        client.create(path, true);
+        try {
+            client.create(note, true);
+            client.watcherNote(note);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removeService(String note) throws Exception {
+        client.deleteNote(note);
     }
 }

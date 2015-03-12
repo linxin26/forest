@@ -10,7 +10,7 @@ public interface IZookeeperClient {
 
     public void create(String path, boolean ephemeral);
 
-    public void delete(String path);
+    public void deleteNote(String path) throws Exception;
 
     public List<String> getChildren(String path);
 
