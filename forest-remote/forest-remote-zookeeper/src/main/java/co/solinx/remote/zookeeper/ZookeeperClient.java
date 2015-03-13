@@ -2,6 +2,7 @@ package co.solinx.remote.zookeeper;
 
 import co.solinx.remote.zookeeper.api.IChildrenListener;
 import co.solinx.remote.zookeeper.api.IZookeeperClient;
+import co.solinx.remote.zookeeper.support.ZooNote;
 import co.solinx.remote.zookeeper.watcher.DefaultWatcher;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -18,10 +19,12 @@ import java.util.List;
  */
 public class ZookeeperClient implements IZookeeperClient {
 
+    Logger log = Logger.getLogger(ZookeeperClient.class);
 
     private CuratorFramework client;
     private String url;
-    Logger log = Logger.getLogger(ZookeeperClient.class);
+    DefaultWatcher watcher;
+
 
     public ZookeeperClient(String url) {
         this.url = url;
@@ -30,10 +33,11 @@ public class ZookeeperClient implements IZookeeperClient {
         client.getConnectionStateListenable().addListener(new ConnectionStateListener() {
             @Override
             public void stateChanged(CuratorFramework curatorFramework, ConnectionState connectionState) {
-                log.info("连接状态");
+                log.info("Connection状态监听");
                 log.info(connectionState);
             }
         });
+        watcher = new DefaultWatcher(client);
         log.info(client.getState());
     }
 
@@ -44,12 +48,19 @@ public class ZookeeperClient implements IZookeeperClient {
      * @param ephemeral
      */
     @Override
-    public void create(String note, boolean ephemeral) {
+    public void createNote(ZooNote note, boolean ephemeral) {
         try {
-            if (!this.checkExists(note)) {
-                client.create().forPath(note);
+            String notePath;
+            if (note.getParentNote() == null) {
+                notePath = note.notePath;
             } else {
-                log.info("节点：" + note + ",已存在！");
+                notePath = note.getParentNote().getNotePath() + note.getNotePath();
+            }
+            if (!this.checkExists(notePath)) {
+                client.create().forPath(notePath);
+
+            } else {
+                log.info("节点：" + notePath + ",已存在！");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -58,14 +69,34 @@ public class ZookeeperClient implements IZookeeperClient {
     }
 
     /**
+     * 设置节点数据
+     *
+     * @param path
+     * @param data
+     * @throws Exception
+     */
+    public void setNoteData(String path, byte[] data) throws Exception {
+        client.setData().forPath(path, data);
+    }
+
+    /**
      * 监听Note
      *
      * @param note
      * @throws Exception
      */
-    public void watcherNote(String note) throws Exception {
-        DefaultWatcher watcher = new DefaultWatcher(client, note);
-        watcher.start();
+    public void watcherNote(ZooNote note) throws Exception {
+        watcher.watcherNote(note);
+    }
+
+    /**
+     * 监听Note的ChildNote
+     *
+     * @param note
+     * @throws Exception
+     */
+    public void watcherChildNote(String note) throws Exception {
+        watcher.watcherChildNote(note);
     }
 
     public void watcherNoteData(String note) {
@@ -95,8 +126,14 @@ public class ZookeeperClient implements IZookeeperClient {
      * @throws Exception
      */
     @Override
-    public void deleteNote(String note) throws Exception {
-        client.delete().forPath(note);
+    public void deleteNote(ZooNote note) throws Exception {
+        String notePath;
+        if (note.getParentNote() == null) {
+            notePath = note.getNotePath();
+        } else {
+            notePath = note.getParentNote().getNotePath() + note.getNotePath();
+        }
+        client.delete().forPath(notePath);
     }
 
     @Override

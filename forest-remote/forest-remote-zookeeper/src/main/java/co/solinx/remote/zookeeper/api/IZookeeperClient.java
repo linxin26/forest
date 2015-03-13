@@ -1,5 +1,7 @@
 package co.solinx.remote.zookeeper.api;
 
+import co.solinx.remote.zookeeper.support.ZooNote;
+
 import java.util.List;
 
 /**
@@ -8,19 +10,19 @@ import java.util.List;
  */
 public interface IZookeeperClient {
 
-    public void create(String path, boolean ephemeral);
+    public void createNote(ZooNote note, boolean ephemeral);
 
-    public void deleteNote(String path) throws Exception;
+    public void deleteNote(ZooNote note) throws Exception;
 
-    public List<String> getChildren(String path);
+    public List<String> getChildren(String note);
 
-    public List<String> addChildrenListener(String path, IChildrenListener listener);
+    public List<String> addChildrenListener(String note, IChildrenListener listener);
 
-    public void remoteChildrenListener(String path, IChildrenListener listener);
+    public void remoteChildrenListener(String note, IChildrenListener listener);
 
     public boolean isConnected();
 
     public void close();
- 
+
 
 }

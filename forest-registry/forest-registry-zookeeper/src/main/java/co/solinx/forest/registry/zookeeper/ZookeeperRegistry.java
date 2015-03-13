@@ -2,6 +2,7 @@ package co.solinx.forest.registry.zookeeper;
 
 import co.solinx.forest.registry.IRegistry;
 import co.solinx.remote.zookeeper.ZookeeperClient;
+import co.solinx.remote.zookeeper.support.ZooNote;
 import org.apache.log4j.Logger;
 
 /**
@@ -18,17 +19,26 @@ public class ZookeeperRegistry implements IRegistry {
 
     }
 
-    public void registryService(String note) {
+    public void registerService(String service) {
 //        client.create("/forest/co.solinx.forest", true);
         try {
-            client.create(note, true);
+            ZooNote note = new ZooNote();
+            note.setNoteName(service);
+            note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR+service);
+            note.setParentNote(null);
+            note.setNoteData(service);
+
+            client.createNote(note, true);
             client.watcherNote(note);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void removeService(String note) throws Exception {
+    public void unRegisterService(String service) throws Exception {
+        ZooNote note = new ZooNote();
+        note.setNoteName(service);
+        note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR+service);
         client.deleteNote(note);
     }
 }

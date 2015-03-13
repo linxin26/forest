@@ -32,17 +32,17 @@ public class SpringContainer implements IContainer {
         zookeeperRegistry.toRegistry(registryConfig.getAddress());
 
         String[] beanNames = context.getBeanDefinitionNames();
-        String root = "/forest/";
+        String root = "forest/";
         for (int i = 0; i < beanNames.length; i++) {
             if (beanNames[i].indexOf(".") != -1) {
-                zookeeperRegistry.registryService(root + beanNames[i]);
+                zookeeperRegistry.registerService(root + beanNames[i]);
                 logger.info(beanNames[i]);
             }
         }
         for (int i = 0; i < beanNames.length; i++) {
             try {
                 if (beanNames[i].indexOf(".") != -1) {
-                    zookeeperRegistry.removeService(root + beanNames[i]);
+                    zookeeperRegistry.unRegisterService(root + beanNames[i]);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
