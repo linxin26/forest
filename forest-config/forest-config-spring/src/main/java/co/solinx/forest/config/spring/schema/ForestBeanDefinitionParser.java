@@ -19,6 +19,7 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
     private Logger logger = Logger.getLogger(ForestBeanDefinitionParser.class);
     private Class<?> beanClass;
     private boolean required;
+//    private Map<String,ServiceConfig> serviceConfigMap=new HashMap<String, ServiceConfig>();
 
     public ForestBeanDefinitionParser(Class<?> beanClass, boolean required) {
         this.beanClass = beanClass;

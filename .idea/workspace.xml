@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcffe273-43e5-43ae-a2d3-ae0833631cb0" name="Default" comment="add listener by zookeeper note">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/main/java/co/solinx/remote/zookeeper/support/ZooNote.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/main/java/co/solinx/remote/zookeeper/watcher/DefaultWatcher.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/main/java/co/solinx/remote/zookeeper/watcher/DefaultWatcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/main/java/co/solinx/remote/zookeeper/api/IZookeeperClient.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/main/java/co/solinx/remote/zookeeper/api/IZookeeperClient.java" />
+    <list default="true" id="fcffe273-43e5-43ae-a2d3-ae0833631cb0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-config/forest-config-spring/src/main/java/co/solinx/forest/config/spring/schema/ForestBeanDefinitionParser.java" afterPath="$PROJECT_DIR$/forest-config/forest-config-spring/src/main/java/co/solinx/forest/config/spring/schema/ForestBeanDefinitionParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-container/forest-container-spring/src/main/java/co/solinx/forest/container/spring/SpringContainer.java" afterPath="$PROJECT_DIR$/forest-container/forest-container-spring/src/main/java/co/solinx/forest/container/spring/SpringContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/main/java/co/solinx/remote/zookeeper/ZookeeperClient.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/main/java/co/solinx/remote/zookeeper/ZookeeperClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-registry/forest-registry-zookeeper/src/main/java/co/solinx/forest/registry/zookeeper/ZookeeperRegistry.java" afterPath="$PROJECT_DIR$/forest-registry/forest-registry-zookeeper/src/main/java/co/solinx/forest/registry/zookeeper/ZookeeperRegistry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/resources/META-INF/spring/forest-provider.xml" afterPath="$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/resources/META-INF/spring/forest-provider.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log4j.file" afterPath="$PROJECT_DIR$/log4j.file" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/test/java/co/solinx/forest/remote/zookeeper/zooTest.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/test/java/co/solinx/forest/remote/zookeeper/zooTest.java" />
     </list>
     <ignored path="forest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +32,12 @@
       <file leaf-file-name="SpringContainer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/forest-container/forest-container-spring/src/main/java/co/solinx/forest/container/spring/SpringContainer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71374047" vertical-offset="544" max-vertical-offset="1037">
-              <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.38870433" vertical-offset="512" max-vertical-offset="1156">
+              <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
               <folding>
-                <element signature="e#1926#1927#0" expanded="true" />
-                <element signature="e#1984#1985#0" expanded="true" />
+                <element signature="e#2531#2532#0" expanded="true" />
+                <element signature="e#2589#2590#0" expanded="true" />
+                <marker date="1426360295768" expanded="true" signature="2166:2176" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -60,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/forest-registry/forest-registry-zookeeper/src/main/java/co/solinx/forest/registry/zookeeper/ZookeeperRegistry.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="799">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -91,26 +88,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forest-remote/forest-rmote-api/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="zooTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/test/java/co/solinx/forest/remote/zookeeper/zooTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -119,6 +96,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForestBeanDefinitionParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forest-config/forest-config-spring/src/main/java/co/solinx/forest/config/spring/schema/ForestBeanDefinitionParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1071">
+              <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -180,6 +167,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="forest-provider.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/resources/META-INF/spring/forest-provider.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.88" vertical-offset="141" max-vertical-offset="459">
+              <caret line="14" column="75" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -233,8 +230,6 @@
         <option value="$PROJECT_DIR$/forest-registry/forest-registry-api/src/main/java/co/solinx/forest/registry/IRegistry.java" />
         <option value="$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/java/co/solinx/forest/demo/api/IHelloRPC.java" />
         <option value="$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/java/co/solinx/forest/demo/impl/HelloRPCImpl.java" />
-        <option value="$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/resources/META-INF/spring/forest-provider.xml" />
-        <option value="$PROJECT_DIR$/forest-config/forest-config-spring/src/main/java/co/solinx/forest/config/spring/schema/ForestBeanDefinitionParser.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/test/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/java/co/solinx/forest/demo/impl/HelloForestServiceImpl.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/main/java/co/solinx/remote/zookeeper/api/IZookeeperClient.java" />
@@ -243,6 +238,8 @@
         <option value="$PROJECT_DIR$/forest-registry/forest-registry-zookeeper/src/main/java/co/solinx/forest/registry/zookeeper/ZookeeperRegistry.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/main/java/co/solinx/remote/zookeeper/ZookeeperClient.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/src/test/java/co/solinx/forest/remote/zookeeper/zooTest.java" />
+        <option value="$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/resources/META-INF/spring/forest-provider.xml" />
+        <option value="$PROJECT_DIR$/forest-config/forest-config-spring/src/main/java/co/solinx/forest/config/spring/schema/ForestBeanDefinitionParser.java" />
         <option value="$PROJECT_DIR$/forest-container/forest-container-spring/src/main/java/co/solinx/forest/container/spring/SpringContainer.java" />
       </list>
     </option>
@@ -761,6 +758,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1757,7 +1762,7 @@
       <workItem from="1425800492302" duration="14883000" />
       <workItem from="1426000204040" duration="1609000" />
       <workItem from="1426012522214" duration="294000" />
-      <workItem from="1426012851398" duration="30247000" />
+      <workItem from="1426012851398" duration="37521000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1425479544034</created>
@@ -1803,11 +1808,15 @@
       <created>1426178627445</created>
       <updated>1426178627445</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add listener by zookeeper note">
+      <created>1426263615382</created>
+      <updated>1426263615382</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98521000" />
+    <option name="totallyTimeSpent" value="105795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1833,7 +1842,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23975721" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34901366" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24810319" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36034483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2129,26 +2138,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forest-config/forest-config-spring/src/main/java/co/solinx/forest/config/spring/schema/ForestBeanDefinitionParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1054">
-          <caret line="36" column="83" selection-start-line="36" selection-start-column="83" selection-end-line="36" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/java/co/solinx/forest/demo/api/IHelloForestService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/resources/META-INF/spring/forest-provider.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.12" vertical-offset="67" max-vertical-offset="459">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -2349,21 +2342,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/forest-config/forest-config-spring/src/main/java/co/solinx/forest/config/spring/schema/ForestBeanDefinitionParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1071">
+          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/resources/META-INF/spring/forest-provider.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.88" vertical-offset="141" max-vertical-offset="459">
+          <caret line="14" column="75" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/forest-registry/forest-registry-zookeeper/src/main/java/co/solinx/forest/registry/zookeeper/ZookeeperRegistry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="799">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/forest-container/forest-container-spring/src/main/java/co/solinx/forest/container/spring/SpringContainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71374047" vertical-offset="544" max-vertical-offset="1037">
-          <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.38870433" vertical-offset="512" max-vertical-offset="1156">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
           <folding>
-            <element signature="e#1926#1927#0" expanded="true" />
-            <element signature="e#1984#1985#0" expanded="true" />
+            <element signature="e#2531#2532#0" expanded="true" />
+            <element signature="e#2589#2590#0" expanded="true" />
+            <marker date="1426360295768" expanded="true" signature="2166:2176" placeholder="..." />
           </folding>
         </state>
       </provider>
