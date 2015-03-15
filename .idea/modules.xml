@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/forest-container/forest-container-log4j/forest-container-log4j.iml" filepath="$PROJECT_DIR$/forest-container/forest-container-log4j/forest-container-log4j.iml" />
       <module fileurl="file://$PROJECT_DIR$/forest-container/forest-container-spring/forest-container-spring.iml" filepath="$PROJECT_DIR$/forest-container/forest-container-spring/forest-container-spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/forest-demo/forest-demo.iml" filepath="$PROJECT_DIR$/forest-demo/forest-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forest-demo/forest-demo-customer/forest-demo-customer.iml" filepath="$PROJECT_DIR$/forest-demo/forest-demo-customer/forest-demo-customer.iml" />
       <module fileurl="file://$PROJECT_DIR$/forest-demo/forest-demo-provider/forest-demo-provider.iml" filepath="$PROJECT_DIR$/forest-demo/forest-demo-provider/forest-demo-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/forest-registry/forest-registry.iml" filepath="$PROJECT_DIR$/forest-registry/forest-registry.iml" />
       <module fileurl="file://$PROJECT_DIR$/forest-registry/forest-registry-api/forest-registry-api.iml" filepath="$PROJECT_DIR$/forest-registry/forest-registry-api/forest-registry-api.iml" />

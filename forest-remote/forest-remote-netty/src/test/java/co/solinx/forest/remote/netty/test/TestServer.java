@@ -1,6 +1,6 @@
 package co.solinx.forest.remote.netty.test;
 
-import co.solinx.forest.remote.netty.server.Server;
+import co.solinx.forest.remote.netty.server.NettyServer;
 
 /**
  * Created by LX on 2015/3/15.
@@ -8,7 +8,7 @@ import co.solinx.forest.remote.netty.server.Server;
 public class TestServer {
 
     public static void main(String[] args) {
-        Server server = new Server();
+        NettyServer server = new NettyServer();
         server.start();
     }
 

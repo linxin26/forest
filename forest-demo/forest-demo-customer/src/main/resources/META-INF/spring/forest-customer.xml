@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:forest="http://code.solinx.co/schema/forest"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.solinx.co/schema/forest
+       http://code.solinx.co/schema/forest/forest.xsd">
+
+    <forest:application name="demo-customer" owner="programmer" organization="forest"/>
+
+    <forest:registry address="zookeeper://192.168.254.144:2181"></forest:registry>
+
+
+    <forest:reference id="forestService" interface="co.solinx.forest.demo.customer.api.IHelloForestService"></forest:reference>
+
+</beans>

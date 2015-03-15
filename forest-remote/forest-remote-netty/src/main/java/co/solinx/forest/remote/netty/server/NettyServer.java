@@ -15,16 +15,15 @@ import java.util.concurrent.Executors;
 /**
  * Created by LX on 2015/3/15.
  */
-public class Server {
+public class NettyServer {
 
     public ServerBootstrap server;
 
-    public Server() {
+    public NettyServer() {
         server = new ServerBootstrap(new NioServerSocketChannelFactory(Executors.newCachedThreadPool(), Executors.newCachedThreadPool()));
     }
 
     public void start() {
-
         server.setPipelineFactory(new ChannelPipelineFactory() {
             @Override
             public ChannelPipeline getPipeline() throws Exception {

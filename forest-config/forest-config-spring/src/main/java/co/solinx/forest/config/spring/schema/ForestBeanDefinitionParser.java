@@ -1,5 +1,6 @@
 package co.solinx.forest.config.spring.schema;
 
+import co.solinx.forest.config.ReferenceConfig;
 import co.solinx.forest.config.RegistryConfig;
 import co.solinx.forest.config.ServiceConfig;
 import org.apache.log4j.Logger;
@@ -56,6 +57,8 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
             beanDefinition.getPropertyValues().addPropertyValue("protocol", element.getAttribute("protocol"));
         } else if (RegistryConfig.class.equals(beanClass)) {
             beanDefinition.getPropertyValues().addPropertyValue("address", element.getAttribute("address"));
+        }else if(ReferenceConfig.class.equals(beanClass)){
+            beanDefinition.getPropertyValues().addPropertyValue("interfaceName",element.getAttribute("interface"));
         }
         for (Method setter : beanClass.getMethods()) {
             String name = setter.getName();

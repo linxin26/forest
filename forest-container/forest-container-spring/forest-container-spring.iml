@@ -22,6 +22,7 @@
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="module" module-name="forest-config-api" />
     <orderEntry type="module" module-name="forest-registry-zookeeper" />
+    <orderEntry type="module" module-name="forest-remote-netty" />
   </component>
 </module>
 

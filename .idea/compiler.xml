@@ -29,6 +29,7 @@
         <module name="forest-container-api" />
         <module name="forest-container-log4j" />
         <module name="forest-container-spring" />
+        <module name="forest-demo-customer" />
         <module name="forest-demo-provider" />
         <module name="forest-registry-api" />
         <module name="forest-registry-zookeeper" />
@@ -36,6 +37,13 @@
         <module name="forest-remote-netty" />
         <module name="forest-remote-zookeeper" />
         <module name="forest-rmote-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for forest-remote-api" enabled="true">
+        <sourceOutputDir name="..\forest-rmote-api\target\generated-sources\annotations" />
+        <sourceTestOutputDir name="..\forest-rmote-api\target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="forest-remote-api" />
       </profile>
     </annotationProcessing>
   </component>
