@@ -37,6 +37,7 @@
         <module name="forest-remote-netty" />
         <module name="forest-remote-zookeeper" />
         <module name="forest-rmote-api" />
+        <module name="forest-rpc-default" />
       </profile>
       <profile default="false" name="Annotation profile for forest-remote-api" enabled="true">
         <sourceOutputDir name="..\forest-rmote-api\target\generated-sources\annotations" />
