@@ -2,7 +2,7 @@ package co.solinx.forest.config.spring.schema;
 
 import co.solinx.forest.config.ReferenceConfig;
 import co.solinx.forest.config.RegistryConfig;
-import co.solinx.forest.config.ServiceConfig;
+import co.solinx.forest.config.spring.ServiceBean;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.RootBeanDefinition;
@@ -32,9 +32,9 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
         RootBeanDefinition beanDefinition = new RootBeanDefinition();
         beanDefinition.setBeanClass(beanClass);
         beanDefinition.setLazyInit(false);
-        String id=null;
+        String id = null;
 
-        if (ServiceConfig.class.equals(beanClass)) {
+        if (ServiceBean.class.equals(beanClass)) {
             id = element.getAttribute("interface");
             parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
             beanDefinition.getPropertyValues().addPropertyValue("id", id);
@@ -47,18 +47,23 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
             parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
             beanDefinition.getPropertyValues().addPropertyValue("id", id);
         }
-//        else {
-//            parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
-//            beanDefinition.getPropertyValues().addPropertyValue("id", id);
-//        }
-        if (ServiceConfig.class.equals(beanClass)) {
+
+        if (ServiceBean.class.equals(beanClass)) {
+//            String className = element.getAttribute("class");
+//            if (className != null&&className.length()>0) {
+//                RootBeanDefinition classDefinition = new RootBeanDefinition();
+//                classDefinition.setBeanClass(ReflectUtils.forName(className));
+//                classDefinition.setLazyInit(false);
+//                beanDefinition.getPropertyValues().addPropertyValue("ref", new BeanDefinitionHolder(classDefinition, id + "Impl"));
+//            }
+
             beanDefinition.getPropertyValues().addPropertyValue("interfaceName", element.getAttribute("interface"));
             beanDefinition.getPropertyValues().addPropertyValue("ref", element.getAttribute("ref"));
             beanDefinition.getPropertyValues().addPropertyValue("protocol", element.getAttribute("protocol"));
         } else if (RegistryConfig.class.equals(beanClass)) {
             beanDefinition.getPropertyValues().addPropertyValue("address", element.getAttribute("address"));
-        }else if(ReferenceConfig.class.equals(beanClass)){
-            beanDefinition.getPropertyValues().addPropertyValue("interfaceName",element.getAttribute("interface"));
+        } else if (ReferenceConfig.class.equals(beanClass)) {
+            beanDefinition.getPropertyValues().addPropertyValue("interfaceName", element.getAttribute("interface"));
         }
         for (Method setter : beanClass.getMethods()) {
             String name = setter.getName();

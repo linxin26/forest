@@ -12,11 +12,23 @@ public class ZookeeperRegistry implements IRegistry {
 
     Logger log = Logger.getLogger(ZookeeperRegistry.class);
     ZookeeperClient client;
+    private static ZookeeperRegistry registry;
+
+    public ZookeeperRegistry() {
+    }
+
+    public static ZookeeperRegistry getZookeeper() {
+        if (registry == null) {
+            registry = new ZookeeperRegistry();
+        }
+        return registry;
+    }
 
     @Override
     public void toRegistry(String url) {
-        client = new ZookeeperClient(url.replace("zookeeper://", ""));
-
+        if (client == null) {
+            client = new ZookeeperClient(url.replace("zookeeper://", ""));
+        }
     }
 
     public void registerService(String service) {
@@ -24,7 +36,7 @@ public class ZookeeperRegistry implements IRegistry {
         try {
             ZooNote note = new ZooNote();
             note.setNoteName(service);
-            note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR+service);
+            note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR + service);
             note.setParentNote(null);
             note.setNoteData(service);
 
@@ -38,7 +50,7 @@ public class ZookeeperRegistry implements IRegistry {
     public void unRegisterService(String service) throws Exception {
         ZooNote note = new ZooNote();
         note.setNoteName(service);
-        note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR+service);
+        note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR + service);
         client.deleteNote(note);
     }
 }

@@ -2,9 +2,7 @@ package co.solinx.forest.container;
 
 import co.solinx.forest.common.extension.ExtensionLoader;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.ServiceLoader;
 
 /**
@@ -14,18 +12,16 @@ public class Main {
 
     public static void main(String[] args) throws IllegalAccessException, InstantiationException {
 
-
+        /**
+         * 加载SPI配置文件
+         */
         ExtensionLoader loader = new ExtensionLoader();
-         loader.loadFile();
-//        IContainer container = (IContainer)loader.findClass("Log4jContainer").newInstance();
-//        container.start();
-//        for (int i = 0; i < classList.size(); i++) {
-//            IContainer container = (IContainer) classList.get(i).newInstance();
-//            container.start();
-//        }
-        List<IContainer> containers = new ArrayList<IContainer>();
+        loader.loadFile();
         ServiceLoader<IContainer> service = ServiceLoader.load(IContainer.class);
         Iterator<IContainer> container = service.iterator();
+        /**
+         * 启动容器
+         */
         while (container.hasNext()) {
             IContainer modl = container.next();
             modl.start();
