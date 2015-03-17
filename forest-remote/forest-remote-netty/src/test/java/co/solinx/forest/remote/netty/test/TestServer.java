@@ -8,8 +8,8 @@ import co.solinx.forest.remote.netty.server.NettyServer;
 public class TestServer {
 
     public static void main(String[] args) {
-        NettyServer server = new NettyServer();
-        server.start();
+        NettyServer server =NettyServer.getInstance();
+        server.open();
     }
 
 }

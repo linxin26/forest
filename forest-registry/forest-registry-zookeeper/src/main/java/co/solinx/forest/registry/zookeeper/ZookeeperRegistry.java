@@ -5,6 +5,8 @@ import co.solinx.remote.zookeeper.ZookeeperClient;
 import co.solinx.remote.zookeeper.support.ZooNote;
 import org.apache.log4j.Logger;
 
+import java.util.List;
+
 /**
  * Created by LX on 2015/3/10.
  */
@@ -30,6 +32,21 @@ public class ZookeeperRegistry implements IRegistry {
             client = new ZookeeperClient(url.replace("zookeeper://", ""));
         }
     }
+
+    /**
+     * 获取服务实现
+     *
+     * @param interfaceName
+     * @return
+     * @throws Exception
+     */
+    public List<String> getServiceImplList(String interfaceName) throws Exception {
+        ZooNote api = new ZooNote();
+        api.setNoteName(interfaceName);
+        api.setNotePath("/forest/" + interfaceName + "/providers");
+        return client.getchildNote(api);
+    }
+
 
     public void registerService(String service) {
 //        client.create("/forest/co.solinx.forest", true);

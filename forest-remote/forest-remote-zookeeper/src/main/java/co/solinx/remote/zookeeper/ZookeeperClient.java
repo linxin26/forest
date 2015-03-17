@@ -42,6 +42,18 @@ public class ZookeeperClient implements IZookeeperClient {
     }
 
     /**
+     * 取得子节点
+     *
+     * @param note
+     * @return
+     * @throws Exception
+     */
+    public List<String> getchildNote(ZooNote note) throws Exception {
+        List<String> noteList = client.getChildren().forPath(note.getNotePath());
+        return noteList;
+    }
+
+    /**
      * 添加节点
      *
      * @param note

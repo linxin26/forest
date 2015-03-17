@@ -37,8 +37,8 @@ public class ServiceConfig<T> extends AbstractConfig {
 
             }
         }
-            NettyServer server=new NettyServer();
-            server.start();
+        NettyServer server = NettyServer.getInstance();
+        server.open();
     }
 //        else {
 //            String[] beanNames = context.getBeanDefinitionNames();

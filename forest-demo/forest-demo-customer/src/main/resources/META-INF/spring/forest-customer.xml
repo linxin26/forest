@@ -12,6 +12,10 @@
     <forest:registry address="zookeeper://192.168.254.144:2181"></forest:registry>
 
 
-    <forest:reference id="forestService" interface="co.solinx.forest.demo.customer.api.IHelloForestService"></forest:reference>
+    <forest:reference id="forestService"
+                      interface="co.solinx.forest.demo.api.IHelloForestService"></forest:reference>
+
+    <forest:reference id="helloRpcService"
+                      interface="co.solinx.forest.demo.api.IHelloRpcService"></forest:reference>
 
 </beans>

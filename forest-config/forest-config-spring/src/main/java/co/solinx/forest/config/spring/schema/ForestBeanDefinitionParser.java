@@ -1,7 +1,7 @@
 package co.solinx.forest.config.spring.schema;
 
-import co.solinx.forest.config.ReferenceConfig;
 import co.solinx.forest.config.RegistryConfig;
+import co.solinx.forest.config.spring.ReferenceBean;
 import co.solinx.forest.config.spring.ServiceBean;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.config.BeanDefinition;
@@ -39,6 +39,11 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
             parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
             beanDefinition.getPropertyValues().addPropertyValue("id", id);
         }
+        if (ReferenceBean.class.equals(beanClass)) {
+            id = element.getAttribute("interface");
+            parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
+            beanDefinition.getPropertyValues().addPropertyValue("id", id);
+        }
 
         if ((id == null || id == "") & required) {
 //            id = element.getAttribute("id");
@@ -62,7 +67,7 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
             beanDefinition.getPropertyValues().addPropertyValue("protocol", element.getAttribute("protocol"));
         } else if (RegistryConfig.class.equals(beanClass)) {
             beanDefinition.getPropertyValues().addPropertyValue("address", element.getAttribute("address"));
-        } else if (ReferenceConfig.class.equals(beanClass)) {
+        } else if (ReferenceBean.class.equals(beanClass)) {
             beanDefinition.getPropertyValues().addPropertyValue("interfaceName", element.getAttribute("interface"));
         }
         for (Method setter : beanClass.getMethods()) {

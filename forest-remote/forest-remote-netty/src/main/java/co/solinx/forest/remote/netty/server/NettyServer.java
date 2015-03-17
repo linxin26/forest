@@ -1,6 +1,7 @@
 package co.solinx.forest.remote.netty.server;
 
 import co.solinx.forest.remote.netty.Handler.HelloHandler;
+import org.apache.log4j.Logger;
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.ChannelPipeline;
 import org.jboss.netty.channel.ChannelPipelineFactory;
@@ -17,13 +18,30 @@ import java.util.concurrent.Executors;
  */
 public class NettyServer {
 
-    public ServerBootstrap server;
+    Logger logger = Logger.getLogger(NettyServer.class);
 
-    public NettyServer() {
-        server = new ServerBootstrap(new NioServerSocketChannelFactory(Executors.newCachedThreadPool(), Executors.newCachedThreadPool()));
+    public ServerBootstrap server;
+    private static NettyServer nettyServer;
+
+    private NettyServer() {
+
     }
 
-    public void start() {
+    public static NettyServer getInstance() {
+        if (nettyServer == null) {
+            nettyServer = new NettyServer();
+        }
+        return nettyServer;
+    }
+
+    public void open() {
+        if (server == null) {
+            server = new ServerBootstrap(new NioServerSocketChannelFactory(Executors.newCachedThreadPool(), Executors.newCachedThreadPool()));
+            this.start();
+        }
+    }
+
+    private void start() {
         server.setPipelineFactory(new ChannelPipelineFactory() {
             @Override
             public ChannelPipeline getPipeline() throws Exception {
@@ -35,7 +53,7 @@ public class NettyServer {
             }
         });
         server.bind(new InetSocketAddress("127.0.0.1", 18088));
-
+        logger.info("netty server start bind by 18088 ");
     }
 
 

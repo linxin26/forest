@@ -22,7 +22,12 @@ public class ServiceBean<T> extends ServiceConfig implements Serializable, Dispo
     Logger logger = LoggerFactory.getLogger(ServiceBean.class);
     private String beanName;
     private ApplicationContext applicationContext;
+    private boolean export;
 
+
+    public ServiceBean() {
+        logger.info("ServiceBean ");
+    }
 
     @Override
     public void destroy() throws Exception {
@@ -36,9 +41,12 @@ public class ServiceBean<T> extends ServiceConfig implements Serializable, Dispo
 
     @Override
     public void onApplicationEvent(ApplicationEvent applicationEvent) {
+        logger.info(applicationEvent.getClass().getName());
         if (ContextRefreshedEvent.class.getName().equals(applicationEvent.getClass().getName())) {
-            logger.info(String.valueOf(applicationContext.getBeanDefinitionNames().length));
-            Export(applicationContext);
+            if (!export) {
+                Export(applicationContext);
+                export = true;
+            }
         }
 
     }
