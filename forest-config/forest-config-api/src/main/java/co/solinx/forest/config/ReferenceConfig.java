@@ -1,6 +1,7 @@
 package co.solinx.forest.config;
 
 import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
+import co.solinx.forest.remote.netty.client.NettyClient;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -34,10 +35,14 @@ public class ReferenceConfig<T> extends AbstractConfig {
 
         try {
             List<String> serviceList = zookeeperRegistry.getServiceImplList(interfaceName);
-            for (String temp : serviceList) {
-                
-                logger.info(temp);
-            }
+//            for (String temp : serviceList) {
+//                Class clazz = Class.forName(temp);
+//                logger.info(clazz.newInstance());
+//                logger.info(temp);
+//            }
+
+            NettyClient client= new NettyClient();
+            client.start(serviceList.get(0).toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

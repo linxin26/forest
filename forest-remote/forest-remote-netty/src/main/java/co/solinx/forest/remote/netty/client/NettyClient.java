@@ -6,8 +6,8 @@ import org.jboss.netty.channel.ChannelPipeline;
 import org.jboss.netty.channel.ChannelPipelineFactory;
 import org.jboss.netty.channel.Channels;
 import org.jboss.netty.channel.socket.nio.NioClientSocketChannelFactory;
-import org.jboss.netty.handler.codec.string.StringDecoder;
-import org.jboss.netty.handler.codec.string.StringEncoder;
+import org.jboss.netty.handler.codec.serialization.ObjectDecoder;
+import org.jboss.netty.handler.codec.serialization.ObjectEncoder;
 
 import java.net.InetSocketAddress;
 
@@ -22,14 +22,15 @@ public class NettyClient {
 
     }
 
-    public void start() {
+    public void start(String service) {
+        final HelloClientHandler clientHandler = new HelloClientHandler(service);
         client.setPipelineFactory(new ChannelPipelineFactory() {
             @Override
             public ChannelPipeline getPipeline() throws Exception {
-                ChannelPipeline pipeline=Channels.pipeline();
-                pipeline.addLast("encode",new StringEncoder());
-                pipeline.addLast("decode",new StringDecoder());
-                pipeline.addLast("handler",new HelloClientHandler());
+                ChannelPipeline pipeline = Channels.pipeline();
+                pipeline.addLast("encode", new ObjectEncoder());
+                pipeline.addLast("decode", new ObjectDecoder());
+                pipeline.addLast("handler", clientHandler);
                 return pipeline;
             }
         });

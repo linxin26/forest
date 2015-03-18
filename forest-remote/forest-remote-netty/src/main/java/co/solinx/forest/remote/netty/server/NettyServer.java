@@ -7,8 +7,8 @@ import org.jboss.netty.channel.ChannelPipeline;
 import org.jboss.netty.channel.ChannelPipelineFactory;
 import org.jboss.netty.channel.Channels;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
-import org.jboss.netty.handler.codec.string.StringDecoder;
-import org.jboss.netty.handler.codec.string.StringEncoder;
+import org.jboss.netty.handler.codec.serialization.ObjectDecoder;
+import org.jboss.netty.handler.codec.serialization.ObjectEncoder;
 
 import java.net.InetSocketAddress;
 import java.util.concurrent.Executors;
@@ -46,8 +46,8 @@ public class NettyServer {
             @Override
             public ChannelPipeline getPipeline() throws Exception {
                 ChannelPipeline pipeline = Channels.pipeline();
-                pipeline.addLast("encode", new StringEncoder());
-                pipeline.addLast("decode", new StringDecoder());
+                pipeline.addLast("encode", new ObjectEncoder());
+                pipeline.addLast("decode", new ObjectDecoder());
                 pipeline.addLast("handler", new HelloHandler());
                 return pipeline;
             }
