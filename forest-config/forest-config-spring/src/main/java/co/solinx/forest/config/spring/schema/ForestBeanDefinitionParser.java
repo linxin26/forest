@@ -40,7 +40,7 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
             beanDefinition.getPropertyValues().addPropertyValue("id", id);
         }
         if (ReferenceBean.class.equals(beanClass)) {
-            id = element.getAttribute("interface");
+            id = element.getAttribute("id");
             parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
             beanDefinition.getPropertyValues().addPropertyValue("id", id);
         }
@@ -54,13 +54,6 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
         }
 
         if (ServiceBean.class.equals(beanClass)) {
-//            String className = element.getAttribute("class");
-//            if (className != null&&className.length()>0) {
-//                RootBeanDefinition classDefinition = new RootBeanDefinition();
-//                classDefinition.setBeanClass(ReflectUtils.forName(className));
-//                classDefinition.setLazyInit(false);
-//                beanDefinition.getPropertyValues().addPropertyValue("ref", new BeanDefinitionHolder(classDefinition, id + "Impl"));
-//            }
 
             beanDefinition.getPropertyValues().addPropertyValue("interfaceName", element.getAttribute("interface"));
             beanDefinition.getPropertyValues().addPropertyValue("ref", element.getAttribute("ref"));

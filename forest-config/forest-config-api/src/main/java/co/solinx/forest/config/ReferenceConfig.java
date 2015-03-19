@@ -42,7 +42,8 @@ public class ReferenceConfig<T> extends AbstractConfig {
 //            }
 
             NettyClient client= new NettyClient();
-            client.start(serviceList.get(0).toString());
+//            client.start(serviceList.get(0).toString());
+            client.start(Class.forName(interfaceName));
         } catch (Exception e) {
             e.printStackTrace();
         }

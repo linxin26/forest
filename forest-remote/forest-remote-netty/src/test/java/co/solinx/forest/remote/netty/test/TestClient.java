@@ -8,6 +8,6 @@ import co.solinx.forest.remote.netty.client.NettyClient;
 public class TestClient {
     public static void main(String[] args) {
         NettyClient client = new NettyClient();
-        client.start("nettyClient");
+//        client.start("nettyClient");
     }
 }

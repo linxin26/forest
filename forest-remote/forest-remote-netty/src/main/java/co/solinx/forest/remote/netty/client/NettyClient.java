@@ -22,7 +22,7 @@ public class NettyClient {
 
     }
 
-    public void start(String service) {
+    public void start(Class service) {
         final HelloClientHandler clientHandler = new HelloClientHandler(service);
         client.setPipelineFactory(new ChannelPipelineFactory() {
             @Override
@@ -37,5 +37,8 @@ public class NettyClient {
         client.connect(new InetSocketAddress("127.0.0.1", 18088));
     }
 
+    public void result(){
+
+    }
 
 }
