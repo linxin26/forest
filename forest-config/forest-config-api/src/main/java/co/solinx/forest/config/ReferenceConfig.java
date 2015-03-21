@@ -1,13 +1,13 @@
 package co.solinx.forest.config;
 
 import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
-import co.solinx.forest.remote.netty.client.NettyClient;
 import org.apache.log4j.Logger;
 
 import java.util.List;
 
 /**
  * Created by LX on 2015/3/9.
+ *
  */
 public class ReferenceConfig<T> extends AbstractConfig {
 
@@ -41,9 +41,9 @@ public class ReferenceConfig<T> extends AbstractConfig {
 //                logger.info(temp);
 //            }
 
-            NettyClient client= new NettyClient();
+//            NettyClient client= new NettyClient();
 //            client.start(serviceList.get(0).toString());
-            client.start(Class.forName(interfaceName));
+//            client.start(Class.forName(interfaceName));
         } catch (Exception e) {
             e.printStackTrace();
         }
