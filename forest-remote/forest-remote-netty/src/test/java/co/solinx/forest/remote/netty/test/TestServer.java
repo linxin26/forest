@@ -9,7 +9,7 @@ public class TestServer {
 
     public static void main(String[] args) {
         NettyServer server =NettyServer.getInstance();
-        server.open();
+//        server.open();
     }
 
 }

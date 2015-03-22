@@ -18,8 +18,9 @@
     <forest:reference id="helloRpcService"
                       interface="co.solinx.forest.demo.api.IHelloRpcService"></forest:reference>
 
-    <!--<bean class="co.solinx.forest.demo.main" init-method="start">-->
-        <!--<property name="rpcService" ref="forestService"></property>-->
-    <!--</bean>-->
+    <bean class="co.solinx.forest.demo.main" init-method="start">
+        <property name="rpcService" ref="helloRpcService"></property>
+        <property name="forestService" ref="forestService"></property>
+    </bean>
 
 </beans>

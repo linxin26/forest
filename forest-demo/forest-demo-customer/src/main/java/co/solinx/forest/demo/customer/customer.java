@@ -8,9 +8,12 @@ public class customer {
     public static void main(String[] args) {
         try {
             co.solinx.forest.container.Main.main(args);
+
+//            IHelloForestService service = Client.refer(IHelloForestService.class, "127.0.0.1", 1234);
+//            service.hello();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
-        } catch (InstantiationException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

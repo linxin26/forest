@@ -5,7 +5,11 @@ import co.solinx.forest.remote.netty.server.NettyServer;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
+ * 服务配置类
  * Created by LX on 2015/3/9.
  */
 public class ServiceConfig<T> extends AbstractConfig {
@@ -17,14 +21,22 @@ public class ServiceConfig<T> extends AbstractConfig {
     public String interfaceName;
     public T ref;
     public String protocol;
+    private List<Object> serviceList = new ArrayList<Object>();
     ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
 
-    public void Export(ApplicationContext context) {
+    /**
+     * 导出服务
+     *
+     * @param context
+     */
+    public void Export(ApplicationContext context) throws ClassNotFoundException {
         logger.info("Export：" + interfaceName);
 //            RegistryConfig registryConfig = (RegistryConfig) context.getBean("RegistryConfig");
+       //连接注册中心
         zookeeperRegistry.toRegistry("192.168.254.144:2181");
         String[] beanNames = context.getBeanDefinitionNames();
         String root = "forest/";
+        //往注册中心注册服务
         for (int i = 0; i < beanNames.length; i++) {
 
             if (beanNames[i].indexOf(".") != -1) {
@@ -33,26 +45,14 @@ public class ServiceConfig<T> extends AbstractConfig {
                 zookeeperRegistry.registerService(serviceApi + "/providers");
                 ServiceConfig serviceConfig = (ServiceConfig) context.getBean(beanNames[i]);
                 Object serviceImpl = context.getBean(serviceConfig.getRef().toString());
+                serviceList.add(serviceImpl);
                 zookeeperRegistry.registerService(serviceApi + "/providers/" + serviceImpl.getClass().getName());
 
             }
         }
         NettyServer server = NettyServer.getInstance();
-        server.open();
+        server.open(serviceList);
     }
-//        else {
-//            String[] beanNames = context.getBeanDefinitionNames();
-//            for (int i = 0; i < beanNames.length; i++) {
-//                if(beanNames[i].equals("ReferenceConfig")) {
-//                    ReferenceConfig referenceConfig = (ReferenceConfig) context.getBean(beanNames[i]);
-//                    logger.info(referenceConfig);
-//                }
-//                logger.info(beanNames[i]);
-//            }
-//            NettyClient client=new NettyClient();
-//            client.start();
-//        }
-
 
     public String getId() {
         return id;

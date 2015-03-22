@@ -7,6 +7,7 @@ import java.util.Enumeration;
 import java.util.Properties;
 
 /**
+ * Log4j容器
  * Created by LX on 2015/3/1.
  */
 public class Log4jContainer implements IContainer {

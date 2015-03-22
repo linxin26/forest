@@ -15,6 +15,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import java.io.Serializable;
 
 /**
+ * Service管理类
  * Created by LX on 2015/3/15.
  */
 public class ServiceBean<T> extends ServiceConfig implements Serializable, DisposableBean, BeanNameAware, ApplicationListener, ApplicationContextAware {
@@ -44,8 +45,14 @@ public class ServiceBean<T> extends ServiceConfig implements Serializable, Dispo
         logger.info(applicationEvent.getClass().getName());
         if (ContextRefreshedEvent.class.getName().equals(applicationEvent.getClass().getName())) {
             if (!export) {
-                Export(applicationContext);
-                export = true;
+                try {
+                    Export(applicationContext);
+                    export = true;
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                    export = false;
+                }
+
             }
         }
 

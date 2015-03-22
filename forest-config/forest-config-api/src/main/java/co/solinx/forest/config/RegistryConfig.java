@@ -3,6 +3,7 @@ package co.solinx.forest.config;
 import java.util.Map;
 
 /**
+ * 注册中心配置类
  * Created by LX on 2015/3/3.
  */
 public class RegistryConfig extends AbstractConfig {

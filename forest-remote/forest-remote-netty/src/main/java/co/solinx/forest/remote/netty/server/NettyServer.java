@@ -1,6 +1,6 @@
 package co.solinx.forest.remote.netty.server;
 
-import co.solinx.forest.remote.netty.Handler.HelloHandler;
+import co.solinx.forest.remote.netty.Handler.ServiceHandler;
 import org.apache.log4j.Logger;
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.ChannelPipeline;
@@ -11,6 +11,7 @@ import org.jboss.netty.handler.codec.serialization.ObjectDecoder;
 import org.jboss.netty.handler.codec.serialization.ObjectEncoder;
 
 import java.net.InetSocketAddress;
+import java.util.List;
 import java.util.concurrent.Executors;
 
 /**
@@ -22,6 +23,7 @@ public class NettyServer {
 
     public ServerBootstrap server;
     private static NettyServer nettyServer;
+    private List<Object> serviceList;
 
     private NettyServer() {
 
@@ -34,21 +36,23 @@ public class NettyServer {
         return nettyServer;
     }
 
-    public void open() {
+    public void open(List<Object> serviceList) {
         if (server == null) {
+            this.serviceList=serviceList;
             server = new ServerBootstrap(new NioServerSocketChannelFactory(Executors.newCachedThreadPool(), Executors.newCachedThreadPool()));
             this.start();
         }
     }
 
     private void start() {
+        final List<Object> services=serviceList;
         server.setPipelineFactory(new ChannelPipelineFactory() {
             @Override
             public ChannelPipeline getPipeline() throws Exception {
                 ChannelPipeline pipeline = Channels.pipeline();
                 pipeline.addLast("encode", new ObjectEncoder());
                 pipeline.addLast("decode", new ObjectDecoder());
-                pipeline.addLast("handler", new HelloHandler());
+                pipeline.addLast("handler", new ServiceHandler(services));
                 return pipeline;
             }
         });

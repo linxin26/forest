@@ -7,6 +7,7 @@ import co.solinx.forest.config.spring.ServiceBean;
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 
 /**
+ * Spring自定义标签处理类
  * Created by LX on 2015/3/2.
  */
 public class ForestNamespaceHandler extends NamespaceHandlerSupport {

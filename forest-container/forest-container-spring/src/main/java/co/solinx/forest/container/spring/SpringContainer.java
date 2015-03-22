@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
+ * Spring容器
  * Created by LX on 2015/2/28.
  */
 public class SpringContainer implements IContainer {

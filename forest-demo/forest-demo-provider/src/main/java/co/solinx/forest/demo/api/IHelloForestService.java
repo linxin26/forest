@@ -6,4 +6,6 @@ package co.solinx.forest.demo.api;
 public interface IHelloForestService {
 
     public void hello();
+
+    public String print();
 }

@@ -13,4 +13,8 @@ public class HelloForestServiceImpl implements IHelloForestService, Serializable
     public void hello() {
         System.out.println(" HelloForestServiceImpl ");
     }
+
+    public String print(){
+        return "HelloForest";
+    }
 }

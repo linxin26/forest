@@ -13,6 +13,7 @@ import org.w3c.dom.Element;
 import java.lang.reflect.Method;
 
 /**
+ * Spring自定义标签解析类
  * Created by LX on 2015/3/3.
  */
 public class ForestBeanDefinitionParser implements BeanDefinitionParser {

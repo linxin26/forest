@@ -1,13 +1,11 @@
 package co.solinx.forest.config;
 
-import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
+import co.solinx.forest.remote.proxy.DefaultProxy;
 import org.apache.log4j.Logger;
 
-import java.util.List;
-
 /**
+ *引用配置类
  * Created by LX on 2015/3/9.
- *
  */
 public class ReferenceConfig<T> extends AbstractConfig {
 
@@ -22,31 +20,26 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public T get() {
 
         logger.info(interfaceName);
-        if (ref == null) {
-            init();
-        }
+//        if (ref == null) {
+//            init();
+//        }
+        init();
         return ref;
     }
 
+    /**
+     * 初始化接口代理
+     */
     public void init() {
-
-        ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
-        zookeeperRegistry.toRegistry("192.168.254.144:2181");
-
+        //代理类
+        DefaultProxy proxy = new DefaultProxy();
         try {
-            List<String> serviceList = zookeeperRegistry.getServiceImplList(interfaceName);
-//            for (String temp : serviceList) {
-//                Class clazz = Class.forName(temp);
-//                logger.info(clazz.newInstance());
-//                logger.info(temp);
-//            }
-
-//            NettyClient client= new NettyClient();
-//            client.start(serviceList.get(0).toString());
-//            client.start(Class.forName(interfaceName));
-        } catch (Exception e) {
+            ref = (T) proxy.proxy(Class.forName(interfaceName));
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+//        ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
+//        zookeeperRegistry.toRegistry("192.168.254.144:2181");
     }
 
     public String getId() {
