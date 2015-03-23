@@ -4,6 +4,7 @@ import org.jboss.netty.bootstrap.ClientBootstrap;
 import org.jboss.netty.channel.socket.nio.NioClientSocketChannelFactory;
 
 /**
+ * netty客户端
  * Created by LX on 2015/3/15.
  */
 public class NettyClient {

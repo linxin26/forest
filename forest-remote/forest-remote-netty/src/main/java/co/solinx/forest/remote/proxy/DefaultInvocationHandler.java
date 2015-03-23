@@ -15,6 +15,7 @@ import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 
 /**
+ * 通过netty引用远程服务
  * Created by LX on 2015/3/21.
  */
 public class DefaultInvocationHandler implements InvocationHandler,Serializable {
@@ -25,7 +26,8 @@ public class DefaultInvocationHandler implements InvocationHandler,Serializable 
 
     @Override
     public Object invoke(Object proxy, final Method method, Object[] args) throws Throwable {
- 
+
+        //启动ntty客户端
         ClientBootstrap client = new ClientBootstrap();
         final ClientHandler clientHandler = new ClientHandler(obj, method);
         client.setFactory(new NioClientSocketChannelFactory());

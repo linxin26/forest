@@ -42,7 +42,7 @@ public class ServiceBean<T> extends ServiceConfig implements Serializable, Dispo
 
     @Override
     public void onApplicationEvent(ApplicationEvent applicationEvent) {
-        logger.info(applicationEvent.getClass().getName());
+//        logger.info(applicationEvent.getClass().getName());
         if (ContextRefreshedEvent.class.getName().equals(applicationEvent.getClass().getName())) {
             if (!export) {
                 try {

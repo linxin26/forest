@@ -13,6 +13,11 @@ import java.util.List;
 public class ZookeeperRegistry implements IRegistry {
 
     Logger log = Logger.getLogger(ZookeeperRegistry.class);
+
+    public static String ROOT_NOTE = "forest/";
+    public static String PROVIDRES_NOTE = "providers";
+    public static String CONSUMERS_NOTE = "consumers";
+
     ZookeeperClient client;
     private static ZookeeperRegistry registry;
 

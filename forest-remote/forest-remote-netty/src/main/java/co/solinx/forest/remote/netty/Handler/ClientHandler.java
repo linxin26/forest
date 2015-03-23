@@ -6,6 +6,7 @@ import org.jboss.netty.channel.*;
 import java.lang.reflect.Method;
 
 /**
+ * 请求引用服务
  * Created by LX on 2015/3/15.
  */
 public class ClientHandler<T> extends SimpleChannelHandler {

@@ -44,7 +44,6 @@ public class ReferenceBean<T> extends ReferenceConfig<T> implements FactoryBean,
     @Override
     public void afterPropertiesSet() throws Exception {
         logger.info(interfaceName);
-        logger.info("afterPropertiesSet ");
         getObject();
     }
 

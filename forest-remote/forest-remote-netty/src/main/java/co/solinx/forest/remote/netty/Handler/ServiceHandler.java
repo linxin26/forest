@@ -7,6 +7,7 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 /**
+ * 处理所引用的服务
  * Created by LX on 2015/3/15.
  */
 public class ServiceHandler extends SimpleChannelHandler {
@@ -21,7 +22,7 @@ public class ServiceHandler extends SimpleChannelHandler {
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
 //        super.messageReceived(ctx, e);
-        logger.info("HelloHandler MessageReceived");
+//        logger.info("HelloHandler MessageReceived");
         String message = (String) e.getMessage();
         System.out.println("message:" + message);
         logger.info(services.size());
