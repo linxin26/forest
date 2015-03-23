@@ -1,10 +1,14 @@
 package co.solinx.forest.config;
 
+import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
 import co.solinx.forest.remote.proxy.DefaultProxy;
 import org.apache.log4j.Logger;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 /**
- *引用配置类
+ * 引用配置类
  * Created by LX on 2015/3/9.
  */
 public class ReferenceConfig<T> extends AbstractConfig {
@@ -35,11 +39,17 @@ public class ReferenceConfig<T> extends AbstractConfig {
         DefaultProxy proxy = new DefaultProxy();
         try {
             ref = (T) proxy.proxy(Class.forName(interfaceName));
+            ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
+            zookeeperRegistry.toRegistry("192.168.254.144:2181");
+            zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + interfaceName);
+            zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE);
+            zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE + "/" + InetAddress.getLocalHost().getHostAddress());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
         }
-//        ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
-//        zookeeperRegistry.toRegistry("192.168.254.144:2181");
+
     }
 
     public String getId() {
