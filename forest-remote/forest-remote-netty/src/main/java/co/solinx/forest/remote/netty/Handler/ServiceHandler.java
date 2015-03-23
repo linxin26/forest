@@ -67,8 +67,6 @@ public class ServiceHandler extends SimpleChannelHandler {
     @Override
     public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
 //        super.channelConnected(ctx, e);
-//        ctx.getChannel().write("Server Handler");
-        logger.info("HelloHandler channelConnected");
     }
 
     @Override

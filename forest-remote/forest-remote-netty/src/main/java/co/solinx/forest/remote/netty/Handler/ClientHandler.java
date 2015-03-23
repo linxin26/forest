@@ -28,7 +28,6 @@ public class ClientHandler<T> extends SimpleChannelHandler {
     @Override
     public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
 //        super.channelConnected(ctx, e);
-        logger.info("HelloClientHandler channelConnected");
         ctx.getChannel().write(api.toString() + "," + method.getName());
     }
 
