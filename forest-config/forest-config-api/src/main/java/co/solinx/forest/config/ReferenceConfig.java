@@ -40,10 +40,10 @@ public class ReferenceConfig<T> extends AbstractConfig {
         try {
             ref = (T) proxy.proxy(Class.forName(interfaceName));
             ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
-            zookeeperRegistry.toRegistry("192.168.254.144:2181");
-            zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + interfaceName);
-            zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE);
-            zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE + "/" + InetAddress.getLocalHost().getHostAddress());
+            zookeeperRegistry.toRegistry("192.168.254.146:2181");
+            zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + interfaceName);
+            zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE);
+            zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE + "/" + InetAddress.getLocalHost().getHostAddress());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (UnknownHostException e) {

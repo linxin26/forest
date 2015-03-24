@@ -32,21 +32,21 @@ public class ServiceConfig<T> extends AbstractConfig {
     public void Export(ApplicationContext context) throws ClassNotFoundException {
         logger.info("Export：" + interfaceName);
 //            RegistryConfig registryConfig = (RegistryConfig) context.getBean("RegistryConfig");
-       //连接注册中心
-        zookeeperRegistry.toRegistry("192.168.254.144:2181");
+        RegistryConfig registryAddress = (RegistryConfig) context.getBean("registryAddress");
+        //连接注册中心
+        zookeeperRegistry.toRegistry(registryAddress.getAddress());
         String[] beanNames = context.getBeanDefinitionNames();
-        String root = "forest/";
         //往注册中心注册服务
         for (int i = 0; i < beanNames.length; i++) {
 
             if (beanNames[i].indexOf(".") != -1) {
-                String serviceApi = root + beanNames[i];
-                zookeeperRegistry.registerService(serviceApi);
-                zookeeperRegistry.registerService(serviceApi + "/providers");
+                String serviceApi = beanNames[i];
+                zookeeperRegistry.registryServerApi(serviceApi);
+                zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" +serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE);
                 ServiceConfig serviceConfig = (ServiceConfig) context.getBean(beanNames[i]);
                 Object serviceImpl = context.getBean(serviceConfig.getRef().toString());
                 serviceList.add(serviceImpl);
-                zookeeperRegistry.registerService(serviceApi + "/providers/" + serviceImpl.getClass().getName());
+                zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" +serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE + "/" + serviceImpl.getClass().getName());
 
             }
         }

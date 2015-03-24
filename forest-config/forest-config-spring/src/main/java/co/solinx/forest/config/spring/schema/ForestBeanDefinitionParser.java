@@ -45,7 +45,11 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
             parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
             beanDefinition.getPropertyValues().addPropertyValue("id", id);
         }
-
+        if(RegistryConfig.class.equals(beanClass)){
+            id ="registryAddress";
+            parserContext.getRegistry().registerBeanDefinition(id,beanDefinition);
+            beanDefinition.getPropertyValues().addPropertyValue("id",id);
+        }
         if ((id == null || id == "") & required) {
 //            id = element.getAttribute("id");
 //            String name = element.getAttribute("name");

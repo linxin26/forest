@@ -14,7 +14,7 @@ public class ZookeeperRegistry implements IRegistry {
 
     Logger log = Logger.getLogger(ZookeeperRegistry.class);
 
-    public static String ROOT_NOTE = "forest/";
+    public static String ROOT_NOTE = "forest";
     public static String PROVIDRES_NOTE = "providers";
     public static String CONSUMERS_NOTE = "consumers";
 
@@ -50,6 +50,28 @@ public class ZookeeperRegistry implements IRegistry {
         api.setNoteName(interfaceName);
         api.setNotePath("/forest/" + interfaceName + "/providers");
         return client.getchildNote(api);
+    }
+
+
+    private void createRoot(){
+        ZooNote note=new ZooNote();
+        note.setNoteName(ZookeeperRegistry.ROOT_NOTE);
+        note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR+ZookeeperRegistry.ROOT_NOTE);
+        note.setParentNote(null);
+        note.setNoteData(ZookeeperRegistry.ROOT_NOTE);
+        client.createNote(note,true);
+    }
+
+
+    public void registryServerApi(String service){
+        this.createRoot();
+        ZooNote note=new ZooNote();
+        note.setNoteName(service);
+        note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR+ZookeeperRegistry.ROOT_NOTE+ZooNote.NOTE_PATH_SEPARATOR+service);
+        note.setParentNote(null);
+        note.setNoteData(service);
+        client.createNote(note,true);
+
     }
 
 
