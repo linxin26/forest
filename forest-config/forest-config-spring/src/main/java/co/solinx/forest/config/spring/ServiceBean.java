@@ -46,6 +46,7 @@ public class ServiceBean<T> extends ServiceConfig implements Serializable, Dispo
         if (ContextRefreshedEvent.class.getName().equals(applicationEvent.getClass().getName())) {
             if (!export) {
                 try {
+                    logger.info("_________________________"+applicationEvent);
                     Export(applicationContext);
                     export = true;
                 } catch (ClassNotFoundException e) {

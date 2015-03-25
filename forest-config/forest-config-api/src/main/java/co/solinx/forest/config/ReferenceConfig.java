@@ -3,6 +3,7 @@ package co.solinx.forest.config;
 import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
 import co.solinx.forest.remote.proxy.DefaultProxy;
 import org.apache.log4j.Logger;
+import org.springframework.context.ApplicationContext;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -20,13 +21,15 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public String interfaceName;
     public T ref;
     public String protocol;
+    private ApplicationContext context;
 
-    public T get() {
+    public T get(ApplicationContext context) {
 
         logger.info(interfaceName);
 //        if (ref == null) {
 //            init();
 //        }
+        this.context=context;
         init();
         return ref;
     }
@@ -38,9 +41,10 @@ public class ReferenceConfig<T> extends AbstractConfig {
         //代理类
         DefaultProxy proxy = new DefaultProxy();
         try {
+            RegistryConfig registryCenter= (RegistryConfig) context.getBean("registryAddress");
             ref = (T) proxy.proxy(Class.forName(interfaceName));
             ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
-            zookeeperRegistry.toRegistry("192.168.254.146:2181");
+            zookeeperRegistry.toRegistry(registryCenter.getAddress());   //连接注册中心
             zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + interfaceName);
             zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE);
             zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE + "/" + InetAddress.getLocalHost().getHostAddress());
@@ -51,6 +55,7 @@ public class ReferenceConfig<T> extends AbstractConfig {
         }
 
     }
+
 
     public String getId() {
         return id;
@@ -87,6 +92,8 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public String getProtocol() {
         return protocol;
     }
+
+
 
     public void setProtocol(String protocol) {
         this.protocol = protocol;

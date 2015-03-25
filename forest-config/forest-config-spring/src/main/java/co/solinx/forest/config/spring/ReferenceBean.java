@@ -21,7 +21,7 @@ public class ReferenceBean<T> extends ReferenceConfig<T> implements FactoryBean,
 
     @Override
     public Object getObject() throws Exception {
-        Object obj = get();
+        Object obj = get(applicationContext);
         logger.info(obj);
         return obj;
     }
@@ -43,8 +43,8 @@ public class ReferenceBean<T> extends ReferenceConfig<T> implements FactoryBean,
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        logger.info(interfaceName);
-        getObject();
+        logger.info("---------------------------"+interfaceName);
+//        getObject();
     }
 
     @Override

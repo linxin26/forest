@@ -16,13 +16,18 @@ public class ServiceConfig<T> extends AbstractConfig {
 
     Logger logger = Logger.getLogger(ServiceConfig.class);
 
+    private static int num;
     public String id;
     public String name;
     public String interfaceName;
     public T ref;
     public String protocol;
-    private List<Object> serviceList = new ArrayList<Object>();
+    private static List<Object> serviceList = new ArrayList<Object>();
     ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
+
+    public ServiceConfig() {
+        logger.info("++++++++++++++++++++++" + num++);
+    }
 
     /**
      * 导出服务
@@ -31,25 +36,28 @@ public class ServiceConfig<T> extends AbstractConfig {
      */
     public void Export(ApplicationContext context) throws ClassNotFoundException {
         logger.info("Export：" + interfaceName);
-//            RegistryConfig registryConfig = (RegistryConfig) context.getBean("RegistryConfig");
         RegistryConfig registryAddress = (RegistryConfig) context.getBean("registryAddress");
         //连接注册中心
         zookeeperRegistry.toRegistry(registryAddress.getAddress());
-        String[] beanNames = context.getBeanDefinitionNames();
         //往注册中心注册服务
-        for (int i = 0; i < beanNames.length; i++) {
+        logger.info("interfaceName_______________" + interfaceName);
+        String serviceApi = interfaceName;
+        zookeeperRegistry.registryServerApi(serviceApi);
+        zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE);
+        ServiceConfig serviceConfig = (ServiceConfig) context.getBean(serviceApi);
+        Object serviceImpl = context.getBean(serviceConfig.getRef().toString());
+        serviceList.add(serviceImpl);
+        zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE + "/" + serviceImpl.getClass().getName());
+        logger.info(serviceList);
 
-            if (beanNames[i].indexOf(".") != -1) {
-                String serviceApi = beanNames[i];
-                zookeeperRegistry.registryServerApi(serviceApi);
-                zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" +serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE);
-                ServiceConfig serviceConfig = (ServiceConfig) context.getBean(beanNames[i]);
-                Object serviceImpl = context.getBean(serviceConfig.getRef().toString());
-                serviceList.add(serviceImpl);
-                zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" +serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE + "/" + serviceImpl.getClass().getName());
-
-            }
+        //加载所有服务后启动Server
+        if (serviceList.size() == num) {
+            this.startServer();
         }
+    }
+
+    public void startServer() {
+
         NettyServer server = NettyServer.getInstance();
         server.open(serviceList);
     }

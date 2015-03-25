@@ -38,14 +38,27 @@ public class NettyServer {
 
     public void open(List<Object> serviceList) {
         if (server == null) {
-            this.serviceList=serviceList;
+            this.serviceList = serviceList;
             server = new ServerBootstrap(new NioServerSocketChannelFactory(Executors.newCachedThreadPool(), Executors.newCachedThreadPool()));
             this.start();
+            logger.info("------------------netty start");
+        }else{
+            final List<Object> services = serviceList;
+            server.setPipelineFactory(new ChannelPipelineFactory() {
+                @Override
+                public ChannelPipeline getPipeline() throws Exception {
+                    ChannelPipeline pipeline = Channels.pipeline();
+                    pipeline.addLast("encode", new ObjectEncoder());
+                    pipeline.addLast("decode", new ObjectDecoder());
+                    pipeline.addLast("handler2", new ServiceHandler(services));
+                    return pipeline;
+                }
+            });
         }
     }
 
     private void start() {
-        final List<Object> services=serviceList;
+        final List<Object> services = serviceList;
         server.setPipelineFactory(new ChannelPipelineFactory() {
             @Override
             public ChannelPipeline getPipeline() throws Exception {
