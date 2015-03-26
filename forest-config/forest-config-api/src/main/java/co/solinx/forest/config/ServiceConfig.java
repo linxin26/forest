@@ -26,7 +26,7 @@ public class ServiceConfig<T> extends AbstractConfig {
     ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
 
     public ServiceConfig() {
-        logger.info("++++++++++++++++++++++" + num++);
+        num++;
     }
 
     /**
