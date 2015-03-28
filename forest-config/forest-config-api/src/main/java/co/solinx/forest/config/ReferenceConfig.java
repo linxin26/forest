@@ -1,11 +1,11 @@
 package co.solinx.forest.config;
 
+import co.solinx.forest.common.utils.InetAddressUtils;
 import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
 import co.solinx.forest.remote.proxy.DefaultProxy;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
-import java.net.InetAddress;
 import java.net.URLDecoder;
 import java.net.UnknownHostException;
 import java.util.List;
@@ -31,7 +31,7 @@ public class ReferenceConfig<T> extends AbstractConfig {
 //        if (ref == null) {
 //            init();
 //        }
-        this.context=context;
+        this.context = context;
         init();
         return ref;
     }
@@ -44,19 +44,22 @@ public class ReferenceConfig<T> extends AbstractConfig {
         DefaultProxy proxy = new DefaultProxy();
         try {
             //注册中心
-            RegistryConfig registryCenter= (RegistryConfig) context.getBean("registryAddress");
+            RegistryConfig registryCenter = (RegistryConfig) context.getBean("registryAddress");
             ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
             zookeeperRegistry.toRegistry(registryCenter.getAddress());   //连接注册中心
             //取得注册的服务
-            List<String> impl= zookeeperRegistry.getServiceImplList(interfaceName);
+            List<String> impl = zookeeperRegistry.getServiceImplList(interfaceName);
 
-            String serviceImpl= URLDecoder.decode(impl.get(0),"UTF-8");
-            String serverAddress=serviceImpl.substring(serviceImpl.indexOf("//")+2,serviceImpl.lastIndexOf("/"));
+            String serviceImpl = URLDecoder.decode(impl.get(0), "UTF-8");
+            String serverAddress = serviceImpl.substring(serviceImpl.indexOf("//") + 2, serviceImpl.lastIndexOf("/"));
 
-            ref = (T) proxy.proxy(Class.forName(interfaceName),serverAddress);
-            zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + interfaceName);
-            zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE);
-            zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE + "/" + InetAddress.getLocalHost().getHostAddress());
+            ref = (T) proxy.proxy(Class.forName(interfaceName), serverAddress);
+            String serviceApiNote=zookeeperRegistry.ROOT_NOTE + "/" + interfaceName;
+            String concumersNote=zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE;
+            String currentConsumer=zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE + "/" + InetAddressUtils.findAddress();
+            zookeeperRegistry.registerService(serviceApiNote);
+            zookeeperRegistry.registerService(concumersNote);
+            zookeeperRegistry.registerService(currentConsumer);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (UnknownHostException e) {
@@ -103,7 +106,6 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public String getProtocol() {
         return protocol;
     }
-
 
 
     public void setProtocol(String protocol) {
