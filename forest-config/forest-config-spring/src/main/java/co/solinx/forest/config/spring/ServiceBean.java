@@ -13,6 +13,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.net.UnknownHostException;
 
 /**
  * Service管理类
@@ -52,6 +54,10 @@ public class ServiceBean<T> extends ServiceConfig implements Serializable, Dispo
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                     export = false;
+                } catch (UnknownHostException e) {
+                    e.printStackTrace();
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
                 }
 
             }

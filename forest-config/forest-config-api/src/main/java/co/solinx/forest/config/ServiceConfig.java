@@ -5,6 +5,9 @@ import co.solinx.forest.remote.netty.server.NettyServer;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +37,7 @@ public class ServiceConfig<T> extends AbstractConfig {
      *
      * @param context
      */
-    public void Export(ApplicationContext context) throws ClassNotFoundException {
+    public void Export(ApplicationContext context) throws ClassNotFoundException, UnknownHostException, UnsupportedEncodingException {
         logger.info("Export：" + interfaceName);
         RegistryConfig registryAddress = (RegistryConfig) context.getBean("registryAddress");
         //连接注册中心
@@ -47,7 +50,9 @@ public class ServiceConfig<T> extends AbstractConfig {
         ServiceConfig serviceConfig = (ServiceConfig) context.getBean(serviceApi);
         Object serviceImpl = context.getBean(serviceConfig.getRef().toString());
         serviceList.add(serviceImpl);
-        zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE + "/" + serviceImpl.getClass().getName());
+        //forest://192.168.254.144:20909/co.solinx.forest.demo.impl.HelloForestServiceImpl
+        String serviceImplNote = "forest://127.0.0.1:18088/" + serviceImpl.getClass().getName();
+        zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE + "/" + URLEncoder.encode(serviceImplNote, "UTF-8"));
         logger.info(serviceList);
 
         //加载所有服务后启动Server

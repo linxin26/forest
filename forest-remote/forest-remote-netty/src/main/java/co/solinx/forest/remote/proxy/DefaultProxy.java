@@ -9,9 +9,9 @@ import java.lang.reflect.Proxy;
  */
 public class DefaultProxy {
     Logger logger=Logger.getLogger(DefaultProxy.class);
-    public Object proxy(Class interfaceClass) {
+    public Object proxy(Class interfaceClass,String serverAddress) {
         logger.info(interfaceClass);
-        Object obj = Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[]{interfaceClass}, new DefaultInvocationHandler(interfaceClass.getName()));
+        Object obj = Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[]{interfaceClass}, new DefaultInvocationHandler(interfaceClass.getName(),serverAddress));
         return obj;
     }
 }

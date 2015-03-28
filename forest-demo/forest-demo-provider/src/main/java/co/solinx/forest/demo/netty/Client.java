@@ -1,4 +1,4 @@
-package co.solinx.forest.demo;
+package co.solinx.forest.demo.netty;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;

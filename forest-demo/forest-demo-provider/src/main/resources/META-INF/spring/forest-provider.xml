@@ -8,7 +8,7 @@
        http://code.solinx.co/schema/forest
        http://code.solinx.co/schema/forest/forest.xsd">
 
-    <forest:registry address="zookeeper://192.168.254.146:2181"/>
+    <forest:registry address="zookeeper://192.168.254.147:2181"/>
     <forest:service interface="co.solinx.forest.demo.api.IHelloForestService" ref="helloForestService" protocol="forest"
                     owner="linx"/>
     <forest:service interface="co.solinx.forest.demo.api.IHelloRpcService" ref="helloRpcService" protocol="forest"

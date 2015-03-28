@@ -1,6 +1,7 @@
 package co.solinx.forest.remote.proxy;
 
 import co.solinx.forest.remote.netty.Handler.ClientHandler;
+import org.apache.log4j.Logger;
 import org.jboss.netty.bootstrap.ClientBootstrap;
 import org.jboss.netty.channel.ChannelPipeline;
 import org.jboss.netty.channel.ChannelPipelineFactory;
@@ -18,11 +19,13 @@ import java.net.InetSocketAddress;
  * 通过netty引用远程服务
  * Created by LX on 2015/3/21.
  */
-public class DefaultInvocationHandler implements InvocationHandler,Serializable {
+public class DefaultInvocationHandler implements InvocationHandler, Serializable {
 
+    Logger logger = Logger.getLogger(DefaultInvocationHandler.class);
 
     boolean result = false;
     Object obj;
+    String address;
 
     @Override
     public Object invoke(Object proxy, final Method method, Object[] args) throws Throwable {
@@ -42,18 +45,18 @@ public class DefaultInvocationHandler implements InvocationHandler,Serializable 
             }
         });
 
-        client.connect(new InetSocketAddress("127.0.0.1", 18088));
-//        while(!result){
-//            System.out.println(result);
-//        }
+        String ip = address.split(":")[0];
+        int port = Integer.parseInt(address.split(":")[1]);
+        client.connect(new InetSocketAddress(ip, port));
         Thread.sleep(2000);
         Object ret = clientHandler.getApi();
 //        client.releaseExternalResources();
         return ret;
     }
 
-    public DefaultInvocationHandler(Object obj) {
+    public DefaultInvocationHandler(Object obj, String address) {
         this.obj = obj;
+        this.address = address;
     }
 
 }

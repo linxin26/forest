@@ -6,7 +6,9 @@ import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
 import java.net.InetAddress;
+import java.net.URLDecoder;
 import java.net.UnknownHostException;
+import java.util.List;
 
 /**
  * 引用配置类
@@ -41,16 +43,25 @@ public class ReferenceConfig<T> extends AbstractConfig {
         //代理类
         DefaultProxy proxy = new DefaultProxy();
         try {
+            //注册中心
             RegistryConfig registryCenter= (RegistryConfig) context.getBean("registryAddress");
-            ref = (T) proxy.proxy(Class.forName(interfaceName));
             ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
             zookeeperRegistry.toRegistry(registryCenter.getAddress());   //连接注册中心
+            //取得注册的服务
+            List<String> impl= zookeeperRegistry.getServiceImplList(interfaceName);
+
+            String serviceImpl= URLDecoder.decode(impl.get(0),"UTF-8");
+            String serverAddress=serviceImpl.substring(serviceImpl.indexOf("//")+2,serviceImpl.lastIndexOf("/"));
+
+            ref = (T) proxy.proxy(Class.forName(interfaceName),serverAddress);
             zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + interfaceName);
             zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE);
             zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE + "/" + InetAddress.getLocalHost().getHostAddress());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (UnknownHostException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
