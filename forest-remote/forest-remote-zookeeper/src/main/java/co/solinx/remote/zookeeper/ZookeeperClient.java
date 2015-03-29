@@ -10,6 +10,7 @@ import org.apache.curator.framework.state.ConnectionState;
 import org.apache.curator.framework.state.ConnectionStateListener;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.log4j.Logger;
+import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
 
 import java.util.List;
@@ -69,7 +70,14 @@ public class ZookeeperClient implements IZookeeperClient {
                 notePath = note.getParentNote().getNotePath() + note.getNotePath();
             }
             if (!this.checkExists(notePath)) {
-                client.create().forPath(notePath);
+                CreateMode mode;
+                if (ephemeral) {
+                    mode = CreateMode.EPHEMERAL;
+                } else {
+                    mode = CreateMode.PERSISTENT;
+                }
+
+                client.create().withMode(mode).forPath(notePath);
 
             } else {
                 log.info("节点：" + notePath + ",已存在！");

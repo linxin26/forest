@@ -54,12 +54,12 @@ public class ReferenceConfig<T> extends AbstractConfig {
             String serverAddress = serviceImpl.substring(serviceImpl.indexOf("//") + 2, serviceImpl.lastIndexOf("/"));
 
             ref = (T) proxy.proxy(Class.forName(interfaceName), serverAddress);
-            String serviceApiNote=zookeeperRegistry.ROOT_NOTE + "/" + interfaceName;
-            String concumersNote=zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE;
-            String currentConsumer=zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE + "/" + InetAddressUtils.findAddress();
-            zookeeperRegistry.registerService(serviceApiNote);
-            zookeeperRegistry.registerService(concumersNote);
-            zookeeperRegistry.registerService(currentConsumer);
+            String serviceApiNote = zookeeperRegistry.ROOT_NOTE + "/" + interfaceName;
+            String concumersNote = zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE;
+            String currentConsumer = zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE + "/" + InetAddressUtils.findAddress();
+            zookeeperRegistry.registerService(serviceApiNote, false);
+            zookeeperRegistry.registerService(concumersNote, false);
+            zookeeperRegistry.registerService(currentConsumer, true);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (UnknownHostException e) {

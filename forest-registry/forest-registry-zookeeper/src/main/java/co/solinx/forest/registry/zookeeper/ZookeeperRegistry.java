@@ -70,12 +70,12 @@ public class ZookeeperRegistry implements IRegistry {
         note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR+ZookeeperRegistry.ROOT_NOTE+ZooNote.NOTE_PATH_SEPARATOR+service);
         note.setParentNote(null);
         note.setNoteData(service);
-        client.createNote(note,true);
+        client.createNote(note,false);
 
     }
 
 
-    public void registerService(String service) {
+    public void registerService(String service,boolean isRehemeral) {
 //        client.create("/forest/co.solinx.forest", true);
         try {
             ZooNote note = new ZooNote();
@@ -83,8 +83,7 @@ public class ZookeeperRegistry implements IRegistry {
             note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR + service);
             note.setParentNote(null);
             note.setNoteData(service);
-
-            client.createNote(note, true);
+            client.createNote(note, isRehemeral);
             client.watcherNote(note);
         } catch (Exception e) {
             e.printStackTrace();

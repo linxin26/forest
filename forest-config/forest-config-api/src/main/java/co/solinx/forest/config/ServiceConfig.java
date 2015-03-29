@@ -47,13 +47,13 @@ public class ServiceConfig<T> extends AbstractConfig {
         logger.info("interfaceName_______________" + interfaceName);
         String serviceApi = interfaceName;
         zookeeperRegistry.registryServerApi(serviceApi);
-        zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE);
+        zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE,false);
         ServiceConfig serviceConfig = (ServiceConfig) context.getBean(serviceApi);
         Object serviceImpl = context.getBean(serviceConfig.getRef().toString());
         serviceList.add(serviceImpl);
         //forest://192.168.254.144:20909/co.solinx.forest.demo.impl.HelloForestServiceImpl
         String serviceImplNote = "forest://"+ InetAddressUtils.findAddress()+":18088/" + serviceImpl.getClass().getName();
-        zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE + "/" + URLEncoder.encode(serviceImplNote, "UTF-8"));
+        zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE + "/" + URLEncoder.encode(serviceImplNote, "UTF-8"),true);
         logger.info(serviceList);
 
         //加载所有服务后启动Server
