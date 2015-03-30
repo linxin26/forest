@@ -1,13 +1,11 @@
 package co.solinx.forest.config;
 
-import co.solinx.forest.common.utils.InetAddressUtils;
 import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
 import co.solinx.forest.remote.netty.server.NettyServer;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,14 +44,12 @@ public class ServiceConfig<T> extends AbstractConfig {
         //往注册中心注册服务
         logger.info("interfaceName_______________" + interfaceName);
         String serviceApi = interfaceName;
-        zookeeperRegistry.registryServerApi(serviceApi);
-        zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE,false);
+        //取得服务
         ServiceConfig serviceConfig = (ServiceConfig) context.getBean(serviceApi);
         Object serviceImpl = context.getBean(serviceConfig.getRef().toString());
         serviceList.add(serviceImpl);
-        //forest://192.168.254.144:20909/co.solinx.forest.demo.impl.HelloForestServiceImpl
-        String serviceImplNote = "forest://"+ InetAddressUtils.findAddress()+":18088/" + serviceImpl.getClass().getName();
-        zookeeperRegistry.registerService(zookeeperRegistry.ROOT_NOTE + "/" + serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE + "/" + URLEncoder.encode(serviceImplNote, "UTF-8"),true);
+        //注册服务
+        zookeeperRegistry.registryService(serviceImpl.getClass().getName(),serviceApi);
         logger.info(serviceList);
 
         //加载所有服务后启动Server

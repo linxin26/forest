@@ -1,6 +1,5 @@
 package co.solinx.forest.config;
 
-import co.solinx.forest.common.utils.InetAddressUtils;
 import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
 import co.solinx.forest.remote.proxy.DefaultProxy;
 import org.apache.log4j.Logger;
@@ -50,16 +49,13 @@ public class ReferenceConfig<T> extends AbstractConfig {
             //取得注册的服务
             List<String> impl = zookeeperRegistry.getServiceImplList(interfaceName);
 
+            //引用提供的第一个服务
             String serviceImpl = URLDecoder.decode(impl.get(0), "UTF-8");
             String serverAddress = serviceImpl.substring(serviceImpl.indexOf("//") + 2, serviceImpl.lastIndexOf("/"));
 
             ref = (T) proxy.proxy(Class.forName(interfaceName), serverAddress);
-            String serviceApiNote = zookeeperRegistry.ROOT_NOTE + "/" + interfaceName;
-            String concumersNote = zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE;
-            String currentConsumer = zookeeperRegistry.ROOT_NOTE + "/" + interfaceName + "/" + zookeeperRegistry.CONSUMERS_NOTE + "/" + InetAddressUtils.findAddress();
-            zookeeperRegistry.registerService(serviceApiNote, false);
-            zookeeperRegistry.registerService(concumersNote, false);
-            zookeeperRegistry.registerService(currentConsumer, true);
+             //注册消费者
+            zookeeperRegistry.registryConsumer(interfaceName);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (UnknownHostException e) {

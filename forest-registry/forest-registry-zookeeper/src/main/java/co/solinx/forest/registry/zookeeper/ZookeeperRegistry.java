@@ -1,10 +1,13 @@
 package co.solinx.forest.registry.zookeeper;
 
+import co.solinx.forest.common.utils.InetAddressUtils;
 import co.solinx.forest.registry.IRegistry;
 import co.solinx.remote.zookeeper.ZookeeperClient;
 import co.solinx.remote.zookeeper.support.ZooNote;
 import org.apache.log4j.Logger;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.List;
 
 /**
@@ -53,42 +56,92 @@ public class ZookeeperRegistry implements IRegistry {
     }
 
 
-    private void createRoot(){
-        ZooNote note=new ZooNote();
+    /**
+     * 添加Root节点
+     */
+    private void createRoot() {
+        ZooNote note = new ZooNote();
         note.setNoteName(ZookeeperRegistry.ROOT_NOTE);
-        note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR+ZookeeperRegistry.ROOT_NOTE);
+        note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR + ZookeeperRegistry.ROOT_NOTE);
         note.setParentNote(null);
         note.setNoteData(ZookeeperRegistry.ROOT_NOTE);
-        client.createNote(note,true);
+        client.createNote(note, false);
     }
 
 
-    public void registryServerApi(String service){
-        this.createRoot();
-        ZooNote note=new ZooNote();
+    public void registryServerApi(String service) {
+        ZooNote note = new ZooNote();
         note.setNoteName(service);
-        note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR+ZookeeperRegistry.ROOT_NOTE+ZooNote.NOTE_PATH_SEPARATOR+service);
+        note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR + ZookeeperRegistry.ROOT_NOTE + ZooNote.NOTE_PATH_SEPARATOR + service);
         note.setParentNote(null);
         note.setNoteData(service);
-        client.createNote(note,false);
-
+        client.createNote(note, false);
     }
 
-
-    public void registerService(String service,boolean isRehemeral) {
-//        client.create("/forest/co.solinx.forest", true);
-        try {
-            ZooNote note = new ZooNote();
-            note.setNoteName(service);
-            note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR + service);
-            note.setParentNote(null);
-            note.setNoteData(service);
-            client.createNote(note, isRehemeral);
-            client.watcherNote(note);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    /**
+     * 添加 serviceApi的 Consumer节点
+     * @param serviceApi
+     */
+    private void createConsumerNote(String serviceApi){
+        ZooNote note = new ZooNote();
+        note.setNoteName(ZookeeperRegistry.PROVIDRES_NOTE);
+        note.setNoteData(ZookeeperRegistry.PROVIDRES_NOTE);
+        note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR + ZookeeperRegistry.ROOT_NOTE + "/" + serviceApi + "/" + ZookeeperRegistry.CONSUMERS_NOTE);
+        note.setParentNote(null);
+        client.createNote(note, false);
     }
+
+    /**
+     * 添加 serviceApi的Provider节点
+     * @param serviceApi
+     */
+    private void createProviderNote(String serviceApi) {
+        ZooNote note = new ZooNote();
+        note.setNoteName(ZookeeperRegistry.PROVIDRES_NOTE);
+        note.setNoteData(ZookeeperRegistry.PROVIDRES_NOTE);
+        note.setNotePath(ZooNote.NOTE_PATH_SEPARATOR + ZookeeperRegistry.ROOT_NOTE + "/" + serviceApi + "/" + ZookeeperRegistry.PROVIDRES_NOTE);
+        note.setParentNote(null);
+        client.createNote(note, false);
+    }
+
+    /**
+     * 注册Consumer
+     * @param api
+     */
+    public void registryConsumer(String api){
+        this.createRoot();
+        this.registryServerApi(api);
+        this.createConsumerNote(api);
+
+        String address=InetAddressUtils.findAddress();
+        ZooNote serviceNote = new ZooNote();
+        serviceNote.setNoteData(address);
+        serviceNote.setNoteName(address);
+        serviceNote.setNotePath( ZooNote.NOTE_PATH_SEPARATOR+ZookeeperRegistry.ROOT_NOTE + "/" + api + "/" + ZookeeperRegistry.CONSUMERS_NOTE + "/" + address);
+        serviceNote.setParentNote(null);
+        client.createNote(serviceNote, true);
+    }
+
+    /**
+     * 注册 service
+     * @param service
+     * @param api
+     * @throws UnsupportedEncodingException
+     */
+    public void registryService(String service, String api) throws UnsupportedEncodingException {
+        this.createRoot();
+        this.registryServerApi(api);
+        this.createProviderNote(api);
+
+        String serviceImplNote = URLEncoder.encode("forest://" + InetAddressUtils.findAddress() + ":18088/" + service, "UTF-8");
+        ZooNote serviceNote = new ZooNote();
+        serviceNote.setNoteData(service);
+        serviceNote.setNoteName(service);
+        serviceNote.setNotePath(ZooNote.NOTE_PATH_SEPARATOR + ZookeeperRegistry.ROOT_NOTE + "/" + api + "/" + ZookeeperRegistry.PROVIDRES_NOTE + "/" + serviceImplNote);
+        serviceNote.setParentNote(null);
+        client.createNote(serviceNote, true);
+    }
+
 
     public void unRegisterService(String service) throws Exception {
         ZooNote note = new ZooNote();
