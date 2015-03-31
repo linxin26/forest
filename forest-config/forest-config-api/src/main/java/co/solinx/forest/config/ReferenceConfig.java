@@ -27,9 +27,6 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public T get(ApplicationContext context) {
 
         logger.info(interfaceName);
-//        if (ref == null) {
-//            init();
-//        }
         this.context = context;
         init();
         return ref;

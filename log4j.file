@@ -2198,3 +2198,419 @@ Caused by: java.net.BindException: Address already in use: bind
 2015-03-30 23:01:19,576 [main] INFO  co.solinx.forest.demo.main (main.java:29) - print rpc
 2015-03-30 23:01:19,815 [New I/O worker #4] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:28) - 2
 2015-03-30 23:01:22,052 [New I/O worker #5] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:28) - 2
+2015-03-30 23:54:46,146 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server 192.168.254.147/192.168.254.147:2181, unexpected error, closing socket connection and attempting reconnect
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:225)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:193)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:359)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:68)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:366)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-30 23:54:46,146 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server 192.168.254.147/192.168.254.147:2181, unexpected error, closing socket connection and attempting reconnect
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:225)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:193)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:359)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:68)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:366)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-30 23:54:48,727 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-30 23:54:49,123 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.NoRouteToHostException: No route to host: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-30 23:54:49,583 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-30 23:54:49,585 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-30 23:54:50,710 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-30 23:54:50,711 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:19,217 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:19,220 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:19,520 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:19,522 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:21,047 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:21,048 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:21,587 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:21,588 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:22,079 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: SUSPENDED
+2015-03-31 21:04:22,272 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:22,273 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:22,371 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: SUSPENDED
+2015-03-31 21:04:23,023 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:23,024 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:23,933 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:23,934 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:24,231 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:24,232 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:25,507 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:25,508 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:25,760 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:25,761 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:27,082 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:27,083 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:27,374 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:27,375 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:28,224 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-03-31 21:04:28,224 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - SUSPENDED
+2015-03-31 21:04:28,359 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-03-31 21:04:28,360 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - SUSPENDED
+2015-03-31 21:04:28,887 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:28,888 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:29,387 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:29,388 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:30,056 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:30,057 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:30,557 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:30,558 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:31,717 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:31,719 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:32,037 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:32,038 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:32,852 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:32,853 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:33,232 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:33,233 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:34,399 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:34,404 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:34,460 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:34,461 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:36,014 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:36,015 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:38,502 [Curator-Framework-0] ERROR org.apache.curator.ConnectionState (ConnectionState.java:200) - Connection timed out for connection string (192.168.254.147:2181) and timeout (15000) / elapsed (15760)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2015-03-31 21:04:38,536 [Curator-Framework-0] ERROR org.apache.curator.ConnectionState (ConnectionState.java:200) - Connection timed out for connection string (192.168.254.147:2181) and timeout (15000) / elapsed (15925)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2015-03-31 21:04:39,505 [Curator-Framework-0] ERROR org.apache.curator.ConnectionState (ConnectionState.java:200) - Connection timed out for connection string (192.168.254.147:2181) and timeout (15000) / elapsed (16894)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2015-03-31 21:04:44,539 [Curator-Framework-0] ERROR org.apache.curator.ConnectionState (ConnectionState.java:200) - Connection timed out for connection string (192.168.254.147:2181) and timeout (15000) / elapsed (21928)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2015-03-31 21:04:44,540 [Curator-Framework-0] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: LOST
+2015-03-31 21:04:44,540 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-03-31 21:04:44,540 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - LOST
+2015-03-31 21:04:44,541 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:537) - Background operation retry gave up
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:99)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkBackgroundRetry(CuratorFrameworkImpl.java:708)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:826)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2015-03-31 21:04:44,542 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:537) - Background retry gave up
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2015-03-31 21:04:46,506 [Curator-Framework-0] ERROR org.apache.curator.ConnectionState (ConnectionState.java:200) - Connection timed out for connection string (192.168.254.147:2181) and timeout (15000) / elapsed (23894)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2015-03-31 21:04:46,508 [Curator-Framework-0] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: LOST
+2015-03-31 21:04:46,508 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-03-31 21:04:46,509 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - LOST
+2015-03-31 21:04:46,511 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:537) - Background operation retry gave up
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:99)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkBackgroundRetry(CuratorFrameworkImpl.java:708)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:826)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2015-03-31 21:04:46,515 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:537) - Background retry gave up
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2015-03-31 21:04:57,017 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:57,026 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:04:58,258 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:04:58,601 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:05:19,252 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:05:19,607 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:05:20,409 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:05:21,474 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:05:41,420 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:05:42,475 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:05:43,446 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:05:44,170 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:06:04,448 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00022 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:06:05,179 [main-SendThread(192.168.254.147:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00023 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:692)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2015-03-31 21:06:05,831 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:06:05,857 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.254.147/192.168.254.147:2181, initiating session
+2015-03-31 21:06:05,858 [main-EventThread] WARN  org.apache.curator.ConnectionState (ConnectionState.java:288) - Session expired event received
+2015-03-31 21:06:05,858 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1094) - Unable to reconnect to ZooKeeper service, session 0x14c1e5595a00022 has expired, closing socket connection
+2015-03-31 21:06:05,859 [main-EventThread] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.254.147:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@188ccba1
+2015-03-31 21:06:05,862 [main-EventThread] INFO  org.apache.zookeeper.ClientCnxn$EventThread (ClientCnxn.java:512) - EventThread shut down
+2015-03-31 21:06:05,862 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:06:05,870 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.254.147/192.168.254.147:2181, initiating session
+2015-03-31 21:06:05,882 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.254.147/192.168.254.147:2181, sessionid = 0x14c1e5595a00024, negotiated timeout = 40000
+2015-03-31 21:06:05,883 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: RECONNECTED
+2015-03-31 21:06:05,883 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-03-31 21:06:05,883 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - RECONNECTED
+2015-03-31 21:06:07,066 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:06:07,262 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.254.147/192.168.254.147:2181, initiating session
+2015-03-31 21:06:07,271 [main-EventThread] WARN  org.apache.curator.ConnectionState (ConnectionState.java:288) - Session expired event received
+2015-03-31 21:06:07,271 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1094) - Unable to reconnect to ZooKeeper service, session 0x14c1e5595a00023 has expired, closing socket connection
+2015-03-31 21:06:07,272 [main-EventThread] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.254.147:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@76b8c4f5
+2015-03-31 21:06:07,276 [main-EventThread] INFO  org.apache.zookeeper.ClientCnxn$EventThread (ClientCnxn.java:512) - EventThread shut down
+2015-03-31 21:06:07,276 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.254.147/192.168.254.147:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-03-31 21:06:07,279 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.254.147/192.168.254.147:2181, initiating session
+2015-03-31 21:06:07,282 [main-SendThread(192.168.254.147:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.254.147/192.168.254.147:2181, sessionid = 0x14c1e5595a00025, negotiated timeout = 40000
+2015-03-31 21:06:07,282 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: RECONNECTED
+2015-03-31 21:06:07,282 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-03-31 21:06:07,282 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - RECONNECTED
+2015-03-31 21:07:16,146 [New I/O worker #69] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:37) - java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+2015-03-31 21:07:16,146 [New I/O worker #1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:37) - java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+2015-03-31 21:07:16,146 [New I/O worker #18] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:37) - java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+2015-03-31 21:07:16,146 [New I/O worker #35] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:37) - java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+2015-03-31 21:07:16,146 [New I/O worker #52] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:37) - java.io.IOException: 远程主机强迫关闭了一个现有的连接。
