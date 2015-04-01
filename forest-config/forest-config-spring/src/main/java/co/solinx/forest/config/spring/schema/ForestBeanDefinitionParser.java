@@ -1,5 +1,6 @@
 package co.solinx.forest.config.spring.schema;
 
+import co.solinx.forest.config.ProtocolConfig;
 import co.solinx.forest.config.RegistryConfig;
 import co.solinx.forest.config.spring.ReferenceBean;
 import co.solinx.forest.config.spring.ServiceBean;
@@ -35,24 +36,32 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
         beanDefinition.setLazyInit(false);
         String id = null;
 
+        //服务暴露bean
         if (ServiceBean.class.equals(beanClass)) {
             id = element.getAttribute("interface");
             parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
             beanDefinition.getPropertyValues().addPropertyValue("id", id);
         }
+
+        //服务引用bean
         if (ReferenceBean.class.equals(beanClass)) {
             id = element.getAttribute("id");
             parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
             beanDefinition.getPropertyValues().addPropertyValue("id", id);
         }
-        if(RegistryConfig.class.equals(beanClass)){
-            id ="registryAddress";
-            parserContext.getRegistry().registerBeanDefinition(id,beanDefinition);
-            beanDefinition.getPropertyValues().addPropertyValue("id",id);
+
+        //注册中心配置
+        if (RegistryConfig.class.equals(beanClass)) {
+            id = "registryAddress";
+            parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
+            beanDefinition.getPropertyValues().addPropertyValue("id", id);
         }
+        if (ProtocolConfig.class.equals(beanClass)) {
+            id = element.getAttribute("name");
+            parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
+        }
+
         if ((id == null || id == "") & required) {
-//            id = element.getAttribute("id");
-//            String name = element.getAttribute("name");
             id = beanClass.getSimpleName();
             parserContext.getRegistry().registerBeanDefinition(id, beanDefinition);
             beanDefinition.getPropertyValues().addPropertyValue("id", id);
@@ -67,7 +76,10 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
             beanDefinition.getPropertyValues().addPropertyValue("address", element.getAttribute("address"));
         } else if (ReferenceBean.class.equals(beanClass)) {
             beanDefinition.getPropertyValues().addPropertyValue("interfaceName", element.getAttribute("interface"));
+        } else if (ProtocolConfig.class.equals(beanClass)) {
+            beanDefinition.getPropertyValues().addPropertyValue("port", element.getAttribute("port"));
         }
+
         for (Method setter : beanClass.getMethods()) {
             String name = setter.getName();
 //            logger.info(name);

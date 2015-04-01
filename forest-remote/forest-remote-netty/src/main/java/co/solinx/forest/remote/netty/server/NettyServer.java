@@ -36,16 +36,16 @@ public class NettyServer {
         return nettyServer;
     }
 
-    public void open(List<Object> serviceList) {
+    public void open(List<Object> serviceList, int port) {
         if (server == null) {
             this.serviceList = serviceList;
             server = new ServerBootstrap(new NioServerSocketChannelFactory(Executors.newCachedThreadPool(), Executors.newCachedThreadPool()));
-            this.start();
+            this.start(port);
             logger.info("------------------netty start");
         }
     }
 
-    private void start() {
+    private void start(int port) {
         final List<Object> services = serviceList;
         server.setPipelineFactory(new ChannelPipelineFactory() {
             @Override
@@ -57,8 +57,8 @@ public class NettyServer {
                 return pipeline;
             }
         });
-        server.bind(new InetSocketAddress("127.0.0.1", 18088));
-        logger.info("netty server start bind by 18088 ");
+        server.bind(new InetSocketAddress("127.0.0.1", port));
+        logger.info("netty server start bind by " + port);
     }
 
 

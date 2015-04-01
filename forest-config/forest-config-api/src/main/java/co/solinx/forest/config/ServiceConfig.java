@@ -54,14 +54,15 @@ public class ServiceConfig<T> extends AbstractConfig {
 
         //加载所有服务后启动Server
         if (serviceList.size() == num) {
-            this.startServer();
+            ProtocolConfig protocol= (ProtocolConfig) context.getBean("forest");
+            this.startServer(protocol.getPort());
         }
     }
 
-    public void startServer() {
+    public void startServer(int port) {
 
         NettyServer server = NettyServer.getInstance();
-        server.open(serviceList);
+        server.open(serviceList,port);
     }
 
     public String getId() {

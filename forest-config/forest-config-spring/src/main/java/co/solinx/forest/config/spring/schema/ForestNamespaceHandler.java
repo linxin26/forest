@@ -1,6 +1,7 @@
 package co.solinx.forest.config.spring.schema;
 
 import co.solinx.forest.config.ApplicationConfig;
+import co.solinx.forest.config.ProtocolConfig;
 import co.solinx.forest.config.RegistryConfig;
 import co.solinx.forest.config.spring.ReferenceBean;
 import co.solinx.forest.config.spring.ServiceBean;
@@ -21,5 +22,6 @@ public class ForestNamespaceHandler extends NamespaceHandlerSupport {
         registerBeanDefinitionParser("reference", new ForestBeanDefinitionParser(ReferenceBean.class, true));
         registerBeanDefinitionParser("application", new ForestBeanDefinitionParser(ApplicationConfig.class, true));
         registerBeanDefinitionParser("service", new ForestBeanDefinitionParser(ServiceBean.class, true));
+        registerBeanDefinitionParser("protocol", new ForestBeanDefinitionParser(ProtocolConfig.class, true));
     }
 }
