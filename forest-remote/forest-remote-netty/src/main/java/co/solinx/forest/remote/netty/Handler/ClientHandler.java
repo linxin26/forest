@@ -14,6 +14,7 @@ public class ClientHandler<T> extends SimpleChannelHandler {
     Logger logger = Logger.getLogger(ClientHandler.class);
     Method method;
     Object api;
+    Object result;
 
     public ClientHandler(Object api, Method method) {
         this.method = method;
@@ -22,8 +23,8 @@ public class ClientHandler<T> extends SimpleChannelHandler {
 
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
-//        super.messageReceived(ctx, e);
-        api = e.getMessage();
+        //处理返回的结果
+        result = e.getMessage();
     }
 
     @Override
@@ -39,6 +40,7 @@ public class ClientHandler<T> extends SimpleChannelHandler {
     }
 
     public Object getApi() {
-        return api;
+        return result;
     }
+
 }

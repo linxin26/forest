@@ -1,5 +1,6 @@
 package co.solinx.forest.remote.netty.server;
 
+import co.solinx.forest.common.utils.InetAddressUtils;
 import co.solinx.forest.remote.netty.Handler.ServiceHandler;
 import org.apache.log4j.Logger;
 import org.jboss.netty.bootstrap.ServerBootstrap;
@@ -57,7 +58,7 @@ public class NettyServer {
                 return pipeline;
             }
         });
-        server.bind(new InetSocketAddress("127.0.0.1", port));
+        server.bind(new InetSocketAddress(InetAddressUtils.findAddress(), port));
         logger.info("netty server start bind by " + port);
     }
 
