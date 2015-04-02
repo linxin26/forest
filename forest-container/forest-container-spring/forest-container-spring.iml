@@ -18,14 +18,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.1.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.1.5.RELEASE" level="project" />
-    <orderEntry type="module" module-name="forest-container-api" />
-    <orderEntry type="module" module-name="forest-config" />
-    <orderEntry type="module" module-name="forest-registry-zookeeper" />
-    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty:3.7.0.Final" level="project" />
-    <orderEntry type="module" module-name="forest-config-spring" />
-    <orderEntry type="module" module-name="forest-remote-netty" />
-    <orderEntry type="module" module-name="forest-config-api" />
   </component>
 </module>
 

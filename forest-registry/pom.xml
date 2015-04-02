@@ -14,8 +14,6 @@
     <modules>
         <module>forest-registry-zookeeper</module>
         <module>forest-registry-api</module>
-        <module>forest-registry-api</module>
-        <module>forest-registry-api</module>
     </modules>
 
 

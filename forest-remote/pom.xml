@@ -15,7 +15,7 @@
         <module>forest-remote-http</module>
         <module>forest-remote-zookeeper</module>
         <module>forest-remote-netty</module>
-        <module>forest-rmote-api</module>
+        <module>forest-remote-api</module>
     </modules>
 
 

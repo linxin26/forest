@@ -11,9 +11,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="forest-registry-zookeeper" />
-    <orderEntry type="module" module-name="forest-config-api" />
-    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
   </component>
 </module>
 
