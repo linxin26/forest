@@ -1,7 +1,7 @@
 package co.solinx.forest.registry.zookeeper;
 
 import co.solinx.forest.common.utils.InetAddressUtils;
-import co.solinx.forest.registry.IRegistry;
+import co.solinx.forest.registry.api.IRegistry;
 import co.solinx.remote.zookeeper.ZookeeperClient;
 import co.solinx.remote.zookeeper.support.ZooNote;
 import org.apache.log4j.Logger;
@@ -80,9 +80,10 @@ public class ZookeeperRegistry implements IRegistry {
 
     /**
      * 添加 serviceApi的 Consumer节点
+     *
      * @param serviceApi
      */
-    private void createConsumerNote(String serviceApi){
+    private void createConsumerNote(String serviceApi) {
         ZooNote note = new ZooNote();
         note.setNoteName(ZookeeperRegistry.PROVIDRES_NOTE);
         note.setNoteData(ZookeeperRegistry.PROVIDRES_NOTE);
@@ -93,6 +94,7 @@ public class ZookeeperRegistry implements IRegistry {
 
     /**
      * 添加 serviceApi的Provider节点
+     *
      * @param serviceApi
      */
     private void createProviderNote(String serviceApi) {
@@ -106,24 +108,26 @@ public class ZookeeperRegistry implements IRegistry {
 
     /**
      * 注册Consumer
+     *
      * @param api
      */
-    public void registryConsumer(String api){
+    public void registryConsumer(String api) {
         this.createRoot();
         this.registryServerApi(api);
         this.createConsumerNote(api);
 
-        String address=InetAddressUtils.findAddress();
+        String address = InetAddressUtils.findAddress();
         ZooNote serviceNote = new ZooNote();
         serviceNote.setNoteData(address);
         serviceNote.setNoteName(address);
-        serviceNote.setNotePath( ZooNote.NOTE_PATH_SEPARATOR+ZookeeperRegistry.ROOT_NOTE + "/" + api + "/" + ZookeeperRegistry.CONSUMERS_NOTE + "/" + address);
+        serviceNote.setNotePath(ZooNote.NOTE_PATH_SEPARATOR + ZookeeperRegistry.ROOT_NOTE + "/" + api + "/" + ZookeeperRegistry.CONSUMERS_NOTE + "/" + address);
         serviceNote.setParentNote(null);
         client.createNote(serviceNote, true);
     }
 
     /**
      * 注册 service
+     *
      * @param service
      * @param api
      * @throws UnsupportedEncodingException

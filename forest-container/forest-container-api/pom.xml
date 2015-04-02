@@ -11,5 +11,12 @@
 
     <artifactId>forest-container-api</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>co.solinx</groupId>
+            <artifactId>forest-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

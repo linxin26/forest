@@ -1,8 +1,8 @@
 package co.solinx.forest.config.spring;
 
 import co.solinx.forest.config.ServiceConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
+import org.apache.log4j.spi.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
@@ -22,7 +22,7 @@ import java.net.UnknownHostException;
  */
 public class ServiceBean<T> extends ServiceConfig implements Serializable, DisposableBean, BeanNameAware, ApplicationListener, ApplicationContextAware {
 
-    Logger logger = LoggerFactory.getLogger(ServiceBean.class);
+    Logger logger = Logger.getLogger(ServiceBean.class);
     private String beanName;
     private ApplicationContext applicationContext;
     private boolean export;
