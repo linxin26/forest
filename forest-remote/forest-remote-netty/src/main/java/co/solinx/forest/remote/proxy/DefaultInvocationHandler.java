@@ -23,10 +23,11 @@ public class DefaultInvocationHandler extends SimpleChannelHandler implements In
 
     Object result = new Object();
     Object obj;
+    final Object lock = new Object();
     String address;
     Method method;
 
-    @Override
+
     public Object invoke(Object proxy, final Method method, Object[] args) throws Throwable {
 
         this.method = method;
@@ -36,12 +37,11 @@ public class DefaultInvocationHandler extends SimpleChannelHandler implements In
         final ClientHandler clientHandler = new ClientHandler(obj, method);
         client.setFactory(new NioClientSocketChannelFactory());
         client.setPipelineFactory(new ChannelPipelineFactory() {
-            @Override
             public ChannelPipeline getPipeline() throws Exception {
                 ChannelPipeline pipeline = new DefaultChannelPipeline();
                 pipeline.addLast("decode", new ObjectDecoder());
                 pipeline.addLast("encode", new ObjectEncoder());
-                pipeline.addLast("handler", clientHandler);
+                pipeline.addLast("handler", DefaultInvocationHandler.this);
                 return pipeline;
             }
         });
@@ -50,27 +50,29 @@ public class DefaultInvocationHandler extends SimpleChannelHandler implements In
         int port = Integer.parseInt(address.split(":")[1]);
         client.connect(new InetSocketAddress(ip, port));
 
-        Thread.sleep(1000);
-        Object ret = clientHandler.getApi();
-//        synchronized (result) {
-//            if (result == null) {
-//                Thread.currentThread().wait();
-//            }
-//        }
+
+        Object ret = clientHandler.getRceiveMessage();
+        synchronized (lock) {
+            lock.wait();
+        }
+//        Thread.sleep(2000);
 //        client.releaseExternalResources();
-        return ret;
+//        client.shutdown();
+        return result;
     }
 
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
         result = e.getMessage();
-        if (result != null) {
-            result.notify();
+        synchronized (lock) {
+            lock.notifyAll();
         }
+//        logger.info(result);
     }
 
     @Override
-    public void writeComplete(ChannelHandlerContext ctx, WriteCompletionEvent e) throws Exception {
+    public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
+//        logger.info("connected");
         ctx.getChannel().write(obj.toString() + "," + method.getName());
     }
 

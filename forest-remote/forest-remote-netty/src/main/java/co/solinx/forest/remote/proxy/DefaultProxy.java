@@ -5,12 +5,16 @@ import org.apache.log4j.Logger;
 import java.lang.reflect.Proxy;
 
 /**
+ * jdk¶¯Ì¬´úÀí
  * Created by LX on 2015/3/21.
  */
 public class DefaultProxy {
-    Logger logger=Logger.getLogger(DefaultProxy.class);
-    public Object proxy(Class interfaceClass,String serverAddress) {
+    Logger logger = Logger.getLogger(DefaultProxy.class);
+
+    public Object proxy(Class interfaceClass, String serverAddress) {
         logger.info(interfaceClass);
-        Object obj = Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[]{interfaceClass}, new DefaultInvocationHandler(interfaceClass.getName(),serverAddress));        return obj;
+        Object obj = Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[]{interfaceClass}, new DefaultInvocationHandler(interfaceClass.getName(), serverAddress));
+        return obj;
+
     }
 }
