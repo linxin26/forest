@@ -56,8 +56,6 @@ public class DefaultInvocationHandler extends SimpleChannelHandler implements In
             lock.wait();
         }
 //        Thread.sleep(2000);
-//        client.releaseExternalResources();
-//        client.shutdown();
         return result;
     }
 
