@@ -6,11 +6,9 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /**
- * Created by LX on 2015/4/4.
+ * Created by 鑫 on 2015/4/7.
  */
-public class JdkProxyHandler implements InvocationHandler{
-
-
+public class JdkProxyHandler implements InvocationHandler {
     private Object delegate;
     private String serverAddress;
 
