@@ -1,6 +1,6 @@
-package co.solinx.forest.rpc.protocol;
+package co.solinx.forest.rpc.jdk;
 
-import co.solinx.forest.rpc.protocol.handler.JdkProxyHandler;
+import co.solinx.forest.rpc.jdk.handler.JdkProxyHandler;
 
 import java.lang.reflect.Proxy;
 

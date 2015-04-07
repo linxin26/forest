@@ -1,8 +1,7 @@
 package co.solinx.forest.config;
 
 import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
-import co.solinx.forest.remote.proxy.DefaultProxy;
-import co.solinx.forest.rpc.protocol.JdkDynamicProxy;
+import co.solinx.forest.rpc.jdk.JdkDynamicProxy;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
@@ -41,6 +40,7 @@ public class ReferenceConfig<T> extends AbstractConfig {
 //        DefaultProxy proxy = new DefaultProxy();
 //        JdkProxy proxy=new JdkProxy();
         JdkDynamicProxy proxy=new JdkDynamicProxy();
+
         try {
             //注册中心
             RegistryConfig registryCenter = (RegistryConfig) context.getBean("registryAddress");

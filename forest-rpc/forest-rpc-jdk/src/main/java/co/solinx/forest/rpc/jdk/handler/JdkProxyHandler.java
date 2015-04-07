@@ -1,4 +1,4 @@
-package co.solinx.forest.rpc.protocol.handler;
+package co.solinx.forest.rpc.jdk.handler;
 
 import co.solinx.forest.remote.invoker.NettyInvoker;
 
@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 /**
  * Created by 鑫 on 2015/4/7.
  */
-public class JdkProxyHandler implements InvocationHandler {
+public class JdkProxyHandler implements InvocationHandler{
     private Object delegate;
     private String serverAddress;
 

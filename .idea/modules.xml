@@ -23,7 +23,7 @@
       <module fileurl="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/forest-remote-netty.iml" filepath="$PROJECT_DIR$/forest-remote/forest-remote-netty/forest-remote-netty.iml" />
       <module fileurl="file://$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/forest-remote-zookeeper.iml" filepath="$PROJECT_DIR$/forest-remote/forest-remote-zookeeper/forest-remote-zookeeper.iml" />
       <module fileurl="file://$PROJECT_DIR$/forest-rpc/forest-rpc.iml" filepath="$PROJECT_DIR$/forest-rpc/forest-rpc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/forest-rpc/forest-rpc-default/forest-rpc-default.iml" filepath="$PROJECT_DIR$/forest-rpc/forest-rpc-default/forest-rpc-default.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forest-rpc/forest-rpc-jdk/forest-rpc-jdk.iml" filepath="$PROJECT_DIR$/forest-rpc/forest-rpc-jdk/forest-rpc-jdk.iml" />
     </modules>
   </component>
 </project>

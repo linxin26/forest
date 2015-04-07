@@ -6,7 +6,6 @@
     <file url="file://$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/io/UnsafeStringWriter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/utils/ClassHelper.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/utils/Holder.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/utils/ReflectUtils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/utils/StringUtils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/forest-config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/forest-config/forest-config-api" charset="UTF-8" />
@@ -32,7 +31,6 @@
     <file url="file://$PROJECT_DIR$/forest-remote/forest-remote-zookeeper" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/forest-rpc" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/forest-rpc/forest-rpc-default" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/forest-rpc/forest-rpc-default" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/forest-rpc/forest-rpc-default/src/main/java/co/solinx/forest/rpc/protocol/ForestProtocol.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forest-rpc/forest-rpc-jdk" charset="UTF-8" />
   </component>
 </project>

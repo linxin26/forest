@@ -38,7 +38,7 @@
         <module name="forest-remote-netty" />
         <module name="forest-remote-zookeeper" />
         <module name="forest-rmote-api" />
-        <module name="forest-rpc-default" />
+        <module name="forest-rpc-jdk" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -64,6 +64,7 @@
       <module name="forest-remote-zookeeper" target="1.8" />
       <module name="forest-rpc" target="1.8" />
       <module name="forest-rpc-default" target="1.8" />
+      <module name="forest-rpc-jdk" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

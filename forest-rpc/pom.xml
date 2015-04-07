@@ -12,7 +12,7 @@
     <artifactId>forest-rpc</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>forest-rpc-default</module>
+        <module>forest-rpc-jdk</module>
     </modules>
 
 

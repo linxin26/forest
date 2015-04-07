@@ -34,7 +34,7 @@
         </dependency>
         <dependency>
             <groupId>co.solinx</groupId>
-            <artifactId>forest-rpc-default</artifactId>
+            <artifactId>forest-rpc-jdk</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
