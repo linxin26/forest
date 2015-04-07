@@ -47,7 +47,7 @@ public class ReferenceBean<T> extends ReferenceConfig<T> implements FactoryBean,
 //        getObject();
     }
 
-    @Override
+
     public void destroy() throws Exception {
 
     }

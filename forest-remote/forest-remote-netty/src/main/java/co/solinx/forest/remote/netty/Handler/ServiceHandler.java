@@ -24,7 +24,7 @@ public class ServiceHandler extends SimpleChannelHandler {
 //        super.messageReceived(ctx, e);
 //        logger.info("HelloHandler MessageReceived");
         String message = (String) e.getMessage();
-        System.out.println("message:" + message);
+        logger.info("message:" + message);
         logger.info(services.size());
         String[] invoke = message.split(",");
         Class<?>[] parameterTypes = null;
@@ -34,7 +34,7 @@ public class ServiceHandler extends SimpleChannelHandler {
                 if (this.isInterfaceImpl(services.get(i), invoke[0])) {
                     Method method = services.get(i).getClass().getMethod(invoke[1], parameterTypes);
                     Object result = method.invoke(services.get(i), arguments);
-                    System.out.println("result:" + result);
+                    logger.info("result:" + result);
                     if(result!=null) {
                         ctx.getChannel().write(result);
                     }

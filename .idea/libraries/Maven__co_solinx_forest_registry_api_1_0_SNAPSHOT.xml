@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: co.solinx:forest-registry-api:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://D:/apache-maven-3.1.0/repository/co/solinx/forest-registry-api/1.0-SNAPSHOT/forest-registry-api-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/apache-maven-3.1.0/repository/co/solinx/forest-registry-api/1.0-SNAPSHOT/forest-registry-api-1.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/apache-maven-3.1.0/repository/co/solinx/forest-registry-api/1.0-SNAPSHOT/forest-registry-api-1.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

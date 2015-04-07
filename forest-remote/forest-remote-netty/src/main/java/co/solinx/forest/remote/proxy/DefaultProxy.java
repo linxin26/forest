@@ -5,7 +5,7 @@ import org.apache.log4j.Logger;
 import java.lang.reflect.Proxy;
 
 /**
- * jdk¶¯Ì¬´úÀí
+ * jdkåŠ¨æ€ä»£ç†
  * Created by LX on 2015/3/21.
  */
 public class DefaultProxy {

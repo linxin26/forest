@@ -34,7 +34,7 @@ public class ZookeeperRegistry implements IRegistry {
         return registry;
     }
 
-    @Override
+
     public void toRegistry(String url) {
         if (client == null) {
             client = new ZookeeperClient(url.replace("zookeeper://", ""));

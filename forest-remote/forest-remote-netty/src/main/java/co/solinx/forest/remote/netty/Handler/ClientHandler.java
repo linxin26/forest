@@ -25,6 +25,7 @@ public class ClientHandler<T> extends SimpleChannelHandler {
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
         //处理返回的结果
         result = e.getMessage();
+        logger.info(result);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class ClientHandler<T> extends SimpleChannelHandler {
         super.exceptionCaught(ctx, e);
     }
 
-    public Object getApi() {
+    public Object getRceiveMessage() {
         return result;
     }
 

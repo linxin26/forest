@@ -41,6 +41,29 @@
         <module name="forest-rpc-default" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="forest" target="1.8" />
+      <module name="forest-common" target="1.8" />
+      <module name="forest-config" target="1.8" />
+      <module name="forest-config-api" target="1.8" />
+      <module name="forest-config-spring" target="1.8" />
+      <module name="forest-container" target="1.8" />
+      <module name="forest-container-api" target="1.8" />
+      <module name="forest-container-log4j" target="1.8" />
+      <module name="forest-container-spring" target="1.8" />
+      <module name="forest-demo" target="1.8" />
+      <module name="forest-demo-customer" target="1.8" />
+      <module name="forest-demo-provider" target="1.8" />
+      <module name="forest-registry" target="1.8" />
+      <module name="forest-registry-api" target="1.8" />
+      <module name="forest-registry-zookeeper" target="1.8" />
+      <module name="forest-remote" target="1.8" />
+      <module name="forest-remote-api" target="1.8" />
+      <module name="forest-remote-http" target="1.8" />
+      <module name="forest-remote-netty" target="1.8" />
+      <module name="forest-remote-zookeeper" target="1.8" />
+      <module name="forest-rpc" target="1.8" />
+      <module name="forest-rpc-default" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
-
