@@ -12,7 +12,7 @@ public class ForestProtocol {
 //    ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
 
 //    public void export(String interfaceName,RegistryConfig registryAddress) {
-        //forest://192.168.254.144:20909/co.solinx.forest.demo.impl.HelloForestServiceImpl
+    //forest://192.168.254.144:20909/co.solinx.forest.demo.impl.HelloForestServiceImpl
 //        String forestProtocol="forest://";
 //
 //        //连接注册中心
