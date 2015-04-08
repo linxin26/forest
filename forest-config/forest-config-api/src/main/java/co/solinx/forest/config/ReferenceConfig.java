@@ -38,7 +38,6 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public void init() {
         //代理类
 //        DefaultProxy proxy = new DefaultProxy();
-//        JdkProxy proxy=new JdkProxy();
         JdkDynamicProxy proxy=new JdkDynamicProxy();
 
         try {
