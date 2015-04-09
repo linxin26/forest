@@ -39,6 +39,7 @@
     <orderEntry type="module" module-name="forest-registry-zookeeper" />
     <orderEntry type="library" name="Maven: co.solinx:forest-registry-api:1.0-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="forest-remote-netty" />
+    <orderEntry type="library" name="Maven: io.netty:netty-all:4.0.27.Final" level="project" />
     <orderEntry type="module" module-name="forest-remote-zookeeper" />
   </component>
 </module>

@@ -1,14 +1,18 @@
+
 package co.solinx.forest.remote.exchange;
+
+import java.util.Arrays;
 
 /**
  * Created by linx on 2015/4/8.
- * 引用的请求
+ * 动态代理请求
  */
 public class Request {
 
     private int id;
     private Object data;
     private long RequestTime;
+    private Object[] param;
 
 
     public int getId() {
@@ -35,12 +39,21 @@ public class Request {
         RequestTime = requestTime;
     }
 
+    public Object[] getParam() {
+        return param;
+    }
+
+    public void setParam(Object[] param) {
+        this.param = param;
+    }
+
     @Override
     public String toString() {
         return "Request{" +
                 "id=" + id +
                 ", data=" + data +
                 ", RequestTime=" + RequestTime +
+                ", param=" + Arrays.toString(param) +
                 '}';
     }
 }

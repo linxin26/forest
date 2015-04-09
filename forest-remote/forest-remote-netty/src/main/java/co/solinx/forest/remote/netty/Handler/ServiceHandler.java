@@ -1,16 +1,20 @@
 package co.solinx.forest.remote.netty.Handler;
 
+import io.netty.buffer.UnpooledDirectByteBuf;
+import io.netty.buffer.UnpooledUnsafeDirectByteBuf;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 import org.apache.log4j.Logger;
-import org.jboss.netty.channel.*;
 
 import java.lang.reflect.Method;
+import java.nio.ByteBuffer;
 import java.util.List;
 
 /**
  * 处理所引用的服务
  * Created by LX on 2015/3/15.
  */
-public class ServiceHandler extends SimpleChannelHandler {
+public class ServiceHandler extends ChannelInboundHandlerAdapter {
     Logger logger = Logger.getLogger(ServiceHandler.class);
 
     List<Object> services;
@@ -20,10 +24,14 @@ public class ServiceHandler extends SimpleChannelHandler {
     }
 
     @Override
-    public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
-//        super.messageReceived(ctx, e);
-//        logger.info("HelloHandler MessageReceived");
-        String message = (String) e.getMessage();
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+
+//        UnpooledDirectByteBuf byteBuf=new UnpooledDirectByteBuf();
+//        byteBuf.readBytes(msg);
+        UnpooledUnsafeDirectByteBuf byteBuf= (UnpooledUnsafeDirectByteBuf) msg;
+        byte[] rebytenew =new byte[byteBuf.readableBytes()];
+        byteBuf.readBytes(rebytenew);
+        String message =new String(rebytenew);
         logger.info("message:" + message);
         logger.info(services.size());
         String[] invoke = message.split(",");
@@ -36,7 +44,8 @@ public class ServiceHandler extends SimpleChannelHandler {
                     Object result = method.invoke(services.get(i), arguments);
                     logger.info("result:" + result);
                     if(result!=null) {
-                        ctx.getChannel().write(result);
+                        ctx.channel().write(result);
+                        ctx.channel().flush();
                     }
                 } else {
 
@@ -46,6 +55,7 @@ public class ServiceHandler extends SimpleChannelHandler {
             t.printStackTrace();
         }
     }
+
 
     /**
      * 检查czl是否实现intl接口
@@ -65,14 +75,5 @@ public class ServiceHandler extends SimpleChannelHandler {
         return ret;
     }
 
-    @Override
-    public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
-//        super.channelConnected(ctx, e);
-    }
 
-    @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) throws Exception {
-        logger.info(e.getCause());
-        super.exceptionCaught(ctx, e);
-    }
 }

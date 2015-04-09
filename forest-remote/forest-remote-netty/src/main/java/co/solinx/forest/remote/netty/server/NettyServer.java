@@ -2,18 +2,18 @@ package co.solinx.forest.remote.netty.server;
 
 import co.solinx.forest.common.utils.InetAddressUtils;
 import co.solinx.forest.remote.netty.Handler.ServiceHandler;
+import io.netty.bootstrap.ServerBootstrap;
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.SocketChannel;
+import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
 import org.apache.log4j.Logger;
-import org.jboss.netty.bootstrap.ServerBootstrap;
-import org.jboss.netty.channel.ChannelPipeline;
-import org.jboss.netty.channel.ChannelPipelineFactory;
-import org.jboss.netty.channel.Channels;
-import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
-import org.jboss.netty.handler.codec.serialization.ObjectDecoder;
-import org.jboss.netty.handler.codec.serialization.ObjectEncoder;
 
 import java.net.InetSocketAddress;
 import java.util.List;
-import java.util.concurrent.Executors;
 
 /**
  * Created by LX on 2015/3/15.
@@ -40,7 +40,10 @@ public class NettyServer {
     public void open(List<Object> serviceList, int port) {
         if (server == null) {
             this.serviceList = serviceList;
-            server = new ServerBootstrap(new NioServerSocketChannelFactory(Executors.newCachedThreadPool(), Executors.newCachedThreadPool()));
+            server = new ServerBootstrap();
+            EventLoopGroup boosGroup = new NioEventLoopGroup();
+            EventLoopGroup workerGroup = new NioEventLoopGroup();
+            server.group(boosGroup, workerGroup);
             this.start(port);
             logger.info("------------------netty start");
         }
@@ -48,16 +51,16 @@ public class NettyServer {
 
     private void start(int port) {
         final List<Object> services = serviceList;
-        server.setPipelineFactory(new ChannelPipelineFactory() {
+        server.channel(NioServerSocketChannel.class);
+        server.childHandler(new ChannelInitializer<SocketChannel>() {
             @Override
-            public ChannelPipeline getPipeline() throws Exception {
-                ChannelPipeline pipeline = Channels.pipeline();
-                pipeline.addLast("encode", new ObjectEncoder());
-                pipeline.addLast("decode", new ObjectDecoder());
-                pipeline.addLast("handler", new ServiceHandler(services));
-                return pipeline;
+            protected void initChannel(SocketChannel sc) throws Exception {
+                sc.pipeline().addFirst(new StringEncoder());
+                sc.pipeline().addFirst(new StringDecoder());
+                sc.pipeline().addFirst(new ServiceHandler(services));
             }
         });
+
         server.bind(new InetSocketAddress(InetAddressUtils.findAddress(), port));
         logger.info("netty server start bind by " + port);
     }
