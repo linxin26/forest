@@ -2,6 +2,8 @@ package co.solinx.forest.remote.netty.server;
 
 import co.solinx.forest.common.utils.InetAddressUtils;
 import co.solinx.forest.remote.netty.Handler.ServiceHandler;
+import co.solinx.forest.remote.netty.code.RequestDecoder;
+import co.solinx.forest.remote.netty.code.RequestEncoder;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.EventLoopGroup;
@@ -55,9 +57,9 @@ public class NettyServer {
         server.childHandler(new ChannelInitializer<SocketChannel>() {
             @Override
             protected void initChannel(SocketChannel sc) throws Exception {
-                sc.pipeline().addFirst(new StringEncoder());
-                sc.pipeline().addFirst(new StringDecoder());
-                sc.pipeline().addFirst(new ServiceHandler(services));
+                sc.pipeline().addLast(new RequestEncoder());
+                sc.pipeline().addLast(new RequestDecoder());
+                sc.pipeline().addLast(new ServiceHandler(services));
             }
         });
 

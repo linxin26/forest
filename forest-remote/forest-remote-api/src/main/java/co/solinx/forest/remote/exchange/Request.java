@@ -1,13 +1,14 @@
 
 package co.solinx.forest.remote.exchange;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 /**
  * Created by linx on 2015/4/8.
  * 动态代理请求
  */
-public class Request {
+public class Request implements Serializable{
 
     private int id;
     private Object data;
@@ -56,4 +57,6 @@ public class Request {
                 ", param=" + Arrays.toString(param) +
                 '}';
     }
+
+
 }
