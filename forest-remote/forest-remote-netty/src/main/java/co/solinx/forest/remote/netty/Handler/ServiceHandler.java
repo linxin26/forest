@@ -1,6 +1,7 @@
 package co.solinx.forest.remote.netty.Handler;
 
 import co.solinx.forest.remote.exchange.Request;
+import co.solinx.forest.remote.exchange.Response;
 import io.netty.buffer.UnpooledDirectByteBuf;
 import io.netty.buffer.UnpooledUnsafeDirectByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -24,16 +25,11 @@ public class ServiceHandler extends ChannelInboundHandlerAdapter {
         this.services = services;
     }
 
-    public ServiceHandler() {
-    }
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 
         Request request= (Request) msg;
-//        UnpooledUnsafeDirectByteBuf byteBuf= (UnpooledUnsafeDirectByteBuf) msg;
-//        byte[] rebytenew =new byte[byteBuf.readableBytes()];
-//        byteBuf.readBytes(rebytenew);
         String message =new String(request.getData().toString());
         logger.info("message:" + message);
         logger.info(services.size());
@@ -47,10 +43,10 @@ public class ServiceHandler extends ChannelInboundHandlerAdapter {
                     Object result = method.invoke(services.get(i), arguments);
                     logger.info("result:" + result);
                     if(result!=null) {
-                        Request response=new Request();
-                        response.setData(result);
-//                        ctx.channel().write(result);
-//                        ctx.channel().flush();
+//                        Request response=new Request();
+//                        response.setData(result);
+                        Response response =new Response();
+                        response.setResult(result);
                         ctx.writeAndFlush(response);
                     }
                 } else {

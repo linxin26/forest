@@ -24,18 +24,19 @@ public class RequestDecoder extends ByteToMessageDecoder {
 
         byte[] data = new byte[msg.readableBytes()];
         msg.readBytes(data);
-        Request request= this.convertRequestByByte(data);
+        Object request= this.convertRequestByByte(data);
         out.add(request);
-        logger.info(msg);
     }
 
-    public Request convertRequestByByte(byte[] bytes) {
+    public Object convertRequestByByte(byte[] bytes) {
         Request request=null;
+        Object obj=null;
         ByteInputStream inputStream = new ByteInputStream();
         inputStream.setBuf(bytes);
         try {
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-            request = (Request) objectInputStream.readObject();
+            obj=objectInputStream.readObject();
+//            request = (Request) obj;
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -43,6 +44,6 @@ public class RequestDecoder extends ByteToMessageDecoder {
         }
         logger.info("----------------------------convert");
         logger.info(request);
-        return request;
+        return obj;
     }
 }
