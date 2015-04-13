@@ -362,3 +362,691 @@ java.net.ConnectException: Connection timed out: no further information
 2015-04-13 19:49:20,734 [Curator-Framework-0-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: RECONNECTED
 2015-04-13 19:49:20,734 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
 2015-04-13 19:49:20,734 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - RECONNECTED
+2015-04-13 22:34:18,949 [nioEventLoopGroup-3-11] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.UnpooledUnsafeDirectByteBuf.setBytes(UnpooledUnsafeDirectByteBuf.java:447)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:241)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+2015-04-13 22:34:18,949 [nioEventLoopGroup-3-12] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.UnpooledUnsafeDirectByteBuf.setBytes(UnpooledUnsafeDirectByteBuf.java:447)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:241)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+2015-04-13 22:34:18,950 [nioEventLoopGroup-3-13] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.UnpooledUnsafeDirectByteBuf.setBytes(UnpooledUnsafeDirectByteBuf.java:447)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:241)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+2015-04-13 22:34:18,953 [nioEventLoopGroup-3-16] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.UnpooledUnsafeDirectByteBuf.setBytes(UnpooledUnsafeDirectByteBuf.java:447)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:241)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+2015-04-13 22:34:18,952 [nioEventLoopGroup-3-15] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.UnpooledUnsafeDirectByteBuf.setBytes(UnpooledUnsafeDirectByteBuf.java:447)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:241)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+2015-04-13 22:34:18,951 [nioEventLoopGroup-3-12] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:34:18,951 [nioEventLoopGroup-3-14] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.UnpooledUnsafeDirectByteBuf.setBytes(UnpooledUnsafeDirectByteBuf.java:447)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:241)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+2015-04-13 22:34:18,957 [nioEventLoopGroup-3-15] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:34:18,958 [nioEventLoopGroup-3-15] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:34:18,950 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:34:18,958 [nioEventLoopGroup-3-15] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+io.netty.handler.codec.DecoderException: java.lang.NullPointerException: element
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:279)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:237)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:223)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:829)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:610)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:357)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:357)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException: element
+	at io.netty.util.internal.RecyclableArrayList.add(RecyclableArrayList.java:104)
+	at co.solinx.forest.remote.netty.code.RequestDecoder.decode(RequestDecoder.java:28)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeLast(ByteToMessageDecoder.java:370)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:274)
+	... 9 more
+2015-04-13 22:34:18,956 [nioEventLoopGroup-3-12] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:34:18,956 [nioEventLoopGroup-3-16] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:34:18,955 [nioEventLoopGroup-3-13] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:34:18,960 [nioEventLoopGroup-3-13] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:34:18,960 [nioEventLoopGroup-3-16] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:34:18,959 [nioEventLoopGroup-3-12] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+io.netty.handler.codec.DecoderException: java.lang.NullPointerException: element
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:279)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:237)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:223)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:829)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:610)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:357)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:357)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException: element
+	at io.netty.util.internal.RecyclableArrayList.add(RecyclableArrayList.java:104)
+	at co.solinx.forest.remote.netty.code.RequestDecoder.decode(RequestDecoder.java:28)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeLast(ByteToMessageDecoder.java:370)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:274)
+	... 9 more
+2015-04-13 22:34:18,958 [nioEventLoopGroup-3-14] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:34:18,958 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:34:18,961 [nioEventLoopGroup-3-14] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:34:18,961 [nioEventLoopGroup-3-16] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+io.netty.handler.codec.DecoderException: java.lang.NullPointerException: element
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:279)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:237)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:223)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:829)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:610)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:357)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:357)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException: element
+	at io.netty.util.internal.RecyclableArrayList.add(RecyclableArrayList.java:104)
+	at co.solinx.forest.remote.netty.code.RequestDecoder.decode(RequestDecoder.java:28)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeLast(ByteToMessageDecoder.java:370)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:274)
+	... 9 more
+2015-04-13 22:34:18,960 [nioEventLoopGroup-3-13] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+io.netty.handler.codec.DecoderException: java.lang.NullPointerException: element
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:279)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:237)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:223)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:829)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:610)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:357)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:357)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException: element
+	at io.netty.util.internal.RecyclableArrayList.add(RecyclableArrayList.java:104)
+	at co.solinx.forest.remote.netty.code.RequestDecoder.decode(RequestDecoder.java:28)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeLast(ByteToMessageDecoder.java:370)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:274)
+	... 9 more
+2015-04-13 22:34:18,962 [nioEventLoopGroup-3-14] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+io.netty.handler.codec.DecoderException: java.lang.NullPointerException: element
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:279)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:237)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:223)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:829)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:610)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:357)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:357)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException: element
+	at io.netty.util.internal.RecyclableArrayList.add(RecyclableArrayList.java:104)
+	at co.solinx.forest.remote.netty.code.RequestDecoder.decode(RequestDecoder.java:28)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeLast(ByteToMessageDecoder.java:370)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:274)
+	... 9 more
+2015-04-13 22:34:18,962 [nioEventLoopGroup-3-11] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+io.netty.handler.codec.DecoderException: java.lang.NullPointerException: element
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:279)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:237)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:223)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:829)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:610)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:357)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:357)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException: element
+	at io.netty.util.internal.RecyclableArrayList.add(RecyclableArrayList.java:104)
+	at co.solinx.forest.remote.netty.code.RequestDecoder.decode(RequestDecoder.java:28)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeLast(ByteToMessageDecoder.java:370)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:274)
+	... 9 more
+2015-04-13 22:34:39,866 [main] INFO  co.solinx.forest.container.spring.SpringContainer (SpringContainer.java:22) - SpringContainer start
+2015-04-13 22:34:40,011 [main] INFO  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon Apr 13 22:34:40 CST 2015]; root of context hierarchy
+2015-04-13 22:34:40,072 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader (XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from file [E:\Develop\forest\forest-demo\forest-demo-provider\target\classes\META-INF\spring\forest-provider.xml]
+2015-04-13 22:34:40,369 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:32) - ServiceBean 
+2015-04-13 22:34:40,385 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:32) - ServiceBean 
+2015-04-13 22:34:40,414 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:51) - _________________________org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon Apr 13 22:34:40 CST 2015]; root of context hierarchy]
+2015-04-13 22:34:40,414 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:40) - Export：co.solinx.forest.demo.api.IHelloForestService
+2015-04-13 22:34:40,533 [main] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:224) - Starting
+2015-04-13 22:34:56,094 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2015-04-13 22:34:56,094 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:host.name=linx
+2015-04-13 22:34:56,095 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.version=1.8.0_40
+2015-04-13 22:34:56,095 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
+2015-04-13 22:34:56,095 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.home=D:\Java\jdk1.8.0_40\jre
+2015-04-13 22:34:56,095 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.class.path=D:\Java\jdk1.8.0_40\jre\lib\charsets.jar;D:\Java\jdk1.8.0_40\jre\lib\deploy.jar;D:\Java\jdk1.8.0_40\jre\lib\javaws.jar;D:\Java\jdk1.8.0_40\jre\lib\jce.jar;D:\Java\jdk1.8.0_40\jre\lib\jfr.jar;D:\Java\jdk1.8.0_40\jre\lib\jfxswt.jar;D:\Java\jdk1.8.0_40\jre\lib\jsse.jar;D:\Java\jdk1.8.0_40\jre\lib\management-agent.jar;D:\Java\jdk1.8.0_40\jre\lib\plugin.jar;D:\Java\jdk1.8.0_40\jre\lib\resources.jar;D:\Java\jdk1.8.0_40\jre\lib\rt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\access-bridge-64.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\cldrdata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\dnsns.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jaccess.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jfxrt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\localedata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\nashorn.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunec.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunjce_provider.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunmscapi.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunpkcs11.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\zipfs.jar;E:\Develop\forest\forest-demo\forest-demo-provider\target\classes;D:\apache-maven-3.1.0\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\apache-maven-3.1.0\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-beans\4.1.5.RELEASE\spring-beans-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-core\4.1.5.RELEASE\spring-core-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-context\4.1.5.RELEASE\spring-context-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-aop\4.1.5.RELEASE\spring-aop-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-expression\4.1.5.RELEASE\spring-expression-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;D:\apache-maven-3.1.0\repository\jline\jline\0.9.94\jline-0.9.94.jar;D:\apache-maven-3.1.0\repository\junit\junit\3.8.1\junit-3.8.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-framework\2.7.1\curator-framework-2.7.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-client\2.7.1\curator-client-2.7.1.jar;D:\apache-maven-3.1.0\repository\com\google\guava\guava\16.0.1\guava-16.0.1.jar;E:\Develop\forest\forest-common\target\classes;D:\apache-maven-3.1.0\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\Develop\forest\forest-config\forest-config-api\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-jdk\target\classes;E:\Develop\forest\forest-config\forest-config-spring\target\classes;E:\Develop\forest\forest-container\forest-container-api\target\classes;E:\Develop\forest\forest-container\forest-container-log4j\target\classes;E:\Develop\forest\forest-container\forest-container-spring\target\classes;E:\Develop\forest\forest-registry\forest-registry-zookeeper\target\classes;D:\apache-maven-3.1.0\repository\co\solinx\forest-registry-api\1.0-SNAPSHOT\forest-registry-api-1.0-SNAPSHOT.jar;E:\Develop\forest\forest-remote\forest-remote-netty\target\classes;D:\apache-maven-3.1.0\repository\io\netty\netty-all\4.0.27.Final\netty-all-4.0.27.Final.jar;E:\Develop\forest\forest-remote\forest-remote-api\target\classes;E:\Develop\forest\forest-remote\forest-remote-zookeeper\target\classes;D:\JetBrains\IntelliJ IDEA 14.1\lib\idea_rt.jar
+2015-04-13 22:34:56,098 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.library.path=D:\Java\jdk1.8.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Java\jdk1.8.0_40\bin;D:\Java\jdk1.8.0_40\jre\bin;D:\Git\bin;D:\Go\bin;.
+2015-04-13 22:34:56,098 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\鑫\AppData\Local\Temp\
+2015-04-13 22:34:56,099 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.compiler=<NA>
+2015-04-13 22:34:56,099 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.name=Windows 8.1
+2015-04-13 22:34:56,099 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.arch=amd64
+2015-04-13 22:34:56,100 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.version=6.3
+2015-04-13 22:34:56,100 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.name=鑫
+2015-04-13 22:34:56,102 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.home=C:\Users\鑫
+2015-04-13 22:34:56,102 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.dir=E:\Develop\forest
+2015-04-13 22:34:56,103 [main] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.130:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@8b96fde
+2015-04-13 22:34:56,289 [main-SendThread(192.168.140.130:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.130/192.168.140.130:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-04-13 22:34:56,314 [main-SendThread(192.168.140.130:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.140.130/192.168.140.130:2181, initiating session
+2015-04-13 22:34:56,338 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:42) - STARTED
+2015-04-13 22:34:56,338 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:45) - interfaceName_______________co.solinx.forest.demo.api.IHelloForestService
+2015-04-13 22:34:56,363 [main-SendThread(192.168.140.130:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.140.130/192.168.140.130:2181, sessionid = 0x14c1e5595a0011e, negotiated timeout = 40000
+2015-04-13 22:34:56,379 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: CONNECTED
+2015-04-13 22:34:56,381 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-04-13 22:34:56,381 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - CONNECTED
+2015-04-13 22:34:56,420 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-04-13 22:34:56,421 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService,已存在！
+2015-04-13 22:34:56,422 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService/providers,已存在！
+2015-04-13 22:34:56,451 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:53) - [co.solinx.forest.demo.impl.HelloForestServiceImpl@22a637e7]
+2015-04-13 22:34:56,452 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:51) - _________________________org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon Apr 13 22:34:40 CST 2015]; root of context hierarchy]
+2015-04-13 22:34:56,452 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:40) - Export：co.solinx.forest.demo.api.IHelloRpcService
+2015-04-13 22:34:56,452 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:45) - interfaceName_______________co.solinx.forest.demo.api.IHelloRpcService
+2015-04-13 22:34:56,453 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-04-13 22:34:56,454 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService,已存在！
+2015-04-13 22:34:56,454 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService/providers,已存在！
+2015-04-13 22:34:56,456 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:53) - [co.solinx.forest.demo.impl.HelloForestServiceImpl@22a637e7, co.solinx.forest.demo.impl.HelloRpcServiceImpl@6fe7aac8]
+2015-04-13 22:34:57,059 [main] INFO  solinx.forest.remote.netty.server.NettyServer (NettyServer.java:67) - netty server start bind by 18088
+2015-04-13 22:34:57,059 [main] INFO  solinx.forest.remote.netty.server.NettyServer (NettyServer.java:50) - ------------------netty start
+2015-04-13 22:35:42,474 [main] INFO  co.solinx.forest.container.spring.SpringContainer (SpringContainer.java:22) - SpringContainer start
+2015-04-13 22:35:42,597 [main] INFO  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon Apr 13 22:35:42 CST 2015]; root of context hierarchy
+2015-04-13 22:35:42,651 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader (XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from file [E:\Develop\forest\forest-demo\forest-demo-customer\target\classes\META-INF\spring\forest-customer.xml]
+2015-04-13 22:35:42,902 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:46) - ---------------------------co.solinx.forest.demo.api.IHelloForestService
+2015-04-13 22:35:42,902 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:46) - ---------------------------co.solinx.forest.demo.api.IHelloRpcService
+2015-04-13 22:35:42,903 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:29) - co.solinx.forest.demo.api.IHelloRpcService
+2015-04-13 22:35:43,036 [main] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:224) - Starting
+2015-04-13 22:35:47,550 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2015-04-13 22:35:47,552 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:host.name=linx
+2015-04-13 22:35:47,552 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.version=1.8.0_40
+2015-04-13 22:35:47,552 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
+2015-04-13 22:35:47,553 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.home=D:\Java\jdk1.8.0_40\jre
+2015-04-13 22:35:47,553 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.class.path=D:\Java\jdk1.8.0_40\jre\lib\charsets.jar;D:\Java\jdk1.8.0_40\jre\lib\deploy.jar;D:\Java\jdk1.8.0_40\jre\lib\javaws.jar;D:\Java\jdk1.8.0_40\jre\lib\jce.jar;D:\Java\jdk1.8.0_40\jre\lib\jfr.jar;D:\Java\jdk1.8.0_40\jre\lib\jfxswt.jar;D:\Java\jdk1.8.0_40\jre\lib\jsse.jar;D:\Java\jdk1.8.0_40\jre\lib\management-agent.jar;D:\Java\jdk1.8.0_40\jre\lib\plugin.jar;D:\Java\jdk1.8.0_40\jre\lib\resources.jar;D:\Java\jdk1.8.0_40\jre\lib\rt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\access-bridge-64.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\cldrdata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\dnsns.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jaccess.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jfxrt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\localedata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\nashorn.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunec.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunjce_provider.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunmscapi.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunpkcs11.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\zipfs.jar;E:\Develop\forest\forest-demo\forest-demo-customer\target\classes;D:\apache-maven-3.1.0\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\apache-maven-3.1.0\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-beans\4.1.5.RELEASE\spring-beans-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-core\4.1.5.RELEASE\spring-core-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-context\4.1.5.RELEASE\spring-context-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-aop\4.1.5.RELEASE\spring-aop-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-expression\4.1.5.RELEASE\spring-expression-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;D:\apache-maven-3.1.0\repository\jline\jline\0.9.94\jline-0.9.94.jar;D:\apache-maven-3.1.0\repository\junit\junit\3.8.1\junit-3.8.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-framework\2.7.1\curator-framework-2.7.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-client\2.7.1\curator-client-2.7.1.jar;D:\apache-maven-3.1.0\repository\com\google\guava\guava\16.0.1\guava-16.0.1.jar;E:\Develop\forest\forest-common\target\classes;D:\apache-maven-3.1.0\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\Develop\forest\forest-config\forest-config-api\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-jdk\target\classes;E:\Develop\forest\forest-config\forest-config-spring\target\classes;E:\Develop\forest\forest-container\forest-container-api\target\classes;E:\Develop\forest\forest-container\forest-container-log4j\target\classes;E:\Develop\forest\forest-container\forest-container-spring\target\classes;E:\Develop\forest\forest-registry\forest-registry-zookeeper\target\classes;D:\apache-maven-3.1.0\repository\co\solinx\forest-registry-api\1.0-SNAPSHOT\forest-registry-api-1.0-SNAPSHOT.jar;E:\Develop\forest\forest-remote\forest-remote-netty\target\classes;D:\apache-maven-3.1.0\repository\io\netty\netty-all\4.0.27.Final\netty-all-4.0.27.Final.jar;E:\Develop\forest\forest-remote\forest-remote-api\target\classes;E:\Develop\forest\forest-remote\forest-remote-zookeeper\target\classes;D:\JetBrains\IntelliJ IDEA 14.1\lib\idea_rt.jar
+2015-04-13 22:35:47,555 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.library.path=D:\Java\jdk1.8.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Java\jdk1.8.0_40\bin;D:\Java\jdk1.8.0_40\jre\bin;D:\Git\bin;D:\Go\bin;.
+2015-04-13 22:35:47,557 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\鑫\AppData\Local\Temp\
+2015-04-13 22:35:47,557 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.compiler=<NA>
+2015-04-13 22:35:47,560 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.name=Windows 8.1
+2015-04-13 22:35:47,561 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.arch=amd64
+2015-04-13 22:35:47,561 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.version=6.3
+2015-04-13 22:35:47,562 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.name=鑫
+2015-04-13 22:35:47,562 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.home=C:\Users\鑫
+2015-04-13 22:35:47,567 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.dir=E:\Develop\forest
+2015-04-13 22:35:47,569 [main] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.130:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@58fdd99
+2015-04-13 22:35:47,668 [main-SendThread(192.168.140.130:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.130/192.168.140.130:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-04-13 22:35:47,671 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:42) - STARTED
+2015-04-13 22:35:47,683 [main-SendThread(192.168.140.130:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.140.130/192.168.140.130:2181, initiating session
+2015-04-13 22:35:47,717 [main-SendThread(192.168.140.130:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.140.130/192.168.140.130:2181, sessionid = 0x14c1e5595a0011f, negotiated timeout = 40000
+2015-04-13 22:35:47,721 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: CONNECTED
+2015-04-13 22:35:47,722 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-04-13 22:35:47,722 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - CONNECTED
+2015-04-13 22:35:47,757 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-04-13 22:35:47,758 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService,已存在！
+2015-04-13 22:35:47,759 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService/consumers,已存在！
+2015-04-13 22:35:48,076 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - threadName:main
+2015-04-13 22:35:48,076 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - method:class java.lang.String
+2015-04-13 22:35:48,076 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - method:class java.lang.String
+
+2015-04-13 22:35:48,126 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - threadName:main
+2015-04-13 22:35:48,126 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - method:class java.lang.String
+2015-04-13 22:35:48,129 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:29) - co.solinx.forest.demo.api.IHelloForestService
+2015-04-13 22:35:48,131 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-04-13 22:35:48,132 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService,已存在！
+2015-04-13 22:35:48,133 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService/consumers,已存在！
+2015-04-13 22:35:48,174 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - threadName:main
+2015-04-13 22:35:48,174 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - method:class java.lang.String
+2015-04-13 22:35:48,174 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - method:class java.lang.String
+
+2015-04-13 22:35:48,212 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - threadName:main
+2015-04-13 22:35:48,212 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - method:class java.lang.String
+2015-04-13 22:35:48,213 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:40) - channelRegistered
+2015-04-13 22:35:48,175 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:40) - channelRegistered
+2015-04-13 22:35:48,141 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:40) - channelRegistered
+2015-04-13 22:35:48,141 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:40) - channelRegistered
+2015-04-13 22:35:48,220 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.client.NettyClient$2 (NettyClient.java:54) - rceiveMessage:null
+2015-04-13 22:35:48,220 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.client.NettyClient$2 (NettyClient.java:54) - rceiveMessage:null
+2015-04-13 22:35:48,220 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.client.NettyClient$2 (NettyClient.java:54) - rceiveMessage:null
+2015-04-13 22:35:48,220 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.client.NettyClient$2 (NettyClient.java:54) - rceiveMessage:null
+2015-04-13 22:35:48,265 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:18) - threadName:main
+2015-04-13 22:35:48,265 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - method:class java.lang.String
+2015-04-13 22:35:48,266 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:40) - channelRegistered
+2015-04-13 22:35:48,267 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.client.NettyClient$2 (NettyClient.java:54) - rceiveMessage:null
+2015-04-13 22:35:48,371 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:34) - Request{id=0, data=co.solinx.forest.demo.api.IHelloForestService,toString, RequestTime=0, param=null}
+2015-04-13 22:35:48,371 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:34) - Request{id=0, data=co.solinx.forest.demo.api.IHelloRpcService,print, RequestTime=0, param=null}
+2015-04-13 22:35:48,371 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:34) - Request{id=0, data=co.solinx.forest.demo.api.IHelloRpcService,toString, RequestTime=0, param=null}
+2015-04-13 22:35:48,371 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:34) - Request{id=0, data=co.solinx.forest.demo.api.IHelloForestService,toString, RequestTime=0, param=null}
+2015-04-13 22:35:48,371 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:34) - Request{id=0, data=co.solinx.forest.demo.api.IHelloRpcService,toString, RequestTime=0, param=null}
+2015-04-13 22:35:48,434 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:35:48,434 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:35:48,434 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:35:48,435 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:35:48,434 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:35:48,435 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:35:48,434 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:35:48,434 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:35:48,435 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:35:48,435 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:35:48,436 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:34) - message:co.solinx.forest.demo.api.IHelloRpcService,toString
+2015-04-13 22:35:48,436 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:34) - message:co.solinx.forest.demo.api.IHelloForestService,toString
+2015-04-13 22:35:48,436 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:34) - message:co.solinx.forest.demo.api.IHelloRpcService,print
+2015-04-13 22:35:48,436 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:35) - 2
+2015-04-13 22:35:48,436 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:34) - message:co.solinx.forest.demo.api.IHelloRpcService,toString
+2015-04-13 22:35:48,436 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:34) - message:co.solinx.forest.demo.api.IHelloForestService,toString
+2015-04-13 22:35:48,437 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:35) - 2
+2015-04-13 22:35:48,436 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:35) - 2
+2015-04-13 22:35:48,436 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:44) - result:print rpc
+2015-04-13 22:35:48,436 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:35) - 2
+2015-04-13 22:35:48,436 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:35) - 2
+2015-04-13 22:35:48,437 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:44) - result:co.solinx.forest.demo.impl.HelloForestServiceImpl@22a637e7
+2015-04-13 22:35:48,437 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:44) - result:co.solinx.forest.demo.impl.HelloRpcServiceImpl@6fe7aac8
+2015-04-13 22:35:48,437 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:44) - result:co.solinx.forest.demo.impl.HelloForestServiceImpl@22a637e7
+2015-04-13 22:35:48,438 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.RequestEncoder (RequestEncoder.java:36) - -----------------------------Response
+2015-04-13 22:35:48,438 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.RequestEncoder (RequestEncoder.java:36) - -----------------------------Response
+2015-04-13 22:35:48,438 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.RequestEncoder (RequestEncoder.java:36) - -----------------------------Response
+2015-04-13 22:35:48,438 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.RequestEncoder (RequestEncoder.java:36) - -----------------------------Response
+2015-04-13 22:35:48,437 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:44) - result:co.solinx.forest.demo.impl.HelloRpcServiceImpl@6fe7aac8
+2015-04-13 22:35:48,439 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.RequestEncoder (RequestEncoder.java:36) - -----------------------------Response
+2015-04-13 22:35:48,446 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:35:48,446 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:35:48,446 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:35:48,446 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:35:48,446 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:35:48,447 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:35:48,446 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:35:48,447 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:35:48,446 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:35:48,447 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:02,952 [nioEventLoopGroup-3-1] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.UnpooledUnsafeDirectByteBuf.setBytes(UnpooledUnsafeDirectByteBuf.java:447)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:241)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+2015-04-13 22:36:02,952 [nioEventLoopGroup-3-5] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.UnpooledUnsafeDirectByteBuf.setBytes(UnpooledUnsafeDirectByteBuf.java:447)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:241)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+2015-04-13 22:36:02,952 [nioEventLoopGroup-3-4] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.UnpooledUnsafeDirectByteBuf.setBytes(UnpooledUnsafeDirectByteBuf.java:447)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:241)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+2015-04-13 22:36:02,952 [nioEventLoopGroup-3-2] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.UnpooledUnsafeDirectByteBuf.setBytes(UnpooledUnsafeDirectByteBuf.java:447)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:241)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+2015-04-13 22:36:02,952 [nioEventLoopGroup-3-3] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.UnpooledUnsafeDirectByteBuf.setBytes(UnpooledUnsafeDirectByteBuf.java:447)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:241)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+2015-04-13 22:36:02,983 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:02,984 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:02,984 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:02,984 [nioEventLoopGroup-3-4] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+io.netty.handler.codec.DecoderException: java.lang.NullPointerException: element
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:279)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:237)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:223)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:829)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:610)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:357)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:357)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException: element
+	at io.netty.util.internal.RecyclableArrayList.add(RecyclableArrayList.java:104)
+	at co.solinx.forest.remote.netty.code.RequestDecoder.decode(RequestDecoder.java:28)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeLast(ByteToMessageDecoder.java:370)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:274)
+	... 9 more
+2015-04-13 22:36:02,984 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:02,985 [nioEventLoopGroup-3-2] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+io.netty.handler.codec.DecoderException: java.lang.NullPointerException: element
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:279)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:237)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:223)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:829)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:610)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:357)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:357)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException: element
+	at io.netty.util.internal.RecyclableArrayList.add(RecyclableArrayList.java:104)
+	at co.solinx.forest.remote.netty.code.RequestDecoder.decode(RequestDecoder.java:28)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeLast(ByteToMessageDecoder.java:370)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:274)
+	... 9 more
+2015-04-13 22:36:02,985 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:02,985 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:02,985 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:02,986 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:02,986 [nioEventLoopGroup-3-3] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+io.netty.handler.codec.DecoderException: java.lang.NullPointerException: element
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:279)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:237)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:223)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:829)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:610)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:357)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:357)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException: element
+	at io.netty.util.internal.RecyclableArrayList.add(RecyclableArrayList.java:104)
+	at co.solinx.forest.remote.netty.code.RequestDecoder.decode(RequestDecoder.java:28)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeLast(ByteToMessageDecoder.java:370)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:274)
+	... 9 more
+2015-04-13 22:36:02,986 [nioEventLoopGroup-3-5] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+io.netty.handler.codec.DecoderException: java.lang.NullPointerException: element
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:279)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:237)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:223)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:829)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:610)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:357)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:357)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException: element
+	at io.netty.util.internal.RecyclableArrayList.add(RecyclableArrayList.java:104)
+	at co.solinx.forest.remote.netty.code.RequestDecoder.decode(RequestDecoder.java:28)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeLast(ByteToMessageDecoder.java:370)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:274)
+	... 9 more
+2015-04-13 22:36:02,986 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:02,988 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:02,989 [nioEventLoopGroup-3-1] WARN  io.netty.util.internal.logging.Slf4JLogger (Slf4JLogger.java:151) - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+io.netty.handler.codec.DecoderException: java.lang.NullPointerException: element
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:279)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:237)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:223)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:829)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:610)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:357)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:357)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException: element
+	at io.netty.util.internal.RecyclableArrayList.add(RecyclableArrayList.java:104)
+	at co.solinx.forest.remote.netty.code.RequestDecoder.decode(RequestDecoder.java:28)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeLast(ByteToMessageDecoder.java:370)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:274)
+	... 9 more
+2015-04-13 22:36:03,656 [main] INFO  co.solinx.forest.container.spring.SpringContainer (SpringContainer.java:22) - SpringContainer start
+2015-04-13 22:36:03,803 [main] INFO  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon Apr 13 22:36:03 CST 2015]; root of context hierarchy
+2015-04-13 22:36:03,859 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader (XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from file [E:\Develop\forest\forest-demo\forest-demo-customer\target\classes\META-INF\spring\forest-customer.xml]
+2015-04-13 22:36:04,097 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:46) - ---------------------------co.solinx.forest.demo.api.IHelloForestService
+2015-04-13 22:36:04,098 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:46) - ---------------------------co.solinx.forest.demo.api.IHelloRpcService
+2015-04-13 22:36:04,098 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:29) - co.solinx.forest.demo.api.IHelloRpcService
+2015-04-13 22:36:04,204 [main] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:224) - Starting
+2015-04-13 22:36:08,715 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2015-04-13 22:36:08,716 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:host.name=linx
+2015-04-13 22:36:08,717 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.version=1.8.0_40
+2015-04-13 22:36:08,717 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
+2015-04-13 22:36:08,718 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.home=D:\Java\jdk1.8.0_40\jre
+2015-04-13 22:36:08,718 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.class.path=D:\Java\jdk1.8.0_40\jre\lib\charsets.jar;D:\Java\jdk1.8.0_40\jre\lib\deploy.jar;D:\Java\jdk1.8.0_40\jre\lib\javaws.jar;D:\Java\jdk1.8.0_40\jre\lib\jce.jar;D:\Java\jdk1.8.0_40\jre\lib\jfr.jar;D:\Java\jdk1.8.0_40\jre\lib\jfxswt.jar;D:\Java\jdk1.8.0_40\jre\lib\jsse.jar;D:\Java\jdk1.8.0_40\jre\lib\management-agent.jar;D:\Java\jdk1.8.0_40\jre\lib\plugin.jar;D:\Java\jdk1.8.0_40\jre\lib\resources.jar;D:\Java\jdk1.8.0_40\jre\lib\rt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\access-bridge-64.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\cldrdata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\dnsns.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jaccess.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jfxrt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\localedata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\nashorn.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunec.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunjce_provider.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunmscapi.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunpkcs11.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\zipfs.jar;E:\Develop\forest\forest-demo\forest-demo-customer\target\classes;D:\apache-maven-3.1.0\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\apache-maven-3.1.0\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-beans\4.1.5.RELEASE\spring-beans-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-core\4.1.5.RELEASE\spring-core-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-context\4.1.5.RELEASE\spring-context-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-aop\4.1.5.RELEASE\spring-aop-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-expression\4.1.5.RELEASE\spring-expression-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;D:\apache-maven-3.1.0\repository\jline\jline\0.9.94\jline-0.9.94.jar;D:\apache-maven-3.1.0\repository\junit\junit\3.8.1\junit-3.8.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-framework\2.7.1\curator-framework-2.7.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-client\2.7.1\curator-client-2.7.1.jar;D:\apache-maven-3.1.0\repository\com\google\guava\guava\16.0.1\guava-16.0.1.jar;E:\Develop\forest\forest-common\target\classes;D:\apache-maven-3.1.0\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\Develop\forest\forest-config\forest-config-api\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-jdk\target\classes;E:\Develop\forest\forest-config\forest-config-spring\target\classes;E:\Develop\forest\forest-container\forest-container-api\target\classes;E:\Develop\forest\forest-container\forest-container-log4j\target\classes;E:\Develop\forest\forest-container\forest-container-spring\target\classes;E:\Develop\forest\forest-registry\forest-registry-zookeeper\target\classes;D:\apache-maven-3.1.0\repository\co\solinx\forest-registry-api\1.0-SNAPSHOT\forest-registry-api-1.0-SNAPSHOT.jar;E:\Develop\forest\forest-remote\forest-remote-netty\target\classes;D:\apache-maven-3.1.0\repository\io\netty\netty-all\4.0.27.Final\netty-all-4.0.27.Final.jar;E:\Develop\forest\forest-remote\forest-remote-api\target\classes;E:\Develop\forest\forest-remote\forest-remote-zookeeper\target\classes;D:\JetBrains\IntelliJ IDEA 14.1\lib\idea_rt.jar
+2015-04-13 22:36:08,721 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.library.path=D:\Java\jdk1.8.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Java\jdk1.8.0_40\bin;D:\Java\jdk1.8.0_40\jre\bin;D:\Git\bin;D:\Go\bin;.
+2015-04-13 22:36:08,721 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\鑫\AppData\Local\Temp\
+2015-04-13 22:36:08,721 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.compiler=<NA>
+2015-04-13 22:36:08,723 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.name=Windows 8.1
+2015-04-13 22:36:08,724 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.arch=amd64
+2015-04-13 22:36:08,724 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.version=6.3
+2015-04-13 22:36:08,724 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.name=鑫
+2015-04-13 22:36:08,724 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.home=C:\Users\鑫
+2015-04-13 22:36:08,727 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.dir=E:\Develop\forest
+2015-04-13 22:36:08,729 [main] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.130:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@58fdd99
+2015-04-13 22:36:08,802 [main-SendThread(192.168.140.130:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.130/192.168.140.130:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-04-13 22:36:08,805 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:42) - STARTED
+2015-04-13 22:36:08,817 [main-SendThread(192.168.140.130:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.140.130/192.168.140.130:2181, initiating session
+2015-04-13 22:36:08,823 [main-SendThread(192.168.140.130:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.140.130/192.168.140.130:2181, sessionid = 0x14c1e5595a00120, negotiated timeout = 40000
+2015-04-13 22:36:08,826 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: CONNECTED
+2015-04-13 22:36:08,827 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-04-13 22:36:08,827 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - CONNECTED
+2015-04-13 22:36:09,858 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-04-13 22:36:09,860 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService,已存在！
+2015-04-13 22:36:09,861 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService/consumers,已存在！
+2015-04-13 22:36:09,864 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService/consumers/127.0.0.1,已存在！
+2015-04-13 22:36:10,076 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - threadName:main
+2015-04-13 22:36:10,076 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - method:class java.lang.String
+2015-04-13 22:36:10,076 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - method:class java.lang.String
+
+2015-04-13 22:36:10,110 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - threadName:main
+2015-04-13 22:36:10,111 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - method:class java.lang.String
+2015-04-13 22:36:10,083 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:40) - channelRegistered
+2015-04-13 22:36:10,114 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:40) - channelRegistered
+2015-04-13 22:36:10,116 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:29) - co.solinx.forest.demo.api.IHelloForestService
+2015-04-13 22:36:10,119 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-04-13 22:36:10,119 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.client.NettyClient$2 (NettyClient.java:54) - rceiveMessage:null
+2015-04-13 22:36:10,119 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.client.NettyClient$2 (NettyClient.java:54) - rceiveMessage:null
+2015-04-13 22:36:10,120 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService,已存在！
+2015-04-13 22:36:10,121 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService/consumers,已存在！
+2015-04-13 22:36:10,122 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService/consumers/127.0.0.1,已存在！
+2015-04-13 22:36:10,149 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:10,149 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:10,149 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:10,149 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:10,150 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:34) - message:co.solinx.forest.demo.api.IHelloRpcService,toString
+2015-04-13 22:36:10,150 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:34) - message:co.solinx.forest.demo.api.IHelloRpcService,toString
+2015-04-13 22:36:10,150 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:35) - 2
+2015-04-13 22:36:10,150 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:35) - 2
+2015-04-13 22:36:10,150 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:44) - result:co.solinx.forest.demo.impl.HelloRpcServiceImpl@6fe7aac8
+2015-04-13 22:36:10,150 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:44) - result:co.solinx.forest.demo.impl.HelloRpcServiceImpl@6fe7aac8
+2015-04-13 22:36:10,150 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.code.RequestEncoder (RequestEncoder.java:36) - -----------------------------Response
+2015-04-13 22:36:10,150 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.code.RequestEncoder (RequestEncoder.java:36) - -----------------------------Response
+2015-04-13 22:36:10,163 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - threadName:main
+2015-04-13 22:36:10,164 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - method:class java.lang.String
+2015-04-13 22:36:10,164 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - method:class java.lang.String
+
+2015-04-13 22:36:10,201 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - threadName:main
+2015-04-13 22:36:10,202 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:25) - method:class java.lang.String
+2015-04-13 22:36:10,202 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:40) - channelRegistered
+2015-04-13 22:36:10,164 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:40) - channelRegistered
+2015-04-13 22:36:10,150 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:34) - Request{id=0, data=co.solinx.forest.demo.api.IHelloRpcService,toString, RequestTime=0, param=null}
+2015-04-13 22:36:10,150 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:34) - Request{id=0, data=co.solinx.forest.demo.api.IHelloRpcService,toString, RequestTime=0, param=null}
+2015-04-13 22:36:10,203 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.client.NettyClient$2 (NettyClient.java:54) - rceiveMessage:null
+2015-04-13 22:36:10,203 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.client.NettyClient$2 (NettyClient.java:54) - rceiveMessage:null
+2015-04-13 22:36:10,204 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:34) - Request{id=0, data=co.solinx.forest.demo.api.IHelloForestService,toString, RequestTime=0, param=null}
+2015-04-13 22:36:10,204 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:34) - Request{id=0, data=co.solinx.forest.demo.api.IHelloForestService,toString, RequestTime=0, param=null}
+2015-04-13 22:36:10,205 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:10,205 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:10,205 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:10,205 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:10,205 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:34) - message:co.solinx.forest.demo.api.IHelloForestService,toString
+2015-04-13 22:36:10,205 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:34) - message:co.solinx.forest.demo.api.IHelloForestService,toString
+2015-04-13 22:36:10,206 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:35) - 2
+2015-04-13 22:36:10,206 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:35) - 2
+2015-04-13 22:36:10,206 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:44) - result:co.solinx.forest.demo.impl.HelloForestServiceImpl@22a637e7
+2015-04-13 22:36:10,206 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:44) - result:co.solinx.forest.demo.impl.HelloForestServiceImpl@22a637e7
+2015-04-13 22:36:10,206 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.code.RequestEncoder (RequestEncoder.java:36) - -----------------------------Response
+2015-04-13 22:36:10,206 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.code.RequestEncoder (RequestEncoder.java:36) - -----------------------------Response
+2015-04-13 22:36:10,207 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:10,208 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:10,208 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:10,208 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:10,208 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:10,207 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:10,208 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:10,209 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:10,246 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:18) - threadName:main
+2015-04-13 22:36:10,246 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - method:class java.lang.String
+2015-04-13 22:36:10,247 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:40) - channelRegistered
+2015-04-13 22:36:10,248 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.client.NettyClient$2 (NettyClient.java:54) - rceiveMessage:null
+2015-04-13 22:36:10,248 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:34) - Request{id=0, data=co.solinx.forest.demo.api.IHelloRpcService,print, RequestTime=0, param=null}
+2015-04-13 22:36:10,249 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:10,249 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:10,250 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:34) - message:co.solinx.forest.demo.api.IHelloRpcService,print
+2015-04-13 22:36:10,250 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:35) - 2
+2015-04-13 22:36:10,250 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:44) - result:print rpc
+2015-04-13 22:36:10,250 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.code.RequestEncoder (RequestEncoder.java:36) - -----------------------------Response
+2015-04-13 22:36:10,250 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:10,251 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:10,251 [main] INFO  co.solinx.forest.demo.main (main.java:30) - print rpc
+2015-04-13 22:36:10,303 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:18) - threadName:main
+2015-04-13 22:36:10,303 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - method:void
+2015-04-13 22:36:10,304 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:40) - channelRegistered
+2015-04-13 22:36:10,305 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.client.NettyClient$2 (NettyClient.java:54) - rceiveMessage:null
+2015-04-13 22:36:10,306 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:34) - Request{id=0, data=co.solinx.forest.demo.api.IHelloForestService,hello, RequestTime=0, param=null}
+2015-04-13 22:36:10,307 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:45) - ----------------------------convert
+2015-04-13 22:36:10,307 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.RequestDecoder (RequestDecoder.java:46) - 
+2015-04-13 22:36:10,307 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:34) - message:co.solinx.forest.demo.api.IHelloForestService,hello
+2015-04-13 22:36:10,307 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:35) - 2
+2015-04-13 22:36:10,307 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:44) - result:null
