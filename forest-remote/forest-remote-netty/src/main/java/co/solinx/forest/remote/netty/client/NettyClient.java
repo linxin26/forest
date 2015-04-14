@@ -26,17 +26,22 @@ public class NettyClient {
     Logger logger=Logger.getLogger(NettyClient.class);
     Bootstrap client;
     ClientHandler clientHandler;
-    NioEventLoopGroup eventLoopGroup=new NioEventLoopGroup();
+    NioEventLoopGroup eventLoopGroup;
+    Object service;
+    Method method;
 
     public NettyClient(Object service, Method method) {
         client = new Bootstrap();
-        client.group(eventLoopGroup);
-        clientHandler = new ClientHandler(service, method);
+        eventLoopGroup=new NioEventLoopGroup();
+        this.service=service;
+        this.method=method;
     }
 
     public void start() {
 
         try {
+            client.group(eventLoopGroup);
+            clientHandler = new ClientHandler(service, method);
             client.channel(NioSocketChannel.class);
             client.handler(new ChannelInitializer<SocketChannel>() {
                 @Override
@@ -51,11 +56,12 @@ public class NettyClient {
             future.addListener(new ChannelFutureListener() {
                 @Override
                 public void operationComplete(ChannelFuture future) throws Exception {
-                    logger.info("rceiveMessage:" + clientHandler.getRceiveMessage());
+//                    logger.info("rceiveMessage:" + clientHandler.getRceiveMessage());
+//                    eventLoopGroup.shutdownGracefully();
                 }
             });
         }finally{
-//            eventLoopGroup.shutdownGracefully();
+
         }
     }
 

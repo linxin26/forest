@@ -22,20 +22,24 @@ public class RequestDecoder extends ByteToMessageDecoder {
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) throws Exception {
 
-        byte[] data = new byte[msg.readableBytes()];
-        msg.readBytes(data);
-        Object request= this.convertRequestByByte(data);
-        out.add(request);
+        if (msg.readableBytes() > 0) {
+            byte[] data = new byte[msg.readableBytes()];
+            msg.readBytes(data);
+            Object request = this.convertRequestByByte(data);
+            if (request != null) {
+                out.add(request);
+            }
+        }
     }
 
     public Object convertRequestByByte(byte[] bytes) {
-        Request request=null;
-        Object obj=null;
+        Request request = null;
+        Object obj = null;
         ByteInputStream inputStream = new ByteInputStream();
         inputStream.setBuf(bytes);
         try {
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-            obj=objectInputStream.readObject();
+            obj = objectInputStream.readObject();
 //            request = (Request) obj;
         } catch (IOException e) {
             e.printStackTrace();

@@ -22,6 +22,8 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     Object result;
 
     public ClientHandler(Object api, Method method) {
+        logger.info("api="+api);
+        logger.info("method="+method);
         this.method = method;
         this.api = api;
     }
@@ -37,7 +39,7 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
-        logger.info("channelRegistered");
+
     }
 
     @Override

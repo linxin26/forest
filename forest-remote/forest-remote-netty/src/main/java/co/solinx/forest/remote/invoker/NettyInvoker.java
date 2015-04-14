@@ -16,7 +16,7 @@ public class NettyInvoker {
         NettyClient client = new NettyClient(delegate, method);
         client.start();
         logger.info("threadName:" + Thread.currentThread().getName());
-        logger.info("method:"+method.getReturnType());
+        logger.info("returnType:"+method.getReturnType());
         if(method.getName()!="toString") {
             if(method.getReturnType().getName()!="void") {
                 while (true) {
