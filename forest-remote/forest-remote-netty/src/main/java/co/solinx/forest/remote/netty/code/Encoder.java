@@ -15,9 +15,25 @@ import java.util.List;
 /**
  * Created by linx on 2015/4/11.
  */
-public class RequestEncoder extends MessageToMessageEncoder<Object> {
+public class Encoder extends MessageToMessageEncoder<Object> {
 
-    Logger logger = Logger.getLogger(RequestEncoder.class);
+
+    /**
+     * 协议头长度
+     */
+    private static final int HEADER_LENGTH=11;
+    /**
+     * 魔数
+     */
+    public static final byte MAGIC=0x5F;
+    public static final byte FLAG_REQUEST=0x20;
+    public static final byte FLAG_RESPONSE=0x40;
+    public static final byte FLAG_EVENT=0x60;
+//    private static final int SEQUENCE;
+
+
+
+    Logger logger = Logger.getLogger(Encoder.class);
 
 
     public byte[] convertByteByRequest(Object obj) {
@@ -25,7 +41,7 @@ public class RequestEncoder extends MessageToMessageEncoder<Object> {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         try {
             ObjectOutputStream output = new ObjectOutputStream(outputStream);
-            output.writeObject(request);
+            output.writeObject(request);    //request Body
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -54,9 +70,13 @@ public class RequestEncoder extends MessageToMessageEncoder<Object> {
         }else if( msg instanceof Response){
             data=this.convertByteByResponse(msg);
         }
-        ByteBuf encoded = ctx.alloc().buffer(data.length);
-
-        encoded.writeBytes(data);
+        ByteBuf encoded = ctx.alloc().buffer(HEADER_LENGTH+data.length);
+        encoded.writeByte(MAGIC);
+        encoded.writeByte(FLAG_REQUEST);
+        encoded.writeInt(1);      //Sequence
+        encoded.writeInt(data.length);
+        encoded.writeByte(1);     //状态
+        encoded.writeBytes(data);   //body
         out.add(encoded);
     }
 }

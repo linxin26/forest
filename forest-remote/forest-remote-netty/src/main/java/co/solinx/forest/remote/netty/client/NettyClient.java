@@ -1,8 +1,8 @@
 package co.solinx.forest.remote.netty.client;
 
 import co.solinx.forest.remote.netty.Handler.ClientHandler;
-import co.solinx.forest.remote.netty.code.RequestDecoder;
-import co.solinx.forest.remote.netty.code.RequestEncoder;
+import co.solinx.forest.remote.netty.code.Decoder;
+import co.solinx.forest.remote.netty.code.Encoder;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -10,8 +10,6 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.string.StringDecoder;
-import io.netty.handler.codec.string.StringEncoder;
 import org.apache.log4j.Logger;
 
 import java.lang.reflect.Method;
@@ -46,8 +44,8 @@ public class NettyClient {
             client.handler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 protected void initChannel(SocketChannel sc) throws Exception {
-                    sc.pipeline().addLast(new RequestDecoder());
-                    sc.pipeline().addLast(new RequestEncoder());
+                    sc.pipeline().addLast(new Decoder());
+                    sc.pipeline().addLast(new Encoder());
                     sc.pipeline().addLast(clientHandler);
 
                 }

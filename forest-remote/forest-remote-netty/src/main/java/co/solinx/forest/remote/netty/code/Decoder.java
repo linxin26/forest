@@ -14,20 +14,29 @@ import java.util.List;
 /**
  * Created by linx on 2015/4/11.
  */
-public class RequestDecoder extends ByteToMessageDecoder {
+public class Decoder extends ByteToMessageDecoder {
 
-    Logger logger = Logger.getLogger(RequestDecoder.class);
+    Logger logger = Logger.getLogger(Decoder.class);
 
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) throws Exception {
 
-        if (msg.readableBytes() > 0) {
-            byte[] data = new byte[msg.readableBytes()];
-            msg.readBytes(data);
-            Object request = this.convertRequestByByte(data);
-            if (request != null) {
-                out.add(request);
+        if (msg.readableBytes() >= 11) {
+            byte magic = msg.readByte();
+            byte flagType = msg.readByte();
+            int sequence = msg.readInt();
+            int bodyLength = msg.readInt();
+            byte status=msg.readByte();
+            if (Encoder.MAGIC == magic && Encoder.FLAG_REQUEST == flagType) {
+                if (msg.readableBytes() >= bodyLength) {
+                    byte[] data = new byte[bodyLength];
+                    msg.readBytes(data);
+                    Object request = this.convertRequestByByte(data);
+                    if (request != null) {
+                        out.add(request);
+                    }
+                }
             }
         }
     }
@@ -40,7 +49,6 @@ public class RequestDecoder extends ByteToMessageDecoder {
         try {
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
             obj = objectInputStream.readObject();
-//            request = (Request) obj;
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
