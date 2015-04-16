@@ -28,6 +28,7 @@ public class Decoder extends ByteToMessageDecoder {
             int sequence = msg.readInt();
             int bodyLength = msg.readInt();
             byte status=msg.readByte();
+            //检查消息魔数
             if (Encoder.MAGIC == magic && Encoder.FLAG_REQUEST == flagType) {
                 if (msg.readableBytes() >= bodyLength) {
                     byte[] data = new byte[bodyLength];
