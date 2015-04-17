@@ -30,6 +30,6 @@ public class main {
             logger.info(rpcService.print());
 //        }
 //        rpcService.hello();
-        forestService.hello();
+//        forestService.hello();
     }
 }
