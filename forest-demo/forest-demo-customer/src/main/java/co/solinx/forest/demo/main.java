@@ -27,7 +27,7 @@ public class main {
 
     public void start() {
 //        for (int i = 0; i < 10; i++) {
-            logger.info(rpcService.print());
+//            logger.info(rpcService.print());
 //        }
 //        rpcService.hello();
 //        forestService.hello();

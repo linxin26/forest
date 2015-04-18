@@ -22,6 +22,7 @@ public class ReferenceBean<T> extends ReferenceConfig<T> implements FactoryBean,
     @Override
     public Object getObject() throws Exception {
         Object obj = get(applicationContext);
+        logger.info("getObject---------------");
         logger.info(obj);
         return obj;
     }

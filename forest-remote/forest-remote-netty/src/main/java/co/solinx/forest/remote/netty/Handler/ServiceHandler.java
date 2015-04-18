@@ -42,13 +42,12 @@ public class ServiceHandler extends ChannelInboundHandlerAdapter {
                     Method method = services.get(i).getClass().getMethod(invoke[1], parameterTypes);
                     Object result = method.invoke(services.get(i), arguments);
                     logger.info("result:" + result);
-                    if(result!=null) {
-//                        Request response=new Request();
-//                        response.setData(result);
-                        Response response =new Response();
-                        response.setResult(result);
-                        ctx.writeAndFlush(response);
+                    if(result==null) {
+                        result="empty";
                     }
+                    Response response =new Response();
+                    response.setResult(result);
+                    ctx.writeAndFlush(response);
                 } else {
 
                 }

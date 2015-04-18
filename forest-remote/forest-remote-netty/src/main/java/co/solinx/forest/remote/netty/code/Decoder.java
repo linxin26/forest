@@ -43,7 +43,6 @@ public class Decoder extends ByteToMessageDecoder {
     }
 
     public Object convertRequestByByte(byte[] bytes) {
-        Request request = null;
         Object obj = null;
         ByteInputStream inputStream = new ByteInputStream();
         inputStream.setBuf(bytes);
@@ -56,7 +55,7 @@ public class Decoder extends ByteToMessageDecoder {
             e.printStackTrace();
         }
         logger.info("----------------------------convert");
-        logger.info(request);
+        logger.info(obj);
         return obj;
     }
 }

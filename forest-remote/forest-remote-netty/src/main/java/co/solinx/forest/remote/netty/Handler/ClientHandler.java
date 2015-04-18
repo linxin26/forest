@@ -22,8 +22,8 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     Object result;
 
     public ClientHandler(Object api, Method method) {
-        logger.info("api="+api);
-        logger.info("method="+method);
+//        logger.info("api="+api);
+//        logger.info("method="+method);
         this.method = method;
         this.api = api;
     }
@@ -46,6 +46,7 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Response response= (Response) msg;
         this.result=response.getResult();
+
     }
 
     public Object getRceiveMessage() {

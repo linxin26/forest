@@ -14,18 +14,26 @@ public class NettyInvoker {
 
     public Object clientInvoker(Object delegate, String serverAddress, Method method) throws InterruptedException {
         NettyClient client = new NettyClient(delegate, method);
-        client.start();
-        logger.info("threadName:" + Thread.currentThread().getName());
-        logger.info("returnType:"+method.getReturnType());
         if(method.getName()!="toString") {
-            if(method.getReturnType().getName()!="void") {
-                while (true) {
-                    if (client.result() != null) {
-                        break;
-                    }
-                }
-            }
+        client.start(serverAddress);
+        logger.info("threadName:" + Thread.currentThread().getName());
+        logger.info("returnType:" + method.getReturnType());
+
+//            if(method.getReturnType().getName()!="void") {
+//                while (true) {
+//                    Object result=client.result();
+//                    logger.info(result);
+//                    if ( result!= null) {
+//                        client.close();
+//                        break;
+//                    }
+//                }
+//            }
         }
+// else{
+//            client.close();
+//        }
+        logger.info(client.result());
         return client.result();
     }
 
