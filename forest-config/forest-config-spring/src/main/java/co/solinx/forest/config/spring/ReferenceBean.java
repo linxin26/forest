@@ -18,14 +18,16 @@ public class ReferenceBean<T> extends ReferenceConfig<T> implements FactoryBean,
     Logger logger = Logger.getLogger(ReferenceBean.class);
 
     private ApplicationContext applicationContext;
+    Object obj;
+
 
     @Override
     public Object getObject() throws Exception {
-        Object obj = get(applicationContext);
-        logger.info("getObject---------------");
-        logger.info(obj);
+        //返回bean的代理对象
         return obj;
     }
+
+
 
     @Override
     public Class<?> getObjectType() {
@@ -46,9 +48,14 @@ public class ReferenceBean<T> extends ReferenceConfig<T> implements FactoryBean,
     public void afterPropertiesSet() throws Exception {
         logger.info("---------------------------"+interfaceName);
 //        getObject();
+        logger.info("getObject---------------");
+        //bean 初始化时创建bean的代理
+        obj = get(applicationContext);
+        logger.info(obj);
     }
 
 
+    @Override
     public void destroy() throws Exception {
 
     }

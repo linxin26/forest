@@ -24,6 +24,11 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public String protocol;
     private ApplicationContext context;
 
+
+    public ReferenceConfig() {
+        logger.info("constructor-----------");
+    }
+
     public T get(ApplicationContext context) {
 
         logger.info(interfaceName);
@@ -68,6 +73,7 @@ public class ReferenceConfig<T> extends AbstractConfig {
 
 
     public String getId() {
+
         return id;
     }
 

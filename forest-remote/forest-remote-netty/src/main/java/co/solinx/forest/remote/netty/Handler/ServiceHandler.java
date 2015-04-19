@@ -34,8 +34,12 @@ public class ServiceHandler extends ChannelInboundHandlerAdapter {
         logger.info("message:" + message);
         logger.info(services.size());
         String[] invoke = message.split(",");
-        Class<?>[] parameterTypes = null;
-        Object[] arguments = null;
+        Class<?>[] parameterTypes =null;
+        Object[] arguments =null;
+        if(invoke.length>2){
+             parameterTypes = new Class<?>[]{Class.forName(invoke[3])};
+             arguments = new Object[]{invoke[2]};
+        }
         try {
             for (int i = 0; i < services.size(); i++) {
                 if (this.isInterfaceImpl(services.get(i), invoke[0])) {

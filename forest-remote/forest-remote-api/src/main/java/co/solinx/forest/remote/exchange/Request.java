@@ -14,6 +14,7 @@ public class Request implements Serializable{
     private Object data;
     private long RequestTime;
     private Object[] param;
+    private Object[] paramType;
 
 
     public int getId() {
@@ -46,6 +47,14 @@ public class Request implements Serializable{
 
     public void setParam(Object[] param) {
         this.param = param;
+    }
+
+    public Object[] getParamType() {
+        return paramType;
+    }
+
+    public void setParamType(Object[] paramType) {
+        this.paramType = paramType;
     }
 
     @Override

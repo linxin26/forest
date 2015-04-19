@@ -18,7 +18,7 @@ public class JdkProxyHandler implements InvocationHandler{
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         NettyInvoker invoker=new NettyInvoker();
 
-        return invoker.clientInvoker(delegate,serverAddress,method);
+        return invoker.clientInvoker(delegate,serverAddress,method,args);
     }
 
     public JdkProxyHandler(Object delegate, String serverAddress) {

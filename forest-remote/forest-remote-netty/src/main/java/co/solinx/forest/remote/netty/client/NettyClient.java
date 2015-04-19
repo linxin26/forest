@@ -34,15 +34,17 @@ public class NettyClient {
     ClientHandler clientHandler;
     NioEventLoopGroup eventLoopGroup;
     Object service;
-    Method method;
+    Method method;     //方法
+    Object[] params;   //参数
     Lock lock=new ReentrantLock();
     Condition condition=lock.newCondition();
 
-    public NettyClient(Object service, Method method) {
+    public NettyClient(Object service, Method method,Object[] params) {
         client = new Bootstrap();
         eventLoopGroup=new NioEventLoopGroup();
         this.service=service;
         this.method=method;
+        this.params=params;
     }
 
     public void start(String address) {
@@ -50,7 +52,7 @@ public class NettyClient {
         lock.lock();
         try {
             client.group(eventLoopGroup);
-            clientHandler = new ClientHandler(service, method);
+            clientHandler = new ClientHandler(service, method,params);
             client.channel(NioSocketChannel.class);
             client.handler(new ChannelInitializer<SocketChannel>() {
                 @Override

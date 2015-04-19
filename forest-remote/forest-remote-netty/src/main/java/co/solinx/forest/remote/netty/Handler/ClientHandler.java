@@ -20,18 +20,32 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     Method method;
     Object api;
     Object result;
+    Object[] params;
 
-    public ClientHandler(Object api, Method method) {
+    public ClientHandler(Object api, Method method,Object[] params) {
 //        logger.info("api="+api);
 //        logger.info("method="+method);
         this.method = method;
         this.api = api;
+        this.params=params;
     }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         Request request=new Request();
-        request.setData(api.toString() + "," + method.getName());
+        String data;
+        if(params!=null){
+            data=api.toString() + "," + method.getName()+","+params[0].toString()+","+params[0].getClass().getTypeName();
+        }else{
+            data=api.toString() + "," + method.getName();
+        }
+//        Object[] paramType=new Object[params.length];
+//        for (int i = 0; i < params.length; i++) {
+//            paramType[i]=params[i].getClass().getTypeName();
+//        }
+        request.setData(data);
+        request.setParam(params);
+//        request.setParamType(paramType);
         ctx.writeAndFlush(request);
         logger.info(request);
     }

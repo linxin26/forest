@@ -14,8 +14,8 @@ public class ClientNetty {
         IHelloForestService forestService = (IHelloForestService) proxy.proxy(IHelloForestService.class);
         System.out.println(Thread.currentThread().getId() + Thread.currentThread().getName());
         System.out.println(4);
-        System.out.println("print:" + forestService.print());
-        System.out.println("print:" + forestService.print());
+        System.out.println("print:" + forestService.print("1"));
+        System.out.println("print:" + forestService.print("2"));
         IHelloRpcService rpcService = (IHelloRpcService) proxy.proxy(IHelloRpcService.class);
         System.out.println("print:" + rpcService.print());
         rpcService.hello();

@@ -7,5 +7,5 @@ public interface IHelloForestService {
 
     public void hello();
 
-    public String print();
+    public String print(String i);
 }

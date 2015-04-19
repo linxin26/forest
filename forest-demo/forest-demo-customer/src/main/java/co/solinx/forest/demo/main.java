@@ -26,10 +26,15 @@ public class main {
     }
 
     public void start() {
-//        for (int i = 0; i < 10; i++) {
+//        for (int i = 0; i < 100; i++) {
 //            logger.info(rpcService.print());
 //        }
-//        rpcService.hello();
+        rpcService.hello();
 //        forestService.hello();
+        for (int i = 0; i < 100; i++) {
+           logger.info(forestService.print(String.valueOf(i)));
+        }
+
+
     }
 }
