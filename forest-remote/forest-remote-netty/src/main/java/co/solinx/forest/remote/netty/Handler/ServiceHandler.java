@@ -8,6 +8,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import org.apache.log4j.Logger;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.util.List;
@@ -28,37 +29,39 @@ public class ServiceHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        Request request = (Request) msg;
+        Response response = this.readData(request);
+        ctx.writeAndFlush(response);
+    }
 
-        Request request= (Request) msg;
-        String message =new String(request.getData().toString());
+    public Response readData(Request request) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Response response = new Response();
+        String message = new String(request.getData().toString());
         logger.info("message:" + message);
-        logger.info(services.size());
         String[] invoke = message.split(",");
-        Class<?>[] parameterTypes =null;
-        Object[] arguments =null;
-        if(invoke.length>2){
-             parameterTypes = new Class<?>[]{Class.forName(invoke[3])};
-             arguments = new Object[]{invoke[2]};
-        }
-        try {
-            for (int i = 0; i < services.size(); i++) {
-                if (this.isInterfaceImpl(services.get(i), invoke[0])) {
-                    Method method = services.get(i).getClass().getMethod(invoke[1], parameterTypes);
-                    Object result = method.invoke(services.get(i), arguments);
-                    logger.info("result:" + result);
-                    if(result==null) {
-                        result="empty";
-                    }
-                    Response response =new Response();
-                    response.setResult(result);
-                    ctx.writeAndFlush(response);
-                } else {
-
-                }
+        Class<?>[] parameterTypes = null;      //参数类型
+        Object[] param = request.getParam();   //参数
+        Object[] paramTypeStr = request.getParamType();  //参数类型字符串
+        if (paramTypeStr != null) {
+            parameterTypes = new Class<?>[paramTypeStr.length];
+            for (int i = 0; i < paramTypeStr.length; i++) {
+                parameterTypes[i] = Class.forName((String) paramTypeStr[i]);
             }
-        } catch (Throwable t) {
-            t.printStackTrace();
         }
+        for (int i = 0; i < services.size(); i++) {
+            if (this.isInterfaceImpl(services.get(i), invoke[0])) {
+                //get方法
+                Method method = services.get(i).getClass().getMethod(invoke[1], parameterTypes);
+                //执行方法
+                Object result = method.invoke(services.get(i), param);
+                logger.info("result:" + result);
+                if (result == null) {
+                    result = "empty";
+                }
+                response.setResult(result);
+            }
+        }
+        return response;
     }
 
 
