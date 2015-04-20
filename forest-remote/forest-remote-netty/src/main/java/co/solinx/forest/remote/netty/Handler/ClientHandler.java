@@ -2,12 +2,15 @@ package co.solinx.forest.remote.netty.Handler;
 
 import co.solinx.forest.remote.exchange.Request;
 import co.solinx.forest.remote.exchange.Response;
+import co.solinx.forest.remote.netty.client.NettyClient;
 import io.netty.buffer.UnpooledUnsafeDirectByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import org.apache.log4j.Logger;
 
 import java.lang.reflect.Method;
+import java.util.Random;
+import java.util.concurrent.locks.Condition;
 
 /**
  * 请求引用服务
@@ -19,8 +22,9 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     Logger logger = Logger.getLogger(ClientHandler.class);
     Method method;
     Object api;
-    Object result;
+    Response resultResponse;
     Object[] params;
+    Request request = new Request();
 
     public ClientHandler(Object api, Method method, Object[] params) {
 //        logger.info("api="+api);
@@ -32,7 +36,6 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        Request request = new Request();
         String data;
         data = api.toString() + "," + method.getName();
         Object[] paramType = null;
@@ -43,6 +46,8 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
                 paramType[i] = params[i].getClass().getTypeName();
             }
         }
+        Random random=new Random();
+        request.setId(random.nextInt());
         request.setData(data);
         request.setParam(params);
         request.setParamType(paramType);
@@ -59,11 +64,15 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Response response = (Response) msg;
-        this.result = response.getResult();
-
+        this.resultResponse = response;
+        if(request.getId()!=resultResponse.getId()){
+            throw new Exception("invoker error");
+        }
+        logger.info(response);
+        logger.info(request);
     }
 
-    public Object getRceiveMessage() {
-        return result;
+    public Response getRceiveMessage() {
+        return resultResponse;
     }
 }

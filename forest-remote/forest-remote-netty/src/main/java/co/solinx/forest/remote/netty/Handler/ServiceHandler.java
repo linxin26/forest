@@ -58,6 +58,7 @@ public class ServiceHandler extends ChannelInboundHandlerAdapter {
                 if (result == null) {
                     result = "empty";
                 }
+                response.setId(request.getId());
                 response.setResult(result);
             }
         }

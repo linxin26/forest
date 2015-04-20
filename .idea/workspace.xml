@@ -4,8 +4,9 @@
     <list default="true" id="fcffe273-43e5-43ae-a2d3-ae0833631cb0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log4j.file" afterPath="$PROJECT_DIR$/log4j.file" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ClientHandler.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ClientHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/client/NettyClient.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/client/NettyClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Response.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Response.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-demo/forest-demo-provider/target/classes/META-INF/spring/forest-provider.xml" afterPath="$PROJECT_DIR$/forest-demo/forest-demo-provider/target/classes/META-INF/spring/forest-provider.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="forest.iws" />
@@ -100,22 +101,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Encoder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Encoder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NettyClient.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NettyClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/client/NettyClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6761905">
-              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+              <folding>
+                <element signature="e#2969#2970#0" expanded="true" />
+                <element signature="e#3036#3037#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,21 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ServiceHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forest-demo/forest-demo-customer/src/main/java/co/solinx/forest/demo/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.46031746">
+              <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -160,8 +144,34 @@
         <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+              <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Response.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Response.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+              <folding>
+                <element signature="e#606#607#0" expanded="true" />
+                <element signature="e#646#647#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Random.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/Java/jdk1.8.0_40/src.zip!/java/util/Random.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="285" column="11" selection-start-line="285" selection-start-column="11" selection-end-line="285" selection-end-column="11" />
+              <folding>
+                <element signature="e#3504#3505#0" expanded="true" />
+                <element signature="e#3562#3563#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -224,7 +234,6 @@
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/test/java/co/solinx/forest/remote/netty/test/handler/ClientHandler.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/test/java/co/solinx/forest/remote/netty/test/code/RequestDecoder.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/server/NettyServer.java" />
-        <option value="$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Response.java" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/RequestEncoder.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/RequestDecoder.java" />
@@ -239,11 +248,12 @@
         <option value="$PROJECT_DIR$/forest-demo/forest-demo-customer/src/main/java/co/solinx/forest/demo/api/IHelloForestService.java" />
         <option value="$PROJECT_DIR$/forest-demo/forest-demo-customer/src/main/java/co/solinx/forest/demo/netty/ClientNetty.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/invoker/NettyInvoker.java" />
-        <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/client/NettyClient.java" />
         <option value="$PROJECT_DIR$/forest-demo/forest-demo-customer/src/main/java/co/solinx/forest/demo/main.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Request.java" />
-        <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java" />
+        <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/client/NettyClient.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ClientHandler.java" />
+        <option value="$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Response.java" />
+        <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java" />
       </list>
     </option>
   </component>
@@ -2071,13 +2081,7 @@
       <workItem from="1428583016050" duration="7520000" />
       <workItem from="1428672062576" duration="43370000" />
       <workItem from="1429195365108" duration="982000" />
-      <workItem from="1429273882119" duration="32461000" />
-    </task>
-    <task id="LOCAL-00013" summary="register service note">
-      <created>1426362668590</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1426362668590</updated>
+      <workItem from="1429273882119" duration="36344000" />
     </task>
     <task id="LOCAL-00014" summary="rename remote api">
       <created>1426397360630</created>
@@ -2367,11 +2371,17 @@
       <option name="project" value="LOCAL" />
       <updated>1429426395766</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="远程调用时添加参数，invoker">
+      <created>1429454409328</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1429454409328</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="418321000" />
+    <option name="totallyTimeSpent" value="422204000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2662,13 +2672,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/test/java/co/solinx/forest/remote/netty/test/code/RequestEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/apache-maven-3.1.0/repository/io/netty/netty-all/4.0.27.Final/netty-all-4.0.27.Final-sources.jar!/io/netty/channel/ChannelHandlerContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33211678">
@@ -2687,13 +2690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Response.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -3074,26 +3070,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java">
+    <entry file="jar://D:/Java/jdk1.8.0_40/src.zip!/java/util/Random.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-          <folding />
+          <caret line="285" column="11" selection-start-line="285" selection-start-column="11" selection-end-line="285" selection-end-column="11" />
+          <folding>
+            <element signature="e#3504#3505#0" expanded="true" />
+            <element signature="e#3562#3563#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/client/NettyClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+          <folding>
+            <element signature="e#2969#2970#0" expanded="true" />
+            <element signature="e#3036#3037#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/client/NettyClient.java">
+    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Response.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6761905">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+          <folding>
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#646#647#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46031746">
+          <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
           <folding />
         </state>
       </provider>

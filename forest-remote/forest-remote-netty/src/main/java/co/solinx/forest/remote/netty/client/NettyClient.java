@@ -1,5 +1,6 @@
 package co.solinx.forest.remote.netty.client;
 
+import co.solinx.forest.remote.exchange.Response;
 import co.solinx.forest.remote.netty.Handler.ClientHandler;
 import co.solinx.forest.remote.netty.code.Decoder;
 import co.solinx.forest.remote.netty.code.Encoder;
@@ -67,9 +68,9 @@ public class NettyClient {
 
             //用于检查handler是否已返回数据
             while(true){
-                Object result= clientHandler.getRceiveMessage();
-                if(result==null||result.equals("null")|| result.equals("")) {
-                    condition.await(200, TimeUnit.MILLISECONDS);
+                Response result= clientHandler.getRceiveMessage();
+                if(result==null||result.getResult().equals("null")|| result.getResult().equals("")) {
+                    condition.await(80, TimeUnit.MILLISECONDS);
                 }else{
                     break;
                 }
@@ -83,8 +84,9 @@ public class NettyClient {
         lock.unlock();
     }
 
+
     public Object result() {
-        return clientHandler.getRceiveMessage();
+        return clientHandler.getRceiveMessage().getResult();
     }
 
 }
