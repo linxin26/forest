@@ -1,14 +1,12 @@
 package co.solinx.forest.remote.netty.code;
 
-import co.solinx.forest.remote.exchange.Request;
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
+import co.solinx.forest.common.serialize.JdkSerialize;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.util.List;
 
 /**
@@ -17,7 +15,7 @@ import java.util.List;
 public class Decoder extends ByteToMessageDecoder {
 
     Logger logger = Logger.getLogger(Decoder.class);
-
+    JdkSerialize serialize = new JdkSerialize();
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) throws Exception {
@@ -27,7 +25,7 @@ public class Decoder extends ByteToMessageDecoder {
             byte flagType = msg.readByte();
             int sequence = msg.readInt();
             int bodyLength = msg.readInt();
-            byte status=msg.readByte();
+            byte status = msg.readByte();
             //检查消息魔数
             if (Encoder.MAGIC == magic && Encoder.FLAG_REQUEST == flagType) {
                 if (msg.readableBytes() >= bodyLength) {
@@ -44,11 +42,9 @@ public class Decoder extends ByteToMessageDecoder {
 
     public Object convertRequestByByte(byte[] bytes) {
         Object obj = null;
-        ByteInputStream inputStream = new ByteInputStream();
-        inputStream.setBuf(bytes);
         try {
-            ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-            obj = objectInputStream.readObject();
+            //反序列化
+            obj = serialize.deSerizlize(bytes);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcffe273-43e5-43ae-a2d3-ae0833631cb0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/serialize/ISerialize.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/serialize/JdkSerialize.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log4j.file" afterPath="$PROJECT_DIR$/log4j.file" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ClientHandler.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ClientHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/client/NettyClient.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/client/NettyClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Response.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Response.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Decoder.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Decoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Encoder.java" afterPath="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Encoder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="forest.iws" />
@@ -63,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/invoker/NettyInvoker.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -73,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Decoder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReferenceConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forest-config/forest-config-api/src/main/java/co/solinx/forest/config/ReferenceConfig.java">
+      <file leaf-file-name="Encoder.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Encoder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/forest-rpc/forest-rpc-jdk/src/main/java/co/solinx/forest/rpc/jdk/handler/JdkProxyHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -105,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/client/NettyClient.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+              <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
               <folding>
                 <element signature="e#2969#2970#0" expanded="true" />
                 <element signature="e#3036#3037#0" expanded="true" />
@@ -114,27 +114,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Request.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Request.java">
+      <file leaf-file-name="JdkDynamicProxy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forest-rpc/forest-rpc-jdk/src/main/java/co/solinx/forest/rpc/jdk/JdkDynamicProxy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-              <folding>
-                <element signature="e#841#842#0" expanded="true" />
-                <element signature="e#875#876#0" expanded="true" />
-                <element signature="e#945#946#0" expanded="true" />
-                <element signature="e#997#998#0" expanded="true" />
-                <element signature="e#1039#1040#0" expanded="true" />
-              </folding>
+              <caret line="12" column="112" selection-start-line="12" selection-start-column="112" selection-end-line="12" selection-end-column="112" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceHandler.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java">
+      <file leaf-file-name="JdkSerialize.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/serialize/JdkSerialize.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46031746">
-              <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ObjectOutputStream.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/Java/jdk1.8.0_40/src.zip!/java/io/ObjectOutputStream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="239" column="11" selection-start-line="239" selection-start-column="11" selection-end-line="239" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ISerialize.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/serialize/ISerialize.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -144,34 +158,8 @@
         <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Response.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Response.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-              <folding>
-                <element signature="e#606#607#0" expanded="true" />
-                <element signature="e#646#647#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Random.java" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Java/jdk1.8.0_40/src.zip!/java/util/Random.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="285" column="11" selection-start-line="285" selection-start-column="11" selection-end-line="285" selection-end-column="11" />
-              <folding>
-                <element signature="e#3504#3505#0" expanded="true" />
-                <element signature="e#3562#3563#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -181,8 +169,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -203,9 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/forest-rpc/forest-rpc-default/src/main/java/co/solinx/forest/rpc/protocol/jdkProxy.java" />
-        <option value="$PROJECT_DIR$/forest-rpc/forest-rpc-default/src/main/java/co/solinx/forest/rpc/protocol/JdkProxy.java" />
-        <option value="$PROJECT_DIR$/forest-registry/forest-registry-zookeeper/src/main/java/co/solinx/forest/registry/zookeeper/ZookeeperRegistry.java" />
         <option value="$PROJECT_DIR$/forest-registry/forest-registry-zookeeper/pom.xml" />
         <option value="$PROJECT_DIR$/forest-rpc/forest-rpc-default/src/main/java/co/solinx/forest/rpc/protocol/api/AbstractProxy1.java" />
         <option value="$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/utils/ReflectUtils.java" />
@@ -237,7 +222,6 @@
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/RequestEncoder.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/RequestDecoder.java" />
-        <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Decoder.java" />
         <option value="$PROJECT_DIR$/forest-config/forest-config-api/src/main/java/co/solinx/forest/config/ReferenceConfig.java" />
         <option value="$PROJECT_DIR$/forest-config/forest-config-spring/src/main/java/co/solinx/forest/config/spring/ReferenceBean.java" />
         <option value="$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/resources/META-INF/spring/forest-provider.xml" />
@@ -254,6 +238,10 @@
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ClientHandler.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Response.java" />
         <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java" />
+        <option value="$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/serialize/ISerialize.java" />
+        <option value="$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/serialize/JdkSerialize.java" />
+        <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Decoder.java" />
+        <option value="$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Encoder.java" />
       </list>
     </option>
   </component>
@@ -560,6 +548,158 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest-rpc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest-rpc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest-rpc-jdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest-rpc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest-rpc-jdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest-rpc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest-rpc-jdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest-rpc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest-rpc-jdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest-rpc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest-rpc-jdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1499,11 +1639,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="forest-config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="forest-config-api" />
+              <option name="myItemId" value="forest-common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1517,11 +1653,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="forest-config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="forest-config-api" />
+              <option name="myItemId" value="forest-common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1537,7 +1669,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forest-common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serialize" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2081,13 +2247,7 @@
       <workItem from="1428583016050" duration="7520000" />
       <workItem from="1428672062576" duration="43370000" />
       <workItem from="1429195365108" duration="982000" />
-      <workItem from="1429273882119" duration="36344000" />
-    </task>
-    <task id="LOCAL-00014" summary="rename remote api">
-      <created>1426397360630</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1426397360630</updated>
+      <workItem from="1429273882119" duration="39054000" />
     </task>
     <task id="LOCAL-00015" summary="simple netty program">
       <created>1426402699573</created>
@@ -2377,11 +2537,17 @@
       <option name="project" value="LOCAL" />
       <updated>1429454409328</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="远程调用时添加参数，invoker">
+      <created>1429541390383</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1429541390383</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="422204000" />
+    <option name="totallyTimeSpent" value="424914000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2404,7 +2570,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28831562" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931036" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40344828" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3862069" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931036" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3110774" sideWeight="0.49448818" order="0" side_tool="false" content_ui="combo" />
@@ -2672,35 +2838,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/apache-maven-3.1.0/repository/io/netty/netty-all/4.0.27.Final/netty-all-4.0.27.Final-sources.jar!/io/netty/channel/ChannelHandlerContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33211678">
-          <caret line="442" column="18" selection-start-line="442" selection-start-column="18" selection-end-line="442" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/apache-maven-3.1.0/repository/io/netty/netty-all/4.0.27.Final/netty-all-4.0.27.Final-sources.jar!/io/netty/channel/AbstractChannelHandlerContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2080292">
-          <caret line="700" column="5" selection-start-line="700" selection-start-column="5" selection-end-line="700" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/server/NettyServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forest-demo/forest-demo-customer/src/main/java/co/solinx/forest/demo/invoke/DefaultInvocationHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46646342">
@@ -2939,14 +3076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forest-rpc/forest-rpc-jdk/src/main/java/co/solinx/forest/rpc/jdk/JdkDynamicProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="115" selection-start-line="12" selection-start-column="115" selection-end-line="12" selection-end-column="115" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forest-demo/forest-demo-provider/src/main/java/co/solinx/forest/demo/api/IHelloForestService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3014,14 +3143,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Encoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-api/src/main/java/co/solinx/forest/remote/exchange/Request.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3036,36 +3157,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Decoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forest-config/forest-config-api/src/main/java/co/solinx/forest/config/ReferenceConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forest-rpc/forest-rpc-jdk/src/main/java/co/solinx/forest/rpc/jdk/handler/JdkProxyHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/invoker/NettyInvoker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -3078,25 +3173,6 @@
             <element signature="e#3504#3505#0" expanded="true" />
             <element signature="e#3562#3563#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/client/NettyClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
-          <folding>
-            <element signature="e#2969#2970#0" expanded="true" />
-            <element signature="e#3036#3037#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ClientHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3113,8 +3189,101 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46031746">
-          <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Java/jdk1.8.0_40/src.zip!/java/io/ObjectInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36615384">
+          <caret line="300" column="5" selection-start-line="300" selection-start-column="5" selection-end-line="300" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Java/jdk1.8.0_40/src.zip!/java/io/ObjectOutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="239" column="11" selection-start-line="239" selection-start-column="11" selection-end-line="239" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/serialize/ISerialize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest-common/src/main/java/co/solinx/forest/common/serialize/JdkSerialize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest-rpc/forest-rpc-jdk/src/main/java/co/solinx/forest/rpc/jdk/JdkDynamicProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="112" selection-start-line="12" selection-start-column="112" selection-end-line="12" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest-rpc/forest-rpc-jdk/src/main/java/co/solinx/forest/rpc/jdk/handler/JdkProxyHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/invoker/NettyInvoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/client/NettyClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+          <folding>
+            <element signature="e#2969#2970#0" expanded="true" />
+            <element signature="e#3036#3037#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ClientHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Decoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/code/Encoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
