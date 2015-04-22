@@ -16,7 +16,7 @@ public class JdkSerialize implements ISerialize {
      * @throws IOException
      */
     @Override
-    public byte[] serizlize(Object obj) throws IOException {
+    public byte[] serialize(Object obj) throws IOException {
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         ObjectOutputStream objectOutput = new ObjectOutputStream(outputStream);
@@ -33,7 +33,7 @@ public class JdkSerialize implements ISerialize {
      * @throws ClassNotFoundException
      */
     @Override
-    public Object deSerizlize(byte[] datas) throws IOException, ClassNotFoundException {
+    public Object deSerialize(byte[] datas) throws IOException, ClassNotFoundException {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(datas);
         ObjectInputStream objectInput = new ObjectInputStream(inputStream);
         return objectInput.readObject();

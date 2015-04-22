@@ -6,4 +6,6 @@ package co.solinx.forest.rpc.jdk;
 public abstract class AbstractProxy {
 
     public abstract Object createProxy(Class interfaceClass,String address);
+
+
 }

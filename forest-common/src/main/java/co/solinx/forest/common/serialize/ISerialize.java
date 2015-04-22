@@ -7,8 +7,8 @@ import java.io.IOException;
  */
 public interface ISerialize {
 
-    public byte[] serizlize(Object obj) throws IOException;
+    public byte[] serialize(Object obj) throws IOException;
 
-    public Object deSerizlize(byte[] datas) throws IOException, ClassNotFoundException;
+    public Object deSerialize(byte[] datas) throws IOException, ClassNotFoundException;
 
 }

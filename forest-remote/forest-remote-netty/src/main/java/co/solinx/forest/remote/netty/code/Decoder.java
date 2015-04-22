@@ -1,6 +1,7 @@
 package co.solinx.forest.remote.netty.code;
 
 import co.solinx.forest.common.serialize.JdkSerialize;
+import co.solinx.forest.remote.exchange.RpcException;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
@@ -44,11 +45,11 @@ public class Decoder extends ByteToMessageDecoder {
         Object obj = null;
         try {
             //反序列化
-            obj = serialize.deSerizlize(bytes);
+            obj = serialize.deSerialize(bytes);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            throw new RpcException("Request deserialize exception");
         }
         logger.info("----------------------------convert");
         logger.info(obj);

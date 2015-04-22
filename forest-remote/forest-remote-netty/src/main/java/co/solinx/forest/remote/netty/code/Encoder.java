@@ -41,7 +41,7 @@ public class Encoder extends MessageToMessageEncoder<Object> {
         Request request = (Request) obj;
         byte[] bytes = null;
         try {
-            bytes = serialize.serizlize(request);
+            bytes = serialize.serialize(request);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -53,7 +53,7 @@ public class Encoder extends MessageToMessageEncoder<Object> {
         Response response = (Response) obj;
         byte[] bytes = null;
         try {
-            bytes = serialize.serizlize(response);
+            bytes = serialize.serialize(response);
         } catch (IOException e) {
             e.printStackTrace();
         }
