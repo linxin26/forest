@@ -5,4 +5,8 @@ package co.solinx.forest.common.compiler;
  */
 public class JdkCompiler {
 
+    public static void main(String args) {
+
+    }
+
 }
