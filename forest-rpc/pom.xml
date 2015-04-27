@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>forest-rpc-jdk</module>
+        <module>forest-rpc-api</module>
+        <module>forest-rpc-default</module>
     </modules>
 
 

@@ -38,5 +38,6 @@
     <orderEntry type="library" name="Maven: io.netty:netty-all:4.0.27.Final" level="project" />
     <orderEntry type="module" module-name="forest-remote-api" />
     <orderEntry type="module" module-name="forest-rpc-jdk" />
+    <orderEntry type="module" module-name="forest-rpc-api" />
   </component>
 </module>
