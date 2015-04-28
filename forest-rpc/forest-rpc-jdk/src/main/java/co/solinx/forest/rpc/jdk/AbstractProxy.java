@@ -7,9 +7,9 @@ import cn.solinx.forest.rpc.api.AbstractInvoker;
  */
 public abstract class AbstractProxy {
 
-    public abstract Object createProxy(Class interfaceClass,String address);
+    public abstract Object createProxy(Class interfaceClass, String address);
 
-    public abstract Object createProxy(AbstractInvoker invoke);
+    public abstract Object createProxy(AbstractInvoker invoke, Class interfaces);
 
 
 }

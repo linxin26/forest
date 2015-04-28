@@ -1,23 +1,32 @@
 package cn.solinx.forest.rpc.api;
 
+import co.solinx.forest.remote.invoker.NettyInvoker;
+
 /**
  * Created by linx on 2015/4/26.
  */
 public abstract class AbstractInvoker implements Invoker {
 
-    private Class<?> interfaceName;
+    private String interfaceName;
     private String address;
 
     @Override
-    public void invoke() {
+    public Object invoke(Invocation invocation) {
+        NettyInvoker nettyInvoker = new NettyInvoker();
+        Object result = null;
+        try {
+            result = nettyInvoker.clientInvoker(interfaceName, address, invocation.getMethod(), invocation.getParameters());
+        } catch (InterruptedException e) {
 
+        }
+        return result;
     }
 
-    public Class<?> getInterfaceName() {
+    public String getInterfaceName() {
         return interfaceName;
     }
 
-    public void setInterfaceName(Class<?> interfaceName) {
+    public void setInterfaceName(String interfaceName) {
         this.interfaceName = interfaceName;
     }
 

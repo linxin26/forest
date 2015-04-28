@@ -1,6 +1,7 @@
 package co.solinx.forest.rpc.jdk.handler;
 
 import cn.solinx.forest.rpc.api.AbstractInvoker;
+import cn.solinx.forest.rpc.api.RpcInvocation;
 import co.solinx.forest.remote.invoker.NettyInvoker;
 
 import java.lang.reflect.InvocationHandler;
@@ -18,7 +19,13 @@ public class JdkProxyHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         NettyInvoker nettyInvoker = new NettyInvoker();
-        return nettyInvoker.clientInvoker(invoker.getInterfaceName().getName(), invoker.getAddress(), method, args);
+//        nettyInvoker.clientInvoker(new RpcInvocation(method,args));
+        Object result = null;
+        if (method.getName().equals("toString")) {
+            return nettyInvoker.toString();
+        }
+//        nettyInvoker.clientInvoker(invoker.getInterfaceName().getName(), invoker.getAddress(), method, args);
+        return invoker.invoke(new RpcInvocation(method, args));
     }
 
     public JdkProxyHandler(Object delegate, String serverAddress) {

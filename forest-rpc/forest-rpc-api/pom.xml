@@ -12,4 +12,11 @@
     <artifactId>forest-rpc-api</artifactId>
 
 
+    <!--<dependencies>-->
+        <!--<dependency>-->
+            <!--<groupId>co.solinx</groupId>-->
+            <!--<artifactId>forest-remote-netty</artifactId>-->
+            <!--<version>1.0-SNAPSHOT</version>-->
+        <!--</dependency>-->
+    <!--</dependencies>-->
 </project>

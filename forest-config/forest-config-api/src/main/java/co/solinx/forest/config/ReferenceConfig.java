@@ -26,7 +26,7 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public T ref;
     public String protocol;
     private ApplicationContext context;
-    private ForestInvoker invoker=new ForestInvoker();
+    private ForestInvoker invoker = new ForestInvoker();
 
 
     public ReferenceConfig() {
@@ -47,7 +47,7 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public void init() {
         //代理类
 //        DefaultProxy proxy = new DefaultProxy();
-        JdkDynamicProxy proxy=new JdkDynamicProxy();
+        JdkDynamicProxy proxy = new JdkDynamicProxy();
 
         try {
             //注册中心
@@ -60,10 +60,11 @@ public class ReferenceConfig<T> extends AbstractConfig {
             //引用提供的第一个服务
             String serviceImpl = URLDecoder.decode(impl.get(0), "UTF-8");
             String serverAddress = serviceImpl.substring(serviceImpl.indexOf("//") + 2, serviceImpl.lastIndexOf("/"));
-            invoker.initInvoke(Class.forName(interfaceName),serverAddress);
-            ref=(T)proxy.createProxy(invoker);
+
+            invoker.initInvoke(Class.forName(interfaceName), serverAddress);
+            ref = (T) proxy.createProxy(invoker, Class.forName(interfaceName));
 //            ref=(T)proxy.createProxy(Class.forName(interfaceName),serverAddress);
-             //注册消费者
+            //注册消费者
             zookeeperRegistry.registryConsumer(interfaceName);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
