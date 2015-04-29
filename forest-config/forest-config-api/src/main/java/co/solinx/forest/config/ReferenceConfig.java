@@ -63,7 +63,6 @@ public class ReferenceConfig<T> extends AbstractConfig {
 
             invoker.initInvoke(Class.forName(interfaceName), serverAddress);
             ref = (T) proxy.createProxy(invoker, Class.forName(interfaceName));
-//            ref=(T)proxy.createProxy(Class.forName(interfaceName),serverAddress);
             //注册消费者
             zookeeperRegistry.registryConsumer(interfaceName);
         } catch (ClassNotFoundException e) {

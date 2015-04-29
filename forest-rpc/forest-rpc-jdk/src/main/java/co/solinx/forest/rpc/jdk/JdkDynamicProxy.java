@@ -17,7 +17,6 @@ public class JdkDynamicProxy extends AbstractProxy {
 
     @Override
     public Object createProxy(AbstractInvoker invoke,Class interfaces) {
-        Class<?>[] interfaceClass=interfaces.getInterfaces();
         return Proxy.newProxyInstance(interfaces.getClassLoader(),new Class<?>[]{interfaces}, new JdkProxyHandler(invoke));
     }
 }
