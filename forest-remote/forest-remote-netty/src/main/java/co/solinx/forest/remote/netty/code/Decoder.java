@@ -51,7 +51,7 @@ public class Decoder extends ByteToMessageDecoder {
         } catch (ClassNotFoundException e) {
             throw new RpcException("Request deserialize exception");
         }
-        logger.info("----------------------------convert");
+        logger.info("----------------------------convertRequestByByte");
         logger.info(obj);
         return obj;
     }
