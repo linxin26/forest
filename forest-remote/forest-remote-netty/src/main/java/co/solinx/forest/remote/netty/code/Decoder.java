@@ -22,10 +22,14 @@ public class Decoder extends ByteToMessageDecoder {
     protected void decode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) throws Exception {
 
         if (msg.readableBytes() >= 11) {
+            //魔数
             byte magic = msg.readByte();
+            //类型
             byte flagType = msg.readByte();
             int sequence = msg.readInt();
+            //内容长度
             int bodyLength = msg.readInt();
+            //状态
             byte status = msg.readByte();
             //检查消息魔数
             if (Encoder.MAGIC == magic && Encoder.FLAG_REQUEST == flagType) {
