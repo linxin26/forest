@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * Created by linx on 2015/4/11.
+ * 解码器
  */
 public class Decoder extends ByteToMessageDecoder {
 

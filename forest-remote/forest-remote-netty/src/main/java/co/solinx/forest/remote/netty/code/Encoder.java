@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * Created by linx on 2015/4/11.
+ * 编码器
  */
 public class Encoder extends MessageToMessageEncoder<Object> {
 
@@ -27,8 +28,17 @@ public class Encoder extends MessageToMessageEncoder<Object> {
      * 魔数
      */
     public static final byte MAGIC = 0x5F;
+    /**
+     * 请求flag
+     */
     public static final byte FLAG_REQUEST = 0x20;
+    /**
+     * 返回flag
+     */
     public static final byte FLAG_RESPONSE = 0x40;
+    /**
+     * 事件flag
+     */
     public static final byte FLAG_EVENT = 0x60;
     //    private static final int SEQUENCE;
     private JdkSerialize serialize = new JdkSerialize();
