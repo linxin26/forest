@@ -19,12 +19,9 @@ public class JdkProxyHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         NettyInvoker nettyInvoker = new NettyInvoker();
-//        nettyInvoker.clientInvoker(new RpcInvocation(method,args));
-        Object result = null;
         if (method.getName().equals("toString")) {
             return nettyInvoker.toString();
         }
-//        nettyInvoker.clientInvoker(invoker.getInterfaceName().getName(), invoker.getAddress(), method, args);
         return invoker.invoke(new RpcInvocation(method, args));
     }
 

@@ -1,7 +1,5 @@
 package co.solinx.forest.config;
-
-import cn.solinx.forest.rpc.api.AbstractInvoker;
-import cn.solinx.forest.rpc.api.Invoker;
+ 
 import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
 import co.solinx.forest.rpc.ForestInvoker;
 import co.solinx.forest.rpc.jdk.JdkDynamicProxy;
