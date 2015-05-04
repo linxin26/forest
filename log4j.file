@@ -1,4 +1,4 @@
-2015-05-03 00:46:36,537 [main-SendThread(192.168.140.140:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00226 for server 192.168.140.140/192.168.140.140:2181, unexpected error, closing socket connection and attempting reconnect
+2015-05-04 00:05:36,878 [main-SendThread(192.168.140.140:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00229 for server 192.168.140.140/192.168.140.140:2181, unexpected error, closing socket connection and attempting reconnect
 java.io.IOException: 远程主机强迫关闭了一个现有的连接。
 	at sun.nio.ch.SocketDispatcher.read0(Native Method)
 	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
@@ -8,106 +8,23 @@ java.io.IOException: 远程主机强迫关闭了一个现有的连接。
 	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:68)
 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:366)
 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
-2015-05-03 00:46:36,642 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: SUSPENDED
-2015-05-03 00:46:36,643 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
-2015-05-03 00:46:36,643 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - SUSPENDED
-2015-05-03 03:46:38,525 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
-2015-05-03 03:46:38,526 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1096) - Client session timed out, have not heard from server in 10801884ms for sessionid 0x14c1e5595a00226, closing socket connection and attempting reconnect
-2015-05-03 03:46:40,588 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
-2015-05-03 03:46:40,589 [main-SendThread(192.168.140.140:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00226 for server null, unexpected error, closing socket connection and attempting reconnect
-java.net.NoRouteToHostException: No route to host: no further information
-	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
-	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
-	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
-	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
-2015-05-03 03:46:40,696 [Curator-Framework-0] WARN  org.apache.curator.ConnectionState (ConnectionState.java:191) - Connection attempt unsuccessful after 10804032 (greater than max timeout of 60000). Resetting connection and trying again with a new connection.
-2015-05-03 03:46:41,350 [Curator-Framework-0] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:684) - Session: 0x14c1e5595a00226 closed
-2015-05-03 03:46:41,350 [main-EventThread] INFO  org.apache.zookeeper.ClientCnxn$EventThread (ClientCnxn.java:512) - EventThread shut down
-2015-05-03 03:46:41,350 [Curator-Framework-0] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.140:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@8b96fde
-2015-05-03 03:46:41,354 [Curator-Framework-0-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
-2015-05-03 03:46:41,354 [Curator-Framework-0-SendThread(192.168.140.140:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
-java.net.SocketException: Network is unreachable: no further information
-	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
-	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
-	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
-	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
-2015-05-03 03:46:42,456 [Curator-Framework-0-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
-2015-05-03 03:46:44,923 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:537) - Background operation retry gave up
-org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
-	at org.apache.zookeeper.KeeperException.create(KeeperException.java:99)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkBackgroundRetry(CuratorFrameworkImpl.java:708)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:826)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-2015-05-03 03:46:44,924 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:537) - Background retry gave up
-org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:809)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-2015-05-03 03:46:55,933 [Curator-Framework-0] ERROR org.apache.curator.ConnectionState (ConnectionState.java:200) - Connection timed out for connection string (192.168.140.140:2181) and timeout (15000) / elapsed (15237)
-org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
-	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
-	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
-	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-2015-05-03 03:46:56,935 [Curator-Framework-0] ERROR org.apache.curator.ConnectionState (ConnectionState.java:200) - Connection timed out for connection string (192.168.140.140:2181) and timeout (15000) / elapsed (16239)
-org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
-	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
-	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
-	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-2015-05-03 03:46:57,936 [Curator-Framework-0] ERROR org.apache.curator.ConnectionState (ConnectionState.java:200) - Connection timed out for connection string (192.168.140.140:2181) and timeout (15000) / elapsed (17240)
-org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
-	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
-	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
-	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
-	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-2015-05-03 03:46:59,653 [Curator-Framework-0-SendThread(192.168.140.140:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+2015-05-04 03:05:41,939 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: SUSPENDED
+2015-05-04 03:05:41,939 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-05-04 03:05:41,939 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - SUSPENDED
+2015-05-04 03:05:43,552 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-05-04 03:06:00,252 [main-SendThread(192.168.140.140:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x14c1e5595a00229 for server null, unexpected error, closing socket connection and attempting reconnect
 java.net.SocketException: Software caused connection abort: no further information
 	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
 	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
-2015-05-03 15:31:15,820 [Curator-Framework-0-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
-2015-05-03 15:31:17,002 [Curator-Framework-0] WARN  org.apache.curator.ConnectionState (ConnectionState.java:191) - Connection attempt unsuccessful after 42276306 (greater than max timeout of 60000). Resetting connection and trying again with a new connection.
-2015-05-03 15:31:17,445 [Curator-Framework-0] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:684) - Session: 0x0 closed
-2015-05-03 15:31:17,445 [Curator-Framework-0-EventThread] INFO  org.apache.zookeeper.ClientCnxn$EventThread (ClientCnxn.java:512) - EventThread shut down
-2015-05-03 15:31:17,445 [Curator-Framework-0] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.140:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@8b96fde
-2015-05-03 15:31:17,448 [Curator-Framework-0] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: LOST
-2015-05-03 15:31:17,448 [Curator-Framework-0-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
-2015-05-03 15:31:17,448 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
-2015-05-03 15:31:17,448 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:537) - Background operation retry gave up
+2015-05-04 20:44:09,282 [Curator-Framework-0] WARN  org.apache.curator.ConnectionState (ConnectionState.java:191) - Connection attempt unsuccessful after 63507331 (greater than max timeout of 60000). Resetting connection and trying again with a new connection.
+2015-05-04 20:44:10,554 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-05-04 20:44:10,655 [Curator-Framework-0] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:684) - Session: 0x14c1e5595a00229 closed
+2015-05-04 20:44:10,655 [main-EventThread] INFO  org.apache.zookeeper.ClientCnxn$EventThread (ClientCnxn.java:512) - EventThread shut down
+2015-05-04 20:44:10,655 [Curator-Framework-0] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.140:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@8b96fde
+2015-05-04 20:44:10,658 [Curator-Framework-0-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-05-04 20:44:14,657 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:537) - Background operation retry gave up
 org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
 	at org.apache.zookeeper.KeeperException.create(KeeperException.java:99)
 	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkBackgroundRetry(CuratorFrameworkImpl.java:708)
@@ -119,8 +36,7 @@ org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = 
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
-2015-05-03 15:31:17,448 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - LOST
-2015-05-03 15:31:17,448 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:537) - Background retry gave up
+2015-05-04 20:44:14,658 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:537) - Background retry gave up
 org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
 	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:809)
 	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
@@ -130,263 +46,661 @@ org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionL
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
-2015-05-03 15:31:17,448 [Curator-Framework-0-SendThread(192.168.140.140:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
-java.net.SocketException: Network is unreachable: no further information
-	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
-	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
-	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
-	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
-2015-05-03 15:31:18,550 [Curator-Framework-0-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
-2015-05-03 15:31:39,548 [Curator-Framework-0-SendThread(192.168.140.140:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+2015-05-04 20:44:25,916 [Curator-Framework-0] ERROR org.apache.curator.ConnectionState (ConnectionState.java:200) - Connection timed out for connection string (192.168.140.140:2181) and timeout (15000) / elapsed (15399)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2015-05-04 20:44:26,918 [Curator-Framework-0] ERROR org.apache.curator.ConnectionState (ConnectionState.java:200) - Connection timed out for connection string (192.168.140.140:2181) and timeout (15000) / elapsed (16644)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2015-05-04 20:44:27,919 [Curator-Framework-0] ERROR org.apache.curator.ConnectionState (ConnectionState.java:200) - Connection timed out for connection string (192.168.140.140:2181) and timeout (15000) / elapsed (17645)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2015-05-04 20:44:31,656 [Curator-Framework-0-SendThread(192.168.140.140:2181)] WARN  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1102) - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
 java.net.ConnectException: Connection timed out: no further information
 	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
 	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
-2015-05-03 15:31:40,649 [Curator-Framework-0-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
-2015-05-03 15:31:43,857 [Curator-Framework-0-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.140.140/192.168.140.140:2181, initiating session
-2015-05-03 15:31:44,087 [Curator-Framework-0-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.140.140/192.168.140.140:2181, sessionid = 0x14c1e5595a00228, negotiated timeout = 40000
-2015-05-03 15:31:44,087 [Curator-Framework-0-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: RECONNECTED
-2015-05-03 15:31:44,087 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
-2015-05-03 15:31:44,088 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - RECONNECTED
-2015-05-03 22:37:16,172 [main] INFO  co.solinx.forest.container.spring.SpringContainer (SpringContainer.java:22) - SpringContainer start
-2015-05-03 22:37:16,368 [main] INFO  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Sun May 03 22:37:16 CST 2015]; root of context hierarchy
-2015-05-03 22:37:16,438 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader (XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from file [E:\Develop\forest\forest-demo\forest-demo-provider\target\classes\META-INF\spring\forest-provider.xml]
-2015-05-03 22:37:17,151 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:32) - ServiceBean 
-2015-05-03 22:37:17,167 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:32) - ServiceBean 
-2015-05-03 22:37:17,175 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:51) - _________________________org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Sun May 03 22:37:16 CST 2015]; root of context hierarchy]
-2015-05-03 22:37:17,176 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:40) - Export：co.solinx.forest.demo.api.IHelloForestService
-2015-05-03 22:37:17,653 [main] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:224) - Starting
-2015-05-03 22:37:17,677 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
-2015-05-03 22:37:17,677 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:host.name=linx
-2015-05-03 22:37:17,678 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.version=1.8.0_40
-2015-05-03 22:37:17,678 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
-2015-05-03 22:37:17,679 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.home=D:\Java\jdk1.8.0_40\jre
-2015-05-03 22:37:17,680 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.class.path=D:\Java\jdk1.8.0_40\jre\lib\charsets.jar;D:\Java\jdk1.8.0_40\jre\lib\deploy.jar;D:\Java\jdk1.8.0_40\jre\lib\javaws.jar;D:\Java\jdk1.8.0_40\jre\lib\jce.jar;D:\Java\jdk1.8.0_40\jre\lib\jfr.jar;D:\Java\jdk1.8.0_40\jre\lib\jfxswt.jar;D:\Java\jdk1.8.0_40\jre\lib\jsse.jar;D:\Java\jdk1.8.0_40\jre\lib\management-agent.jar;D:\Java\jdk1.8.0_40\jre\lib\plugin.jar;D:\Java\jdk1.8.0_40\jre\lib\resources.jar;D:\Java\jdk1.8.0_40\jre\lib\rt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\access-bridge-64.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\cldrdata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\dnsns.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jaccess.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jfxrt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\localedata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\nashorn.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunec.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunjce_provider.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunmscapi.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunpkcs11.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\zipfs.jar;E:\Develop\forest\forest-demo\forest-demo-provider\target\classes;D:\apache-maven-3.1.0\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\apache-maven-3.1.0\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-beans\4.1.5.RELEASE\spring-beans-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-core\4.1.5.RELEASE\spring-core-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-context\4.1.5.RELEASE\spring-context-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-aop\4.1.5.RELEASE\spring-aop-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-expression\4.1.5.RELEASE\spring-expression-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;D:\apache-maven-3.1.0\repository\jline\jline\0.9.94\jline-0.9.94.jar;D:\apache-maven-3.1.0\repository\junit\junit\3.8.1\junit-3.8.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-framework\2.7.1\curator-framework-2.7.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-client\2.7.1\curator-client-2.7.1.jar;D:\apache-maven-3.1.0\repository\com\google\guava\guava\16.0.1\guava-16.0.1.jar;E:\Develop\forest\forest-common\target\classes;D:\apache-maven-3.1.0\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\Develop\forest\forest-config\forest-config-api\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-jdk\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-api\target\classes;E:\Develop\forest\forest-config\forest-config-spring\target\classes;E:\Develop\forest\forest-container\forest-container-api\target\classes;E:\Develop\forest\forest-container\forest-container-log4j\target\classes;E:\Develop\forest\forest-container\forest-container-spring\target\classes;E:\Develop\forest\forest-registry\forest-registry-zookeeper\target\classes;D:\apache-maven-3.1.0\repository\co\solinx\forest-registry-api\1.0-SNAPSHOT\forest-registry-api-1.0-SNAPSHOT.jar;E:\Develop\forest\forest-remote\forest-remote-netty\target\classes;D:\apache-maven-3.1.0\repository\io\netty\netty-all\4.0.27.Final\netty-all-4.0.27.Final.jar;E:\Develop\forest\forest-remote\forest-remote-api\target\classes;E:\Develop\forest\forest-remote\forest-remote-zookeeper\target\classes;D:\JetBrains\IntelliJ IDEA 14.1\lib\idea_rt.jar
-2015-05-03 22:37:17,682 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.library.path=D:\Java\jdk1.8.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Java\jdk1.8.0_40\bin;D:\Java\jdk1.8.0_40\jre\bin;D:\Git\bin;D:\Go\bin;.
-2015-05-03 22:37:17,682 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\鑫\AppData\Local\Temp\
-2015-05-03 22:37:17,685 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.compiler=<NA>
-2015-05-03 22:37:17,686 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.name=Windows 8.1
-2015-05-03 22:37:17,686 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.arch=amd64
-2015-05-03 22:37:17,686 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.version=6.3
-2015-05-03 22:37:17,691 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.name=鑫
-2015-05-03 22:37:17,691 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.home=C:\Users\鑫
-2015-05-03 22:37:17,692 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.dir=E:\Develop\forest
-2015-05-03 22:37:17,694 [main] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.140:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@8b96fde
-2015-05-03 22:37:17,936 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
-2015-05-03 22:37:17,963 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.140.140/192.168.140.140:2181, initiating session
-2015-05-03 22:37:18,008 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:42) - STARTED
-2015-05-03 22:37:18,008 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:45) - interfaceName_______________co.solinx.forest.demo.api.IHelloForestService
-2015-05-03 22:37:18,181 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.140.140/192.168.140.140:2181, sessionid = 0x14c1e5595a00229, negotiated timeout = 40000
-2015-05-03 22:37:18,184 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: CONNECTED
-2015-05-03 22:37:18,185 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
-2015-05-03 22:37:18,185 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - CONNECTED
-2015-05-03 22:37:18,291 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
-2015-05-03 22:37:18,291 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService,已存在！
-2015-05-03 22:37:18,292 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService/providers,已存在！
-2015-05-03 22:37:18,303 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:53) - [co.solinx.forest.demo.impl.HelloForestServiceImpl@22a637e7]
-2015-05-03 22:37:18,303 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:51) - _________________________org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Sun May 03 22:37:16 CST 2015]; root of context hierarchy]
-2015-05-03 22:37:18,304 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:40) - Export：co.solinx.forest.demo.api.IHelloRpcService
-2015-05-03 22:37:18,304 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:45) - interfaceName_______________co.solinx.forest.demo.api.IHelloRpcService
-2015-05-03 22:37:18,305 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
-2015-05-03 22:37:18,305 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService,已存在！
-2015-05-03 22:37:18,306 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService/providers,已存在！
-2015-05-03 22:37:18,308 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:53) - [co.solinx.forest.demo.impl.HelloForestServiceImpl@22a637e7, co.solinx.forest.demo.impl.HelloRpcServiceImpl@6fe7aac8]
-2015-05-03 22:37:18,718 [main] INFO  solinx.forest.remote.netty.server.NettyServer (NettyServer.java:65) - netty server start bind by 18088
-2015-05-03 22:37:18,718 [main] INFO  solinx.forest.remote.netty.server.NettyServer (NettyServer.java:48) - ------------------netty start
-2015-05-03 22:37:25,265 [main] INFO  co.solinx.forest.container.spring.SpringContainer (SpringContainer.java:22) - SpringContainer start
-2015-05-03 22:37:25,392 [main] INFO  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Sun May 03 22:37:25 CST 2015]; root of context hierarchy
-2015-05-03 22:37:25,451 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader (XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from file [E:\Develop\forest\forest-demo\forest-demo-customer\target\classes\META-INF\spring\forest-customer.xml]
-2015-05-03 22:37:25,750 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:31) - constructor-----------
-2015-05-03 22:37:25,771 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:49) - ---------------------------co.solinx.forest.demo.api.IHelloForestService
-2015-05-03 22:37:25,771 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:51) - getObject---------------
-2015-05-03 22:37:25,771 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:36) - co.solinx.forest.demo.api.IHelloForestService
-2015-05-03 22:37:25,978 [main] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:224) - Starting
-2015-05-03 22:37:25,992 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
-2015-05-03 22:37:25,992 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:host.name=linx
-2015-05-03 22:37:25,992 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.version=1.8.0_40
-2015-05-03 22:37:25,993 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
-2015-05-03 22:37:25,993 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.home=D:\Java\jdk1.8.0_40\jre
-2015-05-03 22:37:25,993 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.class.path=D:\Java\jdk1.8.0_40\jre\lib\charsets.jar;D:\Java\jdk1.8.0_40\jre\lib\deploy.jar;D:\Java\jdk1.8.0_40\jre\lib\javaws.jar;D:\Java\jdk1.8.0_40\jre\lib\jce.jar;D:\Java\jdk1.8.0_40\jre\lib\jfr.jar;D:\Java\jdk1.8.0_40\jre\lib\jfxswt.jar;D:\Java\jdk1.8.0_40\jre\lib\jsse.jar;D:\Java\jdk1.8.0_40\jre\lib\management-agent.jar;D:\Java\jdk1.8.0_40\jre\lib\plugin.jar;D:\Java\jdk1.8.0_40\jre\lib\resources.jar;D:\Java\jdk1.8.0_40\jre\lib\rt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\access-bridge-64.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\cldrdata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\dnsns.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jaccess.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jfxrt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\localedata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\nashorn.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunec.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunjce_provider.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunmscapi.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunpkcs11.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\zipfs.jar;E:\Develop\forest\forest-demo\forest-demo-customer\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-default\target\classes;D:\apache-maven-3.1.0\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\apache-maven-3.1.0\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-beans\4.1.5.RELEASE\spring-beans-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-core\4.1.5.RELEASE\spring-core-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-context\4.1.5.RELEASE\spring-context-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-aop\4.1.5.RELEASE\spring-aop-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-expression\4.1.5.RELEASE\spring-expression-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;D:\apache-maven-3.1.0\repository\jline\jline\0.9.94\jline-0.9.94.jar;D:\apache-maven-3.1.0\repository\junit\junit\3.8.1\junit-3.8.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-framework\2.7.1\curator-framework-2.7.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-client\2.7.1\curator-client-2.7.1.jar;D:\apache-maven-3.1.0\repository\com\google\guava\guava\16.0.1\guava-16.0.1.jar;E:\Develop\forest\forest-common\target\classes;D:\apache-maven-3.1.0\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\Develop\forest\forest-config\forest-config-api\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-jdk\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-api\target\classes;E:\Develop\forest\forest-config\forest-config-spring\target\classes;E:\Develop\forest\forest-container\forest-container-api\target\classes;E:\Develop\forest\forest-container\forest-container-log4j\target\classes;E:\Develop\forest\forest-container\forest-container-spring\target\classes;E:\Develop\forest\forest-registry\forest-registry-zookeeper\target\classes;D:\apache-maven-3.1.0\repository\co\solinx\forest-registry-api\1.0-SNAPSHOT\forest-registry-api-1.0-SNAPSHOT.jar;E:\Develop\forest\forest-remote\forest-remote-netty\target\classes;D:\apache-maven-3.1.0\repository\io\netty\netty-all\4.0.27.Final\netty-all-4.0.27.Final.jar;E:\Develop\forest\forest-remote\forest-remote-api\target\classes;E:\Develop\forest\forest-remote\forest-remote-zookeeper\target\classes;D:\JetBrains\IntelliJ IDEA 14.1\lib\idea_rt.jar
-2015-05-03 22:37:25,994 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.library.path=D:\Java\jdk1.8.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Java\jdk1.8.0_40\bin;D:\Java\jdk1.8.0_40\jre\bin;D:\Git\bin;D:\Go\bin;.
-2015-05-03 22:37:25,995 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\鑫\AppData\Local\Temp\
-2015-05-03 22:37:25,997 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.compiler=<NA>
-2015-05-03 22:37:25,999 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.name=Windows 8.1
-2015-05-03 22:37:25,999 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.arch=amd64
-2015-05-03 22:37:25,999 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.version=6.3
-2015-05-03 22:37:26,000 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.name=鑫
-2015-05-03 22:37:26,000 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.home=C:\Users\鑫
-2015-05-03 22:37:26,000 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.dir=E:\Develop\forest
-2015-05-03 22:37:26,002 [main] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.140:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@58fdd99
-2015-05-03 22:37:26,110 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
-2015-05-03 22:37:26,113 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:42) - STARTED
-2015-05-03 22:37:26,134 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.140.140/192.168.140.140:2181, initiating session
-2015-05-03 22:37:26,147 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.140.140/192.168.140.140:2181, sessionid = 0x14c1e5595a0022a, negotiated timeout = 40000
-2015-05-03 22:37:26,153 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: CONNECTED
-2015-05-03 22:37:26,156 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
-2015-05-03 22:37:26,156 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - CONNECTED
-2015-05-03 22:37:27,183 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
-2015-05-03 22:37:27,185 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService,已存在！
-2015-05-03 22:37:27,186 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService/consumers,已存在！
-2015-05-03 22:37:27,224 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:54) - co.solinx.forest.remote.invoker.NettyInvoker@778d1062
-2015-05-03 22:37:27,227 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:31) - constructor-----------
-2015-05-03 22:37:27,228 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:49) - ---------------------------co.solinx.forest.demo.api.IHelloRpcService
-2015-05-03 22:37:27,228 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:51) - getObject---------------
-2015-05-03 22:37:27,228 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:36) - co.solinx.forest.demo.api.IHelloRpcService
-2015-05-03 22:37:27,234 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
-2015-05-03 22:37:27,235 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService,已存在！
-2015-05-03 22:37:27,237 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService/consumers,已存在！
-2015-05-03 22:37:27,256 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:54) - co.solinx.forest.remote.invoker.NettyInvoker@6e0dec4a
-2015-05-03 22:37:27,751 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-268566866, data=co.solinx.forest.demo.api.IHelloRpcService,hello, RequestTime=0, param=null}
-2015-05-03 22:37:27,778 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:27,778 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-268566866, data=co.solinx.forest.demo.api.IHelloRpcService,hello, RequestTime=0, param=null}
-2015-05-03 22:37:27,791 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloRpcService,hello
-2015-05-03 22:37:27,791 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:null
-2015-05-03 22:37:27,792 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
-2015-05-03 22:37:27,798 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:27,799 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-268566866, result=empty, errorMsg='null'}
-2015-05-03 22:37:27,799 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-268566866, result=empty, errorMsg='null'}
-2015-05-03 22:37:27,799 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-268566866, data=co.solinx.forest.demo.api.IHelloRpcService,hello, RequestTime=0, param=null}
-2015-05-03 22:37:27,861 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
-2015-05-03 22:37:27,862 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:void
-2015-05-03 22:37:27,862 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - empty
-2015-05-03 22:37:27,898 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=1364594572, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[0]}
-2015-05-03 22:37:27,900 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:27,900 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=1364594572, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[0]}
-2015-05-03 22:37:27,900 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
-2015-05-03 22:37:27,901 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest0
-2015-05-03 22:37:27,901 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
-2015-05-03 22:37:27,902 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:27,902 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=1364594572, result=HelloForest0, errorMsg='null'}
-2015-05-03 22:37:27,902 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=1364594572, result=HelloForest0, errorMsg='null'}
-2015-05-03 22:37:27,902 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=1364594572, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[0]}
-2015-05-03 22:37:27,985 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
-2015-05-03 22:37:27,986 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
-2015-05-03 22:37:27,986 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest0
-2015-05-03 22:37:27,987 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest0
-2015-05-03 22:37:28,057 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=1275078169, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[1]}
-2015-05-03 22:37:28,059 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,059 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=1275078169, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[1]}
-2015-05-03 22:37:28,059 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
-2015-05-03 22:37:28,060 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest1
-2015-05-03 22:37:28,060 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
-2015-05-03 22:37:28,060 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,061 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=1275078169, result=HelloForest1, errorMsg='null'}
-2015-05-03 22:37:28,061 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=1275078169, result=HelloForest1, errorMsg='null'}
-2015-05-03 22:37:28,061 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=1275078169, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[1]}
-2015-05-03 22:37:28,143 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
-2015-05-03 22:37:28,143 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
-2015-05-03 22:37:28,143 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest1
-2015-05-03 22:37:28,144 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest1
-2015-05-03 22:37:28,235 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=453528685, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[2]}
-2015-05-03 22:37:28,237 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,237 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=453528685, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[2]}
-2015-05-03 22:37:28,238 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
-2015-05-03 22:37:28,238 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest2
-2015-05-03 22:37:28,238 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
-2015-05-03 22:37:28,239 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,239 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=453528685, result=HelloForest2, errorMsg='null'}
-2015-05-03 22:37:28,239 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=453528685, result=HelloForest2, errorMsg='null'}
-2015-05-03 22:37:28,239 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=453528685, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[2]}
-2015-05-03 22:37:28,316 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
-2015-05-03 22:37:28,316 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
-2015-05-03 22:37:28,317 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest2
-2015-05-03 22:37:28,317 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest2
-2015-05-03 22:37:28,367 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-857108017, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[3]}
-2015-05-03 22:37:28,368 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,368 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-857108017, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[3]}
-2015-05-03 22:37:28,369 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
-2015-05-03 22:37:28,369 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest3
-2015-05-03 22:37:28,369 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
-2015-05-03 22:37:28,369 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,370 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-857108017, result=HelloForest3, errorMsg='null'}
-2015-05-03 22:37:28,370 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-857108017, result=HelloForest3, errorMsg='null'}
-2015-05-03 22:37:28,370 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-857108017, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[3]}
-2015-05-03 22:37:28,448 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
-2015-05-03 22:37:28,449 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
-2015-05-03 22:37:28,449 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest3
-2015-05-03 22:37:28,449 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest3
-2015-05-03 22:37:28,505 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-221995669, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[4]}
-2015-05-03 22:37:28,507 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,507 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-221995669, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[4]}
-2015-05-03 22:37:28,507 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
-2015-05-03 22:37:28,507 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest4
-2015-05-03 22:37:28,507 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
-2015-05-03 22:37:28,508 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,508 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-221995669, result=HelloForest4, errorMsg='null'}
-2015-05-03 22:37:28,508 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-221995669, result=HelloForest4, errorMsg='null'}
-2015-05-03 22:37:28,508 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-221995669, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[4]}
-2015-05-03 22:37:28,587 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
-2015-05-03 22:37:28,588 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
-2015-05-03 22:37:28,588 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest4
-2015-05-03 22:37:28,588 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest4
-2015-05-03 22:37:28,646 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=473897454, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[5]}
-2015-05-03 22:37:28,647 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,648 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=473897454, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[5]}
-2015-05-03 22:37:28,648 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
-2015-05-03 22:37:28,648 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest5
-2015-05-03 22:37:28,648 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
-2015-05-03 22:37:28,649 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,649 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=473897454, result=HelloForest5, errorMsg='null'}
-2015-05-03 22:37:28,649 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=473897454, result=HelloForest5, errorMsg='null'}
-2015-05-03 22:37:28,649 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=473897454, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[5]}
-2015-05-03 22:37:28,728 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
-2015-05-03 22:37:28,728 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
-2015-05-03 22:37:28,728 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest5
-2015-05-03 22:37:28,729 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest5
-2015-05-03 22:37:28,794 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-228662624, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[6]}
-2015-05-03 22:37:28,796 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,796 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-228662624, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[6]}
-2015-05-03 22:37:28,796 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
-2015-05-03 22:37:28,796 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest6
-2015-05-03 22:37:28,796 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
-2015-05-03 22:37:28,797 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,797 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-228662624, result=HelloForest6, errorMsg='null'}
-2015-05-03 22:37:28,797 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-228662624, result=HelloForest6, errorMsg='null'}
-2015-05-03 22:37:28,797 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-228662624, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[6]}
-2015-05-03 22:37:28,876 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
-2015-05-03 22:37:28,876 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
-2015-05-03 22:37:28,876 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest6
-2015-05-03 22:37:28,877 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest6
-2015-05-03 22:37:28,944 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-1886193695, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[7]}
-2015-05-03 22:37:28,946 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,946 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-1886193695, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[7]}
-2015-05-03 22:37:28,946 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
-2015-05-03 22:37:28,946 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest7
-2015-05-03 22:37:28,946 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
-2015-05-03 22:37:28,947 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:28,947 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-1886193695, result=HelloForest7, errorMsg='null'}
-2015-05-03 22:37:28,947 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-1886193695, result=HelloForest7, errorMsg='null'}
-2015-05-03 22:37:28,948 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-1886193695, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[7]}
-2015-05-03 22:37:29,025 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
-2015-05-03 22:37:29,026 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
-2015-05-03 22:37:29,026 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest7
-2015-05-03 22:37:29,026 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest7
-2015-05-03 22:37:29,098 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-1875175752, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[8]}
-2015-05-03 22:37:29,099 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:29,100 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-1875175752, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[8]}
-2015-05-03 22:37:29,100 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
-2015-05-03 22:37:29,100 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest8
-2015-05-03 22:37:29,100 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
-2015-05-03 22:37:29,101 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:29,101 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-1875175752, result=HelloForest8, errorMsg='null'}
-2015-05-03 22:37:29,101 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-1875175752, result=HelloForest8, errorMsg='null'}
-2015-05-03 22:37:29,101 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-1875175752, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[8]}
-2015-05-03 22:37:29,180 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
-2015-05-03 22:37:29,181 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
-2015-05-03 22:37:29,181 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest8
-2015-05-03 22:37:29,182 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest8
-2015-05-03 22:37:29,290 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-1650101153, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[9]}
-2015-05-03 22:37:29,291 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:29,292 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-1650101153, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[9]}
-2015-05-03 22:37:29,292 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
-2015-05-03 22:37:29,292 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest9
-2015-05-03 22:37:29,292 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
-2015-05-03 22:37:29,293 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
-2015-05-03 22:37:29,293 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-1650101153, result=HelloForest9, errorMsg='null'}
-2015-05-03 22:37:29,294 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-1650101153, result=HelloForest9, errorMsg='null'}
-2015-05-03 22:37:29,294 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-1650101153, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[9]}
-2015-05-03 22:37:29,376 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
-2015-05-03 22:37:29,377 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
-2015-05-03 22:37:29,377 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest9
-2015-05-03 22:37:29,378 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest9
+2015-05-04 20:44:31,921 [Curator-Framework-0] ERROR org.apache.curator.ConnectionState (ConnectionState.java:200) - Connection timed out for connection string (192.168.140.140:2181) and timeout (15000) / elapsed (21647)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2015-05-04 20:44:31,921 [Curator-Framework-0] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: LOST
+2015-05-04 20:44:31,921 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:537) - Background operation retry gave up
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:99)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkBackgroundRetry(CuratorFrameworkImpl.java:708)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:826)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2015-05-04 20:44:31,922 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:537) - Background retry gave up
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:87)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:115)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:806)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2015-05-04 20:44:31,921 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-05-04 20:44:31,922 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - LOST
+2015-05-04 20:44:32,756 [Curator-Framework-0-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-05-04 20:44:41,816 [Curator-Framework-0-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.140.140/192.168.140.140:2181, initiating session
+2015-05-04 20:44:41,976 [Curator-Framework-0-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.140.140/192.168.140.140:2181, sessionid = 0x14c1e5595a0022b, negotiated timeout = 40000
+2015-05-04 20:44:41,976 [Curator-Framework-0-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: RECONNECTED
+2015-05-04 20:44:41,976 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-05-04 20:44:41,976 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - RECONNECTED
+2015-05-04 20:46:00,295 [main] INFO  co.solinx.forest.container.spring.SpringContainer (SpringContainer.java:22) - SpringContainer start
+2015-05-04 20:46:00,503 [main] INFO  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon May 04 20:46:00 CST 2015]; root of context hierarchy
+2015-05-04 20:46:00,588 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader (XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from file [E:\Develop\forest\forest-demo\forest-demo-provider\target\classes\META-INF\spring\forest-provider.xml]
+2015-05-04 20:46:01,237 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:32) - ServiceBean 
+2015-05-04 20:46:01,266 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:32) - ServiceBean 
+2015-05-04 20:46:01,279 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:51) - _________________________org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon May 04 20:46:00 CST 2015]; root of context hierarchy]
+2015-05-04 20:46:01,279 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:40) - Export：co.solinx.forest.demo.api.IHelloForestService
+2015-05-04 20:46:01,550 [main] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:224) - Starting
+2015-05-04 20:46:18,076 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2015-05-04 20:46:18,077 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:host.name=linx
+2015-05-04 20:46:18,077 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.version=1.8.0_40
+2015-05-04 20:46:18,077 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
+2015-05-04 20:46:18,077 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.home=D:\Java\jdk1.8.0_40\jre
+2015-05-04 20:46:18,078 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.class.path=D:\Java\jdk1.8.0_40\jre\lib\charsets.jar;D:\Java\jdk1.8.0_40\jre\lib\deploy.jar;D:\Java\jdk1.8.0_40\jre\lib\javaws.jar;D:\Java\jdk1.8.0_40\jre\lib\jce.jar;D:\Java\jdk1.8.0_40\jre\lib\jfr.jar;D:\Java\jdk1.8.0_40\jre\lib\jfxswt.jar;D:\Java\jdk1.8.0_40\jre\lib\jsse.jar;D:\Java\jdk1.8.0_40\jre\lib\management-agent.jar;D:\Java\jdk1.8.0_40\jre\lib\plugin.jar;D:\Java\jdk1.8.0_40\jre\lib\resources.jar;D:\Java\jdk1.8.0_40\jre\lib\rt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\access-bridge-64.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\cldrdata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\dnsns.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jaccess.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jfxrt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\localedata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\nashorn.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunec.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunjce_provider.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunmscapi.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunpkcs11.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\zipfs.jar;E:\Develop\forest\forest-demo\forest-demo-provider\target\classes;D:\apache-maven-3.1.0\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\apache-maven-3.1.0\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-beans\4.1.5.RELEASE\spring-beans-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-core\4.1.5.RELEASE\spring-core-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-context\4.1.5.RELEASE\spring-context-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-aop\4.1.5.RELEASE\spring-aop-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-expression\4.1.5.RELEASE\spring-expression-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;D:\apache-maven-3.1.0\repository\jline\jline\0.9.94\jline-0.9.94.jar;D:\apache-maven-3.1.0\repository\junit\junit\3.8.1\junit-3.8.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-framework\2.7.1\curator-framework-2.7.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-client\2.7.1\curator-client-2.7.1.jar;D:\apache-maven-3.1.0\repository\com\google\guava\guava\16.0.1\guava-16.0.1.jar;E:\Develop\forest\forest-common\target\classes;D:\apache-maven-3.1.0\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\Develop\forest\forest-config\forest-config-api\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-jdk\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-api\target\classes;E:\Develop\forest\forest-config\forest-config-spring\target\classes;E:\Develop\forest\forest-container\forest-container-api\target\classes;E:\Develop\forest\forest-container\forest-container-log4j\target\classes;E:\Develop\forest\forest-container\forest-container-spring\target\classes;E:\Develop\forest\forest-registry\forest-registry-zookeeper\target\classes;D:\apache-maven-3.1.0\repository\co\solinx\forest-registry-api\1.0-SNAPSHOT\forest-registry-api-1.0-SNAPSHOT.jar;E:\Develop\forest\forest-remote\forest-remote-netty\target\classes;D:\apache-maven-3.1.0\repository\io\netty\netty-all\4.0.27.Final\netty-all-4.0.27.Final.jar;E:\Develop\forest\forest-remote\forest-remote-api\target\classes;E:\Develop\forest\forest-remote\forest-remote-zookeeper\target\classes;D:\JetBrains\IntelliJ IDEA 14.1\lib\idea_rt.jar
+2015-05-04 20:46:18,079 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.library.path=D:\Java\jdk1.8.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Java\jdk1.8.0_40\bin;D:\Java\jdk1.8.0_40\jre\bin;D:\Git\bin;D:\Go\bin;.
+2015-05-04 20:46:18,079 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\鑫\AppData\Local\Temp\
+2015-05-04 20:46:18,081 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.compiler=<NA>
+2015-05-04 20:46:18,081 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.name=Windows 8.1
+2015-05-04 20:46:18,081 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.arch=amd64
+2015-05-04 20:46:18,082 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.version=6.3
+2015-05-04 20:46:18,085 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.name=鑫
+2015-05-04 20:46:18,086 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.home=C:\Users\鑫
+2015-05-04 20:46:18,086 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.dir=E:\Develop\forest
+2015-05-04 20:46:18,088 [main] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.140:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@8b96fde
+2015-05-04 20:46:18,278 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-05-04 20:46:18,281 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.140.140/192.168.140.140:2181, initiating session
+2015-05-04 20:46:18,316 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:42) - STARTED
+2015-05-04 20:46:18,317 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:45) - interfaceName_______________co.solinx.forest.demo.api.IHelloForestService
+2015-05-04 20:46:18,322 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.140.140/192.168.140.140:2181, sessionid = 0x14c1e5595a0022c, negotiated timeout = 40000
+2015-05-04 20:46:18,332 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: CONNECTED
+2015-05-04 20:46:18,335 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-05-04 20:46:18,335 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - CONNECTED
+2015-05-04 20:46:18,378 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-05-04 20:46:18,379 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService,已存在！
+2015-05-04 20:46:18,380 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService/providers,已存在！
+2015-05-04 20:46:18,449 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:53) - [co.solinx.forest.demo.impl.HelloForestServiceImpl@22a637e7]
+2015-05-04 20:46:18,449 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:51) - _________________________org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon May 04 20:46:00 CST 2015]; root of context hierarchy]
+2015-05-04 20:46:18,449 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:40) - Export：co.solinx.forest.demo.api.IHelloRpcService
+2015-05-04 20:46:18,450 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:45) - interfaceName_______________co.solinx.forest.demo.api.IHelloRpcService
+2015-05-04 20:46:18,450 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-05-04 20:46:18,451 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService,已存在！
+2015-05-04 20:46:18,451 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService/providers,已存在！
+2015-05-04 20:46:18,453 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:53) - [co.solinx.forest.demo.impl.HelloForestServiceImpl@22a637e7, co.solinx.forest.demo.impl.HelloRpcServiceImpl@6fe7aac8]
+2015-05-04 20:46:18,949 [main] INFO  solinx.forest.remote.netty.server.NettyServer (NettyServer.java:65) - netty server start bind by 18088
+2015-05-04 20:46:18,949 [main] INFO  solinx.forest.remote.netty.server.NettyServer (NettyServer.java:48) - ------------------netty start
+2015-05-04 20:47:27,632 [main] INFO  co.solinx.forest.container.spring.SpringContainer (SpringContainer.java:22) - SpringContainer start
+2015-05-04 20:47:27,773 [main] INFO  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon May 04 20:47:27 CST 2015]; root of context hierarchy
+2015-05-04 20:47:27,832 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader (XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from file [E:\Develop\forest\forest-demo\forest-demo-customer\target\classes\META-INF\spring\forest-customer.xml]
+2015-05-04 20:47:28,138 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:31) - constructor-----------
+2015-05-04 20:47:28,154 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:49) - ---------------------------co.solinx.forest.demo.api.IHelloForestService
+2015-05-04 20:47:28,154 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:51) - getObject---------------
+2015-05-04 20:47:28,154 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:36) - co.solinx.forest.demo.api.IHelloForestService
+2015-05-04 20:47:28,381 [main] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:224) - Starting
+2015-05-04 20:47:32,894 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2015-05-04 20:47:32,895 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:host.name=linx
+2015-05-04 20:47:32,896 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.version=1.8.0_40
+2015-05-04 20:47:32,896 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
+2015-05-04 20:47:32,897 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.home=D:\Java\jdk1.8.0_40\jre
+2015-05-04 20:47:32,897 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.class.path=D:\Java\jdk1.8.0_40\jre\lib\charsets.jar;D:\Java\jdk1.8.0_40\jre\lib\deploy.jar;D:\Java\jdk1.8.0_40\jre\lib\javaws.jar;D:\Java\jdk1.8.0_40\jre\lib\jce.jar;D:\Java\jdk1.8.0_40\jre\lib\jfr.jar;D:\Java\jdk1.8.0_40\jre\lib\jfxswt.jar;D:\Java\jdk1.8.0_40\jre\lib\jsse.jar;D:\Java\jdk1.8.0_40\jre\lib\management-agent.jar;D:\Java\jdk1.8.0_40\jre\lib\plugin.jar;D:\Java\jdk1.8.0_40\jre\lib\resources.jar;D:\Java\jdk1.8.0_40\jre\lib\rt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\access-bridge-64.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\cldrdata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\dnsns.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jaccess.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jfxrt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\localedata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\nashorn.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunec.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunjce_provider.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunmscapi.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunpkcs11.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\zipfs.jar;E:\Develop\forest\forest-demo\forest-demo-customer\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-default\target\classes;D:\apache-maven-3.1.0\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\apache-maven-3.1.0\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-beans\4.1.5.RELEASE\spring-beans-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-core\4.1.5.RELEASE\spring-core-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-context\4.1.5.RELEASE\spring-context-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-aop\4.1.5.RELEASE\spring-aop-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-expression\4.1.5.RELEASE\spring-expression-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;D:\apache-maven-3.1.0\repository\jline\jline\0.9.94\jline-0.9.94.jar;D:\apache-maven-3.1.0\repository\junit\junit\3.8.1\junit-3.8.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-framework\2.7.1\curator-framework-2.7.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-client\2.7.1\curator-client-2.7.1.jar;D:\apache-maven-3.1.0\repository\com\google\guava\guava\16.0.1\guava-16.0.1.jar;E:\Develop\forest\forest-common\target\classes;D:\apache-maven-3.1.0\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\Develop\forest\forest-config\forest-config-api\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-jdk\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-api\target\classes;E:\Develop\forest\forest-config\forest-config-spring\target\classes;E:\Develop\forest\forest-container\forest-container-api\target\classes;E:\Develop\forest\forest-container\forest-container-log4j\target\classes;E:\Develop\forest\forest-container\forest-container-spring\target\classes;E:\Develop\forest\forest-registry\forest-registry-zookeeper\target\classes;D:\apache-maven-3.1.0\repository\co\solinx\forest-registry-api\1.0-SNAPSHOT\forest-registry-api-1.0-SNAPSHOT.jar;E:\Develop\forest\forest-remote\forest-remote-netty\target\classes;D:\apache-maven-3.1.0\repository\io\netty\netty-all\4.0.27.Final\netty-all-4.0.27.Final.jar;E:\Develop\forest\forest-remote\forest-remote-api\target\classes;E:\Develop\forest\forest-remote\forest-remote-zookeeper\target\classes;D:\JetBrains\IntelliJ IDEA 14.1\lib\idea_rt.jar
+2015-05-04 20:47:32,899 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.library.path=D:\Java\jdk1.8.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Java\jdk1.8.0_40\bin;D:\Java\jdk1.8.0_40\jre\bin;D:\Git\bin;D:\Go\bin;.
+2015-05-04 20:47:32,904 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\鑫\AppData\Local\Temp\
+2015-05-04 20:47:32,908 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.compiler=<NA>
+2015-05-04 20:47:32,913 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.name=Windows 8.1
+2015-05-04 20:47:32,914 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.arch=amd64
+2015-05-04 20:47:32,914 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.version=6.3
+2015-05-04 20:47:32,914 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.name=鑫
+2015-05-04 20:47:32,915 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.home=C:\Users\鑫
+2015-05-04 20:47:32,915 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.dir=E:\Develop\forest
+2015-05-04 20:47:32,918 [main] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.140:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@58fdd99
+2015-05-04 20:47:33,006 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-05-04 20:47:33,008 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.140.140/192.168.140.140:2181, initiating session
+2015-05-04 20:47:33,009 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:42) - STARTED
+2015-05-04 20:47:33,017 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.140.140/192.168.140.140:2181, sessionid = 0x14c1e5595a0022d, negotiated timeout = 40000
+2015-05-04 20:47:33,045 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: CONNECTED
+2015-05-04 20:47:33,046 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-05-04 20:47:33,047 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - CONNECTED
+2015-05-04 20:47:33,105 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-05-04 20:47:33,106 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService,已存在！
+2015-05-04 20:47:33,107 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService/consumers,已存在！
+2015-05-04 20:47:33,118 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:54) - co.solinx.forest.remote.invoker.NettyInvoker@4313f5bc
+2015-05-04 20:47:33,173 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:31) - constructor-----------
+2015-05-04 20:47:33,173 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:49) - ---------------------------co.solinx.forest.demo.api.IHelloRpcService
+2015-05-04 20:47:33,174 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:51) - getObject---------------
+2015-05-04 20:47:33,174 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:36) - co.solinx.forest.demo.api.IHelloRpcService
+2015-05-04 20:47:33,183 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-05-04 20:47:33,185 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService,已存在！
+2015-05-04 20:47:33,188 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService/consumers,已存在！
+2015-05-04 20:47:33,287 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:54) - co.solinx.forest.remote.invoker.NettyInvoker@670002
+2015-05-04 20:47:34,038 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,038 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=529305005, data=co.solinx.forest.demo.api.IHelloRpcService,hello, RequestTime=0, param=null}
+2015-05-04 20:47:34,042 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=529305005, data=co.solinx.forest.demo.api.IHelloRpcService,hello, RequestTime=0, param=null}
+2015-05-04 20:47:34,060 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloRpcService,hello
+2015-05-04 20:47:34,061 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:null
+2015-05-04 20:47:34,061 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 20:47:34,068 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,068 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=529305005, result=empty, errorMsg='null'}
+2015-05-04 20:47:34,068 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=529305005, result=empty, errorMsg='null'}
+2015-05-04 20:47:34,068 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=529305005, data=co.solinx.forest.demo.api.IHelloRpcService,hello, RequestTime=0, param=null}
+2015-05-04 20:47:34,130 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 20:47:34,131 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:void
+2015-05-04 20:47:34,131 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - empty
+2015-05-04 20:47:34,168 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-199839079, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[0]}
+2015-05-04 20:47:34,170 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,170 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-199839079, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[0]}
+2015-05-04 20:47:34,170 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 20:47:34,170 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest0
+2015-05-04 20:47:34,170 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 20:47:34,171 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,171 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-199839079, result=HelloForest0, errorMsg='null'}
+2015-05-04 20:47:34,172 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-199839079, result=HelloForest0, errorMsg='null'}
+2015-05-04 20:47:34,172 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-199839079, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[0]}
+2015-05-04 20:47:34,259 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 20:47:34,259 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 20:47:34,260 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest0
+2015-05-04 20:47:34,260 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest0
+2015-05-04 20:47:34,342 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-920618694, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[1]}
+2015-05-04 20:47:34,344 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,344 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-920618694, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[1]}
+2015-05-04 20:47:34,344 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 20:47:34,344 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest1
+2015-05-04 20:47:34,344 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 20:47:34,345 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,345 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-920618694, result=HelloForest1, errorMsg='null'}
+2015-05-04 20:47:34,345 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-920618694, result=HelloForest1, errorMsg='null'}
+2015-05-04 20:47:34,345 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-920618694, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[1]}
+2015-05-04 20:47:34,428 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 20:47:34,428 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 20:47:34,429 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest1
+2015-05-04 20:47:34,429 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest1
+2015-05-04 20:47:34,502 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=1346595013, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[2]}
+2015-05-04 20:47:34,504 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,504 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=1346595013, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[2]}
+2015-05-04 20:47:34,504 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 20:47:34,504 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest2
+2015-05-04 20:47:34,505 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 20:47:34,505 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,506 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=1346595013, result=HelloForest2, errorMsg='null'}
+2015-05-04 20:47:34,506 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=1346595013, result=HelloForest2, errorMsg='null'}
+2015-05-04 20:47:34,506 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=1346595013, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[2]}
+2015-05-04 20:47:34,583 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 20:47:34,583 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 20:47:34,583 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest2
+2015-05-04 20:47:34,584 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest2
+2015-05-04 20:47:34,632 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=168301243, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[3]}
+2015-05-04 20:47:34,634 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,634 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=168301243, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[3]}
+2015-05-04 20:47:34,634 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 20:47:34,634 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest3
+2015-05-04 20:47:34,634 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 20:47:34,635 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,635 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=168301243, result=HelloForest3, errorMsg='null'}
+2015-05-04 20:47:34,635 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=168301243, result=HelloForest3, errorMsg='null'}
+2015-05-04 20:47:34,635 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=168301243, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[3]}
+2015-05-04 20:47:34,715 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 20:47:34,715 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 20:47:34,715 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest3
+2015-05-04 20:47:34,715 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest3
+2015-05-04 20:47:34,772 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=1066339635, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[4]}
+2015-05-04 20:47:34,774 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,774 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=1066339635, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[4]}
+2015-05-04 20:47:34,774 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 20:47:34,774 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest4
+2015-05-04 20:47:34,774 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 20:47:34,775 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,775 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=1066339635, result=HelloForest4, errorMsg='null'}
+2015-05-04 20:47:34,775 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=1066339635, result=HelloForest4, errorMsg='null'}
+2015-05-04 20:47:34,775 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=1066339635, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[4]}
+2015-05-04 20:47:34,854 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 20:47:34,855 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 20:47:34,855 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest4
+2015-05-04 20:47:34,855 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest4
+2015-05-04 20:47:34,917 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=1121041953, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[5]}
+2015-05-04 20:47:34,918 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,918 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=1121041953, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[5]}
+2015-05-04 20:47:34,919 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 20:47:34,919 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest5
+2015-05-04 20:47:34,919 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 20:47:34,920 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:34,920 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=1121041953, result=HelloForest5, errorMsg='null'}
+2015-05-04 20:47:34,920 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=1121041953, result=HelloForest5, errorMsg='null'}
+2015-05-04 20:47:34,920 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=1121041953, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[5]}
+2015-05-04 20:47:34,999 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 20:47:35,023 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 20:47:35,024 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest5
+2015-05-04 20:47:35,024 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest5
+2015-05-04 20:47:35,091 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-1900805618, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[6]}
+2015-05-04 20:47:35,093 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:35,093 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-1900805618, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[6]}
+2015-05-04 20:47:35,093 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 20:47:35,093 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest6
+2015-05-04 20:47:35,093 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 20:47:35,094 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:35,094 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-1900805618, result=HelloForest6, errorMsg='null'}
+2015-05-04 20:47:35,094 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-1900805618, result=HelloForest6, errorMsg='null'}
+2015-05-04 20:47:35,094 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-1900805618, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[6]}
+2015-05-04 20:47:35,173 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 20:47:35,173 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 20:47:35,173 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest6
+2015-05-04 20:47:35,173 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest6
+2015-05-04 20:47:35,244 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=1539208647, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[7]}
+2015-05-04 20:47:35,245 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:35,245 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=1539208647, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[7]}
+2015-05-04 20:47:35,245 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 20:47:35,246 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest7
+2015-05-04 20:47:35,246 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 20:47:35,246 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:35,246 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=1539208647, result=HelloForest7, errorMsg='null'}
+2015-05-04 20:47:35,247 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=1539208647, result=HelloForest7, errorMsg='null'}
+2015-05-04 20:47:35,247 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=1539208647, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[7]}
+2015-05-04 20:47:35,325 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 20:47:35,325 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 20:47:35,325 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest7
+2015-05-04 20:47:35,326 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest7
+2015-05-04 20:47:35,399 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=1615457152, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[8]}
+2015-05-04 20:47:35,400 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:35,400 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=1615457152, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[8]}
+2015-05-04 20:47:35,401 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 20:47:35,401 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest8
+2015-05-04 20:47:35,401 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 20:47:35,401 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:35,402 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=1615457152, result=HelloForest8, errorMsg='null'}
+2015-05-04 20:47:35,402 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=1615457152, result=HelloForest8, errorMsg='null'}
+2015-05-04 20:47:35,402 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=1615457152, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[8]}
+2015-05-04 20:47:35,479 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 20:47:35,479 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 20:47:35,480 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest8
+2015-05-04 20:47:35,480 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest8
+2015-05-04 20:47:35,558 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=2132186235, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[9]}
+2015-05-04 20:47:35,560 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:35,560 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=2132186235, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[9]}
+2015-05-04 20:47:35,560 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 20:47:35,561 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest9
+2015-05-04 20:47:35,561 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 20:47:35,562 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 20:47:35,562 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=2132186235, result=HelloForest9, errorMsg='null'}
+2015-05-04 20:47:35,562 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=2132186235, result=HelloForest9, errorMsg='null'}
+2015-05-04 20:47:35,562 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=2132186235, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[9]}
+2015-05-04 20:47:35,639 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 20:47:35,640 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 20:47:35,641 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest9
+2015-05-04 20:47:35,641 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest9
+2015-05-04 21:35:50,864 [main] INFO  co.solinx.forest.container.spring.SpringContainer (SpringContainer.java:22) - SpringContainer start
+2015-05-04 21:35:50,992 [main] INFO  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon May 04 21:35:50 CST 2015]; root of context hierarchy
+2015-05-04 21:35:51,055 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader (XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from file [E:\Develop\forest\forest-demo\forest-demo-provider\target\classes\META-INF\spring\forest-provider.xml]
+2015-05-04 21:35:51,305 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:32) - ServiceBean 
+2015-05-04 21:35:51,319 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:32) - ServiceBean 
+2015-05-04 21:35:51,327 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:51) - _________________________org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon May 04 21:35:50 CST 2015]; root of context hierarchy]
+2015-05-04 21:35:51,327 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:40) - Export：co.solinx.forest.demo.api.IHelloForestService
+2015-05-04 21:35:51,438 [main] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:224) - Starting
+2015-05-04 21:35:55,956 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2015-05-04 21:35:55,957 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:host.name=linx
+2015-05-04 21:35:55,958 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.version=1.8.0_40
+2015-05-04 21:35:55,958 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
+2015-05-04 21:35:55,959 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.home=D:\Java\jdk1.8.0_40\jre
+2015-05-04 21:35:55,959 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.class.path=D:\Java\jdk1.8.0_40\jre\lib\charsets.jar;D:\Java\jdk1.8.0_40\jre\lib\deploy.jar;D:\Java\jdk1.8.0_40\jre\lib\javaws.jar;D:\Java\jdk1.8.0_40\jre\lib\jce.jar;D:\Java\jdk1.8.0_40\jre\lib\jfr.jar;D:\Java\jdk1.8.0_40\jre\lib\jfxswt.jar;D:\Java\jdk1.8.0_40\jre\lib\jsse.jar;D:\Java\jdk1.8.0_40\jre\lib\management-agent.jar;D:\Java\jdk1.8.0_40\jre\lib\plugin.jar;D:\Java\jdk1.8.0_40\jre\lib\resources.jar;D:\Java\jdk1.8.0_40\jre\lib\rt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\access-bridge-64.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\cldrdata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\dnsns.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jaccess.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jfxrt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\localedata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\nashorn.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunec.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunjce_provider.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunmscapi.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunpkcs11.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\zipfs.jar;E:\Develop\forest\forest-demo\forest-demo-provider\target\classes;D:\apache-maven-3.1.0\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\apache-maven-3.1.0\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-beans\4.1.5.RELEASE\spring-beans-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-core\4.1.5.RELEASE\spring-core-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-context\4.1.5.RELEASE\spring-context-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-aop\4.1.5.RELEASE\spring-aop-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-expression\4.1.5.RELEASE\spring-expression-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;D:\apache-maven-3.1.0\repository\jline\jline\0.9.94\jline-0.9.94.jar;D:\apache-maven-3.1.0\repository\junit\junit\3.8.1\junit-3.8.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-framework\2.7.1\curator-framework-2.7.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-client\2.7.1\curator-client-2.7.1.jar;D:\apache-maven-3.1.0\repository\com\google\guava\guava\16.0.1\guava-16.0.1.jar;E:\Develop\forest\forest-common\target\classes;D:\apache-maven-3.1.0\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\Develop\forest\forest-config\forest-config-api\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-jdk\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-api\target\classes;E:\Develop\forest\forest-config\forest-config-spring\target\classes;E:\Develop\forest\forest-container\forest-container-api\target\classes;E:\Develop\forest\forest-container\forest-container-log4j\target\classes;E:\Develop\forest\forest-container\forest-container-spring\target\classes;E:\Develop\forest\forest-registry\forest-registry-zookeeper\target\classes;D:\apache-maven-3.1.0\repository\co\solinx\forest-registry-api\1.0-SNAPSHOT\forest-registry-api-1.0-SNAPSHOT.jar;E:\Develop\forest\forest-remote\forest-remote-netty\target\classes;D:\apache-maven-3.1.0\repository\io\netty\netty-all\4.0.27.Final\netty-all-4.0.27.Final.jar;E:\Develop\forest\forest-remote\forest-remote-api\target\classes;E:\Develop\forest\forest-remote\forest-remote-zookeeper\target\classes;D:\JetBrains\IntelliJ IDEA 14.1\lib\idea_rt.jar
+2015-05-04 21:35:55,961 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.library.path=D:\Java\jdk1.8.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Java\jdk1.8.0_40\bin;D:\Java\jdk1.8.0_40\jre\bin;D:\Git\bin;D:\Go\bin;.
+2015-05-04 21:35:55,962 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\鑫\AppData\Local\Temp\
+2015-05-04 21:35:55,964 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.compiler=<NA>
+2015-05-04 21:35:55,965 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.name=Windows 8.1
+2015-05-04 21:35:55,965 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.arch=amd64
+2015-05-04 21:35:55,965 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.version=6.3
+2015-05-04 21:35:55,969 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.name=鑫
+2015-05-04 21:35:55,970 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.home=C:\Users\鑫
+2015-05-04 21:35:55,970 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.dir=E:\Develop\forest
+2015-05-04 21:35:55,972 [main] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.140:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@8b96fde
+2015-05-04 21:35:56,051 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-05-04 21:35:56,054 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:42) - STARTED
+2015-05-04 21:35:56,054 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:45) - interfaceName_______________co.solinx.forest.demo.api.IHelloForestService
+2015-05-04 21:35:56,077 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.140.140/192.168.140.140:2181, initiating session
+2015-05-04 21:35:56,085 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.140.140/192.168.140.140:2181, sessionid = 0x14c1e5595a0022e, negotiated timeout = 40000
+2015-05-04 21:35:56,088 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: CONNECTED
+2015-05-04 21:35:56,089 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-05-04 21:35:56,089 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - CONNECTED
+2015-05-04 21:35:57,097 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-05-04 21:35:57,098 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService,已存在！
+2015-05-04 21:35:57,099 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService/providers,已存在！
+2015-05-04 21:35:57,101 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService/providers/forest%3A%2F%2F127.0.0.1%3A18088%2Fco.solinx.forest.demo.impl.HelloForestServiceImpl,已存在！
+2015-05-04 21:35:57,102 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:53) - [co.solinx.forest.demo.impl.HelloForestServiceImpl@7adda9cc]
+2015-05-04 21:35:57,102 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:51) - _________________________org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon May 04 21:35:50 CST 2015]; root of context hierarchy]
+2015-05-04 21:35:57,102 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:40) - Export：co.solinx.forest.demo.api.IHelloRpcService
+2015-05-04 21:35:57,102 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:45) - interfaceName_______________co.solinx.forest.demo.api.IHelloRpcService
+2015-05-04 21:35:57,103 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-05-04 21:35:57,104 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService,已存在！
+2015-05-04 21:35:57,104 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService/providers,已存在！
+2015-05-04 21:35:57,105 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService/providers/forest%3A%2F%2F127.0.0.1%3A18088%2Fco.solinx.forest.demo.impl.HelloRpcServiceImpl,已存在！
+2015-05-04 21:35:57,106 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:53) - [co.solinx.forest.demo.impl.HelloForestServiceImpl@7adda9cc, co.solinx.forest.demo.impl.HelloRpcServiceImpl@5cee5251]
+2015-05-04 21:35:57,391 [main] INFO  solinx.forest.remote.netty.server.NettyServer (NettyServer.java:65) - netty server start bind by 18088
+2015-05-04 21:35:57,391 [main] INFO  solinx.forest.remote.netty.server.NettyServer (NettyServer.java:48) - ------------------netty start
+2015-05-04 21:36:25,124 [main] INFO  co.solinx.forest.container.spring.SpringContainer (SpringContainer.java:22) - SpringContainer start
+2015-05-04 21:36:25,261 [main] INFO  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon May 04 21:36:25 CST 2015]; root of context hierarchy
+2015-05-04 21:36:25,317 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader (XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from file [E:\Develop\forest\forest-demo\forest-demo-customer\target\classes\META-INF\spring\forest-customer.xml]
+2015-05-04 21:36:25,555 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:32) - constructor-----------
+2015-05-04 21:36:25,571 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:49) - ---------------------------co.solinx.forest.demo.api.IHelloForestService
+2015-05-04 21:36:25,571 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:51) - getObject---------------
+2015-05-04 21:36:25,571 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:37) - co.solinx.forest.demo.api.IHelloForestService
+2015-05-04 21:36:25,588 [main] WARN  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:487) - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'forestService': Invocation of init method failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: 0
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:736)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at co.solinx.forest.container.spring.SpringContainer.start(SpringContainer.java:23)
+	at co.solinx.forest.container.Main.main(Main.java:27)
+	at co.solinx.forest.demo.customer.customer.main(customer.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 0
+	at co.solinx.forest.common.extension.ExtensionLoader.loadExtension(ExtensionLoader.java:25)
+	at co.solinx.forest.config.ReferenceConfig.init(ReferenceConfig.java:51)
+	at co.solinx.forest.config.ReferenceConfig.get(ReferenceConfig.java:39)
+	at co.solinx.forest.config.spring.ReferenceBean.afterPropertiesSet(ReferenceBean.java:53)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1625)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1562)
+	... 19 more
+2015-05-04 21:41:08,079 [main] INFO  co.solinx.forest.container.spring.SpringContainer (SpringContainer.java:22) - SpringContainer start
+2015-05-04 21:41:08,230 [main] INFO  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon May 04 21:41:08 CST 2015]; root of context hierarchy
+2015-05-04 21:41:08,292 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader (XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from file [E:\Develop\forest\forest-demo\forest-demo-provider\target\classes\META-INF\spring\forest-provider.xml]
+2015-05-04 21:41:08,527 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:32) - ServiceBean 
+2015-05-04 21:41:08,541 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:32) - ServiceBean 
+2015-05-04 21:41:08,548 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:51) - _________________________org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon May 04 21:41:08 CST 2015]; root of context hierarchy]
+2015-05-04 21:41:08,549 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:40) - Export：co.solinx.forest.demo.api.IHelloForestService
+2015-05-04 21:41:08,644 [main] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:224) - Starting
+2015-05-04 21:41:13,155 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2015-05-04 21:41:13,155 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:host.name=linx
+2015-05-04 21:41:13,156 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.version=1.8.0_40
+2015-05-04 21:41:13,156 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
+2015-05-04 21:41:13,156 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.home=D:\Java\jdk1.8.0_40\jre
+2015-05-04 21:41:13,156 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.class.path=D:\Java\jdk1.8.0_40\jre\lib\charsets.jar;D:\Java\jdk1.8.0_40\jre\lib\deploy.jar;D:\Java\jdk1.8.0_40\jre\lib\javaws.jar;D:\Java\jdk1.8.0_40\jre\lib\jce.jar;D:\Java\jdk1.8.0_40\jre\lib\jfr.jar;D:\Java\jdk1.8.0_40\jre\lib\jfxswt.jar;D:\Java\jdk1.8.0_40\jre\lib\jsse.jar;D:\Java\jdk1.8.0_40\jre\lib\management-agent.jar;D:\Java\jdk1.8.0_40\jre\lib\plugin.jar;D:\Java\jdk1.8.0_40\jre\lib\resources.jar;D:\Java\jdk1.8.0_40\jre\lib\rt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\access-bridge-64.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\cldrdata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\dnsns.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jaccess.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jfxrt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\localedata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\nashorn.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunec.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunjce_provider.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunmscapi.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunpkcs11.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\zipfs.jar;E:\Develop\forest\forest-demo\forest-demo-provider\target\classes;D:\apache-maven-3.1.0\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\apache-maven-3.1.0\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-beans\4.1.5.RELEASE\spring-beans-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-core\4.1.5.RELEASE\spring-core-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-context\4.1.5.RELEASE\spring-context-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-aop\4.1.5.RELEASE\spring-aop-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-expression\4.1.5.RELEASE\spring-expression-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;D:\apache-maven-3.1.0\repository\jline\jline\0.9.94\jline-0.9.94.jar;D:\apache-maven-3.1.0\repository\junit\junit\3.8.1\junit-3.8.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-framework\2.7.1\curator-framework-2.7.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-client\2.7.1\curator-client-2.7.1.jar;D:\apache-maven-3.1.0\repository\com\google\guava\guava\16.0.1\guava-16.0.1.jar;E:\Develop\forest\forest-common\target\classes;D:\apache-maven-3.1.0\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\Develop\forest\forest-config\forest-config-api\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-jdk\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-api\target\classes;E:\Develop\forest\forest-config\forest-config-spring\target\classes;E:\Develop\forest\forest-container\forest-container-api\target\classes;E:\Develop\forest\forest-container\forest-container-log4j\target\classes;E:\Develop\forest\forest-container\forest-container-spring\target\classes;E:\Develop\forest\forest-registry\forest-registry-zookeeper\target\classes;D:\apache-maven-3.1.0\repository\co\solinx\forest-registry-api\1.0-SNAPSHOT\forest-registry-api-1.0-SNAPSHOT.jar;E:\Develop\forest\forest-remote\forest-remote-netty\target\classes;D:\apache-maven-3.1.0\repository\io\netty\netty-all\4.0.27.Final\netty-all-4.0.27.Final.jar;E:\Develop\forest\forest-remote\forest-remote-api\target\classes;E:\Develop\forest\forest-remote\forest-remote-zookeeper\target\classes;D:\JetBrains\IntelliJ IDEA 14.1\lib\idea_rt.jar
+2015-05-04 21:41:13,159 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.library.path=D:\Java\jdk1.8.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Java\jdk1.8.0_40\bin;D:\Java\jdk1.8.0_40\jre\bin;D:\Git\bin;D:\Go\bin;.
+2015-05-04 21:41:13,159 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\鑫\AppData\Local\Temp\
+2015-05-04 21:41:13,160 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.compiler=<NA>
+2015-05-04 21:41:13,160 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.name=Windows 8.1
+2015-05-04 21:41:13,160 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.arch=amd64
+2015-05-04 21:41:13,160 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.version=6.3
+2015-05-04 21:41:13,161 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.name=鑫
+2015-05-04 21:41:13,161 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.home=C:\Users\鑫
+2015-05-04 21:41:13,161 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.dir=E:\Develop\forest
+2015-05-04 21:41:13,162 [main] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.140:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@8b96fde
+2015-05-04 21:41:13,230 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-05-04 21:41:13,233 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:42) - STARTED
+2015-05-04 21:41:13,233 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:45) - interfaceName_______________co.solinx.forest.demo.api.IHelloForestService
+2015-05-04 21:41:13,251 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.140.140/192.168.140.140:2181, initiating session
+2015-05-04 21:41:13,258 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.140.140/192.168.140.140:2181, sessionid = 0x14c1e5595a0022f, negotiated timeout = 40000
+2015-05-04 21:41:13,261 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: CONNECTED
+2015-05-04 21:41:13,262 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-05-04 21:41:13,263 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - CONNECTED
+2015-05-04 21:41:14,282 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-05-04 21:41:14,284 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService,已存在！
+2015-05-04 21:41:14,286 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService/providers,已存在！
+2015-05-04 21:41:14,306 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:53) - [co.solinx.forest.demo.impl.HelloForestServiceImpl@76908cc0]
+2015-05-04 21:41:14,306 [main] INFO  co.solinx.forest.config.spring.ServiceBean (ServiceBean.java:51) - _________________________org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon May 04 21:41:08 CST 2015]; root of context hierarchy]
+2015-05-04 21:41:14,307 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:40) - Export：co.solinx.forest.demo.api.IHelloRpcService
+2015-05-04 21:41:14,307 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:45) - interfaceName_______________co.solinx.forest.demo.api.IHelloRpcService
+2015-05-04 21:41:14,308 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-05-04 21:41:14,309 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService,已存在！
+2015-05-04 21:41:14,311 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService/providers,已存在！
+2015-05-04 21:41:14,314 [main] INFO  co.solinx.forest.config.ServiceConfig (ServiceConfig.java:53) - [co.solinx.forest.demo.impl.HelloForestServiceImpl@76908cc0, co.solinx.forest.demo.impl.HelloRpcServiceImpl@2473d930]
+2015-05-04 21:41:14,592 [main] INFO  solinx.forest.remote.netty.server.NettyServer (NettyServer.java:65) - netty server start bind by 18088
+2015-05-04 21:41:14,592 [main] INFO  solinx.forest.remote.netty.server.NettyServer (NettyServer.java:48) - ------------------netty start
+2015-05-04 21:42:29,418 [main] INFO  co.solinx.forest.container.spring.SpringContainer (SpringContainer.java:22) - SpringContainer start
+2015-05-04 21:42:29,566 [main] INFO  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Mon May 04 21:42:29 CST 2015]; root of context hierarchy
+2015-05-04 21:42:29,629 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader (XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from file [E:\Develop\forest\forest-demo\forest-demo-customer\target\classes\META-INF\spring\forest-customer.xml]
+2015-05-04 21:42:29,870 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:32) - constructor-----------
+2015-05-04 21:42:29,887 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:49) - ---------------------------co.solinx.forest.demo.api.IHelloForestService
+2015-05-04 21:42:29,888 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:51) - getObject---------------
+2015-05-04 21:42:29,888 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:37) - co.solinx.forest.demo.api.IHelloForestService
+2015-05-04 21:42:30,046 [main] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl (CuratorFrameworkImpl.java:224) - Starting
+2015-05-04 21:42:34,559 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2015-05-04 21:42:34,560 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:host.name=linx
+2015-05-04 21:42:34,561 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.version=1.8.0_40
+2015-05-04 21:42:34,561 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
+2015-05-04 21:42:34,561 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.home=D:\Java\jdk1.8.0_40\jre
+2015-05-04 21:42:34,562 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.class.path=D:\Java\jdk1.8.0_40\jre\lib\charsets.jar;D:\Java\jdk1.8.0_40\jre\lib\deploy.jar;D:\Java\jdk1.8.0_40\jre\lib\javaws.jar;D:\Java\jdk1.8.0_40\jre\lib\jce.jar;D:\Java\jdk1.8.0_40\jre\lib\jfr.jar;D:\Java\jdk1.8.0_40\jre\lib\jfxswt.jar;D:\Java\jdk1.8.0_40\jre\lib\jsse.jar;D:\Java\jdk1.8.0_40\jre\lib\management-agent.jar;D:\Java\jdk1.8.0_40\jre\lib\plugin.jar;D:\Java\jdk1.8.0_40\jre\lib\resources.jar;D:\Java\jdk1.8.0_40\jre\lib\rt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\access-bridge-64.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\cldrdata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\dnsns.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jaccess.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\jfxrt.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\localedata.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\nashorn.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunec.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunjce_provider.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunmscapi.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\sunpkcs11.jar;D:\Java\jdk1.8.0_40\jre\lib\ext\zipfs.jar;E:\Develop\forest\forest-demo\forest-demo-customer\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-default\target\classes;D:\apache-maven-3.1.0\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\apache-maven-3.1.0\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-beans\4.1.5.RELEASE\spring-beans-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-core\4.1.5.RELEASE\spring-core-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-context\4.1.5.RELEASE\spring-context-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-aop\4.1.5.RELEASE\spring-aop-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;D:\apache-maven-3.1.0\repository\org\springframework\spring-expression\4.1.5.RELEASE\spring-expression-4.1.5.RELEASE.jar;D:\apache-maven-3.1.0\repository\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;D:\apache-maven-3.1.0\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;D:\apache-maven-3.1.0\repository\jline\jline\0.9.94\jline-0.9.94.jar;D:\apache-maven-3.1.0\repository\junit\junit\3.8.1\junit-3.8.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-framework\2.7.1\curator-framework-2.7.1.jar;D:\apache-maven-3.1.0\repository\org\apache\curator\curator-client\2.7.1\curator-client-2.7.1.jar;D:\apache-maven-3.1.0\repository\com\google\guava\guava\16.0.1\guava-16.0.1.jar;E:\Develop\forest\forest-common\target\classes;D:\apache-maven-3.1.0\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\Develop\forest\forest-config\forest-config-api\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-jdk\target\classes;E:\Develop\forest\forest-rpc\forest-rpc-api\target\classes;E:\Develop\forest\forest-config\forest-config-spring\target\classes;E:\Develop\forest\forest-container\forest-container-api\target\classes;E:\Develop\forest\forest-container\forest-container-log4j\target\classes;E:\Develop\forest\forest-container\forest-container-spring\target\classes;E:\Develop\forest\forest-registry\forest-registry-zookeeper\target\classes;D:\apache-maven-3.1.0\repository\co\solinx\forest-registry-api\1.0-SNAPSHOT\forest-registry-api-1.0-SNAPSHOT.jar;E:\Develop\forest\forest-remote\forest-remote-netty\target\classes;D:\apache-maven-3.1.0\repository\io\netty\netty-all\4.0.27.Final\netty-all-4.0.27.Final.jar;E:\Develop\forest\forest-remote\forest-remote-api\target\classes;E:\Develop\forest\forest-remote\forest-remote-zookeeper\target\classes;D:\JetBrains\IntelliJ IDEA 14.1\lib\idea_rt.jar
+2015-05-04 21:42:34,564 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.library.path=D:\Java\jdk1.8.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Java\jdk1.8.0_40\bin;D:\Java\jdk1.8.0_40\jre\bin;D:\Git\bin;D:\Go\bin;.
+2015-05-04 21:42:34,569 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\鑫\AppData\Local\Temp\
+2015-05-04 21:42:34,572 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:java.compiler=<NA>
+2015-05-04 21:42:34,576 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.name=Windows 8.1
+2015-05-04 21:42:34,577 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.arch=amd64
+2015-05-04 21:42:34,577 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:os.version=6.3
+2015-05-04 21:42:34,578 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.name=鑫
+2015-05-04 21:42:34,578 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.home=C:\Users\鑫
+2015-05-04 21:42:34,578 [main] INFO  org.apache.zookeeper.Environment (Environment.java:100) - Client environment:user.dir=E:\Develop\forest
+2015-05-04 21:42:34,581 [main] INFO  org.apache.zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.140.140:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@58fdd99
+2015-05-04 21:42:34,669 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:975) - Opening socket connection to server 192.168.140.140/192.168.140.140:2181. Will not attempt to authenticate using SASL (unknown error)
+2015-05-04 21:42:34,672 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:852) - Socket connection established to 192.168.140.140/192.168.140.140:2181, initiating session
+2015-05-04 21:42:34,672 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:42) - STARTED
+2015-05-04 21:42:34,679 [main-SendThread(192.168.140.140:2181)] INFO  org.apache.zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1235) - Session establishment complete on server 192.168.140.140/192.168.140.140:2181, sessionid = 0x14c1e5595a00230, negotiated timeout = 40000
+2015-05-04 21:42:34,682 [main-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager (ConnectionStateManager.java:228) - State change: CONNECTED
+2015-05-04 21:42:34,684 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:37) - Connection状态监听
+2015-05-04 21:42:34,684 [Curator-ConnectionStateManager-0] INFO  co.solinx.remote.zookeeper.ZookeeperClient$1 (ZookeeperClient.java:38) - CONNECTED
+2015-05-04 21:42:35,698 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-05-04 21:42:35,700 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService,已存在！
+2015-05-04 21:42:35,702 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloForestService/consumers,已存在！
+2015-05-04 21:42:35,762 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:54) - co.solinx.forest.remote.invoker.NettyInvoker@1e802ef9
+2015-05-04 21:42:35,764 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:32) - constructor-----------
+2015-05-04 21:42:35,764 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:49) - ---------------------------co.solinx.forest.demo.api.IHelloRpcService
+2015-05-04 21:42:35,764 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:51) - getObject---------------
+2015-05-04 21:42:35,764 [main] INFO  co.solinx.forest.config.ReferenceConfig (ReferenceConfig.java:37) - co.solinx.forest.demo.api.IHelloRpcService
+2015-05-04 21:42:35,768 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest,已存在！
+2015-05-04 21:42:35,769 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService,已存在！
+2015-05-04 21:42:35,771 [main] INFO  co.solinx.remote.zookeeper.ZookeeperClient (ZookeeperClient.java:83) - 节点：/forest/co.solinx.forest.demo.api.IHelloRpcService/consumers,已存在！
+2015-05-04 21:42:35,776 [main] INFO  co.solinx.forest.config.spring.ReferenceBean (ReferenceBean.java:54) - co.solinx.forest.remote.invoker.NettyInvoker@49c386c8
+2015-05-04 21:42:36,061 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=1157299099, data=co.solinx.forest.demo.api.IHelloRpcService,hello, RequestTime=0, param=null}
+2015-05-04 21:42:36,078 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,078 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=1157299099, data=co.solinx.forest.demo.api.IHelloRpcService,hello, RequestTime=0, param=null}
+2015-05-04 21:42:36,080 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloRpcService,hello
+2015-05-04 21:42:36,081 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:null
+2015-05-04 21:42:36,081 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 21:42:36,090 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,090 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=1157299099, result=empty, errorMsg='null'}
+2015-05-04 21:42:36,090 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=1157299099, result=empty, errorMsg='null'}
+2015-05-04 21:42:36,090 [nioEventLoopGroup-2-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=1157299099, data=co.solinx.forest.demo.api.IHelloRpcService,hello, RequestTime=0, param=null}
+2015-05-04 21:42:36,114 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 21:42:36,115 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:void
+2015-05-04 21:42:36,115 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - empty
+2015-05-04 21:42:36,152 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=611840469, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[0]}
+2015-05-04 21:42:36,154 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,154 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=611840469, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[0]}
+2015-05-04 21:42:36,154 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 21:42:36,155 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest0
+2015-05-04 21:42:36,155 [nioEventLoopGroup-3-2] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 21:42:36,156 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,156 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=611840469, result=HelloForest0, errorMsg='null'}
+2015-05-04 21:42:36,156 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=611840469, result=HelloForest0, errorMsg='null'}
+2015-05-04 21:42:36,156 [nioEventLoopGroup-3-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=611840469, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[0]}
+2015-05-04 21:42:36,235 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 21:42:36,235 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 21:42:36,235 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest0
+2015-05-04 21:42:36,235 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest0
+2015-05-04 21:42:36,276 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-1417050690, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[1]}
+2015-05-04 21:42:36,277 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,277 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-1417050690, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[1]}
+2015-05-04 21:42:36,277 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 21:42:36,277 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest1
+2015-05-04 21:42:36,278 [nioEventLoopGroup-3-3] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 21:42:36,278 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,278 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-1417050690, result=HelloForest1, errorMsg='null'}
+2015-05-04 21:42:36,278 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-1417050690, result=HelloForest1, errorMsg='null'}
+2015-05-04 21:42:36,279 [nioEventLoopGroup-4-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-1417050690, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[1]}
+2015-05-04 21:42:36,357 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 21:42:36,358 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 21:42:36,358 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest1
+2015-05-04 21:42:36,358 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest1
+2015-05-04 21:42:36,422 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=306469701, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[2]}
+2015-05-04 21:42:36,424 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,424 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=306469701, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[2]}
+2015-05-04 21:42:36,424 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 21:42:36,424 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest2
+2015-05-04 21:42:36,424 [nioEventLoopGroup-3-4] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 21:42:36,425 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,425 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=306469701, result=HelloForest2, errorMsg='null'}
+2015-05-04 21:42:36,425 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=306469701, result=HelloForest2, errorMsg='null'}
+2015-05-04 21:42:36,425 [nioEventLoopGroup-5-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=306469701, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[2]}
+2015-05-04 21:42:36,507 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 21:42:36,508 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 21:42:36,508 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest2
+2015-05-04 21:42:36,508 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest2
+2015-05-04 21:42:36,595 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-452045138, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[3]}
+2015-05-04 21:42:36,596 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,597 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-452045138, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[3]}
+2015-05-04 21:42:36,597 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 21:42:36,597 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest3
+2015-05-04 21:42:36,597 [nioEventLoopGroup-3-5] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 21:42:36,598 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,598 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-452045138, result=HelloForest3, errorMsg='null'}
+2015-05-04 21:42:36,598 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-452045138, result=HelloForest3, errorMsg='null'}
+2015-05-04 21:42:36,598 [nioEventLoopGroup-6-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-452045138, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[3]}
+2015-05-04 21:42:36,676 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 21:42:36,676 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 21:42:36,676 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest3
+2015-05-04 21:42:36,677 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest3
+2015-05-04 21:42:36,730 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=2000554358, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[4]}
+2015-05-04 21:42:36,732 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,732 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=2000554358, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[4]}
+2015-05-04 21:42:36,732 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 21:42:36,732 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest4
+2015-05-04 21:42:36,732 [nioEventLoopGroup-3-6] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 21:42:36,733 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,733 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=2000554358, result=HelloForest4, errorMsg='null'}
+2015-05-04 21:42:36,733 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=2000554358, result=HelloForest4, errorMsg='null'}
+2015-05-04 21:42:36,733 [nioEventLoopGroup-7-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=2000554358, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[4]}
+2015-05-04 21:42:36,812 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 21:42:36,812 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 21:42:36,813 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest4
+2015-05-04 21:42:36,813 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest4
+2015-05-04 21:42:36,872 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-1594982595, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[5]}
+2015-05-04 21:42:36,873 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,874 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-1594982595, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[5]}
+2015-05-04 21:42:36,874 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 21:42:36,874 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest5
+2015-05-04 21:42:36,874 [nioEventLoopGroup-3-7] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 21:42:36,875 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:36,875 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-1594982595, result=HelloForest5, errorMsg='null'}
+2015-05-04 21:42:36,875 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-1594982595, result=HelloForest5, errorMsg='null'}
+2015-05-04 21:42:36,875 [nioEventLoopGroup-8-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-1594982595, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[5]}
+2015-05-04 21:42:36,954 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 21:42:36,955 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 21:42:36,955 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest5
+2015-05-04 21:42:36,955 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest5
+2015-05-04 21:42:37,023 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=654958546, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[6]}
+2015-05-04 21:42:37,024 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:37,025 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=654958546, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[6]}
+2015-05-04 21:42:37,025 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 21:42:37,025 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest6
+2015-05-04 21:42:37,025 [nioEventLoopGroup-3-8] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 21:42:37,026 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:37,026 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=654958546, result=HelloForest6, errorMsg='null'}
+2015-05-04 21:42:37,026 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=654958546, result=HelloForest6, errorMsg='null'}
+2015-05-04 21:42:37,026 [nioEventLoopGroup-9-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=654958546, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[6]}
+2015-05-04 21:42:37,104 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 21:42:37,104 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 21:42:37,105 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest6
+2015-05-04 21:42:37,105 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest6
+2015-05-04 21:42:37,172 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-490559203, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[7]}
+2015-05-04 21:42:37,173 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:37,173 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-490559203, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[7]}
+2015-05-04 21:42:37,174 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 21:42:37,174 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest7
+2015-05-04 21:42:37,174 [nioEventLoopGroup-3-9] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 21:42:37,174 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:37,175 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-490559203, result=HelloForest7, errorMsg='null'}
+2015-05-04 21:42:37,175 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-490559203, result=HelloForest7, errorMsg='null'}
+2015-05-04 21:42:37,175 [nioEventLoopGroup-10-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-490559203, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[7]}
+2015-05-04 21:42:37,253 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 21:42:37,253 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 21:42:37,254 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest7
+2015-05-04 21:42:37,254 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest7
+2015-05-04 21:42:37,325 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=-751763997, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[8]}
+2015-05-04 21:42:37,327 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:37,327 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=-751763997, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[8]}
+2015-05-04 21:42:37,327 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 21:42:37,327 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest8
+2015-05-04 21:42:37,327 [nioEventLoopGroup-3-10] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 21:42:37,328 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:37,328 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=-751763997, result=HelloForest8, errorMsg='null'}
+2015-05-04 21:42:37,328 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=-751763997, result=HelloForest8, errorMsg='null'}
+2015-05-04 21:42:37,328 [nioEventLoopGroup-11-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=-751763997, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[8]}
+2015-05-04 21:42:37,406 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 21:42:37,407 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 21:42:37,407 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest8
+2015-05-04 21:42:37,407 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest8
+2015-05-04 21:42:37,485 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:55) - Request{id=2139468331, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[9]}
+2015-05-04 21:42:37,487 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:37,487 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Request{id=2139468331, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[9]}
+2015-05-04 21:42:37,487 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:40) - message:co.solinx.forest.demo.api.IHelloForestService,print
+2015-05-04 21:42:37,487 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.Handler.ServiceHandler (ServiceHandler.java:57) - result:HelloForest9
+2015-05-04 21:42:37,488 [nioEventLoopGroup-3-11] INFO  solinx.forest.remote.netty.code.Encoder (Encoder.java:60) - -----------------------------Response
+2015-05-04 21:42:37,488 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:59) - ----------------------------convertRequestByByte
+2015-05-04 21:42:37,488 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.code.Decoder (Decoder.java:60) - Response{id=2139468331, result=HelloForest9, errorMsg='null'}
+2015-05-04 21:42:37,488 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:71) - Response{id=2139468331, result=HelloForest9, errorMsg='null'}
+2015-05-04 21:42:37,489 [nioEventLoopGroup-12-1] INFO  solinx.forest.remote.netty.Handler.ClientHandler (ClientHandler.java:72) - Request{id=2139468331, data=co.solinx.forest.demo.api.IHelloForestService,print, RequestTime=0, param=[9]}
+2015-05-04 21:42:37,566 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:19) - threadName:main
+2015-05-04 21:42:37,566 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:20) - returnType:class java.lang.String
+2015-05-04 21:42:37,567 [main] INFO  co.solinx.forest.remote.invoker.NettyInvoker (NettyInvoker.java:22) - HelloForest9
+2015-05-04 21:42:37,567 [main] INFO  co.solinx.forest.demo.main (main.java:35) - HelloForest9

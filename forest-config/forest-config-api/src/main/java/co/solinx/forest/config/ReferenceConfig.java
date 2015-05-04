@@ -1,8 +1,9 @@
 package co.solinx.forest.config;
- 
+
+import co.solinx.forest.common.extension.ExtensionLoader;
 import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
 import co.solinx.forest.rpc.ForestInvoker;
-import co.solinx.forest.rpc.jdk.JdkDynamicProxy;
+import co.solinx.forest.rpc.jdk.AbstractProxy;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
@@ -25,6 +26,8 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public String protocol;
     private ApplicationContext context;
     private ForestInvoker invoker = new ForestInvoker();
+    private ExtensionLoader<AbstractProxy> extensionLoader=new ExtensionLoader();
+    private AbstractProxy proxy =extensionLoader.loadExtension("co.solinx.forest.rpc.jdk.AbstractProxy",AbstractProxy.class);
 
 
     public ReferenceConfig() {
@@ -45,7 +48,7 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public void init() {
         //代理类
 //        DefaultProxy proxy = new DefaultProxy();
-        JdkDynamicProxy proxy = new JdkDynamicProxy();
+
 
         try {
             //注册中心

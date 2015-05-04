@@ -4,9 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -16,12 +14,27 @@ import java.util.concurrent.ConcurrentMap;
 public class ExtensionLoader<T> {
 
     private static final String SERVICE_DIRECTORY = "META-INF/services/";
+    private static final String SERVICE_PROXY_INTERFACE="co.solinx.forest.rpc.jdk.AbstractProxy";
 
     private final ConcurrentMap<String, Class> cacheClass = new ConcurrentHashMap<String, Class>();
 
-    public void loadFile() {
+    public T loadExtension(String api,Class inter){
+        this.loadFile(api);
+        ServiceLoader<T> service= ServiceLoader.load(inter);
+        return service.iterator().next();
+    }
+
+    public Iterator<T> loadExtensionIterator(String api,Class inter){
+        this.loadFile(api);
+        ServiceLoader<T> service= ServiceLoader.load(inter);
+        return service.iterator();
+    }
+
+    public void loadFile(String path) {
         ClassLoader classLoader = findClassLoader();
-        String fileName = SERVICE_DIRECTORY + "co.solinx.forest.container.IContainer";
+//        String fileName = SERVICE_DIRECTORY + "co.solinx.forest.container.IContainer";
+//        String fileName = SERVICE_DIRECTORY + "co.solinx.forest.rpc.jdk.AbstractProxy";
+        String fileName=SERVICE_DIRECTORY+path;
         Enumeration<URL> urls;
         List<Class> classList = new ArrayList();
         try {
