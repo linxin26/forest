@@ -19,13 +19,13 @@ public class ExtensionLoader<T> {
     private final ConcurrentMap<String, Class> cacheClass = new ConcurrentHashMap<String, Class>();
 
     public T loadExtension(String api,Class inter){
-        this.loadFile(api);
+//        this.loadFile(api);
         ServiceLoader<T> service= ServiceLoader.load(inter);
         return service.iterator().next();
     }
 
     public Iterator<T> loadExtensionIterator(String api,Class inter){
-        this.loadFile(api);
+//        this.loadFile(api);
         ServiceLoader<T> service= ServiceLoader.load(inter);
         return service.iterator();
     }
