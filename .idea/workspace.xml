@@ -1114,13 +1114,7 @@
       <workItem from="1429273882119" duration="55565000" />
       <workItem from="1430056082036" duration="12415000" />
       <workItem from="1430239375100" duration="15552000" />
-      <workItem from="1430834767900" duration="511000" />
-    </task>
-    <task id="LOCAL-00051" summary="netty3.7更新为netty4.0.27">
-      <created>1428588769961</created>
-      <option name="number" value="00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1428588769962</updated>
+      <workItem from="1430834767900" duration="550000" />
     </task>
     <task id="LOCAL-00052" summary="封装Request">
       <created>1428750682102</created>
@@ -1410,11 +1404,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430835084021</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="删除IDE相关文件">
+      <created>1430835281526</created>
+      <option name="number" value="00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1430835281526</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="469903000" />
+    <option name="totallyTimeSpent" value="469942000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
