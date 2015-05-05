@@ -1,42 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcffe273-43e5-43ae-a2d3-ae0833631cb0" name="Default" comment="重构SPI加载类">
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\copyright\profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\dictionaries\.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\dictionaries\LX.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__aopalliance_aopalliance_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__co_solinx_forest_registry_api_1_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__co_solinx_forest_rpc_default_1_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__com_google_guava_guava_16_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__commons_logging_commons_logging_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__io_netty_netty_3_7_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__io_netty_netty_all_4_0_27_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__jline_jline_0_9_94.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__junit_junit_3_8_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__log4j_log4j_1_2_16.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__log4j_log4j_1_2_17.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__org_apache_curator_curator_client_2_7_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__org_apache_curator_curator_framework_2_7_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__org_apache_zookeeper_zookeeper_3_4_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__org_javassist_javassist_3_15_0_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__org_slf4j_slf4j_api_1_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__org_slf4j_slf4j_log4j12_1_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__org_springframework_spring_aop_4_1_5_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__org_springframework_spring_beans_4_1_5_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__org_springframework_spring_context_4_1_5_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__org_springframework_spring_core_4_1_5_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\libraries\Maven__org_springframework_spring_expression_4_1_5_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\scopes\scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Develop\forest\.idea\vcs.xml" afterPath="" />
+    <list default="true" id="fcffe273-43e5-43ae-a2d3-ae0833631cb0" name="Default" comment="">
       <change type="DELETED" beforePath="E:\Develop\forest\.idea\workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log4j.file" afterPath="$PROJECT_DIR$/log4j.file" />
     </list>
     <ignored path="forest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1128,13 +1094,7 @@
       <workItem from="1429273882119" duration="55565000" />
       <workItem from="1430056082036" duration="12415000" />
       <workItem from="1430239375100" duration="15552000" />
-      <workItem from="1430834767900" duration="71000" />
-    </task>
-    <task id="LOCAL-00044" summary="简单动态代理调整">
-      <created>1428240403678</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1428240403678</updated>
+      <workItem from="1430834767900" duration="125000" />
     </task>
     <task id="LOCAL-00045" summary="重构JDK动态代理。">
       <created>1428327429489</created>
@@ -1424,11 +1384,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430834622027</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="删除IDE相关文件">
+      <created>1430834850622</created>
+      <option name="number" value="00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1430834850622</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="469463000" />
+    <option name="totallyTimeSpent" value="469517000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1536,9 +1502,9 @@
     <MESSAGE value="重构Container的SPI加载类，添加DynamicProxy 的SPI机制" />
     <MESSAGE value="重构SPI加载类" />
     <MESSAGE value="删除Target目录" />
-    <MESSAGE value="删除IDE相关文件" />
     <MESSAGE value="删除Target目录、删除IDE相关文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="删除Target目录、删除IDE相关文件" />
+    <MESSAGE value="删除IDE相关文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除IDE相关文件" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
