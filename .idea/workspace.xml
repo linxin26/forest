@@ -1094,13 +1094,7 @@
       <workItem from="1429273882119" duration="55565000" />
       <workItem from="1430056082036" duration="12415000" />
       <workItem from="1430239375100" duration="15552000" />
-      <workItem from="1430834767900" duration="155000" />
-    </task>
-    <task id="LOCAL-00046" summary="调整项目编码">
-      <created>1428413764329</created>
-      <option name="number" value="00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1428413764329</updated>
+      <workItem from="1430834767900" duration="177000" />
     </task>
     <task id="LOCAL-00047" summary="调整项目编码">
       <created>1428413975416</created>
@@ -1390,11 +1384,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430834895613</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="删除IDE相关文件">
+      <created>1430834924716</created>
+      <option name="number" value="00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1430834924716</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="469547000" />
+    <option name="totallyTimeSpent" value="469569000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
