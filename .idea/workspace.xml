@@ -531,7 +531,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -565,7 +565,30 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="forest">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="forest">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1094,13 +1117,7 @@
       <workItem from="1429273882119" duration="55565000" />
       <workItem from="1430056082036" duration="12415000" />
       <workItem from="1430239375100" duration="15552000" />
-      <workItem from="1430834767900" duration="260000" />
-    </task>
-    <task id="LOCAL-00049" summary="调整项目编码">
-      <created>1428416678685</created>
-      <option name="number" value="00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1428416678685</updated>
+      <workItem from="1430834767900" duration="314000" />
     </task>
     <task id="LOCAL-00050" summary="封装引用的请求，Request">
       <created>1428501292347</created>
@@ -1390,11 +1407,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430834973933</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="删除IDE相关文件">
+      <created>1430835031868</created>
+      <option name="number" value="00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1430835031868</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="469652000" />
+    <option name="totallyTimeSpent" value="469706000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
