@@ -103,11 +103,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forest-container/forest-container-api/src/main/java/co/solinx/forest/container/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68085104">
+            <state vertical-scroll-proportion="0.0">
               <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forest.iml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/forest.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -129,19 +139,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForestInvoker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forest-rpc/forest-rpc-default/src/main/java/co/solinx/forest/rpc/ForestInvoker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-              <folding>
-                <element signature="e#317#318#0" expanded="true" />
-                <element signature="e#364#365#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -1117,13 +1114,7 @@
       <workItem from="1429273882119" duration="55565000" />
       <workItem from="1430056082036" duration="12415000" />
       <workItem from="1430239375100" duration="15552000" />
-      <workItem from="1430834767900" duration="314000" />
-    </task>
-    <task id="LOCAL-00050" summary="封装引用的请求，Request">
-      <created>1428501292347</created>
-      <option name="number" value="00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1428501292611</updated>
+      <workItem from="1430834767900" duration="511000" />
     </task>
     <task id="LOCAL-00051" summary="netty3.7更新为netty4.0.27">
       <created>1428588769961</created>
@@ -1413,11 +1404,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430835031868</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="删除IDE相关文件">
+      <created>1430835084021</created>
+      <option name="number" value="00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1430835084021</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="469706000" />
+    <option name="totallyTimeSpent" value="469903000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1714,13 +1711,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/forest-remote/forest-remote-netty/src/main/java/co/solinx/forest/remote/netty/Handler/ServiceHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Java/jdk1.8.0_40/src.zip!/java/io/ObjectInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36615384">
@@ -2099,8 +2089,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forest-container/forest-container-api/src/main/java/co/solinx/forest/container/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68085104">
+        <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forest.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
