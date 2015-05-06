@@ -25,9 +25,8 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public T ref;
     public String protocol;
     private ApplicationContext context;
-    private ForestInvoker invoker = new ForestInvoker();
-    private ExtensionLoader<AbstractProxy> extensionLoader=new ExtensionLoader();
-    private AbstractProxy proxy =extensionLoader.loadExtension("co.solinx.forest.rpc.jdk.AbstractProxy",AbstractProxy.class);
+    private ExtensionLoader<AbstractProxy> extensionLoader = new ExtensionLoader();
+    private AbstractProxy proxy = extensionLoader.loadExtension("co.solinx.forest.rpc.jdk.AbstractProxy", AbstractProxy.class);
 
 
     public ReferenceConfig() {
@@ -59,9 +58,10 @@ public class ReferenceConfig<T> extends AbstractConfig {
             List<String> impl = zookeeperRegistry.getServiceImplList(interfaceName);
 
             //引用提供的第一个服务
-            String serviceImpl = URLDecoder.decode(impl.get(0), "UTF-8");
+            String serviceImpl = URLDecoder.decode(impl.get(1), "UTF-8");
             String serverAddress = serviceImpl.substring(serviceImpl.indexOf("//") + 2, serviceImpl.lastIndexOf("/"));
 
+            ForestInvoker invoker = new ForestInvoker();
             invoker.initInvoke(Class.forName(interfaceName), serverAddress);
             ref = (T) proxy.createProxy(invoker, Class.forName(interfaceName));
             //注册消费者

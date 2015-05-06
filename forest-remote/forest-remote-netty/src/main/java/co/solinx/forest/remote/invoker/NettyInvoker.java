@@ -15,6 +15,7 @@ public class NettyInvoker {
     public Object clientInvoker(Object delegate, String serverAddress, Method method, Object[] params) throws InterruptedException {
         NettyClient client = new NettyClient(delegate, method, params);
         if (method.getName() != "toString") {
+            logger.info("serverAddress:" + serverAddress);
             client.start(serverAddress);
             logger.info("threadName:" + Thread.currentThread().getName());
             logger.info("returnType:" + method.getReturnType());

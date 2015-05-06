@@ -30,22 +30,22 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class NettyClient {
 
-    Logger logger=Logger.getLogger(NettyClient.class);
+    Logger logger = Logger.getLogger(NettyClient.class);
     Bootstrap client;
     ClientHandler clientHandler;
     NioEventLoopGroup eventLoopGroup;
     Object service;
     Method method;     //方法
     Object[] params;   //参数
-    Lock lock=new ReentrantLock();
-    Condition condition=lock.newCondition();
+    Lock lock = new ReentrantLock();
+    Condition condition = lock.newCondition();
 
-    public NettyClient(Object service, Method method,Object[] params) {
+    public NettyClient(Object service, Method method, Object[] params) {
         client = new Bootstrap();
-        eventLoopGroup=new NioEventLoopGroup();
-        this.service=service;
-        this.method=method;
-        this.params=params;
+        eventLoopGroup = new NioEventLoopGroup();
+        this.service = service;
+        this.method = method;
+        this.params = params;
     }
 
     public void start(String address) {
@@ -53,7 +53,7 @@ public class NettyClient {
         lock.lock();
         try {
             client.group(eventLoopGroup);
-            clientHandler = new ClientHandler(service, method,params);
+            clientHandler = new ClientHandler(service, method, params);
             client.channel(NioSocketChannel.class);
             client.handler(new ChannelInitializer<SocketChannel>() {
                 @Override
@@ -64,21 +64,21 @@ public class NettyClient {
 
                 }
             });
-            ChannelFuture future = client.connect(new InetSocketAddress("127.0.0.1", 18088));
+            ChannelFuture future = client.connect(new InetSocketAddress(address.split(":")[0], Integer.parseInt(address.split(":")[1])));
 
             //用于检查handler是否已返回数据
-            while(true){
-                Response result= clientHandler.getRceiveMessage();
-                if(result==null||result.getResult().equals("null")|| result.getResult().equals("")) {
+            while (true) {
+                Response result = clientHandler.getRceiveMessage();
+                if (result == null || result.getResult().equals("null") || result.getResult().equals("")) {
                     condition.await(80, TimeUnit.MILLISECONDS);
-                }else{
+                } else {
                     break;
                 }
             }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
-        } finally{
+        } finally {
             eventLoopGroup.shutdownGracefully();
         }
         lock.unlock();

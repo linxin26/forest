@@ -132,12 +132,12 @@ public class ZookeeperRegistry implements IRegistry {
      * @param api
      * @throws UnsupportedEncodingException
      */
-    public void registryService(String service, String api) throws UnsupportedEncodingException {
+    public void registryService(String service, String api, int port) throws UnsupportedEncodingException {
         this.createRoot();
         this.registryServerApi(api);
         this.createProviderNote(api);
 
-        String serviceImplNote = URLEncoder.encode("forest://" + InetAddressUtils.findAddress() + ":18088/" + service, "UTF-8");
+        String serviceImplNote = URLEncoder.encode("forest://" + InetAddressUtils.findAddress() + ":" + port + "/" + service, "UTF-8");
         ZooNote serviceNote = new ZooNote();
         serviceNote.setNoteData(service);
         serviceNote.setNoteName(service);

@@ -44,17 +44,19 @@ public class ServiceConfig<T> extends AbstractConfig {
         //往注册中心注册服务
         logger.info("interfaceName_______________" + interfaceName);
         String serviceApi = interfaceName;
+
+        ProtocolConfig protocol= (ProtocolConfig) context.getBean("forest");
         //取得服务
         ServiceConfig serviceConfig = (ServiceConfig) context.getBean(serviceApi);
         Object serviceImpl = context.getBean(serviceConfig.getRef().toString());
         serviceList.add(serviceImpl);
         //注册服务
-        zookeeperRegistry.registryService(serviceImpl.getClass().getName(),serviceApi);
+        zookeeperRegistry.registryService(serviceImpl.getClass().getName(),serviceApi,protocol.getPort());
         logger.info(serviceList);
 
         //加载所有服务后启动Server
         if (serviceList.size() == num) {
-            ProtocolConfig protocol= (ProtocolConfig) context.getBean("forest");
+
             this.startServer(protocol.getPort());
         }
     }

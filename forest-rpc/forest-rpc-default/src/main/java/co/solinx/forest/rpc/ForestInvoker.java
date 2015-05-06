@@ -9,9 +9,6 @@ import cn.solinx.forest.rpc.api.Invocation;
  */
 public class ForestInvoker extends AbstractInvoker {
 
-    //    private String test;
-
-
 
     @Override
     public Object invoke(Invocation invocation) {
@@ -23,7 +20,6 @@ public class ForestInvoker extends AbstractInvoker {
         super.setInterfaceName(interfaceName.getName());
         super.setAddress(address);
     }
-
 
 
 }
