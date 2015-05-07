@@ -21,6 +21,7 @@
         <module>forest-config</module>
         <module>forest-remote</module>
         <module>forest-rpc</module>
+        <module>forest-cluster</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
