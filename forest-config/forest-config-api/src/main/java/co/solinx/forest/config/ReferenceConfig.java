@@ -1,15 +1,11 @@
 package co.solinx.forest.config;
 
 import co.solinx.forest.common.extension.ExtensionLoader;
-import co.solinx.forest.registry.zookeeper.ZookeeperRegistry;
+import co.solinx.forest.registry.api.AbstractRegistry;
 import co.solinx.forest.rpc.ForestInvoker;
 import co.solinx.forest.rpc.jdk.AbstractProxy;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
-
-import java.net.URLDecoder;
-import java.net.UnknownHostException;
-import java.util.List;
 
 /**
  * 引用配置类
@@ -27,6 +23,8 @@ public class ReferenceConfig<T> extends AbstractConfig {
     private ApplicationContext context;
     private ExtensionLoader<AbstractProxy> extensionLoader = new ExtensionLoader();
     private AbstractProxy proxy = extensionLoader.loadExtension("co.solinx.forest.rpc.jdk.AbstractProxy", AbstractProxy.class);
+    private ExtensionLoader<AbstractRegistry> loader = new ExtensionLoader();
+    AbstractRegistry registry =loader.loadExtension("",AbstractRegistry.class);
 
 
     public ReferenceConfig() {
@@ -50,25 +48,19 @@ public class ReferenceConfig<T> extends AbstractConfig {
 
 
         try {
-            //注册中心
-            RegistryConfig registryCenter = (RegistryConfig) context.getBean("registryAddress");
-            ZookeeperRegistry zookeeperRegistry = ZookeeperRegistry.getZookeeper();
-            zookeeperRegistry.toRegistry(registryCenter.getAddress());   //连接注册中心
-            //取得注册的服务
-            List<String> impl = zookeeperRegistry.getServiceImplList(interfaceName);
 
-            //引用提供的第一个服务
-            String serviceImpl = URLDecoder.decode(impl.get(1), "UTF-8");
-            String serverAddress = serviceImpl.substring(serviceImpl.indexOf("//") + 2, serviceImpl.lastIndexOf("/"));
+//            AbstractRegistry registry = ZookeeperRegistry.getZookeeper();
+            //注册中心配置
+            RegistryConfig registryCenter = (RegistryConfig) context.getBean("registryAddress");
+            //服务提供者地址
+            String address = registry.getServer(interfaceName, registryCenter.getAddress());
 
             ForestInvoker invoker = new ForestInvoker();
-            invoker.initInvoke(Class.forName(interfaceName), serverAddress);
+            invoker.initInvoke(Class.forName(interfaceName), address);
             ref = (T) proxy.createProxy(invoker, Class.forName(interfaceName));
             //注册消费者
-            zookeeperRegistry.registryConsumer(interfaceName);
+            registry.registryConsumer(interfaceName);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();

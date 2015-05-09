@@ -1,7 +1,7 @@
 package co.solinx.forest.registry.zookeeper;
 
 import co.solinx.forest.common.utils.InetAddressUtils;
-import co.solinx.forest.registry.api.IRegistry;
+import co.solinx.forest.registry.api.AbstractRegistry;
 import co.solinx.remote.zookeeper.ZookeeperClient;
 import co.solinx.remote.zookeeper.support.ZooNote;
 import org.apache.log4j.Logger;
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by LX on 2015/3/10.
  */
-public class ZookeeperRegistry implements IRegistry {
+public class ZookeeperRegistry extends AbstractRegistry {
 
     Logger log = Logger.getLogger(ZookeeperRegistry.class);
 
