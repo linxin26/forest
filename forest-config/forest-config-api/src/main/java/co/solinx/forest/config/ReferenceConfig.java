@@ -21,10 +21,8 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public T ref;
     public String protocol;
     private ApplicationContext context;
-    private ExtensionLoader<AbstractProxy> extensionLoader = new ExtensionLoader();
-    private AbstractProxy proxy = extensionLoader.loadExtension("co.solinx.forest.rpc.jdk.AbstractProxy", AbstractProxy.class);
-    private ExtensionLoader<AbstractRegistry> loader = new ExtensionLoader();
-    AbstractRegistry registry =loader.loadExtension("",AbstractRegistry.class);
+    private AbstractProxy proxy = new ExtensionLoader<AbstractProxy>().loadExtension(AbstractProxy.class);
+//    private AbstractRegistry registry = new ExtensionLoader<AbstractRegistry>().loadExtension(AbstractRegistry.class);
 
 
     public ReferenceConfig() {
@@ -48,18 +46,18 @@ public class ReferenceConfig<T> extends AbstractConfig {
 
 
         try {
-
-//            AbstractRegistry registry = ZookeeperRegistry.getZookeeper();
+            //注册中心配置
+//            RegistryConfig registryCenter = (RegistryConfig) context.getBean("registryAddress");
+//            //服务提供者地址
+//            String address = registry.getServer(interfaceName, registryCenter.getAddress());
+//            //注册消费者
+//            registry.registryConsumer(interfaceName);
             //注册中心配置
             RegistryConfig registryCenter = (RegistryConfig) context.getBean("registryAddress");
-            //服务提供者地址
-            String address = registry.getServer(interfaceName, registryCenter.getAddress());
+            ForestInvoker invoker = new ForestInvoker(interfaceName,registryCenter.getAddress());
 
-            ForestInvoker invoker = new ForestInvoker();
-            invoker.initInvoke(Class.forName(interfaceName), address);
             ref = (T) proxy.createProxy(invoker, Class.forName(interfaceName));
-            //注册消费者
-            registry.registryConsumer(interfaceName);
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (Exception e) {
