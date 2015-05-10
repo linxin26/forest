@@ -1,6 +1,8 @@
 package co.solinx.forest.config;
 
+import cn.solinx.forest.rpc.api.Invoker;
 import co.solinx.forest.common.extension.ExtensionLoader;
+import co.solinx.forest.culster.support.CulsterInvoker;
 import co.solinx.forest.registry.api.AbstractRegistry;
 import co.solinx.forest.rpc.ForestInvoker;
 import co.solinx.forest.rpc.jdk.AbstractProxy;
@@ -54,7 +56,8 @@ public class ReferenceConfig<T> extends AbstractConfig {
 //            registry.registryConsumer(interfaceName);
             //注册中心配置
             RegistryConfig registryCenter = (RegistryConfig) context.getBean("registryAddress");
-            ForestInvoker invoker = new ForestInvoker(interfaceName,registryCenter.getAddress());
+//            ForestInvoker invoker = new ForestInvoker(interfaceName,registryCenter.getAddress());
+            Invoker invoker=new CulsterInvoker(interfaceName,registryCenter.getAddress());
 
             ref = (T) proxy.createProxy(invoker, Class.forName(interfaceName));
 

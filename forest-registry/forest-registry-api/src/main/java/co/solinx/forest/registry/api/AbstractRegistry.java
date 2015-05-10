@@ -1,5 +1,7 @@
 package co.solinx.forest.registry.api;
 
+import org.apache.log4j.Logger;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.List;
@@ -8,6 +10,21 @@ import java.util.List;
  * Created by linx on 2015-05-08.
  */
 public abstract class AbstractRegistry {
+
+    Logger logger = Logger.getLogger(AbstractRegistry.class);
+
+    public List<String> getProviderList(String serviceImpl) {
+        List<String> impl = null;
+        //取得注册的服务
+        try {
+            impl = this.getServiceImplList(serviceImpl);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        logger.info("----------------" + impl);
+        return impl;
+    }
 
     /**
      * 取得服务提供者地址
@@ -19,7 +36,7 @@ public abstract class AbstractRegistry {
     public String getServer(String serviceImpl, String address) {
         String service = null;
         try {
-            this.toRegistry(address);   //连接注册中心
+//            this.toRegistry(address);   //连接注册中心
             //取得注册的服务
             List<String> impl = this.getServiceImplList(serviceImpl);
 
