@@ -24,7 +24,6 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public String protocol;
     private ApplicationContext context;
     private AbstractProxy proxy = new ExtensionLoader<AbstractProxy>().loadExtension(AbstractProxy.class);
-//    private AbstractRegistry registry = new ExtensionLoader<AbstractRegistry>().loadExtension(AbstractRegistry.class);
 
 
     public ReferenceConfig() {
@@ -48,12 +47,6 @@ public class ReferenceConfig<T> extends AbstractConfig {
 
 
         try {
-            //注册中心配置
-//            RegistryConfig registryCenter = (RegistryConfig) context.getBean("registryAddress");
-//            //服务提供者地址
-//            String address = registry.getServer(interfaceName, registryCenter.getAddress());
-//            //注册消费者
-//            registry.registryConsumer(interfaceName);
             //注册中心配置
             RegistryConfig registryCenter = (RegistryConfig) context.getBean("registryAddress");
 //            ForestInvoker invoker = new ForestInvoker(interfaceName,registryCenter.getAddress());
