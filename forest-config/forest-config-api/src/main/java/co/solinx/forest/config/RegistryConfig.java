@@ -126,7 +126,7 @@ public class RegistryConfig extends AbstractConfig {
                 ", password='" + password + '\'' +
                 ", port=" + port +
                 ", protocol='" + protocol + '\'' +
-                ", transporter='" + transporter + '\'' +
+                ", transport='" + transporter + '\'' +
                 ", server='" + server + '\'' +
                 ", client='" + client + '\'' +
                 ", cluster='" + cluster + '\'' +
