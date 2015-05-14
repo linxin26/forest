@@ -40,6 +40,9 @@ public class NettyClient {
     Lock lock = new ReentrantLock();
     Condition condition = lock.newCondition();
 
+    private String address;
+    private Integer port=18089;
+
     public NettyClient(Object service, Method method, Object[] params) {
         client = new Bootstrap();
         eventLoopGroup = new NioEventLoopGroup();
@@ -47,6 +50,28 @@ public class NettyClient {
         this.method = method;
         this.params = params;
     }
+
+    public NettyClient(String address){
+        this.address=address;
+        client = new Bootstrap();
+        eventLoopGroup = new NioEventLoopGroup();
+    }
+
+    public Bootstrap doConnect(){
+        client.group(eventLoopGroup);
+        client.channel(NioSocketChannel.class);
+        client.handler(new ChannelInitializer<SocketChannel>() {
+            @Override
+            protected void initChannel(SocketChannel sc) throws Exception {
+                sc.pipeline().addLast(new Decoder());
+                sc.pipeline().addLast(new Encoder());
+            }
+        });
+        client.connect(new InetSocketAddress(address,port));
+
+        return client;
+    }
+
 
     public void start(String address) {
 

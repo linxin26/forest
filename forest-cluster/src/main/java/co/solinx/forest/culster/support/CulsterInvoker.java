@@ -7,6 +7,8 @@ import co.solinx.forest.common.extension.ExtensionLoader;
 import co.solinx.forest.culster.loadbalance.Loadbalance;
 import co.solinx.forest.culster.loadbalance.RandomLoadbalance;
 import co.solinx.forest.registry.api.AbstractRegistry;
+import co.solinx.forest.remote.transport.ITransporter;
+import co.solinx.forest.remote.transport.NettyTransporter;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -23,10 +25,14 @@ public class CulsterInvoker extends AbstractInvoker {
     private Invoker invoker;
     private String interfaceName;
     private String registryAddress;
+    private ITransporter transporter;
 
     public CulsterInvoker(String interfaceName,String address) {
         this.interfaceName=interfaceName;
         this.registryAddress=address;
+        transporter=new NettyTransporter();
+
+        transporter.connect("127.0.0.1");
 
         registry.toRegistry(address);
         //注册消费者
