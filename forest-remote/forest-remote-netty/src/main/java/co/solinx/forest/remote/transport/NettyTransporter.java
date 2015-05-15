@@ -5,6 +5,7 @@ import io.netty.bootstrap.Bootstrap;
 
 /**
  * Created by linx on 2015-05-13.
+ * netty Transporter
  */
 public class NettyTransporter implements ITransporter {
 
