@@ -13,7 +13,7 @@ public class NettyTransporter implements ITransporter {
     public void connect(String address) {
         NettyClient client=new NettyClient(address);
         Bootstrap nettyClient= client.doConnect();
-//        nettyClient.
+
     }
 
     @Override
