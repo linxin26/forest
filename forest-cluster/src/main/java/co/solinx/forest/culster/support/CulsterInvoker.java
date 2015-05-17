@@ -11,6 +11,7 @@ import co.solinx.forest.remote.transport.ITransporter;
 import co.solinx.forest.remote.transport.NettyTransporter;
 import org.apache.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,25 +27,34 @@ public class CulsterInvoker extends AbstractInvoker {
     private String interfaceName;
     private String registryAddress;
     private ITransporter transporter;
+    private List<ITransporter> transporterList=new ArrayList<ITransporter>();
+    List<String> providerList;
 
     public CulsterInvoker(String interfaceName,String address) {
         this.interfaceName=interfaceName;
         this.registryAddress=address;
-        transporter=new NettyTransporter();
-
-        transporter.connect("127.0.0.1");
 
         registry.toRegistry(address);
         //注册消费者
         registry.registryConsumer(interfaceName);
+        //服务提供者地址
+         providerList = registry.getProviderList(interfaceName);
+        for (int i = 0; i < providerList.size(); i++) {
+            transporter=new NettyTransporter();
+            transporter.connect("127.0.0.1");
+            transporterList.add(transporter);
+            logger.info("aaaaaaaaaaaaaaaaaaaaa");
+            logger.info(providerList.get(i).substring(providerList.get(i).indexOf("//"),providerList.lastIndexOf("/")));
+        }
+
+
     }
 
     @Override
     public Object invoke(Invocation invocation) {
 
         Loadbalance loadbalance=new RandomLoadbalance();
-        //服务提供者地址
-        List<String> providerList = registry.getProviderList(interfaceName);
+
 
         String address= loadbalance.select(providerList);
         try {
@@ -55,5 +65,9 @@ public class CulsterInvoker extends AbstractInvoker {
 
         this.setAddress(address);
         return super.invoke(invocation);
+    }
+
+    public List<String> getProviderList() {
+        return providerList;
     }
 }
