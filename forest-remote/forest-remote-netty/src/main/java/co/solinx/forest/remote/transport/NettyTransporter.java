@@ -10,8 +10,8 @@ import io.netty.bootstrap.Bootstrap;
 public class NettyTransporter implements ITransporter {
 
     @Override
-    public void connect(String address) {
-        NettyClient client=new NettyClient(address);
+    public void connect(String address,int port) {
+        NettyClient client=new NettyClient(address,port);
         Bootstrap nettyClient= client.doConnect();
 
     }

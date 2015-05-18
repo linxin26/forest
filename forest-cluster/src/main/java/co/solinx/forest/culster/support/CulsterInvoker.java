@@ -11,6 +11,7 @@ import co.solinx.forest.remote.transport.ITransporter;
 import co.solinx.forest.remote.transport.NettyTransporter;
 import org.apache.log4j.Logger;
 
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,10 +42,12 @@ public class CulsterInvoker extends AbstractInvoker {
          providerList = registry.getProviderList(interfaceName);
         for (int i = 0; i < providerList.size(); i++) {
             transporter=new NettyTransporter();
-            transporter.connect("127.0.0.1");
-            transporterList.add(transporter);
             logger.info("aaaaaaaaaaaaaaaaaaaaa");
-            logger.info(providerList.get(i).substring(providerList.get(i).indexOf("//"),providerList.lastIndexOf("/")));
+            String temp=URLDecoder.decode(providerList.get(i));
+            temp=temp.substring(temp.indexOf("//")+2, temp.lastIndexOf("/"));
+            logger.info(temp);
+            transporter.connect(temp.split(":")[0],Integer.parseInt(temp.split(":")[1]));
+            transporterList.add(transporter);
         }
 
 

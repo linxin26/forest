@@ -51,8 +51,9 @@ public class NettyClient {
         this.params = params;
     }
 
-    public NettyClient(String address){
+    public NettyClient(String address,int port){
         this.address=address;
+        this.port=port;
         client = new Bootstrap();
         eventLoopGroup = new NioEventLoopGroup();
     }
@@ -67,6 +68,7 @@ public class NettyClient {
                 sc.pipeline().addLast(new Encoder());
             }
         });
+        logger.info("connect to "+address+":"+port);
         client.connect(new InetSocketAddress(address,port));
 
         return client;

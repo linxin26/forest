@@ -5,7 +5,7 @@ package co.solinx.forest.remote.transport;
  */
 public interface ITransporter {
 
-    public void connect(String address);
+    public void connect(String address,int port);
 
     public void bind();
 
