@@ -1,7 +1,7 @@
 package co.solinx.forest.remote.transport;
 
 import co.solinx.forest.remote.netty.client.NettyClient;
-import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.Channel;
 
 /**
  * Created by linx on 2015-05-13.
@@ -9,15 +9,26 @@ import io.netty.bootstrap.Bootstrap;
  */
 public class NettyTransporter implements ITransporter {
 
+
+    Channel channel;
+
     @Override
     public void connect(String address,int port) {
         NettyClient client=new NettyClient(address,port);
-        Bootstrap nettyClient= client.doConnect();
-
+          client.doConnect();
+         channel=client.getChannel();
     }
 
     @Override
     public void bind() {
 
     }
+
+    @Override
+    public void send(Object obj){
+
+        channel.writeAndFlush(obj);
+    }
+
+
 }

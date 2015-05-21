@@ -7,6 +7,7 @@ import co.solinx.forest.common.extension.ExtensionLoader;
 import co.solinx.forest.culster.loadbalance.Loadbalance;
 import co.solinx.forest.culster.loadbalance.RandomLoadbalance;
 import co.solinx.forest.registry.api.AbstractRegistry;
+import co.solinx.forest.remote.exchange.ExchangeClient;
 import co.solinx.forest.remote.transport.ITransporter;
 import co.solinx.forest.remote.transport.NettyTransporter;
 import org.apache.log4j.Logger;
@@ -28,8 +29,9 @@ public class CulsterInvoker extends AbstractInvoker {
     private String interfaceName;
     private String registryAddress;
     private ITransporter transporter;
-    private List<ITransporter> transporterList=new ArrayList<ITransporter>();
+
     List<String> providerList;
+    ExchangeClient[] exchangeClients;
 
     public CulsterInvoker(String interfaceName,String address) {
         this.interfaceName=interfaceName;
@@ -47,7 +49,8 @@ public class CulsterInvoker extends AbstractInvoker {
             temp=temp.substring(temp.indexOf("//")+2, temp.lastIndexOf("/"));
             logger.info(temp);
             transporter.connect(temp.split(":")[0],Integer.parseInt(temp.split(":")[1]));
-            transporterList.add(transporter);
+            this.getTransporterList().put(temp.split(":")[0],transporter);
+
         }
 
 

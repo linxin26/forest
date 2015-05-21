@@ -1,14 +1,12 @@
 package co.solinx.forest.remote.netty.client;
 
+import co.solinx.forest.remote.Client;
 import co.solinx.forest.remote.exchange.Response;
 import co.solinx.forest.remote.netty.Handler.ClientHandler;
 import co.solinx.forest.remote.netty.code.Decoder;
 import co.solinx.forest.remote.netty.code.Encoder;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelFutureListener;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelProgressiveFuture;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -28,7 +26,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * netty客户端
  * Created by LX on 2015/3/15.
  */
-public class NettyClient {
+public class NettyClient implements Client{
 
     Logger logger = Logger.getLogger(NettyClient.class);
     Bootstrap client;
@@ -39,6 +37,7 @@ public class NettyClient {
     Object[] params;   //参数
     Lock lock = new ReentrantLock();
     Condition condition = lock.newCondition();
+    private Channel channel;
 
     private String address;
     private Integer port=18089;
@@ -58,7 +57,7 @@ public class NettyClient {
         eventLoopGroup = new NioEventLoopGroup();
     }
 
-    public Bootstrap doConnect(){
+    public void doConnect(){
         client.group(eventLoopGroup);
         client.channel(NioSocketChannel.class);
         client.handler(new ChannelInitializer<SocketChannel>() {
@@ -68,10 +67,9 @@ public class NettyClient {
                 sc.pipeline().addLast(new Encoder());
             }
         });
-        logger.info("connect to "+address+":"+port);
-        client.connect(new InetSocketAddress(address,port));
-
-        return client;
+        logger.info("connect to " + address + ":" + port);
+        ChannelFuture future= client.connect(new InetSocketAddress(address, port));
+        NettyClient.this.channel=future.channel();
     }
 
 
@@ -114,6 +112,15 @@ public class NettyClient {
 
     public Object result() {
         return clientHandler.getRceiveMessage().getResult();
+    }
+
+    @Override
+    public void connect() {
+
+    }
+
+    public Channel getChannel() {
+        return channel;
     }
 
 }
