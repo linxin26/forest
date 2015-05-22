@@ -1,7 +1,10 @@
 package co.solinx.forest.remote.netty.code;
 
 import co.solinx.forest.common.serialize.JdkSerialize;
+import co.solinx.forest.remote.exchange.Response;
 import co.solinx.forest.remote.exchange.RpcException;
+import co.solinx.forest.remote.transport.ITransporter;
+import co.solinx.forest.remote.transport.NettyTransporter;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
@@ -18,6 +21,15 @@ public class Decoder extends ByteToMessageDecoder {
 
     Logger logger = Logger.getLogger(Decoder.class);
     JdkSerialize serialize = new JdkSerialize();
+
+    ITransporter transporter;
+
+    public Decoder() {
+    }
+
+    public Decoder(ITransporter transporter) {
+        this.transporter = transporter;
+    }
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) throws Exception {
@@ -58,6 +70,9 @@ public class Decoder extends ByteToMessageDecoder {
         }
         logger.info("----------------------------convertRequestByByte");
         logger.info(obj);
+        if(obj instanceof Response){
+            transporter.received((Response) obj);
+        }
         return obj;
     }
 }

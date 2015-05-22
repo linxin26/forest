@@ -5,6 +5,7 @@ import co.solinx.forest.remote.exchange.Response;
 import co.solinx.forest.remote.netty.Handler.ClientHandler;
 import co.solinx.forest.remote.netty.code.Decoder;
 import co.solinx.forest.remote.netty.code.Encoder;
+import co.solinx.forest.remote.transport.ITransporter;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -41,6 +42,8 @@ public class NettyClient implements Client{
 
     private String address;
     private Integer port=18089;
+    private ITransporter transporter;
+
 
     public NettyClient(Object service, Method method, Object[] params) {
         client = new Bootstrap();
@@ -50,11 +53,12 @@ public class NettyClient implements Client{
         this.params = params;
     }
 
-    public NettyClient(String address,int port){
+    public NettyClient(String address,int port,ITransporter transporter){
         this.address=address;
         this.port=port;
         client = new Bootstrap();
         eventLoopGroup = new NioEventLoopGroup();
+        this.transporter=transporter;
     }
 
     public void doConnect(){
@@ -63,7 +67,7 @@ public class NettyClient implements Client{
         client.handler(new ChannelInitializer<SocketChannel>() {
             @Override
             protected void initChannel(SocketChannel sc) throws Exception {
-                sc.pipeline().addLast(new Decoder());
+                sc.pipeline().addLast(new Decoder(transporter));
                 sc.pipeline().addLast(new Encoder());
             }
         });

@@ -1,6 +1,7 @@
 package cn.solinx.forest.rpc.api;
 
 import co.solinx.forest.remote.exchange.Request;
+import co.solinx.forest.remote.exchange.Response;
 import co.solinx.forest.remote.invoker.NettyInvoker;
 import co.solinx.forest.remote.transport.ITransporter;
 import org.apache.log4j.Logger;
@@ -14,11 +15,11 @@ import java.util.Random;
  */
 public abstract class AbstractInvoker implements Invoker {
 
-    Logger logger=Logger.getLogger(AbstractInvoker.class);
+    Logger logger = Logger.getLogger(AbstractInvoker.class);
 
     private String interfaceName;
     private String address;
-    private HashMap<String,ITransporter> transporterList=new HashMap<>();
+    private HashMap<String, ITransporter> transporterList = new HashMap<>();
 
     @Override
     public Object invoke(Invocation invocation) {
@@ -26,8 +27,13 @@ public abstract class AbstractInvoker implements Invoker {
         Object result = null;
 //        try {
 
-            this.send(invocation.getMethod(),invocation.getParameters());
-
+        Response response = this.send(invocation.getMethod(), invocation.getParameters());
+        logger.info("++++++++++++++++++++++++++++++++");
+        if(response!=null) {
+            if (!response.getResult().equals("empty")) {
+                result = response.getResult();
+            }
+        }
 //            result = nettyInvoker.clientInvoker(interfaceName, address, invocation.getMethod(), invocation.getParameters());
 //        } catch (InterruptedException e) {
 //
@@ -35,7 +41,7 @@ public abstract class AbstractInvoker implements Invoker {
         return result;
     }
 
-    public void send(Method method, Object[] params){
+    public Response send(Method method, Object[] params) {
         String data;
         data = interfaceName.toString() + "," + method.getName();
         Object[] paramType = null;
@@ -46,7 +52,7 @@ public abstract class AbstractInvoker implements Invoker {
                 paramType[i] = params[i].getClass().getTypeName();
             }
         }
-        Random random=new Random();
+        Random random = new Random();
         Request request = new Request();
         request.setId(random.nextInt());
         request.setData(data);
@@ -54,7 +60,7 @@ public abstract class AbstractInvoker implements Invoker {
         request.setParamType(paramType);
         logger.info(transporterList);
         logger.info(address);
-        transporterList.get(address.split(":")[0]).send(request);
+        return transporterList.get(address).send(request);
     }
 
     public String getInterfaceName() {
@@ -73,7 +79,7 @@ public abstract class AbstractInvoker implements Invoker {
         this.address = address;
     }
 
-    public HashMap<String,ITransporter> getTransporterList() {
+    public HashMap<String, ITransporter> getTransporterList() {
         return transporterList;
     }
 }

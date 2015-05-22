@@ -48,8 +48,8 @@ public class CulsterInvoker extends AbstractInvoker {
             String temp=URLDecoder.decode(providerList.get(i));
             temp=temp.substring(temp.indexOf("//")+2, temp.lastIndexOf("/"));
             logger.info(temp);
-            transporter.connect(temp.split(":")[0],Integer.parseInt(temp.split(":")[1]));
-            this.getTransporterList().put(temp.split(":")[0],transporter);
+            transporter.connect(temp.split(":")[0],Integer.parseInt(temp.split(":")[1]),transporter);
+            this.getTransporterList().put(temp,transporter);
 
         }
 
