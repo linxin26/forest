@@ -1,6 +1,7 @@
 package cn.solinx.forest.rpc.api;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * Created by linx on 2015/4/28.
@@ -24,5 +25,13 @@ public class RpcInvocation implements Invocation {
     @Override
     public Object[] getParameters() {
         return paramters;
+    }
+
+    @Override
+    public String toString() {
+        return "RpcInvocation{" +
+                "method=" + method +
+                ", paramters=" + Arrays.toString(paramters) +
+                '}';
     }
 }

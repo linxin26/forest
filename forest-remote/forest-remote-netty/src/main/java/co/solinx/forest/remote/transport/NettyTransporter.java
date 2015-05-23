@@ -1,5 +1,6 @@
 package co.solinx.forest.remote.transport;
 
+import co.solinx.forest.remote.exchange.Request;
 import co.solinx.forest.remote.exchange.Response;
 import co.solinx.forest.remote.netty.client.NettyClient;
 import io.netty.channel.Channel;
@@ -34,11 +35,27 @@ public class NettyTransporter implements ITransporter {
 
         ChannelFuture future= channel.writeAndFlush(obj);
         try {
-            future.await(2000);
+            future.await(50);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        logger.info("Response");
+        logger.info(obj);
+        while (true){
+//            logger.info(response);
+            try {
+                future.await(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (response!=null) {
+                Request request = (Request) obj;
+                if (response.getId() == request.getId()) {
+                    break;
+                }
+            }
+        }
+
+//        logger.info("Response");
         logger.info(response);
         return response;
     }

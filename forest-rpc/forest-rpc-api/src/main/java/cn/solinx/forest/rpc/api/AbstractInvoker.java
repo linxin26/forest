@@ -28,7 +28,8 @@ public abstract class AbstractInvoker implements Invoker {
 //        try {
 
         Response response = this.send(invocation.getMethod(), invocation.getParameters());
-        logger.info("++++++++++++++++++++++++++++++++");
+        logger.info(invocation);
+//        logger.info("++++++++++++++++++++++++++++++++");
         if(response!=null) {
             if (!response.getResult().equals("empty")) {
                 result = response.getResult();
