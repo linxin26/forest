@@ -27,7 +27,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * netty客户端
  * Created by LX on 2015/3/15.
  */
-public class NettyClient implements Client{
+public class NettyClient implements Client {
 
     Logger logger = Logger.getLogger(NettyClient.class);
     Bootstrap client;
@@ -38,10 +38,10 @@ public class NettyClient implements Client{
     Object[] params;   //参数
     Lock lock = new ReentrantLock();
     Condition condition = lock.newCondition();
-    private Channel channel;
+    Channel channel;
 
     private String address;
-    private Integer port=18089;
+    private Integer port = 18089;
     private ITransporter transporter;
 
 
@@ -53,15 +53,15 @@ public class NettyClient implements Client{
         this.params = params;
     }
 
-    public NettyClient(String address,int port,ITransporter transporter){
-        this.address=address;
-        this.port=port;
+    public NettyClient(String address, int port, ITransporter transporter) {
+        this.address = address;
+        this.port = port;
         client = new Bootstrap();
         eventLoopGroup = new NioEventLoopGroup();
-        this.transporter=transporter;
+        this.transporter = transporter;
     }
 
-    public void doConnect(){
+    public void doConnect() {
         client.group(eventLoopGroup);
         client.channel(NioSocketChannel.class);
         client.handler(new ChannelInitializer<SocketChannel>() {
@@ -72,8 +72,13 @@ public class NettyClient implements Client{
             }
         });
         logger.info("connect to " + address + ":" + port);
-        ChannelFuture future= client.connect(new InetSocketAddress(address, port));
-        NettyClient.this.channel=future.channel();
+        ChannelFuture future = client.connect(new InetSocketAddress(address, port));
+        this.channel = future.channel();
+    }
+
+    public ChannelFuture send(Object obj) {
+        ChannelFuture future = this.channel.writeAndFlush(obj);
+        return future;
     }
 
 
@@ -121,10 +126,6 @@ public class NettyClient implements Client{
     @Override
     public void connect() {
 
-    }
-
-    public Channel getChannel() {
-        return channel;
     }
 
 }

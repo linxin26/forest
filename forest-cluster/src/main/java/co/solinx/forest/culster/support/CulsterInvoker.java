@@ -2,7 +2,6 @@ package co.solinx.forest.culster.support;
 
 import cn.solinx.forest.rpc.api.AbstractInvoker;
 import cn.solinx.forest.rpc.api.Invocation;
-import cn.solinx.forest.rpc.api.Invoker;
 import co.solinx.forest.common.extension.ExtensionLoader;
 import co.solinx.forest.culster.loadbalance.Loadbalance;
 import co.solinx.forest.culster.loadbalance.RandomLoadbalance;
@@ -13,7 +12,6 @@ import co.solinx.forest.remote.transport.NettyTransporter;
 import org.apache.log4j.Logger;
 
 import java.net.URLDecoder;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,7 +23,6 @@ public class CulsterInvoker extends AbstractInvoker {
     Logger logger=Logger.getLogger(CulsterInvoker.class);
 
     private AbstractRegistry registry = new ExtensionLoader<AbstractRegistry>().loadExtension(AbstractRegistry.class);
-    private Invoker invoker;
     private String interfaceName;
     private String registryAddress;
     private ITransporter transporter;
@@ -42,9 +39,9 @@ public class CulsterInvoker extends AbstractInvoker {
         registry.registryConsumer(interfaceName);
         //服务提供者地址
          providerList = registry.getProviderList(interfaceName);
+        //向每个服务提供者发起一个连接
         for (int i = 0; i < providerList.size(); i++) {
             transporter=new NettyTransporter();
-            logger.info("aaaaaaaaaaaaaaaaaaaaa");
             String temp=URLDecoder.decode(providerList.get(i));
             temp=temp.substring(temp.indexOf("//")+2, temp.lastIndexOf("/"));
             logger.info(temp);

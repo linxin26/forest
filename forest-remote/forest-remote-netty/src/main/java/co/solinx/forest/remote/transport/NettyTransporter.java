@@ -3,7 +3,6 @@ package co.solinx.forest.remote.transport;
 import co.solinx.forest.remote.exchange.Request;
 import co.solinx.forest.remote.exchange.Response;
 import co.solinx.forest.remote.netty.client.NettyClient;
-import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import org.apache.log4j.Logger;
 
@@ -15,14 +14,13 @@ public class NettyTransporter implements ITransporter {
 
 
     Logger logger=Logger.getLogger(NettyTransporter.class);
-    Channel channel;
     Response response;
+    NettyClient client;
 
     @Override
     public void connect(String address,int port,ITransporter transporter) {
-        NettyClient client=new NettyClient(address,port,transporter);
+         client=new NettyClient(address,port,transporter);
           client.doConnect();
-         channel=client.getChannel();
     }
 
     @Override
@@ -33,7 +31,7 @@ public class NettyTransporter implements ITransporter {
     @Override
     public Response send(Object obj){
 
-        ChannelFuture future= channel.writeAndFlush(obj);
+        ChannelFuture future= client.send(obj);
         try {
             future.await(50);
         } catch (InterruptedException e) {
@@ -54,8 +52,6 @@ public class NettyTransporter implements ITransporter {
                 }
             }
         }
-
-//        logger.info("Response");
         logger.info(response);
         return response;
     }
