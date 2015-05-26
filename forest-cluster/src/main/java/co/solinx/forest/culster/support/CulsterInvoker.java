@@ -25,7 +25,7 @@ public class CulsterInvoker extends AbstractInvoker {
     private AbstractRegistry registry = new ExtensionLoader<AbstractRegistry>().loadExtension(AbstractRegistry.class);
     private String interfaceName;
     private String registryAddress;
-    private ITransporter transporter;
+    private ITransporter transporter=new NettyTransporter();;
 
     List<String> providerList;
     ExchangeClient[] exchangeClients;
@@ -39,13 +39,14 @@ public class CulsterInvoker extends AbstractInvoker {
         registry.registryConsumer(interfaceName);
         //服务提供者地址
          providerList = registry.getProviderList(interfaceName);
+
         //向每个服务提供者发起一个连接
         for (int i = 0; i < providerList.size(); i++) {
-            transporter=new NettyTransporter();
             String temp=URLDecoder.decode(providerList.get(i));
             temp=temp.substring(temp.indexOf("//")+2, temp.lastIndexOf("/"));
             logger.info(temp);
-            transporter.connect(temp.split(":")[0],Integer.parseInt(temp.split(":")[1]),transporter);
+            transporter.open(temp.split(":")[0], Integer.parseInt(temp.split(":")[1]), transporter);
+            transporter.connect();
             this.getTransporterList().put(temp,transporter);
 
         }

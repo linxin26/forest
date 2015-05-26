@@ -5,6 +5,7 @@ import co.solinx.forest.remote.exchange.Response;
 import co.solinx.forest.remote.netty.Handler.ClientHandler;
 import co.solinx.forest.remote.netty.code.Decoder;
 import co.solinx.forest.remote.netty.code.Encoder;
+import co.solinx.forest.remote.transport.AbstractClient;
 import co.solinx.forest.remote.transport.ITransporter;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -27,7 +28,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * netty客户端
  * Created by LX on 2015/3/15.
  */
-public class NettyClient implements Client {
+public class NettyClient extends AbstractClient {
 
     Logger logger = Logger.getLogger(NettyClient.class);
     Bootstrap client;
@@ -45,6 +46,9 @@ public class NettyClient implements Client {
     private ITransporter transporter;
 
 
+    public NettyClient() {
+    }
+
     public NettyClient(Object service, Method method, Object[] params) {
         client = new Bootstrap();
         eventLoopGroup = new NioEventLoopGroup();
@@ -53,15 +57,17 @@ public class NettyClient implements Client {
         this.params = params;
     }
 
-    public NettyClient(String address, int port, ITransporter transporter) {
-        this.address = address;
-        this.port = port;
-        client = new Bootstrap();
-        eventLoopGroup = new NioEventLoopGroup();
-        this.transporter = transporter;
+
+    public void open(String address,int port,ITransporter transporter){
+        this.address=address;
+        this.port=port;
+        client=new Bootstrap();
+        eventLoopGroup=new NioEventLoopGroup();
+        this.transporter=transporter;
     }
 
-    public void doConnect() {
+    @Override
+    public void connect() {
         client.group(eventLoopGroup);
         client.channel(NioSocketChannel.class);
         client.handler(new ChannelInitializer<SocketChannel>() {
@@ -123,9 +129,5 @@ public class NettyClient implements Client {
         return clientHandler.getRceiveMessage().getResult();
     }
 
-    @Override
-    public void connect() {
-
-    }
 
 }

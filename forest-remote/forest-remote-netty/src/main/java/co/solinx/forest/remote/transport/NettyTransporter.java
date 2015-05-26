@@ -17,10 +17,17 @@ public class NettyTransporter implements ITransporter {
     Response response;
     NettyClient client;
 
+    public NettyTransporter() {
+        client=new NettyClient();
+    }
+
+    public void open(String address,int port,ITransporter transporter){
+        client.open(address, port, transporter);
+    }
+
     @Override
-    public void connect(String address,int port,ITransporter transporter) {
-         client=new NettyClient(address,port,transporter);
-          client.doConnect();
+    public void connect() {
+        client.connect();
     }
 
     @Override

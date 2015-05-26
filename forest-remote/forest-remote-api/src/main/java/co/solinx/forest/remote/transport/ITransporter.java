@@ -7,8 +7,9 @@ import co.solinx.forest.remote.exchange.Response;
  */
 public interface ITransporter {
 
-     void connect(String address,int port,ITransporter transporter);
+     void connect();
 
+    void open(String address,int port,ITransporter transporter);
      void bind();
 
      Response send(Object obj);

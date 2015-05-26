@@ -9,7 +9,7 @@
 
     <forest:application name="demo-customer" owner="programmer" organization="forest"/>
 
-    <forest:registry address="zookeeper://192.168.140.142:2181"></forest:registry>
+    <forest:registry address="zookeeper://192.168.140.146:2181"></forest:registry>
 
 
     <forest:reference id="forestService"
