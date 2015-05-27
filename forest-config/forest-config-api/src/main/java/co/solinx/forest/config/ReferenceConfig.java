@@ -43,9 +43,6 @@ public class ReferenceConfig<T> extends AbstractConfig {
      */
     public void init() {
         //代理类
-//        DefaultProxy proxy = new DefaultProxy();
-
-
         try {
             //注册中心配置
             RegistryConfig registryCenter = (RegistryConfig) context.getBean("registryAddress");

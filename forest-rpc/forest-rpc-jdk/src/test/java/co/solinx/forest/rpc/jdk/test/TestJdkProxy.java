@@ -20,7 +20,7 @@ public class TestJdkProxy {
         loader.loadFile("co.solinx.forest.container.IContainer");
         ServiceLoader<AbstractProxy> service = ServiceLoader.load(AbstractProxy.class);
         Iterator<AbstractProxy> container = service.iterator();
-
+        System.out.println(container.hasNext());
 
     }
 }

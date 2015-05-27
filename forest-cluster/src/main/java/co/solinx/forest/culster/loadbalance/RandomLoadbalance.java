@@ -1,5 +1,7 @@
 package co.solinx.forest.culster.loadbalance;
 
+import org.apache.log4j.Logger;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.Random;
  */
 public class RandomLoadbalance implements Loadbalance {
 
-
+    Logger logger=Logger.getLogger(RandomLoadbalance.class);
     private Random random = new Random();
 
     @Override

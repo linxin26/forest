@@ -4,9 +4,7 @@ import cn.solinx.forest.rpc.api.AbstractInvoker;
 import cn.solinx.forest.rpc.api.Invocation;
 import co.solinx.forest.common.extension.ExtensionLoader;
 import co.solinx.forest.culster.loadbalance.Loadbalance;
-import co.solinx.forest.culster.loadbalance.RandomLoadbalance;
 import co.solinx.forest.registry.api.AbstractRegistry;
-import co.solinx.forest.remote.exchange.ExchangeClient;
 import co.solinx.forest.remote.transport.ITransporter;
 import co.solinx.forest.remote.transport.NettyTransporter;
 import org.apache.log4j.Logger;
@@ -23,12 +21,12 @@ public class CulsterInvoker extends AbstractInvoker {
     Logger logger=Logger.getLogger(CulsterInvoker.class);
 
     private AbstractRegistry registry = new ExtensionLoader<AbstractRegistry>().loadExtension(AbstractRegistry.class);
+    private Loadbalance loadbalance=new ExtensionLoader<Loadbalance>().loadExtension(Loadbalance.class);
     private String interfaceName;
     private String registryAddress;
     private ITransporter transporter=new NettyTransporter();;
 
-    List<String> providerList;
-    ExchangeClient[] exchangeClients;
+    private List<String> providerList;
 
     public CulsterInvoker(String interfaceName,String address) {
         this.interfaceName=interfaceName;
@@ -56,10 +54,6 @@ public class CulsterInvoker extends AbstractInvoker {
 
     @Override
     public Object invoke(Invocation invocation) {
-
-        Loadbalance loadbalance=new RandomLoadbalance();
-
-
         String address= loadbalance.select(providerList);
         try {
             this.setInterfaceName(Class.forName(interfaceName).getName());
@@ -69,9 +63,5 @@ public class CulsterInvoker extends AbstractInvoker {
 
         this.setAddress(address);
         return super.invoke(invocation);
-    }
-
-    public List<String> getProviderList() {
-        return providerList;
     }
 }

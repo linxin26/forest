@@ -21,6 +21,7 @@ public class ExtensionLoader<T> {
     public T loadExtension(Class inter){
 //        this.loadFile(api);
         ServiceLoader<T> service= ServiceLoader.load(inter);
+        System.out.println(inter);
         return service.iterator().next();
     }
 
