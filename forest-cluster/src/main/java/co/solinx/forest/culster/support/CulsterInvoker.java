@@ -23,14 +23,12 @@ public class CulsterInvoker extends AbstractInvoker {
     private AbstractRegistry registry = new ExtensionLoader<AbstractRegistry>().loadExtension(AbstractRegistry.class);
     private Loadbalance loadbalance=new ExtensionLoader<Loadbalance>().loadExtension(Loadbalance.class);
     private String interfaceName;
-    private String registryAddress;
     private ITransporter transporter=new NettyTransporter();;
 
     private List<String> providerList;
 
     public CulsterInvoker(String interfaceName,String address) {
         this.interfaceName=interfaceName;
-        this.registryAddress=address;
 
         registry.toRegistry(address);
         //注册消费者
