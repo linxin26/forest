@@ -8,7 +8,7 @@
        http://code.solinx.co/schema/forest
        http://code.solinx.co/schema/forest/forest.xsd">
 
-    <forest:registry address="zookeeper://192.168.140.150:2181"/>
+    <forest:registry address="zookeeper://192.168.140.151:2181"/>
 
     <forest:protocol name="forest" port="18088"></forest:protocol>
 
