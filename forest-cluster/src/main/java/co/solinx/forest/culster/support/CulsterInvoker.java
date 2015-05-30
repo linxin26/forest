@@ -53,6 +53,7 @@ public class CulsterInvoker extends AbstractInvoker {
     @Override
     public Object invoke(Invocation invocation) {
         String address= loadbalance.select(providerList);
+
         try {
             this.setInterfaceName(Class.forName(interfaceName).getName());
         } catch (ClassNotFoundException e) {
