@@ -7,6 +7,6 @@ package cn.solinx.forest.rpc.api;
 public interface Invoker {
 
 
-    Object invoke(Invocation invocation);
+    Object invoke(Invocation invocation) throws Exception;
 
 }

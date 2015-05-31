@@ -22,7 +22,7 @@ public abstract class AbstractInvoker implements Invoker {
     private HashMap<String, ITransporter> transporterList = new HashMap<>();
 
     @Override
-    public Object invoke(Invocation invocation) {
+    public Object invoke(Invocation invocation) throws Exception {
         NettyInvoker nettyInvoker = new NettyInvoker();
         Object result = null;
 //        try {

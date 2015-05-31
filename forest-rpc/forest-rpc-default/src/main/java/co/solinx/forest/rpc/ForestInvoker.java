@@ -31,7 +31,7 @@ public class ForestInvoker extends AbstractInvoker {
     }
 
     @Override
-    public Object invoke(Invocation invocation) {
+    public Object invoke(Invocation invocation) throws Exception {
         return super.invoke(invocation);
     }
 
