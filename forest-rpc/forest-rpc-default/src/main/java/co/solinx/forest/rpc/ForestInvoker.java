@@ -3,6 +3,7 @@ package co.solinx.forest.rpc;
 
 import cn.solinx.forest.rpc.api.AbstractInvoker;
 import cn.solinx.forest.rpc.api.Invocation;
+import co.solinx.forest.common.byteCode.LoadClass;
 import co.solinx.forest.common.extension.ExtensionLoader;
 import co.solinx.forest.registry.api.AbstractRegistry;
 
@@ -16,9 +17,8 @@ public class ForestInvoker extends AbstractInvoker {
     public ForestInvoker(String interfaceName,String registryAddres) {
 
         try {
-            this.setInterfaceName(Class.forName(interfaceName).getName());
-
-        } catch (ClassNotFoundException e) {
+            this.setInterfaceName(LoadClass.getClassName(interfaceName));
+        }catch (Exception e) {
             e.printStackTrace();
         }
         //服务提供者地址
