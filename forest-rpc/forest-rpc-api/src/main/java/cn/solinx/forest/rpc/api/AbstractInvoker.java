@@ -23,7 +23,6 @@ public abstract class AbstractInvoker implements Invoker {
 
     @Override
     public Object invoke(Invocation invocation) throws Exception {
-        NettyInvoker nettyInvoker = new NettyInvoker();
         Object result = null;
 //        try {
 
