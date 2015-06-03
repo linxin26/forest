@@ -10,6 +10,13 @@ import java.util.concurrent.TimeoutException;
  */
 public class FutureAdapter<v> implements Future<v>{
 
+    private String future;
+
+    public FutureAdapter(String future){
+        this.future=future;
+    }
+
+
     @Override
     public boolean cancel(boolean mayInterruptIfRunning) {
         return false;
@@ -22,16 +29,20 @@ public class FutureAdapter<v> implements Future<v>{
 
     @Override
     public boolean isDone() {
-        return false;
+        boolean result=false;
+        if(future!=null){
+            result=true;
+        }
+        return result;
     }
 
     @Override
     public v get() throws InterruptedException, ExecutionException {
-        return null;
+        return (v) future;
     }
 
     @Override
     public v get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
-        return null;
+        return (v) future;
     }
 }

@@ -7,6 +7,7 @@ import cn.solinx.forest.rpc.api.RpcContext;
 import co.solinx.forest.common.byteCode.LoadClass;
 import co.solinx.forest.common.extension.ExtensionLoader;
 import co.solinx.forest.registry.api.AbstractRegistry;
+import io.netty.util.concurrent.Future;
 import org.apache.log4j.Logger;
 
 /**
@@ -28,9 +29,9 @@ public class ForestInvoker extends AbstractInvoker {
         boolean async=invocation.getAsync();
         logger.info("-------------------------异步："+async);
         if(async){
-            Object result= super.invoke(invocation);
-//            RpcContext.getContext().setFuture();
-            return result;
+            String result= (String) super.invoke(invocation);
+            RpcContext.getContext().setFuture(new FutureAdapter<String>(result));
+            return new String();
         }else{
             RpcContext.getContext().setFuture(null);
             return super.invoke(invocation);
