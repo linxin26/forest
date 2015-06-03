@@ -11,6 +11,10 @@ public class RpcInvocation implements Invocation {
 
     private Method method;
     private Object[] paramters;
+    private boolean async=false;
+
+    public RpcInvocation() {
+    }
 
     public RpcInvocation(Method method, Object[] paramters) {
         this.method = method;
@@ -25,6 +29,29 @@ public class RpcInvocation implements Invocation {
     @Override
     public Object[] getParameters() {
         return paramters;
+    }
+
+    @Override
+    public boolean getAsync() {
+        return async;
+    }
+
+    @Override
+    public void setMethod(Method method) {
+        this.method=method;
+    }
+
+    @Override
+    public void setParameters(Object[] objects) {
+        this.paramters=objects;
+    }
+
+    public boolean isAsync() {
+        return async;
+    }
+
+    public void setAsync(boolean async) {
+        this.async = async;
     }
 
     @Override

@@ -20,4 +20,11 @@ public interface Invocation {
      * @return
      */
     Object[] getParameters();
+
+
+    boolean getAsync();
+
+    void setMethod(Method method);
+
+    void setParameters(Object[] objects);
 }

@@ -82,4 +82,8 @@ public abstract class AbstractInvoker implements Invoker {
     public HashMap<String, ITransporter> getTransporterList() {
         return transporterList;
     }
+
+    public void setTransporterList(HashMap<String, ITransporter> transporterList) {
+        this.transporterList = transporterList;
+    }
 }

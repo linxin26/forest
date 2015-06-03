@@ -1,5 +1,6 @@
 package co.solinx.forest.rpc.jdk;
 
+import cn.solinx.forest.rpc.api.Invocation;
 import cn.solinx.forest.rpc.api.Invoker;
 import co.solinx.forest.rpc.jdk.handler.JdkProxyHandler;
 
@@ -16,7 +17,7 @@ public class JdkDynamicProxy extends AbstractProxy {
     }
 
     @Override
-    public Object createProxy(Invoker invoke,Class interfaces) {
-        return Proxy.newProxyInstance(interfaces.getClassLoader(),new Class<?>[]{interfaces}, new JdkProxyHandler(invoke));
+    public Object createProxy(Invoker invoke,Class interfaces,Invocation invocation) {
+        return Proxy.newProxyInstance(interfaces.getClassLoader(),new Class<?>[]{interfaces}, new JdkProxyHandler(invoke,invocation));
     }
 }

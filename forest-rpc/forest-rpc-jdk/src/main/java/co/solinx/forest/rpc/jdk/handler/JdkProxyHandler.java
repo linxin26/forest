@@ -1,5 +1,6 @@
 package co.solinx.forest.rpc.jdk.handler;
 
+import cn.solinx.forest.rpc.api.Invocation;
 import cn.solinx.forest.rpc.api.Invoker;
 import cn.solinx.forest.rpc.api.RpcInvocation;
 import co.solinx.forest.remote.invoker.NettyInvoker;
@@ -14,6 +15,7 @@ public class JdkProxyHandler implements InvocationHandler {
     private Object delegate;
     private String serverAddress;
     private Invoker invoker;
+    private Invocation invocation;
 
 
     @Override
@@ -21,7 +23,9 @@ public class JdkProxyHandler implements InvocationHandler {
         if (method.getName().equals("toString")) {
             return invoker.toString();
         }
-        return invoker.invoke(new RpcInvocation(method, args));
+        invocation.setParameters(args);
+        invocation.setMethod(method);
+        return invoker.invoke(invocation);
     }
 
     public JdkProxyHandler(Object delegate, String serverAddress) {
@@ -30,7 +34,9 @@ public class JdkProxyHandler implements InvocationHandler {
     }
 
 
-    public JdkProxyHandler(Invoker invoke) {
+
+    public JdkProxyHandler(Invoker invoke,Invocation invocation) {
         this.invoker = invoke;
+        this.invocation=invocation;
     }
 }

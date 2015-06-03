@@ -13,10 +13,10 @@
 
 
     <forest:reference id="forestService"
-                      interface="co.solinx.forest.demo.api.IHelloForestService"></forest:reference>
+                      interface="co.solinx.forest.demo.api.IHelloForestService" async="true"></forest:reference>
 
     <forest:reference id="helloRpcService"
-                      interface="co.solinx.forest.demo.api.IHelloRpcService"></forest:reference>
+                      interface="co.solinx.forest.demo.api.IHelloRpcService" async="false"></forest:reference>
 
     <bean class="co.solinx.forest.demo.main" init-method="start">
         <property name="rpcService" ref="helloRpcService"></property>

@@ -3,36 +3,40 @@ package co.solinx.forest.rpc;
 
 import cn.solinx.forest.rpc.api.AbstractInvoker;
 import cn.solinx.forest.rpc.api.Invocation;
+import cn.solinx.forest.rpc.api.RpcContext;
 import co.solinx.forest.common.byteCode.LoadClass;
 import co.solinx.forest.common.extension.ExtensionLoader;
 import co.solinx.forest.registry.api.AbstractRegistry;
+import org.apache.log4j.Logger;
 
 /**
  * Created by linx on 2015/4/26.
  */
 public class ForestInvoker extends AbstractInvoker {
 
-    private AbstractRegistry registry = new ExtensionLoader<AbstractRegistry>().loadExtension(AbstractRegistry.class);
+    Logger logger=Logger.getLogger(ForestInvoker.class);
 
-    public ForestInvoker(String interfaceName,String registryAddres) {
+    public ForestInvoker(String interfaceName,String addres) {
 
-        try {
-            this.setInterfaceName(LoadClass.getClassName(interfaceName));
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        //服务提供者地址
-        String address = registry.getServer(interfaceName,registryAddres);
-        this.setAddress(address);
-        //注册消费者
-        registry.registryConsumer(interfaceName);
-
-
+        this.setInterfaceName(interfaceName);
+        this.setAddress(addres);
     }
 
     @Override
     public Object invoke(Invocation invocation) throws Exception {
-        return super.invoke(invocation);
+
+        boolean async=invocation.getAsync();
+        logger.info("-------------------------异步："+async);
+        if(async){
+            Object result= super.invoke(invocation);
+//            RpcContext.getContext().setFuture();
+            return result;
+        }else{
+            RpcContext.getContext().setFuture(null);
+            return super.invoke(invocation);
+        }
+
+
     }
 
 

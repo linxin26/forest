@@ -1,6 +1,7 @@
 package co.solinx.forest.config;
 
 import cn.solinx.forest.rpc.api.Invoker;
+import cn.solinx.forest.rpc.api.RpcInvocation;
 import co.solinx.forest.common.extension.ExtensionLoader;
 import co.solinx.forest.culster.support.CulsterInvoker;
 import co.solinx.forest.registry.api.AbstractRegistry;
@@ -23,6 +24,7 @@ public class ReferenceConfig<T> extends AbstractConfig {
     public T ref;
     public String protocol;
     private ApplicationContext context;
+    private boolean async;
     private AbstractProxy proxy = new ExtensionLoader<AbstractProxy>().loadExtension(AbstractProxy.class);
 
 
@@ -49,7 +51,10 @@ public class ReferenceConfig<T> extends AbstractConfig {
 //            ForestInvoker invoker = new ForestInvoker(interfaceName,registryCenter.getAddress());
             Invoker invoker=new CulsterInvoker(interfaceName,registryCenter.getAddress());
 
-            ref = (T) proxy.createProxy(invoker, Class.forName(interfaceName));
+            RpcInvocation invocation=new RpcInvocation();
+            invocation.setAsync(async);
+            logger.info("-------------------------------异步："+async);
+            ref = (T) proxy.createProxy(invoker, Class.forName(interfaceName),invocation);
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -100,6 +105,14 @@ public class ReferenceConfig<T> extends AbstractConfig {
 
     public void setProtocol(String protocol) {
         this.protocol = protocol;
+    }
+
+    public boolean isAsync() {
+        return async;
+    }
+
+    public void setAsync(boolean async) {
+        this.async = async;
     }
 
     @Override

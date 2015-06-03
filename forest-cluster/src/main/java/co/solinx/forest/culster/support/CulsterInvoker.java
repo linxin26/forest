@@ -8,6 +8,7 @@ import co.solinx.forest.culster.loadbalance.Loadbalance;
 import co.solinx.forest.registry.api.AbstractRegistry;
 import co.solinx.forest.remote.transport.ITransporter;
 import co.solinx.forest.remote.transport.NettyTransporter;
+import co.solinx.forest.rpc.ForestInvoker;
 import org.apache.log4j.Logger;
 
 import java.net.URLDecoder;
@@ -54,9 +55,8 @@ public class CulsterInvoker extends AbstractInvoker {
     @Override
     public Object invoke(Invocation invocation) throws Exception {
         String address = loadbalance.select(providerList);
-        this.setInterfaceName(LoadClass.getClassName(interfaceName));
-
-        this.setAddress(address);
-        return super.invoke(invocation);
+        ForestInvoker forestInvoker= new ForestInvoker(LoadClass.getClassName(interfaceName), address);
+        forestInvoker.setTransporterList(this.getTransporterList());
+        return forestInvoker.invoke(invocation);
     }
 }

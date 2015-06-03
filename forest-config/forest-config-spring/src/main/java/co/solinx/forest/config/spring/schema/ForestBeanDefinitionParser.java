@@ -76,6 +76,11 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
             beanDefinition.getPropertyValues().addPropertyValue("address", element.getAttribute("address"));
         } else if (ReferenceBean.class.equals(beanClass)) {
             beanDefinition.getPropertyValues().addPropertyValue("interfaceName", element.getAttribute("interface"));
+
+            if(element.hasAttribute("async")){
+                beanDefinition.getPropertyValues().addPropertyValue("async",element.getAttribute("async"));
+            }
+
         } else if (ProtocolConfig.class.equals(beanClass)) {
             beanDefinition.getPropertyValues().addPropertyValue("port", element.getAttribute("port"));
         }
