@@ -47,7 +47,7 @@ public class NettyTransporter implements ITransporter {
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-//        logger.info(obj);
+        logger.info(obj);
 //        while (true){
 ////            logger.info(response);
 //            try {

@@ -34,7 +34,7 @@ public class ForestInvoker extends AbstractInvoker {
         logger.info("-------------------------异步：" + async);
         if(async){
             ResponseFuture result= (ResponseFuture) super.invoke(invocation);
-            RpcContext.getContext().setFuture(new FutureAdapter<Object>(result));
+            RpcContext.getContext().setFuture(new FutureAdapter<>(result));
             return new String();
         }else{
             RpcContext.getContext().setFuture(null);

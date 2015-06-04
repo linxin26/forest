@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class DefaultFuture implements co.solinx.forest.common.ResponseFuture {
 
     private long id;
-    private static Map<Long, DefaultFuture> FUTURES = new ConcurrentHashMap<>();
+    private final static Map<Long, DefaultFuture> FUTURES = new ConcurrentHashMap<>();
     private Response response;
     Logger logger=Logger.getLogger(DefaultFuture.class);
 
@@ -24,12 +24,16 @@ public class DefaultFuture implements co.solinx.forest.common.ResponseFuture {
 
     public static void revice(Response response) {
         DefaultFuture future = FUTURES.get(Long.valueOf(response.getId()));
-
+        System.out.println("+++++++++++++++++++++++");
+        System.out.println(future);
         future.doRevice(response);
     }
 
     public void doRevice(Response response) {
         this.response = response;
+        logger.info("----------------------doRevice");
+        logger.info(response);
+        FUTURES.put(Long.valueOf(response.getId()),this);
     }
 
     @Override

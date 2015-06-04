@@ -7,7 +7,7 @@ import java.util.concurrent.Future;
  */
 public class RpcContext {
 
-    private Future<?> future;
+    private Future future;
 
     static RpcContext context=new RpcContext();
 
@@ -17,11 +17,11 @@ public class RpcContext {
     }
 
 
-    public Future<?> getFuture() {
+    public Future getFuture() {
         return future;
     }
 
-    public void setFuture(Future<?> future) {
+    public void setFuture(Future future) {
         this.future = future;
     }
 }
