@@ -10,7 +10,7 @@ public interface ITransporter {
 
      void connect();
 
-    void open(String address,int port,ITransporter transporter);
+    void open(String address, int port, ITransporter transporter);
      void bind();
 
     ResponseFuture send(Object obj);

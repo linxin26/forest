@@ -35,14 +35,16 @@ public class main {
         rpcService.hello();
 //        forestService.hello();
         for (int i = 0; i < 10; i++) {
+            //异步
+//            try {
+//               System.out.println(RpcContext.getContext().getFuture().get());
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            } catch (ExecutionException e) {
+//                e.printStackTrace();
+//            }
             logger.info(forestService.print(String.valueOf(i)));
-            try {
-                System.out.println(RpcContext.getContext().getFuture().get());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
+
         }
 
 

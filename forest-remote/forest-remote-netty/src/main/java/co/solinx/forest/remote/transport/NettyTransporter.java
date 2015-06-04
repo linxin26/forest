@@ -1,9 +1,10 @@
 package co.solinx.forest.remote.transport;
 
+import cn.solinx.forest.rpc.api.DefaultFuture;
+import co.solinx.forest.common.ResponseFuture;
 import co.solinx.forest.remote.exchange.Request;
 import co.solinx.forest.remote.exchange.Response;
 import co.solinx.forest.remote.netty.client.NettyClient;
-import io.netty.channel.ChannelFuture;
 import org.apache.log4j.Logger;
 
 /**
@@ -36,31 +37,33 @@ public class NettyTransporter implements ITransporter {
     }
 
     @Override
-    public Response send(Object obj){
+    public ResponseFuture send(Object obj){
 
-        ChannelFuture future= client.send(obj);
-        try {
-            future.await(50);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        logger.info(obj);
-        while (true){
-//            logger.info(response);
-            try {
-                future.await(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            if (response!=null) {
-                Request request = (Request) obj;
-                if (response.getId() == request.getId()) {
-                    break;
-                }
-            }
-        }
-        logger.info(response);
-        return response;
+        DefaultFuture future=new DefaultFuture((Request) obj);
+//        ChannelFuture future= client.send(obj);
+        client.send(obj);
+//        try {
+//            future.await(50);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        logger.info(obj);
+//        while (true){
+////            logger.info(response);
+//            try {
+//                future.await(1);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            if (response!=null) {
+//                Request request = (Request) obj;
+//                if (response.getId() == request.getId()) {
+//                    break;
+//                }
+//            }
+//        }
+//        logger.info(response);
+        return future;
     }
 
 

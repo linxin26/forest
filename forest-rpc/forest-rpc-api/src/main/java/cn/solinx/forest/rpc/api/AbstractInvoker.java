@@ -1,8 +1,6 @@
 package cn.solinx.forest.rpc.api;
 
 import co.solinx.forest.remote.exchange.Request;
-import co.solinx.forest.remote.exchange.Response;
-import co.solinx.forest.remote.invoker.NettyInvoker;
 import co.solinx.forest.remote.transport.ITransporter;
 import org.apache.log4j.Logger;
 
@@ -26,22 +24,22 @@ public abstract class AbstractInvoker implements Invoker {
         Object result = null;
 //        try {
 
-        Response response = this.send(invocation.getMethod(), invocation.getParameters());
+        co.solinx.forest.common.ResponseFuture response = this.send(invocation.getMethod(), invocation.getParameters());
         logger.info(invocation);
 //        logger.info("++++++++++++++++++++++++++++++++");
-        if(response!=null) {
-            if (!response.getResult().equals("empty")) {
-                result = response.getResult();
-            }
-        }
+//        if(response!=null) {
+//            if (!response.getResult().equals("empty")) {
+//                result = response.getResult();
+//            }
+//        }
 //            result = nettyInvoker.clientInvoker(interfaceName, address, invocation.getMethod(), invocation.getParameters());
 //        } catch (InterruptedException e) {
 //
 //        }
-        return result;
+        return response;
     }
 
-    public Response send(Method method, Object[] params) {
+    public co.solinx.forest.common.ResponseFuture send(Method method, Object[] params) {
         String data;
         data = interfaceName.toString() + "," + method.getName();
         Object[] paramType = null;
@@ -61,6 +59,7 @@ public abstract class AbstractInvoker implements Invoker {
         logger.info(transporterList);
         logger.info(address);
         return transporterList.get(address).send(request);
+//        return null;
     }
 
     public String getInterfaceName() {

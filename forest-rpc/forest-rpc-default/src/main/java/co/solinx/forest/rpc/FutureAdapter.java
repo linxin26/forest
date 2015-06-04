@@ -1,5 +1,8 @@
 package co.solinx.forest.rpc;
 
+
+import co.solinx.forest.common.ResponseFuture;
+
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -10,9 +13,9 @@ import java.util.concurrent.TimeoutException;
  */
 public class FutureAdapter<v> implements Future<v>{
 
-    private String future;
+    private ResponseFuture future;
 
-    public FutureAdapter(String future){
+    public FutureAdapter(ResponseFuture future){
         this.future=future;
     }
 
@@ -30,7 +33,7 @@ public class FutureAdapter<v> implements Future<v>{
     @Override
     public boolean isDone() {
         boolean result=false;
-        if(future!=null){
+        if(future.isDone()){
             result=true;
         }
         return result;
@@ -38,7 +41,7 @@ public class FutureAdapter<v> implements Future<v>{
 
     @Override
     public v get() throws InterruptedException, ExecutionException {
-        return (v) future;
+        return (v) future.get();
     }
 
     @Override

@@ -73,7 +73,7 @@ public class NettyClient extends AbstractClient {
         client.handler(new ChannelInitializer<SocketChannel>() {
             @Override
             protected void initChannel(SocketChannel sc) throws Exception {
-                sc.pipeline().addLast(new Decoder(transporter));
+                sc.pipeline().addLast(new Decoder());
                 sc.pipeline().addLast(new Encoder());
             }
         });
