@@ -64,10 +64,6 @@ public class NettyClient extends AbstractClient {
         client=new Bootstrap();
         eventLoopGroup=new NioEventLoopGroup();
         this.transporter=transporter;
-    }
-
-    @Override
-    public void connect() {
         client.group(eventLoopGroup);
         client.channel(NioSocketChannel.class);
         client.handler(new ChannelInitializer<SocketChannel>() {
@@ -77,12 +73,29 @@ public class NettyClient extends AbstractClient {
                 sc.pipeline().addLast(new Encoder());
             }
         });
-        logger.info("connect to " + address + ":" + port);
-        ChannelFuture future = client.connect(new InetSocketAddress(address, port));
-        this.channel = future.channel();
     }
 
+    @Override
+    public void connect() {
+
+        logger.info("connect to " + address + ":" + port);
+        ChannelFuture future = client.connect(new InetSocketAddress(address, port));
+        logger.info("-------done:"+future.isDone());
+        while(true){
+            if(future.isDone()){
+                break;
+            }
+        }
+        logger.info(" end-------done:"+future.isDone());
+        this.channel = future.channel();
+
+    }
+
+
+
     public ChannelFuture send(Object obj) {
+        this.connect();
+
         ChannelFuture future = this.channel.writeAndFlush(obj);
         return future;
     }

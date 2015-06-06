@@ -2,6 +2,7 @@ package co.solinx.forest.remote.netty.test;
 
 
 
+import co.solinx.forest.remote.exchange.Request;
 import co.solinx.forest.remote.netty.test.handler.*;
 import co.solinx.forest.remote.netty.test.code.RequestDecoder;
 import co.solinx.forest.remote.netty.test.code.RequestEncoder;
@@ -37,5 +38,20 @@ public class TestClient {
             }
         });
         ChannelFuture future= client.connect(new InetSocketAddress("127.0.0.1", 18088));
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+         future= client.connect(new InetSocketAddress("127.0.0.1", 18088));
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Request request=new Request();
+        request.setId(99);
+        request.setData("clientHandler ..............9999999");
+        future.channel().writeAndFlush(request);
     }
 }

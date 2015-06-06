@@ -20,7 +20,7 @@ public class HelloForestServiceImpl implements IHelloForestService, Serializable
     public String print(String i){
         if (i.equals("5")){
             try {
-                Thread.sleep(6000);
+                Thread.sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

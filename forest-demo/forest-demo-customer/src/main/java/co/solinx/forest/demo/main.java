@@ -53,24 +53,36 @@ public class main {
 
 
         }
-        for (Future future : futureList) {
+        for (int i=0;i<futureList.size();i++) {
             try {
-                System.out.println("future");
-
+                Future future=futureList.get(i);
 //                System.out.println(future.get());
 
-                while (!future.isDone()) {
-                System.out.println(future.isDone());
-                     Thread.sleep(2000);
-                }
-                if (future.isDone()) {
+//                while (!future.isDone()) {
+//                System.out.println(future.isDone());
+//                     Thread.sleep(200);
+//                }
+                if(i!=5) {
+//                    while (!future.isDone()) {
+//                        if (future.isDone()) {
+//                            break;
+//                        }
+//                    }
+//                }
+//                if (future.isDone()) {
                     System.out.println(future.get());
+                    System.out.println(i+" : "+String.valueOf(future.isDone()));
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
                 e.printStackTrace();
             }
+        }
+        try {
+            System.out.println(futureList.get(5).get());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }
