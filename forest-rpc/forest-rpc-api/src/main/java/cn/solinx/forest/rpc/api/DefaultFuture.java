@@ -38,6 +38,7 @@ public class DefaultFuture implements co.solinx.forest.common.ResponseFuture {
 
     @Override
     public Object get() {
+        //检查是否已经接收到数据
         while (!isDone()) {
             try {
                 Thread.sleep(20);

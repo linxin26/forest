@@ -1,6 +1,5 @@
 package co.solinx.forest.remote.netty.client;
 
-import co.solinx.forest.remote.Client;
 import co.solinx.forest.remote.exchange.Response;
 import co.solinx.forest.remote.netty.Handler.ClientHandler;
 import co.solinx.forest.remote.netty.code.Decoder;
@@ -8,13 +7,12 @@ import co.solinx.forest.remote.netty.code.Encoder;
 import co.solinx.forest.remote.transport.AbstractClient;
 import co.solinx.forest.remote.transport.ITransporter;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.*;
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.util.concurrent.DefaultPromise;
-import io.netty.util.concurrent.Future;
-import io.netty.util.concurrent.FutureListener;
 import org.apache.log4j.Logger;
 
 import java.lang.reflect.Method;
@@ -95,7 +93,6 @@ public class NettyClient extends AbstractClient {
 
     public ChannelFuture send(Object obj) {
         this.connect();
-
         ChannelFuture future = this.channel.writeAndFlush(obj);
         return future;
     }

@@ -19,7 +19,6 @@ import java.util.Random;
 public class ForestInvoker extends AbstractInvoker {
 
     Logger logger=Logger.getLogger(ForestInvoker.class);
-    private HashMap<String, ITransporter> transporterList = new HashMap<>();
 
     public ForestInvoker(String interfaceName,String addres) {
 
@@ -32,6 +31,7 @@ public class ForestInvoker extends AbstractInvoker {
 
         boolean async=invocation.getAsync();
         logger.info("-------------------------异步：" + async);
+        //异步
         if(async){
             ResponseFuture result= (ResponseFuture) super.invoke(invocation);
             RpcContext.getContext().setFuture(new FutureAdapter<>(result));

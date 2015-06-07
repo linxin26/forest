@@ -21,21 +21,8 @@ public abstract class AbstractInvoker implements Invoker {
 
     @Override
     public Object invoke(Invocation invocation) throws Exception {
-        Object result = null;
-//        try {
-
         co.solinx.forest.common.ResponseFuture response = this.send(invocation.getMethod(), invocation.getParameters());
         logger.info(invocation);
-//        logger.info("++++++++++++++++++++++++++++++++");
-//        if(response!=null) {
-//            if (!response.getResult().equals("empty")) {
-//                result = response.getResult();
-//            }
-//        }
-//            result = nettyInvoker.clientInvoker(interfaceName, address, invocation.getMethod(), invocation.getParameters());
-//        } catch (InterruptedException e) {
-//
-//        }
         return response;
     }
 
@@ -59,7 +46,6 @@ public abstract class AbstractInvoker implements Invoker {
         logger.info(transporterList);
         logger.info(address);
         return transporterList.get(address).send(request);
-//        return null;
     }
 
     public String getInterfaceName() {
