@@ -13,6 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class DefaultFuture implements co.solinx.forest.common.ResponseFuture {
 
     private long id;
+    //存储已发送请求  <RequestID,将要返回的值>
     private final static Map<Long, DefaultFuture> FUTURES = new ConcurrentHashMap<>();
     private Response response;
     Logger logger=Logger.getLogger(DefaultFuture.class);
@@ -21,6 +22,7 @@ public class DefaultFuture implements co.solinx.forest.common.ResponseFuture {
         this.id = request.getId();
         FUTURES.put(this.id, this);
     }
+
 
     public static void revice(Response response) {
         DefaultFuture future = FUTURES.get(Long.valueOf(response.getId()));
