@@ -26,8 +26,6 @@ public class DefaultFuture implements co.solinx.forest.common.ResponseFuture {
 
     public static void revice(Response response) {
         DefaultFuture future = FUTURES.get(Long.valueOf(response.getId()));
-        System.out.println("+++++++++++++++++++++++");
-        System.out.println(future);
         future.doRevice(response);
     }
 
