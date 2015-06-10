@@ -48,7 +48,6 @@ public class ReferenceBean<T> extends ReferenceConfig<T> implements FactoryBean,
     public void afterPropertiesSet() throws Exception {
         logger.info("---------------------------"+interfaceName);
 //        getObject();
-        logger.info("getObject---------------");
         //bean 初始化时创建bean的代理
         obj = get(applicationContext);
         logger.info(obj);
