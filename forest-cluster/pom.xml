@@ -27,6 +27,11 @@
             <artifactId>forest-remote-netty</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>co.solinx</groupId>
+            <artifactId>forest-rpc-default</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 

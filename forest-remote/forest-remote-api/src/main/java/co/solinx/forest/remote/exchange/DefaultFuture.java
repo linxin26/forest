@@ -1,7 +1,5 @@
-package cn.solinx.forest.rpc.api;
+package co.solinx.forest.remote.exchange;
 
-import co.solinx.forest.remote.exchange.Request;
-import co.solinx.forest.remote.exchange.Response;
 import org.apache.log4j.Logger;
 
 import java.util.Map;

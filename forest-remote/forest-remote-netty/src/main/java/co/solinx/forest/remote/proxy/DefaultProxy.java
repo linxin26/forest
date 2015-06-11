@@ -2,8 +2,6 @@ package co.solinx.forest.remote.proxy;
 
 import org.apache.log4j.Logger;
 
-import java.lang.reflect.Proxy;
-
 /**
  * jdk动态代理
  * Created by LX on 2015/3/21.
