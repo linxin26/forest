@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Created by linx on 2015-06-04.
  */
-public class DefaultFuture implements co.solinx.forest.common.ResponseFuture {
+public class DefaultFuture implements ResponseFuture {
 
     private long id;
     //存储已发送请求  <RequestID,将要返回的值>

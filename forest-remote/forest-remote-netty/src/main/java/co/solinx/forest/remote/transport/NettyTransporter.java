@@ -1,9 +1,9 @@
 package co.solinx.forest.remote.transport;
 
-import co.solinx.forest.common.ResponseFuture;
 import co.solinx.forest.remote.exchange.DefaultFuture;
 import co.solinx.forest.remote.exchange.Request;
 import co.solinx.forest.remote.exchange.Response;
+import co.solinx.forest.remote.exchange.ResponseFuture;
 import co.solinx.forest.remote.netty.client.NettyClient;
 import org.apache.log4j.Logger;
 

@@ -46,7 +46,6 @@ public class NettyServer {
             EventLoopGroup workerGroup = new NioEventLoopGroup();
             server.group(boosGroup, workerGroup);
             this.start(port);
-            logger.info("------------------netty start");
         }
     }
 

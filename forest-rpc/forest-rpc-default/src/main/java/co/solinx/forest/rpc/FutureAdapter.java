@@ -1,7 +1,7 @@
 package co.solinx.forest.rpc;
 
 
-import co.solinx.forest.common.ResponseFuture;
+import co.solinx.forest.remote.exchange.ResponseFuture;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -11,12 +11,12 @@ import java.util.concurrent.TimeoutException;
 /**
  * Created by linx on 2015-06-03.
  */
-public class FutureAdapter<v> implements Future<v>{
+public class FutureAdapter<v> implements Future<v> {
 
     private ResponseFuture future;
 
-    public FutureAdapter(ResponseFuture future){
-        this.future=future;
+    public FutureAdapter(ResponseFuture future) {
+        this.future = future;
     }
 
 
@@ -32,9 +32,9 @@ public class FutureAdapter<v> implements Future<v>{
 
     @Override
     public boolean isDone() {
-        boolean result=false;
-        if(future.isDone()){
-            result=true;
+        boolean result = false;
+        if (future.isDone()) {
+            result = true;
         }
         return result;
     }

@@ -1,7 +1,8 @@
 package co.solinx.forest.remote.transport;
 
-import co.solinx.forest.common.ResponseFuture;
+
 import co.solinx.forest.remote.exchange.Response;
+import co.solinx.forest.remote.exchange.ResponseFuture;
 
 /**
  * Created by linx on 2015-05-13.

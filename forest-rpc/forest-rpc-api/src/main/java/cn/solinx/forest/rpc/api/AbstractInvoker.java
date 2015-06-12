@@ -1,6 +1,7 @@
 package cn.solinx.forest.rpc.api;
 
 import co.solinx.forest.remote.exchange.Request;
+import co.solinx.forest.remote.exchange.ResponseFuture;
 import co.solinx.forest.remote.transport.ITransporter;
 import org.apache.log4j.Logger;
 
@@ -21,12 +22,12 @@ public abstract class AbstractInvoker implements Invoker {
 
     @Override
     public Object invoke(Invocation invocation) throws Exception {
-        co.solinx.forest.common.ResponseFuture response = this.send(invocation.getMethod(), invocation.getParameters());
+        ResponseFuture response = this.send(invocation.getMethod(), invocation.getParameters());
         logger.info(invocation);
         return response;
     }
 
-    public co.solinx.forest.common.ResponseFuture send(Method method, Object[] params) {
+    public ResponseFuture send(Method method, Object[] params) {
         String data;
         data = interfaceName.toString() + "," + method.getName();
         Object[] paramType = null;
