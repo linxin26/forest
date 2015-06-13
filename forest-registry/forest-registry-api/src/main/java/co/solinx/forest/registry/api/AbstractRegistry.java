@@ -22,7 +22,7 @@ public abstract class AbstractRegistry {
             e.printStackTrace();
         }
 
-        logger.info("----------------" + impl);
+//        logger.info("----------------" + impl);
         return impl;
     }
 
