@@ -21,15 +21,10 @@ public class Decoder extends ByteToMessageDecoder {
 
     Logger logger = Logger.getLogger(Decoder.class);
     JdkSerialize serialize = new JdkSerialize();
-
-    ITransporter transporter;
-
+  
     public Decoder() {
     }
 
-//    public Decoder(ITransporter transporter) {
-//        this.transporter = transporter;
-//    }
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) throws Exception {
@@ -73,7 +68,7 @@ public class Decoder extends ByteToMessageDecoder {
 //        if(obj instanceof Response){
 //            transporter.received((Response) obj);
 //        }
-        if(obj instanceof Response) {
+        if (obj instanceof Response) {
             DefaultFuture.revice((Response) obj);
         }
         return obj;
