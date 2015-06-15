@@ -87,7 +87,7 @@ public class ForestBeanDefinitionParser implements BeanDefinitionParser {
 
         for (Method setter : beanClass.getMethods()) {
             String name = setter.getName();
-            logger.info(name);
+//            logger.info(name);
         }
         return beanDefinition;
     }
