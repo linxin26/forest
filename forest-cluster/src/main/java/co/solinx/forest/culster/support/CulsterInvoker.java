@@ -57,7 +57,7 @@ public class CulsterInvoker extends AbstractInvoker {
     public Object invoke(Invocation invocation) throws Exception {
         String address = loadbalance.select(providerList,invocation,this.selectedAddress);
         this.selectedAddress=address;
-        logger.info("==========================="+selectedAddress);
+//        logger.info("==========================="+selectedAddress);
         ForestInvoker forestInvoker= new ForestInvoker(LoadClass.getClassName(interfaceName), address);
         forestInvoker.setTransporterList(this.getTransporterList());
         return forestInvoker.invoke(invocation);

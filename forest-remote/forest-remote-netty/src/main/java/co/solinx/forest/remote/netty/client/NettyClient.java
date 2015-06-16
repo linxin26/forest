@@ -139,8 +139,4 @@ public class NettyClient extends AbstractClient {
         return clientHandler.getRceiveMessage().getResult();
     }
 
-
-    public int getPort() {
-        return port;
-    }
 }
