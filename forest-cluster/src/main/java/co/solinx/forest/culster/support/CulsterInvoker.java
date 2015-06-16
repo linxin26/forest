@@ -24,8 +24,8 @@ public class CulsterInvoker extends AbstractInvoker {
     private AbstractRegistry registry = new ExtensionLoader<AbstractRegistry>().loadExtension(AbstractRegistry.class);
     private Loadbalance loadbalance = new ExtensionLoader<Loadbalance>().loadExtension(Loadbalance.class);
     private String interfaceName;
-    private ITransporter transporter = new NettyTransporter();
-    ;
+    private ITransporter transporter;
+    private String selectedAddress=null;
 
     private List<String> providerList;
 
@@ -43,6 +43,7 @@ public class CulsterInvoker extends AbstractInvoker {
             String temp = URLDecoder.decode(providerList.get(i));
             temp = temp.substring(temp.indexOf("//") + 2, temp.lastIndexOf("/"));
             logger.info(temp);
+            transporter= new NettyTransporter();
             transporter.open(temp.split(":")[0], Integer.parseInt(temp.split(":")[1]), transporter);
             transporter.connect();
             this.getTransporterList().put(temp, transporter);
@@ -54,7 +55,9 @@ public class CulsterInvoker extends AbstractInvoker {
 
     @Override
     public Object invoke(Invocation invocation) throws Exception {
-        String address = loadbalance.select(providerList);
+        String address = loadbalance.select(providerList,invocation,this.selectedAddress);
+        this.selectedAddress=address;
+        logger.info("==========================="+selectedAddress);
         ForestInvoker forestInvoker= new ForestInvoker(LoadClass.getClassName(interfaceName), address);
         forestInvoker.setTransporterList(this.getTransporterList());
         return forestInvoker.invoke(invocation);

@@ -38,7 +38,7 @@ public class NettyTransporter implements ITransporter {
 
     @Override
     public ResponseFuture send(Object obj){
-
+        logger.info("++++++++++++++++++++++++++"+client.getPort());
         DefaultFuture future=new DefaultFuture((Request) obj);
 //        ChannelFuture future= client.send(obj);
         client.send(obj);
@@ -72,4 +72,7 @@ public class NettyTransporter implements ITransporter {
         this.response=response;
     }
 
+    public NettyClient getClient() {
+        return client;
+    }
 }

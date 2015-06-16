@@ -46,6 +46,7 @@ public abstract class AbstractInvoker implements Invoker {
         request.setParamType(paramType);
         logger.info(transporterList);
         logger.info(address);
+        logger.info(transporterList.get(address));
         return transporterList.get(address).send(request);
     }
 

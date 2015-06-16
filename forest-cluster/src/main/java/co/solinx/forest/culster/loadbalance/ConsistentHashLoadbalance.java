@@ -1,5 +1,8 @@
 package co.solinx.forest.culster.loadbalance;
 
+import cn.solinx.forest.rpc.api.Invocation;
+import org.apache.log4j.Logger;
+
 import java.util.List;
 
 /**
@@ -8,8 +11,18 @@ import java.util.List;
  */
 public class ConsistentHashLoadbalance implements Loadbalance {
 
+    Logger logger=Logger.getLogger(ConsistentHashLoadbalance.class);
+
     @Override
-    public String select(List<String> providerList) {
+    public String select(List<String> providerList,Invocation invocation,String selected) {
+
+        logger.info("---------------------ConsistentHansh");
+
+
+        for (String temp : providerList){
+
+        }
+        System.identityHashCode(invocation);
 
         return null;
     }

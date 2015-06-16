@@ -1,5 +1,7 @@
 package co.solinx.forest.culster.loadbalance;
 
+import cn.solinx.forest.rpc.api.Invocation;
+
 import java.util.List;
 
 /**
@@ -8,6 +10,6 @@ import java.util.List;
 public interface Loadbalance {
 
 
-    public String select(List<String> providerList);
+    public String select(List<String> providerList,Invocation invocation,String selected);
 
 }

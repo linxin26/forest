@@ -1,1 +1,2 @@
 co.solinx.forest.culster.loadbalance.RandomLoadbalance
+co.solinx.forest.culster.loadbalance.ConsistentHashLoadbalance

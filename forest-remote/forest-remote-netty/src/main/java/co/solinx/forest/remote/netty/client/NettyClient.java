@@ -140,4 +140,7 @@ public class NettyClient extends AbstractClient {
     }
 
 
+    public int getPort() {
+        return port;
+    }
 }

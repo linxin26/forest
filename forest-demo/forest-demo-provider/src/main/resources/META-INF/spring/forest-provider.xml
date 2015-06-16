@@ -10,7 +10,7 @@
 
     <forest:registry address="zookeeper://192.168.140.151:2181"/>
 
-    <forest:protocol name="forest" port="18088"></forest:protocol>
+    <forest:protocol name="forest" port="18099"></forest:protocol>
 
     <forest:service interface="co.solinx.forest.demo.api.IHelloForestService" ref="helloForestService" protocol="forest"
                     owner="linx" loadbalance="random" weight="100"/>
